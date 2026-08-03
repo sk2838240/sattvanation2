@@ -1,0 +1,977 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#c2185b">
+<title>Mentors &ndash; Sattva Nation</title>
+<meta name="description" content="Meet the visionary mentors and advisors who guide Sattva Nation's holistic wellness movement across India.">
+<link rel="icon" type="image/png" href="/assets/sattvalogo123.png" sizes="32x32">
+<link rel="apple-touch-icon" href="/assets/sattvalogo123.png">
+<link rel="canonical" href="https://www.sattvanation.com/founders/">
+<meta property="og:title" content="Mentors &ndash; Sattva Nation">
+<meta property="og:description" content="Meet the visionary mentors and advisors who guide Sattva Nation's holistic wellness movement across India.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.sattvanation.com/founders/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --pink-deep: #c2185b;
+    --pink-mid: #d4537e;
+    --pink-soft: #f06292;
+    --pink-light: #fce4ec;
+    --pink-pale: #fdf0f5;
+    --white: #ffffff;
+    --text-dark: #2d1a24;
+    --text-mid: #6b3a50;
+    --text-muted: #a06080;
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans: 'DM Sans', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); background: var(--white); color: var(--text-dark); }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.1rem 5%;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid #f4c0d1;
+  }
+  .logo { display: flex; align-items: center; }
+  .logo-img { height: 40px; width: auto; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    text-decoration: none; font-size: 0.88rem; font-weight: 500;
+    color: var(--text-mid); letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.2s;
+  }
+  .nav-links a:hover, .nav-links a.active-page { color: var(--pink-deep); }
+  .nav-cta {
+    background: var(--pink-deep); color: white !important;
+    padding: 0.5rem 1.3rem; border-radius: 50px;
+    font-size: 0.82rem !important; letter-spacing: 0.06em !important;
+    transition: background 0.2s, transform 0.15s !important;
+  }
+  .nav-cta:hover { background: #a31150 !important; transform: translateY(-1px); }
+  
+  /* Mobile Hamburger Menu */
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 101;
+  }
+  .nav-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--text-dark);
+    transition: all 0.3s ease;
+  }
+  .nav-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .nav-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+  }
+
+  /* PAGE HERO */
+  .page-hero {
+    position: relative; width: 100%; min-height: 52vh;
+    background-image: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1600&q=80');
+    background-size: cover; background-position: center;
+    display: flex; align-items: center;
+    padding: 0 8%; padding-top: 80px; padding-bottom: 4.5rem; overflow: hidden;
+  }
+  .page-hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(120deg, rgba(30,5,18,0.78) 0%, rgba(194,24,91,0.4) 55%, rgba(10,2,8,0.6) 100%);
+  }
+  .page-hero-content { position: relative; z-index: 2; max-width: 720px; animation: fadeUp 0.8s ease both; }
+  .page-hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    font-size: 0.75rem; font-weight: 500; text-transform: uppercase;
+    letter-spacing: 0.16em; color: #f8bbd0; margin-bottom: 1.4rem;
+  }
+  .page-hero-eyebrow::before { content:''; display:block; width:32px; height:1.5px; background:var(--pink-soft); }
+  .page-hero h1 {
+    font-family: var(--serif); font-size: clamp(2.4rem, 5vw, 4.2rem);
+    line-height: 1.1; color: #fff; margin-bottom: 1.1rem;
+    text-shadow: 0 2px 24px rgba(0,0,0,0.3);
+  }
+  .page-hero h1 em { font-style: italic; color: #f48fb1; }
+  .page-hero p {
+    font-size: 1.05rem; line-height: 1.75; color: rgba(255,255,255,0.82);
+    font-weight: 300; max-width: 540px;
+  }
+  .breadcrumb {
+    position: absolute; bottom: 1.8rem; left: 8%; z-index: 2;
+    display: flex; align-items: center; gap: 0.5rem;
+    font-size: 0.76rem; color: rgba(255,255,255,0.55);
+  }
+  .breadcrumb a { color: rgba(255,255,255,0.55); text-decoration: none; transition: color 0.2s; }
+  .breadcrumb a:hover { color: #f48fb1; }
+  .breadcrumb span { color: rgba(255,255,255,0.85); }
+
+  /* SHARED */
+  .section-tag {
+    display: inline-block; font-size: 0.75rem; font-weight: 500;
+    text-transform: uppercase; letter-spacing: 0.12em; color: var(--pink-deep); margin-bottom: 1rem;
+  }
+  .section-title {
+    font-family: var(--serif); font-size: clamp(1.9rem, 3vw, 2.8rem);
+    line-height: 1.18; color: var(--text-dark); margin-bottom: 1.2rem;
+  }
+  .section-title em { font-style: italic; color: var(--pink-deep); }
+  .section-body { font-size: 1rem; line-height: 1.8; color: var(--text-mid); font-weight: 300; margin-bottom: 1.5rem; }
+  .btn-primary {
+    background: var(--pink-deep); color: white; border: none;
+    padding: 0.85rem 2rem; border-radius: 50px; font-family: var(--sans);
+    font-size: 0.92rem; font-weight: 500; cursor: pointer; letter-spacing: 0.04em;
+    transition: background 0.2s, transform 0.15s; text-decoration: none; display: inline-block;
+  }
+  .btn-primary:hover { background: #a31150; transform: translateY(-2px); }
+  .btn-outline-dark {
+    background: transparent; color: var(--pink-deep);
+    border: 1.5px solid var(--pink-mid); padding: 0.85rem 2rem;
+    border-radius: 50px; font-family: var(--sans); font-size: 0.92rem; font-weight: 500;
+    cursor: pointer; letter-spacing: 0.04em; text-decoration: none; display: inline-block;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-outline-dark:hover { background: var(--pink-light); transform: translateY(-2px); }
+
+  /* MENTORS CAROUSEL */
+  .mentors-section {
+    padding: 6rem 0;
+    background: var(--pink-pale);
+    overflow: hidden;
+  }
+  .mentors-header {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 3rem;
+    padding: 0 5%;
+  }
+  .mentors-header p {
+    font-size: 0.95rem; color: var(--text-mid); line-height: 1.75; font-weight: 300;
+  }
+
+  .carousel-wrapper {
+    position: relative;
+    width: 100%;
+  }
+  .carousel-track {
+    display: flex;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .carousel-track,
+    .mentor-slide * {
+      transition: none !important;
+      animation: none !important;
+    }
+  }
+  .mentor-slide {
+    flex: 0 0 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5%;
+    gap: 4rem;
+  }
+  .mentor-card {
+    display: grid;
+    grid-template-columns: 420px 1fr;
+    gap: 0;
+    max-width: 960px;
+    width: 100%;
+    background: white;
+    border-radius: 32px;
+    overflow: hidden;
+    box-shadow: 0 24px 64px rgba(194,24,91,0.12);
+    border: 1px solid #f4c0d1;
+  }
+  .mentor-card:hover {
+    box-shadow: 0 32px 80px rgba(194,24,91,0.18);
+  }
+  .mentor-image-wrap {
+    position: relative;
+    overflow: hidden;
+  }
+  .mentor-image-wrap::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(194,24,91,0.15) 0%, transparent 60%);
+  }
+  .mentor-image {
+    width: 420px;
+    height: 520px;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    transition: transform 0.6s;
+  }
+  .mentor-card:hover .mentor-image { transform: scale(1.04); }
+  .mentor-number {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    font-family: var(--serif);
+    font-size: 4rem;
+    font-weight: 700;
+    color: rgba(255,255,255,0.6);
+    line-height: 1;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.2);
+  }
+  .mentor-content {
+    padding: 3rem 2.5rem 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .mentor-role-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--pink-light);
+    border: 1px solid #f4c0d1;
+    border-radius: 50px;
+    padding: 0.3rem 0.9rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--pink-deep);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 1rem;
+    align-self: flex-start;
+  }
+  .mentor-name {
+    font-family: var(--serif);
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.4rem;
+    line-height: 1.2;
+  }
+  .mentor-title {
+    font-size: 0.92rem;
+    color: var(--pink-mid);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+  }
+  .mentor-bio {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--text-mid);
+    font-weight: 300;
+    margin-bottom: 1.8rem;
+    flex: 1;
+  }
+  .mentor-quote {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--pink-deep);
+    line-height: 1.55;
+    padding-left: 1.2rem;
+    border-left: 3px solid var(--pink-soft);
+    margin-bottom: 1.8rem;
+  }
+  .mentor-socials {
+    display: flex;
+    gap: 0.6rem;
+  }
+  .mentor-social {
+    width: 38px; height: 38px;
+    border-radius: 10px;
+    background: var(--pink-pale);
+    border: 1.5px solid #f4c0d1;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.75rem;
+    color: var(--pink-deep);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s;
+  }
+  .mentor-social:hover {
+    background: var(--pink-deep);
+    color: white;
+    border-color: var(--pink-deep);
+    transform: translateY(-2px);
+  }
+
+  /* CAROUSEL CONTROLS */
+  .carousel-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 3rem;
+    padding: 0 5%;
+  }
+  .carousel-btn {
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    background: white;
+    border: 1.5px solid #f4c0d1;
+    color: var(--pink-deep);
+    font-size: 1.2rem;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 4px 16px rgba(194,24,91,0.08);
+  }
+  .carousel-btn:hover {
+    background: var(--pink-deep);
+    color: white;
+    border-color: var(--pink-deep);
+    transform: translateY(-2px);
+  }
+  .carousel-dots {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .carousel-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: #f4c0d1;
+    border: none;
+    cursor: pointer;
+    transition: all 0.35s;
+    padding: 0;
+  }
+  .carousel-dot.active {
+    width: 28px;
+    border-radius: 4px;
+    background: var(--pink-deep);
+  }
+  .carousel-progress {
+    width: 80px; height: 3px;
+    background: #f4c0d1;
+    border-radius: 2px;
+    overflow: hidden;
+    margin-top: 1rem;
+  }
+  .carousel-progress-bar {
+    height: 100%;
+    background: var(--pink-deep);
+    border-radius: 2px;
+    width: 0%;
+    transition: width 0.1s linear;
+  }
+
+  /* AUTO PLAY PAUSE */
+  .carousel-autoplay {
+    display: flex; align-items: center; gap: 0.5rem;
+    font-size: 0.78rem; color: var(--text-muted); font-weight: 500;
+    cursor: pointer; user-select: none;
+  }
+  .autoplay-icon {
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    background: var(--pink-deep);
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-size: 0.6rem;
+    transition: background 0.2s;
+  }
+  .carousel-autoplay:hover .autoplay-icon { background: #a31150; }
+
+  /* VISION SECTION */
+  .vision {
+    padding: 6rem 5%;
+    background: var(--white);
+    text-align: center;
+  }
+  .vision-inner {
+    max-width: 780px;
+    margin: 0 auto;
+  }
+  .vision-quote {
+    font-family: var(--serif);
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-style: italic;
+    color: var(--text-dark);
+    line-height: 1.5;
+    margin: 2rem 0;
+    position: relative;
+    padding: 0 2rem;
+  }
+  .vision-quote::before, .vision-quote::after {
+    content: '"';
+    font-size: 4rem;
+    color: var(--pink-soft);
+    opacity: 0.4;
+    font-family: var(--serif);
+    position: absolute;
+    line-height: 1;
+  }
+  .vision-quote::before { top: -0.5rem; left: 0; }
+  .vision-quote::after { content: '"'; bottom: -1.5rem; right: 0; }
+
+  /* VALUES STRIP */
+  .values-strip {
+    padding: 5rem 5%;
+    background: var(--pink-deep);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+  .values-strip::before { content:''; position: absolute; top: -100px; right: -100px; width: 400px; height: 400px; border-radius: 50%; background: rgba(255,255,255,0.05); }
+  .values-strip::after { content:''; position: absolute; bottom: -80px; left: -60px; width: 300px; height: 300px; border-radius: 50%; background: rgba(255,255,255,0.04); }
+  .values-strip-inner { position: relative; z-index: 2; max-width: 900px; margin: 0 auto; }
+  .values-strip .section-tag { color: #f8bbd0; }
+  .values-strip h2 { font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 2.6rem); color: white; line-height: 1.2; margin-bottom: 2.5rem; }
+  .values-strip h2 em { font-style: italic; color: #f48fb1; }
+  .values-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+  .value-item {
+    background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 20px; padding: 2rem 1.5rem; backdrop-filter: blur(4px);
+    transition: transform 0.2s, background 0.2s;
+  }
+  .value-item:hover { transform: translateY(-4px); background: rgba(255,255,255,0.15); }
+  .value-icon { font-size: 2rem; margin-bottom: 1rem; }
+  .value-name { font-family: var(--serif); font-size: 1.15rem; font-weight: 600; color: white; margin-bottom: 0.5rem; }
+  .value-desc { font-size: 0.88rem; line-height: 1.7; color: rgba(255,255,255,0.8); font-weight: 300; }
+
+  /* CTA BANNER */
+  .cta-banner {
+    padding: 5rem 5%;
+    background: var(--pink-pale);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 3rem;
+    align-items: center;
+    border-top: 1px solid #f4c0d1;
+    border-bottom: 1px solid #f4c0d1;
+  }
+  .cta-tagline { font-family: var(--serif); font-size: clamp(1.6rem, 3vw, 2.4rem); color: var(--text-dark); line-height: 1.2; }
+  .cta-tagline em { font-style: italic; color: var(--pink-deep); }
+  .cta-sub { font-size: 1rem; color: var(--text-muted); margin-top: 0.7rem; font-weight: 300; line-height: 1.65; }
+  .cta-btns { display: flex; gap: 1rem; flex-shrink: 0; }
+
+  /* FOOTER */
+  footer {
+    background: var(--text-dark); color: #c9899c;
+    padding: 3rem 5%; display: flex;
+    align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+  }
+  .footer-logo { font-family: var(--serif); font-size: 1.35rem; font-weight: 700; color: white; }
+  .footer-links { display: flex; gap: 1.8rem; list-style: none; }
+  .footer-links a { text-decoration: none; font-size: 0.82rem; color: #c9899c; transition: color 0.2s; }
+  .footer-links a:hover { color: #f48fb1; }
+  .footer-copy { font-size: 0.78rem; }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:translateY(0); } }
+  .reveal { opacity:0; transform:translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity:1; transform:translateY(0); }
+
+  /* RESPONSIVE */
+  @media (max-width: 960px) {
+    .nav-toggle { display: flex; }
+    
+    .nav-links {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 280px;
+      height: 100vh;
+      background: white;
+      flex-direction: column;
+      padding: 80px 2rem 2rem;
+      gap: 1.5rem;
+      box-shadow: -4px 0 20px rgba(0,0,0,0.1);
+      transition: right 0.3s ease;
+    }
+    .nav-links.active { right: 0; }
+    
+    .nav-links a {
+      font-size: 1rem;
+      padding: 0.5rem 0;
+    }
+    
+    .mentor-card { grid-template-columns: 1fr; max-width: 480px; }
+    .mentor-image { width: 100%; height: 360px; }
+    .mentor-content { padding: 2rem; }
+    .values-row { grid-template-columns: 1fr; }
+    .cta-banner { grid-template-columns: 1fr; text-align: center; }
+    .cta-btns { justify-content: center; }
+  }
+  @media (max-width: 640px) {
+    .mentor-slide { padding: 0 3%; gap: 0; }
+    .mentor-card { border-radius: 24px; }
+    .mentor-image { height: 300px; }
+    .mentor-content { padding: 1.5rem; }
+    .mentor-name { font-size: 1.5rem; }
+    .page-hero { min-height: 60vh; }
+    .nav-links li:not(:last-child):not(:first-child) { display: block; }
+    .carousel-controls { gap: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">
+    <img src="/assets/sattvalogo123.png" alt="Sattva Nation Logo" class="logo-img" width="160" height="40" />
+  </div>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="/">Home</a></li>
+    <li><a href="/about-us/">About</a></li>
+    <li><a href="/programmes/">Programmes</a></li>
+    <li><a href="/events/">Events</a></li>
+    <li><a href="/founders/" class="active-page">Mentors</a></li>
+    <li><a href="/contact-us/" class="nav-cta">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <span class="page-hero-eyebrow">Guiding Lights</span>
+    <h1>Meet Our <em>Mentors</em></h1>
+    <p>Learn from India's most respected wellness practitioners, healers, and thought leaders who guide the Sattva Nation community with wisdom and compassion.</p>
+  </div>
+  <div class="breadcrumb">
+    <a href="/">Home</a>
+    <span style="margin:0 4px;">&ndash;</span>
+    <span>Mentors</span>
+  </div>
+</section>
+
+<!-- MENTORS CAROUSEL -->
+<section class="mentors-section">
+  <div class="mentors-header">
+    <span class="section-tag">Advisory Board</span>
+    <h2 class="section-title">Wisdom That <em>Guides Us</em></h2>
+    <p>Our mentors bring decades of expertise in wellness, healing, and mindful living. Their guidance shapes every programme and experience we create.</p>
+  </div>
+
+  <div class="carousel-wrapper">
+    <div class="carousel-track" id="carouselTrack">
+
+      <div class="mentor-slide">
+        <div class="mentor-card">
+          <div class="mentor-image-wrap">
+            <img class="mentor-image" src="../assets/mentors/Dr.%20Blossom%20Kochar.jpg" alt="Dr. Blossom Kochar">
+            <div class="mentor-number">01</div>
+          </div>
+          <div class="mentor-content">
+            <div class="mentor-role-tag">— Aromatherapy Pioneer</div>
+            <div class="mentor-name">Dr. Blossom Kochhar</div>
+            <div class="mentor-title">Chairperson, Blossom Kochhar Group . President, OMC Paris . Intercoiffure Mondial India</div>
+            <p class="mentor-bio">
+              Dr. Blossom Kochhar is a pioneering figure in holistic beauty and wellness with over 35 years of experience. She is widely credited as the pioneer of Aromatherapy in India and a visionary advocate of organic living. As Chairperson of the Blossom Kochhar Group of Companies, she has built an empire around natural beauty through Blossom Kochhar Aroma Magic. She is also the founder of the Blossom Kochhar College of Creative Arts & Design (BKCCAD), skilling thousands in the beauty industry. Her leadership roles include President of Organization Mondial Coiffure (OMC), Paris; President of Intercoiffure Mondial India (ICD); and President of the National Hairdressers and Beauticians Association. She is also the Chairperson of the Beauty and Wellness Sector Skills Council of India, driving standards and empowerment across the industry.
+            </p>
+            <div class="mentor-quote">
+              "Healthy lifestyle and wellbeing can bring out the best beauty in you. Women must identify their strength and make conscious efforts toward growth."
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mentor-slide">
+        <div class="mentor-card">
+          <div class="mentor-image-wrap">
+            <img class="mentor-image" src="../assets/mentors/Dr.%20Deepa%20Malik.jpeg" alt="Dr. Deepa Malik">
+            <div class="mentor-number">02</div>
+          </div>
+          <div class="mentor-content">
+            <div class="mentor-role-tag">— Padma Shri . Arjuna Awardee</div>
+            <div class="mentor-name">Dr. Deepa Malik</div>
+            <div class="mentor-title">Padma Shri . Arjuna Awardee . India's First Female Paralympic Archer</div>
+            <p class="mentor-bio">
+              Dr. Deepa Malik is an acclaimed Indian Paralympic athlete and a Padma Shri awardee who has redefined the boundaries of human resilience. As India's first female Paralympic archer and a national-level Wheelchair Basketball player, she has won numerous accolades including the Arjuna Award (2012) and holds three Limca Records for her sporting achievements. Her extraordinary journey from spinal cord injury to becoming a celebrated athlete and motivational figure has inspired millions across India and beyond. She is a passionate advocate for disability rights, women's empowerment, and adaptive sports, demonstrating that true wellness transcends physical limitations.
+            </p>
+            <div class="mentor-quote">
+              "Every challenge is an invitation to grow stronger. Disability is not the end &mdash;&nbsp; it is the beginning of discovering an even fiercer you."
+            </div>
+            <div class="mentor-socials">
+              <a href="https://www.linkedin.com/in/deepamalikofficial" class="mentor-social" aria-label="LinkedIn" target="_blank" rel="noopener">in</a>
+              <a href="https://www.instagram.com/deepa_paralympian?igsh=MTFuYThrbmhkM3FyOA==" class="mentor-social" aria-label="Instagram" target="_blank" rel="noopener">ig</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mentor-slide">
+        <div class="mentor-card">
+          <div class="mentor-image-wrap">
+            <img class="mentor-image" src="../assets/mentors/Dr.%20Mickey%20Mehta.jpeg" alt="Dr. Mickey Mehta">
+            <div class="mentor-number">03</div>
+          </div>
+          <div class="mentor-content">
+            <div class="mentor-role-tag">— Holistic Wellness Visionary</div>
+            <div class="mentor-name">Dr. Mickey Mehta</div>
+            <div class="mentor-title">Holistic Healway Scientist . Serious Ailment Management Expert . 45+ Years</div>
+            <p class="mentor-bio">
+              Dr. Mickey Mehta is a renowned holistic healing practitioner who has devoted over four and a half decades to transforming lives across India and beyond. His integrative Serious Ailment Management programme combines curative nutrition, physiotherapy, mental-emotional wellness, Ayurveda, naturopathy, and ancient therapies to manage, stabilise, and potentially reverse chronic health conditions. Over his career, he has inspired and touched the lives of over 100 million people, guiding them from illness to wellness. Known for his philosophy that "medicine manages the condition but true healing is still missing," he bridges modern medical science with evidence-based natural therapies for comprehensive healing.
+            </p>
+            <div class="mentor-quote">
+              "Death has no right over life. Your breathing can regulate your hormonology. Your meditation can reshape your emotions."
+            </div>
+            <div class="mentor-socials">
+              <a href="https://www.instagram.com/mickey_mehta/" class="mentor-social" aria-label="Instagram" target="_blank" rel="noopener">ig</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mentor-slide">
+        <div class="mentor-card">
+          <div class="mentor-image-wrap">
+            <img class="mentor-image" src="../assets/mentors/Dr.%20Mukesh%20Batra.jpeg" alt="Dr. Mukesh Batra">
+            <div class="mentor-number">04</div>
+          </div>
+          <div class="mentor-content">
+            <div class="mentor-role-tag">— Padma Shri . Homeopathy Pioneer</div>
+            <div class="mentor-name">Dr. Mukesh Batra</div>
+            <div class="mentor-title">Padma Shri . Founder & Chairman, Dr Batra's® Positive Health Clinic</div>
+            <p class="mentor-bio">
+              Dr. Mukesh Batra is a Padma Shri awardee and the Founder & Chairman of Dr Batra's® Positive Health Clinic, India's leading homeopathy healthcare chain with over 40 years of expertise. With 200+ clinics across India, 350+ specialist doctors, and a 91% success rate, Dr Batra's® has treated over 15 lakh patients for conditions ranging from hair and skin disorders to chronic ailments including respiratory, women's health, child health, and mental wellness. He combines classical homeopathy with modern diagnostic technology to deliver personalised, safe, and effective treatment. Trusted by Bollywood icons including Shah Rukh Khan, Hrithik Roshan, and Sonakshi Sinha, he continues to pioneer evidence-based homeopathic care across India.
+            </p>
+            <div class="mentor-quote">
+              "Homeopathy treats the root cause, not just the symptoms &mdash;&nbsp; delivering lasting relief with no side effects."
+            </div>
+            <div class="mentor-socials">
+              <a href="https://www.linkedin.com/in/dr-mukesh-batra" class="mentor-social" aria-label="LinkedIn" target="_blank" rel="noopener">in</a>
+              <a href="https://www.instagram.com/dr.mukeshbatra" class="mentor-social" aria-label="Instagram" target="_blank" rel="noopener">ig</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mentor-slide">
+        <div class="mentor-card">
+          <div class="mentor-image-wrap">
+            <img class="mentor-image" src="../assets/mentors/Dr.%20Niranjan%20Hiranandani.jpeg" alt="Dr. Niranjan Hiranandani">
+            <div class="mentor-number">05</div>
+          </div>
+          <div class="mentor-content">
+            <div class="mentor-role-tag">🔄 Real Estate Icon</div>
+            <div class="mentor-name">Dr. Niranjan Hiranandani</div>
+            <div class="mentor-title">Founder & Chairman, Hiranandani Group . Chairman, NAREDCO . Past President, ASSOCHAM</div>
+            <p class="mentor-bio">
+              Dr. Niranjan Hiranandani is widely recognised as one of India's pioneering business titans and a thought leader who reshaped the nation's urban development landscape. As the Founder & Chairman of the Hiranandani Group, he is credited with redefining integrated township living through landmark developments such as Hiranandani Gardens, Powai. A first-generation entrepreneur and Fellow Chartered Accountant, he has over five decades of experience driving sustainable urban planning, infrastructure development, and economic growth across India.
+            </p>
+            <div class="mentor-quote">
+              "Cities must be built around people, communities, and long-term vision &mdash;&nbsp; not just addresses, but economies."
+            </div>
+            <div class="mentor-socials">
+              <a href="https://www.linkedin.com/in/dr-niranjan-hiranandani" class="mentor-social" aria-label="LinkedIn" target="_blank" rel="noopener">in</a>
+              <a href="https://www.instagram.com/n_hiranandani/" class="mentor-social" aria-label="Instagram" target="_blank" rel="noopener">ig</a>
+              <a href="https://x.com/N_Hiranandani" class="mentor-social" aria-label="X (Twitter)" target="_blank" rel="noopener">tw</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mentor-slide">
+        <div class="mentor-card">
+          <div class="mentor-image-wrap">
+            <img class="mentor-image" src="../assets/mentors/Dr.%20Seema%20Midha.jpeg" alt="Dr. Seema Midha">
+            <div class="mentor-number">06</div>
+          </div>
+          <div class="mentor-content">
+            <div class="mentor-role-tag">— Tarot Queen & Numerologist</div>
+            <div class="mentor-name">Dr. Seema Midha</div>
+            <div class="mentor-title">Internationally Renowned Tarot Expert . Ace Numerologist . Feng Shui Master</div>
+            <p class="mentor-bio">
+              Based in New Delhi, Dr. Seema Midha is an internationally renowned Tarot card expert, teacher, and ace numerologist with a mission to transform lives through ancient wisdom and psychic knowledge. A Post Graduate in Child Psychology, she is also specialised in Feng Shui, Vaastu, Colour therapy, Crystal ball gazing, Reiki, Karuna Reiki, Pranic Healing, Acupressure, Psychotherapy, Hypnotism, Aura Reading, and Angel Healing. She has been featured extensively across electronic media including TV shows and radio, and print publications. She empowers individuals with self-confidence and guides them toward happiness and success through precise numerological calculations and tarot readings.
+            </p>
+            <div class="mentor-quote">
+              "There is no better boat than a horoscope to help a man cross over the sea of life."
+            </div>
+            <div class="mentor-socials">
+              <a href="https://www.linkedin.com/in/seema-middha-tarot-queen-a49a387la" class="mentor-social" aria-label="LinkedIn" target="_blank" rel="noopener">in</a>
+              <a href="https://www.instagram.com/drseemamidha/" class="mentor-social" aria-label="Instagram" target="_blank" rel="noopener">ig</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mentor-slide">
+        <div class="mentor-card">
+          <div class="mentor-image-wrap">
+            <img class="mentor-image" src="../assets/mentors/Gurmit%20Singh%20Arora.jpeg" alt="Gurmit Singh Arora">
+            <div class="mentor-number">07</div>
+          </div>
+          <div class="mentor-content">
+            <div class="mentor-role-tag">— Green Building Authority</div>
+            <div class="mentor-name">Gurmit Singh Arora</div>
+            <div class="mentor-title">Co-Chair, IGBC Mumbai . Managing Director, Rajco Group . National Executive Council Member, Indian Plumbing Association</div>
+            <p class="mentor-bio">
+              Gurmit Singh Arora is a highly respected name in India's sustainable building and plumbing industry. As Managing Director of Rajco Group &mdash;&nbsp; a leading manufacturing company near Mumbai &mdash;&nbsp; he has achieved milestones that have made him an authority on copper tubes, with Rajco holding an 85% market share. He is a Founding Trustee of the Indian Institute of Plumbing, Founding & Executive Council Member and Co-Chairman of the Indian Green Building Council (IGBC) Mumbai Chapter, and Chairman of the IGBC Existing Buildings, O&M Steering Committee. A National Executive Council Member of the Indian Plumbing Association, he has been honoured by the Builders Association of India, Union Bank of India, Hitachi, and numerous other organisations for excellence and innovation. He actively promotes green building practices and sustainable infrastructure across India.
+            </p>
+            <div class="mentor-quote">
+              "Sustainability is not a choice anymore &mdash;&nbsp; it is an imperative. Every building we create today must serve generations tomorrow."
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CAROUSEL CONTROLS -->
+  <div class="carousel-controls">
+    <button class="carousel-btn" id="carouselPrev" aria-label="Previous mentor">&#8592;</button>
+    <div class="carousel-dots" id="carouselDots"></div>
+    <button class="carousel-btn" id="carouselNext" aria-label="Next mentor">&#8594;</button>
+    <div class="carousel-autoplay" id="autoplayToggle" title="Toggle autoplay">
+      <div class="autoplay-icon" id="autoplayIcon">⏸</div>
+      <span id="autoplayLabel">Auto</span>
+    </div>
+  </div>
+  <div class="carousel-controls" style="margin-top: 0.5rem;">
+    <div class="carousel-progress"><div class="carousel-progress-bar" id="progressBar"></div></div>
+  </div>
+</section>
+
+<!-- VISION SECTION -->
+<section class="vision">
+  <div class="vision-inner reveal">
+    <span class="section-tag">Our Why</span>
+    <h2 class="section-title">A Vision Born From <em>Personal Transformation</em></h2>
+    <div class="vision-quote">
+      We believe that every individual carries the seed of Sattva within them &mdash;&nbsp; purity, balance, and inner harmony. Our mission is to create spaces where that seed can grow.
+    </div>
+    <p class="section-body">
+      Sattva Nation was born from a simple yet profound realization: in the rush of modern life, people have forgotten how to pause. Our founders and mentors came together with a shared vision &mdash;&nbsp; to bring holistic wellness out of exclusive retreats and into everyday life, making mindful living accessible to all.
+    </p>
+  </div>
+</section>
+
+<!-- VALUES STRIP -->
+<section class="values-strip">
+  <div class="values-strip-inner reveal">
+    <span class="section-tag">What Drives Us</span>
+    <h2>Guided by <em>Core Principles</em></h2>
+    <div class="values-row">
+      <div class="value-item">
+        <div class="value-icon">🌟</div>
+        <div class="value-name">Authenticity</div>
+        <div class="value-desc">Every experience we create is rooted in genuine intention, not trends or gimmicks.</div>
+      </div>
+      <div class="value-item">
+        <div class="value-icon">🤝</div>
+        <div class="value-name">Inclusivity</div>
+        <div class="value-desc">Wellness is for everyone. We design programmes that welcome all backgrounds and experience levels.</div>
+      </div>
+      <div class="value-item">
+        <div class="value-icon">🔄</div>
+        <div class="value-name">Transformation</div>
+        <div class="value-desc">We measure success not by attendance, but by the lasting positive change in people's lives.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+  <div class="reveal">
+    <div class="cta-tagline">Join the <em>movement.</em></div>
+    <div class="cta-sub">Be part of a growing community dedicated to mindful living and holistic wellness.</div>
+  </div>
+  <div class="cta-btns reveal">
+    <a href="/contact-us/" class="btn-primary">Connect With Us</a>
+    <a href="/events/" class="btn-outline-dark">Explore Events</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">SattvaNation</div>
+  <ul class="footer-links">
+    <li><a href="/about-us/">About</a></li>
+    <li><a href="/programmes/">Programmes</a></li>
+    <li><a href="/events/">Events</a></li>
+    <li><a href="/founders/">Mentors</a></li>
+    <li><a href="/contact-us/">Contact</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/gallery/">Gallery</a></li>
+  </ul>
+  <div class="footer-copy">&copy; 2026 Sattva Nation. Celebrate Life.</div>
+</footer>
+
+<script>
+// Mobile navigation toggle
+(function() {
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  if (toggle && links) {
+    toggle.addEventListener('click', () => {
+      toggle.classList.toggle('active');
+      links.classList.toggle('active');
+      toggle.setAttribute('aria-expanded', toggle.classList.contains('active'));
+    });
+    links.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        toggle.classList.remove('active');
+        links.classList.remove('active');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+})();
+
+(function() {
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => io.observe(el));
+
+  // Carousel
+  const track = document.getElementById('carouselTrack');
+  const slides = document.querySelectorAll('.mentor-slide');
+  const dotsContainer = document.getElementById('carouselDots');
+  const prevBtn = document.getElementById('carouselPrev');
+  const nextBtn = document.getElementById('carouselNext');
+  const progressBar = document.getElementById('progressBar');
+  const autoplayToggle = document.getElementById('autoplayToggle');
+  const autoplayIcon = document.getElementById('autoplayIcon');
+  const autoplayLabel = document.getElementById('autoplayLabel');
+
+  const total = slides.length;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let current = 0;
+  let autoplay = !reduceMotion;
+  let autoplayTimer = null;
+  let progressTimer = null;
+  let progressValue = 0;
+  const INTERVAL = 5000;
+
+  // Create dots
+  for (let i = 0; i < total; i++) {
+    const dot = document.createElement('button');
+    dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('aria-label', 'Go to mentor ' + (i + 1));
+    dot.addEventListener('click', () => goTo(i));
+    dotsContainer.appendChild(dot);
+  }
+  const dots = document.querySelectorAll('.carousel-dot');
+
+  function goTo(index) {
+    current = ((index % total) + total) % total;
+    track.style.transform = 'translateX(-' + (current * 100) + '%)';
+    dots.forEach((d, i) => d.classList.toggle('active', i === current));
+    resetProgress();
+  }
+
+  function next() { goTo(current + 1); }
+  function prev() { goTo(current - 1); }
+
+  prevBtn.addEventListener('click', () => { prev(); if (autoplay) restartAutoplay(); });
+  nextBtn.addEventListener('click', () => { next(); if (autoplay) restartAutoplay(); });
+
+  // Touch/swipe support
+  let touchStartX = 0;
+  track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+  track.addEventListener('touchend', e => {
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) { diff > 0 ? next() : prev(); }
+  });
+
+  // Progress bar
+  function resetProgress() {
+    progressValue = 0;
+    progressBar.style.width = '0%';
+    clearInterval(progressTimer);
+    if (!autoplay) return;
+    progressTimer = setInterval(() => {
+      if (!autoplay) return;
+      progressValue += 100 / (INTERVAL / 50);
+      progressBar.style.width = Math.min(progressValue, 100) + '%';
+    }, 50);
+  }
+
+  // Autoplay
+  function startAutoplay() {
+    autoplay = true;
+    autoplayIcon.textContent = '⏸';
+    autoplayLabel.textContent = 'Auto';
+    clearInterval(autoplayTimer);
+    resetProgress();
+    autoplayTimer = setInterval(() => { next(); }, INTERVAL);
+  }
+
+  function stopAutoplay() {
+    autoplay = false;
+    autoplayIcon.textContent = '▶';
+    autoplayLabel.textContent = 'Pause';
+    clearInterval(autoplayTimer);
+    clearInterval(progressTimer);
+    progressBar.style.width = '0%';
+  }
+
+  function restartAutoplay() {
+    clearInterval(autoplayTimer);
+    clearInterval(progressTimer);
+    startAutoplay();
+  }
+
+  autoplayToggle.addEventListener('click', () => {
+    autoplay = !autoplay;
+    if (autoplay) { startAutoplay(); } else { stopAutoplay(); }
+  });
+
+  // Pause on hover
+  track.addEventListener('mouseenter', () => { if (autoplay) { clearInterval(autoplayTimer); clearInterval(progressTimer); } });
+  track.addEventListener('mouseleave', () => { if (autoplay) { startAutoplay(); } });
+
+  // Pause when tab is hidden
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      clearInterval(autoplayTimer);
+      clearInterval(progressTimer);
+    } else if (autoplay) {
+      startAutoplay();
+    }
+  });
+
+  // Keyboard navigation
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowLeft') { prev(); if (autoplay) restartAutoplay(); }
+    if (e.key === 'ArrowRight') { next(); if (autoplay) restartAutoplay(); }
+  });
+
+  // Reflect reduced-motion default in the toggle UI (start state = "Pause" label)
+  if (!reduceMotion) {
+    startAutoplay();
+  } else {
+    stopAutoplay();
+  }
+})();
+</script>
+
+</body>
+</html>

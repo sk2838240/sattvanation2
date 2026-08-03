@@ -1,0 +1,1278 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#c2185b">
+<title>Gallery - Sattva Nation</title>
+<meta name="description" content="Explore photos and videos from Sattva Nation's wellness festivals, retreats, workshops, and community events across India.">
+<link rel="icon" type="image/png" href="/assets/sattvalogo123.png" sizes="32x32">
+<link rel="apple-touch-icon" href="/assets/sattvalogo123.png">
+<link rel="canonical" href="https://www.sattvanation.com/gallery/">
+<meta property="og:title" content="Gallery - Sattva Nation">
+<meta property="og:description" content="Explore photos and videos from Sattva Nation's wellness festivals, retreats, workshops, and community events across India.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.sattvanation.com/gallery/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --pink-deep: #c2185b;
+    --pink-mid: #d4537e;
+    --pink-soft: #f06292;
+    --pink-light: #fce4ec;
+    --pink-pale: #fdf0f5;
+    --white: #ffffff;
+    --text-dark: #2d1a24;
+    --text-mid: #6b3a50;
+    --text-muted: #a06080;
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans: 'DM Sans', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); background: var(--white); color: var(--text-dark); }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.1rem 5%;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid #f4c0d1;
+  }
+  .logo { display: flex; align-items: center; }
+  .logo-img { height: 40px; width: auto; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    text-decoration: none; font-size: 0.88rem; font-weight: 500;
+    color: var(--text-mid); letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--pink-deep); }
+  .nav-cta {
+    background: var(--pink-deep); color: white !important;
+    padding: 0.5rem 1.3rem; border-radius: 50px;
+    font-size: 0.82rem !important; letter-spacing: 0.06em !important;
+    transition: background 0.2s, transform 0.15s !important;
+  }
+  .nav-cta:hover { background: #a31150 !important; transform: translateY(-1px); }
+  
+  /* Mobile Hamburger Menu */
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 101;
+  }
+  .nav-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--text-dark);
+    transition: all 0.3s ease;
+  }
+  .nav-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .nav-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+  }
+
+  /* PAGE HERO */
+  .page-hero {
+    position: relative; width: 100%; min-height: 52vh;
+    background-image: url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1600&q=80');
+    background-size: cover; background-position: center;
+    display: flex; align-items: center;
+    padding: 0 8%; padding-top: 80px; padding-bottom: 4.5rem; overflow: hidden;
+  }
+  .page-hero::after {
+    content: ''; position: absolute; right: -60px; top: 10%;
+    width: 280px; height: 280px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(240,98,146,0.35), transparent 70%);
+    filter: blur(20px); pointer-events: none; animation: floaty 7s ease-in-out infinite;
+  }
+  .hero-stats {
+    position: relative; z-index: 2; display: flex; gap: 2.4rem;
+    margin-top: 2.6rem; flex-wrap: wrap;
+  }
+  .hero-stat-num {
+    font-family: var(--serif); font-size: 1.9rem; font-weight: 700;
+    color: #fff; line-height: 1; margin-bottom: 0.3rem;
+  }
+  .hero-stat-label {
+    font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.14em;
+    color: rgba(255,255,255,0.7); font-weight: 400;
+  }
+  @keyframes floaty { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-18px)} }
+  .page-hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(120deg, rgba(30,5,18,0.8) 0%, rgba(194,24,91,0.38) 55%, rgba(10,2,8,0.55) 100%);
+  }
+  .page-hero-content { position: relative; z-index: 2; max-width: 720px; animation: fadeUp 0.8s ease both; }
+  .page-hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    font-size: 0.75rem; font-weight: 500; text-transform: uppercase;
+    letter-spacing: 0.16em; color: #f8bbd0; margin-bottom: 1.4rem;
+  }
+  .page-hero-eyebrow::before { content:''; display:block; width:32px; height:1.5px; background:var(--pink-soft); }
+  .page-hero h1 {
+    font-family: var(--serif); font-size: clamp(2.4rem, 5vw, 4.2rem);
+    line-height: 1.1; color: #fff; margin-bottom: 1.1rem;
+    text-shadow: 0 2px 24px rgba(0,0,0,0.3);
+  }
+  .page-hero h1 em { font-style: italic; color: #f48fb1; }
+  .page-hero p {
+    font-size: 1.05rem; line-height: 1.75; color: rgba(255,255,255,0.82);
+    font-weight: 300; max-width: 540px; margin-bottom: 3rem;
+  }
+  .breadcrumb {
+    position: absolute; bottom: 1.8rem; left: 8%; z-index: 2;
+    display: flex; align-items: center; gap: 0.5rem;
+    font-size: 0.76rem; color: rgba(255,255,255,0.55);
+  }
+  .breadcrumb a { color: rgba(255,255,255,0.55); text-decoration: none; transition: color 0.2s; }
+  .breadcrumb a:hover { color: #f48fb1; }
+  .breadcrumb span { color: rgba(255,255,255,0.85); }
+
+  /* SHARED */
+  .section-tag {
+    display: inline-block; font-size: 0.75rem; font-weight: 500;
+    text-transform: uppercase; letter-spacing: 0.12em; color: var(--pink-deep); margin-bottom: 1rem;
+  }
+  .section-title {
+    font-family: var(--serif); font-size: clamp(1.9rem, 3vw, 2.8rem);
+    line-height: 1.18; color: var(--text-dark); margin-bottom: 1.2rem;
+  }
+  .section-title em { font-style: italic; color: var(--pink-deep); }
+
+  /* FILTER BAR */
+  .filter-bar {
+    position: sticky; top: 0; z-index: 50;
+    padding: 1.2rem 5%;
+    background: rgba(253,240,245,0.88);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid #f4c0d1;
+    display: flex; gap: 0.6rem; flex-wrap: wrap; align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 24px rgba(194,24,91,0.06);
+  }
+  .filter-label {
+    font-size: 0.8rem; font-weight: 500; color: var(--text-muted);
+    text-transform: uppercase; letter-spacing: 0.08em; margin-right: 0.5rem;
+  }
+  .filter-btn {
+    padding: 0.5rem 1.15rem; border-radius: 50px; border: 1.5px solid #f4c0d1;
+    background: white; font-size: 0.8rem; font-weight: 500;
+    color: var(--text-mid); cursor: pointer; font-family: inherit;
+    transition: all 0.25s; text-decoration: none; position: relative;
+  }
+  .filter-btn:hover {
+    border-color: var(--pink-soft); color: var(--pink-deep);
+    transform: translateY(-1px);
+  }
+  .filter-btn.active {
+    background: linear-gradient(135deg, var(--pink-deep), var(--pink-mid));
+    border-color: transparent; color: white;
+    box-shadow: 0 6px 18px rgba(194,24,91,0.28);
+  }
+  .filter-count {
+    margin-left: 0.5rem; padding: 1px 8px; border-radius: 50px;
+    background: rgba(194,24,91,0.12); color: var(--pink-deep);
+    font-size: 0.68rem; font-weight: 600;
+  }
+  /* AWARDS 1.0: BENTO GRID */
+  .awards1-section { padding: 5rem 5%; background: var(--white); }
+  .awards1-header { text-align: center; max-width: 640px; margin: 0 auto 3rem; }
+  .awards1-header .section-tag { color: var(--pink-deep); }
+  .awards1-header h2 { font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 2.6rem); color: var(--text-dark); margin-bottom: 0.8rem; }
+  .awards1-header h2 em { font-style: italic; color: var(--pink-deep); }
+  .awards1-header p { font-size: 0.95rem; color: var(--text-mid); line-height: 1.75; font-weight: 300; }
+  .awards1-badge {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    background: var(--pink-light); color: var(--pink-deep);
+    padding: 0.3rem 0.9rem; border-radius: 50px;
+    font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em;
+    margin-bottom: 0.6rem;
+  }
+  .gallery-bento {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 260px 260px 260px;
+    gap: 1rem;
+    margin-top: 3rem;
+  }
+  .gallery-item {
+    border-radius: 20px; overflow: hidden; position: relative;
+    background-color: var(--pink-light);
+    cursor: pointer;
+    transition: transform 0.35s cubic-bezier(0.2,0.7,0.3,1), box-shadow 0.35s;
+    min-height: 260px; box-shadow: 0 4px 18px rgba(45,26,36,0.06);
+  }
+  .gallery-item:hover { transform: scale(1.03); box-shadow: 0 26px 56px rgba(194,24,91,0.24); }
+  .gallery-item:hover .gallery-item-overlay { opacity: 1; }
+  .gallery-item:hover .gallery-item-label { transform: translateY(0); opacity: 1; }
+  .gallery-item:hover img { transform: scale(1.07); }
+  .gallery-item.tall { grid-row: span 2; min-height: 520px; }
+  .gallery-item.wide { grid-column: span 2; }
+  .gallery-item img {
+    width: 100%; height: 260px; object-fit: cover; display: block;
+    transition: transform 0.55s cubic-bezier(0.2,0.7,0.3,1);
+  }
+  .gallery-item.tall img { height: 520px; }
+  .gallery-item.wide img { height: 260px; }
+  .gallery-item-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(194,24,91,0.82) 0%, rgba(45,26,36,0.18) 50%, transparent 100%);
+    opacity: 0; transition: opacity 0.4s;
+  }
+  .gallery-item-label {
+    position: absolute; bottom: 1.3rem; left: 1.3rem; right: 1.3rem;
+    color: white; transform: translateY(12px); opacity: 0;
+    transition: transform 0.4s cubic-bezier(0.2,0.7,0.3,1), opacity 0.4s;
+  }
+  .gl-tag {
+    display: inline-block; background: rgba(255,255,255,0.22);
+    border: 1px solid rgba(255,255,255,0.4); border-radius: 50px;
+    font-size: 0.66rem; letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 3px 11px; margin-bottom: 0.55rem;
+    backdrop-filter: blur(6px); font-weight: 500;
+  }
+  .gl-title { font-family: var(--serif); font-size: 1.08rem; font-weight: 600; line-height: 1.3; }
+  .gl-sub { font-size: 0.78rem; color: rgba(255,255,255,0.85); margin-top: 0.3rem; font-weight: 300; }
+
+  /* AWARDS 2.0: SLIDESHOW */
+  .awards2-section { padding: 5rem 0; background: var(--pink-pale); overflow: hidden; }
+  .awards2-header { text-align: center; max-width: 640px; margin: 0 auto 3rem; padding: 0 5%; }
+  .awards2-header .section-tag { color: var(--pink-deep); }
+  .awards2-header h2 { font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 2.6rem); color: var(--text-dark); margin-bottom: 0.8rem; }
+  .awards2-header h2 em { font-style: italic; color: var(--pink-deep); }
+  .awards2-header p { font-size: 0.95rem; color: var(--text-mid); line-height: 1.75; font-weight: 300; }
+  .awards2-badge {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    background: var(--pink-deep); color: white;
+    padding: 0.3rem 0.9rem; border-radius: 50px;
+    font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em;
+    margin-bottom: 0.6rem;
+  }
+  .slideshow-track {
+    display: flex; gap: 1.2rem; padding: 0 5%;
+    overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth;
+    scrollbar-width: none; -ms-overflow-style: none;
+  }
+  .slideshow-track::-webkit-scrollbar { display: none; }
+  .slideshow-card {
+    flex: 0 0 340px; height: 420px; border-radius: 24px; overflow: hidden;
+    position: relative; background-size: cover; background-position: center;
+    scroll-snap-align: start; cursor: pointer;
+    transition: transform 0.35s cubic-bezier(0.2,0.7,0.3,1), box-shadow 0.35s;
+  }
+  .slideshow-card:hover { transform: scale(1.04) translateY(-4px); box-shadow: 0 30px 64px rgba(194,24,91,0.3); }
+  .slideshow-card-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(30,5,18,0.78) 0%, rgba(30,5,18,0.12) 55%, transparent 100%);
+    transition: background 0.3s;
+  }
+  .slideshow-card:hover .slideshow-card-overlay {
+    background: linear-gradient(to top, rgba(30,5,18,0.88) 0%, rgba(194,24,91,0.18) 55%, transparent 100%);
+  }
+  .slideshow-card-content { position: absolute; bottom: 0; left: 0; right: 0; padding: 1.6rem; color: white; }
+  .slideshow-card-num {
+    font-family: var(--serif); font-size: 2.6rem; font-weight: 700;
+    color: rgba(255,255,255,0.28); line-height: 1; margin-bottom: 0.3rem;
+    transition: color 0.3s;
+  }
+  .slideshow-card:hover .slideshow-card-num { color: rgba(244,143,177,0.7); }
+  .slideshow-card-title { font-family: var(--serif); font-size: 1.15rem; font-weight: 600; margin-bottom: 0.3rem; }
+  .slideshow-card-sub { font-size: 0.8rem; color: rgba(255,255,255,0.78); font-weight: 300; }
+  .slideshow-nav { display: flex; justify-content: center; gap: 0.8rem; margin-top: 2rem; padding: 0 5%; }
+  .slideshow-btn {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: white; border: 1.5px solid #f4c0d1; color: var(--pink-deep); font-size: 1.2rem;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; transition: all 0.2s;
+  }
+  .slideshow-btn:hover { background: var(--pink-deep); color: white; border-color: var(--pink-deep); }
+
+  /* AWARDS 3.0: TIMELINE/MASONRY */
+  .awards3-section { padding: 5rem 5%; background: var(--white); }
+  .awards3-header { text-align: center; max-width: 640px; margin: 0 auto 3rem; }
+  .awards3-header .section-tag { color: var(--pink-deep); }
+  .awards3-header h2 { font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 2.6rem); color: var(--text-dark); margin-bottom: 0.8rem; }
+  .awards3-header h2 em { font-style: italic; color: var(--pink-deep); }
+  .awards3-header p { font-size: 0.95rem; color: var(--text-mid); line-height: 1.75; font-weight: 300; }
+  .awards3-badge {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    background: linear-gradient(135deg, var(--pink-deep), var(--pink-mid)); color: white;
+    padding: 0.3rem 0.9rem; border-radius: 50px;
+    font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em;
+    margin-bottom: 0.6rem;
+  }
+  .timeline-gallery { columns: 3; column-gap: 1.2rem; margin-top: 3rem; }
+  .timeline-item {
+    break-inside: avoid; margin-bottom: 1.2rem; border-radius: 20px; overflow: hidden;
+    position: relative; cursor: pointer;
+    transition: transform 0.35s cubic-bezier(0.2,0.7,0.3,1), box-shadow 0.35s;
+    box-shadow: 0 3px 12px rgba(45,26,36,0.05);
+  }
+  .timeline-item:hover { transform: translateY(-4px); box-shadow: 0 22px 52px rgba(194,24,91,0.22); }
+  .timeline-item img { width: 100%; height: auto; display: block; transition: transform 0.5s cubic-bezier(0.2,0.7,0.3,1), filter 0.3s; }
+  .timeline-item:hover img { transform: scale(1.05); filter: brightness(0.88); }
+  .timeline-item-overlay {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    padding: 2.4rem 1.3rem 1.3rem;
+    background: linear-gradient(to top, rgba(194,24,91,0.88) 0%, rgba(194,24,91,0.1) 70%, transparent 100%);
+    color: white; opacity: 0; transform: translateY(8px);
+    transition: opacity 0.35s, transform 0.35s;
+  }
+  .timeline-item:hover .timeline-item-overlay { opacity: 1; transform: translateY(0); }
+  .timeline-item-title { font-family: var(--serif); font-size: 1rem; font-weight: 600; margin-bottom: 0.25rem; }
+  .timeline-item-sub { font-size: 0.76rem; color: rgba(255,255,255,0.85); font-weight: 300; }
+  .timeline-item-date {
+    position: absolute; top: 1rem; right: 1rem;
+    background: rgba(255,255,255,0.92); color: var(--pink-deep); padding: 0.28rem 0.75rem; border-radius: 50px;
+    font-size: 0.66rem; font-weight: 600; letter-spacing: 0.05em;
+    backdrop-filter: blur(6px); box-shadow: 0 2px 10px rgba(45,26,36,0.18);
+  }
+
+  /* COLLEGE WORKSHOPS: TABBED GRID */
+  .workshops-section { padding: 5rem 5%; background: var(--pink-pale); }
+  .workshops-header { text-align: center; max-width: 640px; margin: 0 auto 2.5rem; }
+  .workshops-header .section-tag { color: var(--pink-deep); }
+  .workshops-header h2 { font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 2.6rem); color: var(--text-dark); margin-bottom: 0.8rem; }
+  .workshops-header h2 em { font-style: italic; color: var(--pink-deep); }
+  .workshops-header p { font-size: 0.95rem; color: var(--text-mid); line-height: 1.75; font-weight: 300; }
+  .workshops-badge {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    background: var(--pink-light); color: var(--pink-deep);
+    padding: 0.3rem 0.9rem; border-radius: 50px;
+    font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em;
+    margin-bottom: 0.6rem;
+  }
+  .workshops-tabs {
+    display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center;
+    margin-bottom: 2.5rem; border-bottom: 2px solid #f4c0d1; padding-bottom: 0;
+  }
+  .workshops-tab {
+    padding: 0.6rem 1.4rem; border-radius: 12px 12px 0 0;
+    background: transparent; border: none; border-bottom: 3px solid transparent;
+    font-size: 0.85rem; font-weight: 500; color: var(--text-muted);
+    cursor: pointer; transition: all 0.25s; font-family: var(--sans); margin-bottom: -2px;
+  }
+  .workshops-tab:hover { color: var(--pink-deep); background: rgba(194,24,91,0.05); }
+  .workshops-tab.active { color: var(--pink-deep); border-bottom-color: var(--pink-deep); background: white; }
+  .workshops-grid { display: none; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.2rem; }
+  .workshops-grid.active { display: grid; }
+  .workshop-card {
+    border-radius: 20px; overflow: hidden; background: white; border: 1px solid #f4c0d1;
+    transition: transform 0.25s, box-shadow 0.25s; cursor: pointer;
+  }
+  .workshop-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(194,24,91,0.15); }
+  .workshop-card img { width: 100%; height: 220px; object-fit: cover; display: block; transition: filter 0.3s; }
+  .workshop-card:hover img { filter: brightness(0.92); }
+  .workshop-card-body { padding: 1rem 1.2rem; }
+  .workshop-card-title { font-family: var(--serif); font-size: 1rem; font-weight: 600; color: var(--text-dark); margin-bottom: 0.3rem; }
+  .workshop-card-meta { font-size: 0.78rem; color: var(--text-muted); }
+
+  /* LIGHTBOX */
+  .lightbox {
+    position: fixed; inset: 0; z-index: 1000;
+    background: radial-gradient(circle at center, rgba(30,5,18,0.85) 0%, rgba(0,0,0,0.96) 100%);
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; visibility: hidden;
+    transition: opacity 0.35s, visibility 0.35s;
+  }
+  .lightbox.active { opacity: 1; visibility: visible; }
+  .lightbox-img {
+    max-width: 90vw; max-height: 85vh; border-radius: 14px; object-fit: contain;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+    animation: zoomIn 0.4s cubic-bezier(0.2,0.7,0.3,1) both;
+  }
+  @keyframes zoomIn { from { transform: scale(0.94); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+  .lightbox-close {
+    position: absolute; top: 1.5rem; right: 1.5rem;
+    width: 46px; height: 46px; border-radius: 50%;
+    background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.18);
+    color: white; font-size: 1.6rem; cursor: pointer; backdrop-filter: blur(8px);
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .lightbox-close:hover { background: var(--pink-deep); transform: rotate(90deg); }
+  .lightbox-nav {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    width: 50px; height: 50px; border-radius: 50%;
+    background: rgba(255,255,255,0.15); border: none;
+    color: white; font-size: 1.3rem; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s, transform 0.2s; backdrop-filter: blur(6px);
+  }
+  .lightbox-nav:hover { background: var(--pink-deep); transform: translateY(-50%) scale(1.08); }
+  .lightbox-nav.prev { left: 1.5rem; }
+  .lightbox-nav.next { right: 1.5rem; }
+  .lightbox-caption {
+    position: absolute; bottom: 1.8rem; left: 50%; transform: translateX(-50%);
+    color: white; text-align: center;
+    font-family: var(--serif); font-size: 1.1rem;
+    background: rgba(194,24,91,0.45); padding: 0.7rem 1.7rem;
+    border-radius: 50px; backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+
+  /* VIDEO SECTION */
+  .video-section { padding: 5rem 5%; background: var(--pink-pale); }
+  .video-header { text-align: center; max-width: 640px; margin: 0 auto 3rem; }
+  .video-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .video-card {
+    background: white; border-radius: 20px; overflow: hidden; border: 1px solid #f4c0d1;
+    transition: transform 0.22s, box-shadow 0.22s;
+  }
+  .video-card:hover { transform: translateY(-5px); box-shadow: 0 14px 36px rgba(194,24,91,0.12); }
+  .video-thumb {
+    width: 100%; height: 200px; background-size: cover; background-position: center;
+    position: relative; display: flex; align-items: center; justify-content: center;
+  }
+  .video-thumb-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(30,5,18,0.6) 0%, rgba(30,5,18,0.25) 60%, rgba(30,5,18,0.1) 100%);
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.3s;
+  }
+  .video-card:hover .video-thumb-overlay {
+    background: linear-gradient(to top, rgba(194,24,91,0.45) 0%, rgba(30,5,18,0.25) 60%, rgba(30,5,18,0.1) 100%);
+  }
+  .play-btn {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: var(--pink-deep); border: 3px solid white;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem; color: white; box-shadow: 0 4px 20px rgba(194,24,91,0.5);
+    transition: transform 0.25s, background 0.25s;
+    position: relative;
+  }
+  .play-btn::after {
+    content: ''; position: absolute; inset: -8px; border-radius: 50%;
+    border: 2px solid rgba(255,255,255,0.45); opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+  }
+  .video-card:hover .play-btn { transform: scale(1.12); background: #a31150; }
+  .video-card:hover .play-btn::after { opacity: 1; transform: scale(1.15); }
+  .video-body { padding: 1.2rem 1.4rem; }
+  .video-title { font-family: var(--serif); font-size: 1rem; font-weight: 600; color: var(--text-dark); line-height: 1.3; margin-bottom: 0.4rem; }
+  .video-meta { font-size: 0.78rem; color: var(--text-muted); }
+
+  /* CTA */
+  .cta-banner {
+    padding: 5rem 5%; background: var(--pink-deep); position: relative; overflow: hidden; text-align: center;
+  }
+  .cta-banner::before { content:''; position: absolute; top: -100px; right: -100px; width: 400px; height: 400px; border-radius: 50%; background: rgba(255,255,255,0.05); }
+  .cta-banner::after { content:''; position: absolute; bottom: -80px; left: -60px; width: 300px; height: 300px; border-radius: 50%; background: rgba(255,255,255,0.04); }
+  .cta-inner { position: relative; z-index: 2; max-width: 640px; margin: 0 auto; }
+  .cta-banner .section-tag { color: #f8bbd0; }
+  .cta-title { font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 2.6rem); color: white; line-height: 1.2; margin-bottom: 1rem; }
+  .cta-title em { font-style: italic; color: #f48fb1; }
+  .cta-sub { font-size: 1rem; color: rgba(255,255,255,0.8); font-weight: 300; line-height: 1.7; margin-bottom: 2rem; }
+  .cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .btn-white {
+    background: white; color: var(--pink-deep); border: none;
+    padding: 0.9rem 2.2rem; border-radius: 50px; font-family: var(--sans);
+    font-size: 0.92rem; font-weight: 500; cursor: pointer; letter-spacing: 0.04em;
+    transition: background 0.2s, transform 0.15s; text-decoration: none; display: inline-block;
+  }
+  .btn-white:hover { background: #fce4ec; transform: translateY(-2px); }
+  .btn-outline-white {
+    background: rgba(255,255,255,0.1); color: white;
+    border: 1.5px solid rgba(255,255,255,0.45);
+    padding: 0.9rem 2.2rem; border-radius: 50px; font-family: var(--sans);
+    font-size: 0.92rem; font-weight: 500; cursor: pointer; letter-spacing: 0.04em;
+    transition: background 0.2s; text-decoration: none; display: inline-block;
+    backdrop-filter: blur(4px);
+  }
+  .btn-outline-white:hover { background: rgba(255,255,255,0.2); }
+
+  /* FOOTER */
+  footer {
+    background: var(--text-dark); color: #c9899c;
+    padding: 3rem 5%; display: flex;
+    align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+  }
+  .footer-logo { font-family: var(--serif); font-size: 1.35rem; font-weight: 700; color: white; }
+  .footer-links { display: flex; gap: 1.8rem; list-style: none; }
+  .footer-links a { text-decoration: none; font-size: 0.82rem; color: #c9899c; transition: color 0.2s; }
+  .footer-links a:hover { color: #f48fb1; }
+  .footer-copy { font-size: 0.78rem; }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:translateY(0); } }
+  .reveal { opacity:0; transform:translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity:1; transform:translateY(0); }
+
+  /* RESPONSIVE */
+  @media (max-width: 960px) {
+    .nav-toggle { display: flex; }
+    
+    .nav-links {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 280px;
+      height: 100vh;
+      background: white;
+      flex-direction: column;
+      padding: 80px 2rem 2rem;
+      gap: 1.5rem;
+      box-shadow: -4px 0 20px rgba(0,0,0,0.1);
+      transition: right 0.3s ease;
+    }
+    .nav-links.active { right: 0; }
+    
+    .nav-links a {
+      font-size: 1rem;
+      padding: 0.5rem 0;
+    }
+    
+    .gallery-bento { grid-template-columns: repeat(2, 1fr); grid-template-rows: auto; }
+    .gallery-item.tall { grid-row: span 1; }
+    .gallery-item.wide { grid-column: span 1; }
+    .video-grid { grid-template-columns: repeat(2, 1fr); }
+    .timeline-gallery { columns: 2; }
+    .slideshow-card { flex: 0 0 280px; height: 360px; }
+    .workshops-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 640px) {
+    .nav-links li:not(:last-child):not(:first-child) { display: block; }
+    .gallery-bento { grid-template-columns: 1fr; }
+    .video-grid { grid-template-columns: 1fr; }
+    .page-hero { min-height: 60vh; padding-bottom: 5.5rem; }
+    .timeline-gallery { columns: 1; }
+    .slideshow-card { flex: 0 0 260px; height: 340px; }
+    .workshops-tabs { gap: 0.3rem; }
+    .workshops-tab { padding: 0.5rem 0.8rem; font-size: 0.78rem; }
+    .workshops-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">
+    <img loading="lazy" src="/assets/sattvalogo123.png" alt="Sattva Nation Logo" class="logo-img" width="160" height="40" />
+  </div>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="/">Home</a></li>
+    <li><a href="/about-us/">About</a></li>
+    <li><a href="/programmes/">Programmes</a></li>
+    <li><a href="/events/">Events</a></li>
+    <li><a href="/founders/">Founders</a></li>
+    <li><a href="/contact-us/" class="nav-cta">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <span class="page-hero-eyebrow">Our Moments</span>
+    <h1>Wellness <em>Gallery</em></h1>
+    <p>A visual journey through our festivals, retreats, workshops, and community gatherings - moments of connection, transformation, and joy.</p>
+    <div class="hero-stats">
+      <div><div class="hero-stat-num">3 Editions</div><div class="hero-stat-label">Iconic Awards</div></div>
+      <div><div class="hero-stat-num">4 Campuses</div><div class="hero-stat-label">College Workshops</div></div>
+      <div><div class="hero-stat-num">40+ Moments</div><div class="hero-stat-label">Captured</div></div>
+    </div>
+  </div>
+  <div class="breadcrumb">
+    <a href="/">Home</a>
+    <span style="margin:0 4px;">|</span>
+    <span>Gallery</span>
+  </div>
+</section>
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <span class="filter-label">Filter by:</span>
+  <button type="button" class="filter-btn active" data-category="all">All</button>
+  <button type="button" class="filter-btn" data-category="retreats">Retreats</button>
+  <button type="button" class="filter-btn" data-category="festivals">Festivals</button>
+  <button type="button" class="filter-btn" data-category="workshops">Workshops</button>
+  <button type="button" class="filter-btn" data-category="community">Community</button>
+  <button type="button" class="filter-btn" data-category="awards">Awards</button>
+</div>
+
+<!--  AWARDS 1.0: BENTO GRID  -->
+<section class="awards1-section">
+  <div class="awards1-header">
+    <span class="awards1-badge">| 2024</span>
+    <span class="section-tag">Sattva Iconic Awards 1.0</span>
+    <h2>The Inaugural <em>Celebration</em></h2>
+    <p>Where it all began. Our first wellness awards honoured exceptional individuals shaping the wellness landscape across India.</p>
+  </div>
+
+  <div class="gallery-bento">
+    <div class="gallery-item tall" data-caption="Sattva Iconic Awards 1.0 - Opening Ceremony">
+      <img loading="lazy" src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%201.0/1-iconic-awards%20(1).jpeg" alt="Opening Ceremony">
+      <div class="gallery-item-overlay"></div>
+      <div class="gallery-item-label">
+        <div class="gl-tag">Awards</div>
+        <div class="gl-title">Opening Ceremony</div>
+        <div class="gl-sub">December 2024 , Mumbai</div>
+      </div>
+    </div>
+    <div class="gallery-item wide" data-caption="Sattva Iconic Awards 1.0 - Keynote Address">
+      <img loading="lazy" src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%201.0/1-iconic-awards%20(2).jpeg" alt="Keynote Address">
+      <div class="gallery-item-overlay"></div>
+      <div class="gallery-item-label">
+        <div class="gl-tag">Keynote</div>
+        <div class="gl-title">Keynote Address</div>
+        <div class="gl-sub">December 2024 , Mumbai</div>
+      </div>
+    </div>
+    <div class="gallery-item" data-caption="Sattva Iconic Awards 1.0 - Winner Stage">
+      <img loading="lazy" src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%201.0/1-iconic-awards%20(3).jpeg" alt="Winner on Stage">
+      <div class="gallery-item-overlay"></div>
+      <div class="gallery-item-label">
+        <div class="gl-tag">Awards</div>
+        <div class="gl-title">Winner on Stage</div>
+        <div class="gl-sub">December 2024 , Mumbai</div>
+      </div>
+    </div>
+    <div class="gallery-item" data-caption="Sattva Iconic Awards 1.0 - Audience">
+      <img src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%201.0/1-iconic-awards%20(4).jpeg" alt="The Audience" loading="lazy">
+      <div class="gallery-item-overlay"></div>
+      <div class="gallery-item-label">
+        <div class="gl-tag">Community</div>
+        <div class="gl-title">The Audience</div>
+        <div class="gl-sub">December 2024 , Mumbai</div>
+      </div>
+    </div>
+    <div class="gallery-item tall" data-caption="Sattva Iconic Awards 1.0 - Honour Ceremony">
+      <img src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%201.0/1-iconic-awards%20(5).jpeg" alt="Honour Ceremony" loading="lazy">
+      <div class="gallery-item-overlay"></div>
+      <div class="gallery-item-label">
+        <div class="gl-tag">Honour</div>
+        <div class="gl-title">Honour Ceremony</div>
+        <div class="gl-sub">December 2024 , Mumbai</div>
+      </div>
+    </div>
+    <div class="gallery-item" data-caption="Sattva Iconic Awards 1.0 - Award Design">
+      <img src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%201.0/1-iconic-awards%20(6).jpeg" alt="The Sattva Award" loading="lazy">
+      <div class="gallery-item-overlay"></div>
+      <div class="gallery-item-label">
+        <div class="gl-tag">Trophy</div>
+        <div class="gl-title">The Sattva Award</div>
+        <div class="gl-sub">December 2024 , Mumbai</div>
+      </div>
+    </div>
+    <div class="gallery-item wide" data-caption="Sattva Iconic Awards 1.0 - Panel Discussion">
+      <img src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%201.0/1-iconic-awards%20(7).jpeg" alt="Panel Discussion" loading="lazy">
+      <div class="gallery-item-overlay"></div>
+      <div class="gallery-item-label">
+        <div class="gl-tag">Panel</div>
+        <div class="gl-title">Panel Discussion</div>
+        <div class="gl-sub">December 2024 , Mumbai</div>
+      </div>
+    </div>
+    <div class="gallery-item" data-caption="Sattva Iconic Awards 1.0 - Networking">
+      <img src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%201.0/1-iconic-awards%20(8).jpeg" alt="Networking Evening" loading="lazy">
+      <div class="gallery-item-overlay"></div>
+      <div class="gallery-item-label">
+        <div class="gl-tag">Network</div>
+        <div class="gl-title">Networking Evening</div>
+        <div class="gl-sub">December 2024 , Mumbai</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--  AWARDS 2.0: SLIDESHOW  -->
+<section class="awards2-section">
+  <div class="awards2-header">
+    <span class="awards2-badge">| 2025</span>
+    <span class="section-tag">Sattva Iconic Awards 2.0</span>
+    <h2>The Grand <em>Return</em></h2>
+    <p>Expanded, elevated, and even more inspiring. Our second edition brought together a larger community of wellness champions.</p>
+  </div>
+
+  <div class="slideshow-track" id="slideshow2">
+    <div class="slideshow-card" style="background-image:url('../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%202.0/2-iconic-awards%20(1).jpeg')" data-caption="Awards 2.0 - Grand Stage">
+      <div class="slideshow-card-overlay"></div>
+      <div class="slideshow-card-content">
+        <div class="slideshow-card-num">01</div>
+        <div class="slideshow-card-title">Grand Stage Setup</div>
+        <div class="slideshow-card-sub">March 2025 , Mumbai</div>
+      </div>
+    </div>
+    <div class="slideshow-card" style="background-image:url('../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%202.0/2-iconic-awards%20(2).jpeg')" data-caption="Awards 2.0 - Acceptance Speech">
+      <div class="slideshow-card-overlay"></div>
+      <div class="slideshow-card-content">
+        <div class="slideshow-card-num">02</div>
+        <div class="slideshow-card-title">Acceptance Speech</div>
+        <div class="slideshow-card-sub">March 2025 , Mumbai</div>
+      </div>
+    </div>
+    <div class="slideshow-card" style="background-image:url('../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%202.0/2-iconic-awards%20(3).jpeg')" data-caption="Awards 2.0 - Honour Ceremony">
+      <div class="slideshow-card-overlay"></div>
+      <div class="slideshow-card-content">
+        <div class="slideshow-card-num">03</div>
+        <div class="slideshow-card-title">Honour Ceremony</div>
+        <div class="slideshow-card-sub">March 2025 , Mumbai</div>
+      </div>
+    </div>
+    <div class="slideshow-card" style="background-image:url('../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%202.0/2-iconic-awards%20(4).jpeg')" data-caption="Awards 2.0 - Hall of Fame">
+      <div class="slideshow-card-overlay"></div>
+      <div class="slideshow-card-content">
+        <div class="slideshow-card-num">04</div>
+        <div class="slideshow-card-title">Hall of Fame Inductees</div>
+        <div class="slideshow-card-sub">March 2025 , Mumbai</div>
+      </div>
+    </div>
+    <div class="slideshow-card" style="background-image:url('../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%202.0/2-iconic-awards%20(5).jpeg')" data-caption="Awards 2.0 - Cultural Performance">
+      <div class="slideshow-card-overlay"></div>
+      <div class="slideshow-card-content">
+        <div class="slideshow-card-num">05</div>
+        <div class="slideshow-card-title">Cultural Performance</div>
+        <div class="slideshow-card-sub">March 2025 , Mumbai</div>
+      </div>
+    </div>
+    <div class="slideshow-card" style="background-image:url('../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%202.0/2-iconic-awards%20(6).jpeg')" data-caption="Awards 2.0 - Closing Gala">
+      <div class="slideshow-card-overlay"></div>
+      <div class="slideshow-card-content">
+        <div class="slideshow-card-num">06</div>
+        <div class="slideshow-card-title">Closing Gala Dinner</div>
+        <div class="slideshow-card-sub">March 2025 , Mumbai</div>
+      </div>
+    </div>
+    <div class="slideshow-card" style="background-image:url('../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%202.0/2-iconic-awards%20(7).jpeg')" data-caption="Awards 2.0 - Group Photo">
+      <div class="slideshow-card-overlay"></div>
+      <div class="slideshow-card-content">
+        <div class="slideshow-card-num">07</div>
+        <div class="slideshow-card-title">All Winners Together</div>
+        <div class="slideshow-card-sub">March 2025 , Mumbai</div>
+      </div>
+    </div>
+    <div class="slideshow-card" style="background-image:url('../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%202.0/2-iconic-awards%20(8).jpeg')" data-caption="Awards 2.0 - VIP Lounge">
+      <div class="slideshow-card-overlay"></div>
+      <div class="slideshow-card-content">
+        <div class="slideshow-card-num">08</div>
+        <div class="slideshow-card-title">VIP Lounge</div>
+        <div class="slideshow-card-sub">March 2025 , Mumbai</div>
+      </div>
+    </div>
+    <div class="slideshow-card" style="background-image:url('../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%202.0/2-iconic-awards%20(9).jpeg')" data-caption="Awards 2.0 - Red Carpet">
+      <div class="slideshow-card-overlay"></div>
+      <div class="slideshow-card-content">
+        <div class="slideshow-card-num">09</div>
+        <div class="slideshow-card-title">Red Carpet Arrivals</div>
+        <div class="slideshow-card-sub">March 2025 , Mumbai</div>
+      </div>
+    </div>
+    <div class="slideshow-card" style="background-image:url('../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%202.0/2-iconic-awards%20(10).jpeg')" data-caption="Awards 2.0 - Stage Finale">
+      <div class="slideshow-card-overlay"></div>
+      <div class="slideshow-card-content">
+        <div class="slideshow-card-num">10</div>
+        <div class="slideshow-card-title">Stage Finale</div>
+        <div class="slideshow-card-sub">March 2025 , Mumbai</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="slideshow-nav">
+    <button class="slideshow-btn" id="slidePrev2">&#8592;</button>
+    <button class="slideshow-btn" id="slideNext2">&#8594;</button>
+  </div>
+</section>
+
+<!--  AWARDS 3.0: TIMELINE/MASONRY  -->
+<section class="awards3-section">
+  <div class="awards3-header">
+    <span class="awards3-badge">| 2026</span>
+    <span class="section-tag">Sattva Iconic Awards 3.0</span>
+    <h2>The Iconic <em>Evolution</em></h2>
+    <p>Our most ambitious edition yet - celebrating three years of wellness excellence with a spectacular showcase of community and achievement.</p>
+  </div>
+
+  <div class="timeline-gallery">
+    <div class="timeline-item" onclick="openLightboxBySrc(this)">
+      <img src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(1).jpeg" alt="Awards 3.0 - Main Stage" loading="lazy">
+      <div class="timeline-item-date">2026</div>
+      <div class="timeline-item-overlay">
+        <div class="timeline-item-title">Main Stage - Opening</div>
+        <div class="timeline-item-sub">The Iconic Awards 3.0 , Mumbai</div>
+      </div>
+    </div>
+    <div class="timeline-item" onclick="openLightboxBySrc(this)">
+      <img src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(2).jpeg" alt="Awards 3.0 - Keynote" loading="lazy">
+      <div class="timeline-item-date">2026</div>
+      <div class="timeline-item-overlay">
+        <div class="timeline-item-title">Keynote Address</div>
+        <div class="timeline-item-sub">The Iconic Awards 3.0 , Mumbai</div>
+      </div>
+    </div>
+    <div class="timeline-item" onclick="openLightboxBySrc(this)">
+      <img loading="lazy" src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(3).jpeg" alt="Awards 3.0 - Award Ceremony">
+      <div class="timeline-item-date">2026</div>
+      <div class="timeline-item-overlay">
+        <div class="timeline-item-title">Award Ceremony</div>
+        <div class="timeline-item-sub">The Iconic Awards 3.0 , Mumbai</div>
+      </div>
+    </div>
+    <div class="timeline-item" onclick="openLightboxBySrc(this)">
+      <img loading="lazy" src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(4).jpeg" alt="Awards 3.0 - Winner">
+      <div class="timeline-item-date">2026</div>
+      <div class="timeline-item-overlay">
+        <div class="timeline-item-title">Winner Receiving Award</div>
+        <div class="timeline-item-sub">The Iconic Awards 3.0 , Mumbai</div>
+      </div>
+    </div>
+    <div class="timeline-item" onclick="openLightboxBySrc(this)">
+      <img loading="lazy" src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(5).jpeg" alt="Awards 3.0 - Audience">
+      <div class="timeline-item-date">2026</div>
+      <div class="timeline-item-overlay">
+        <div class="timeline-item-title">Audience Hall</div>
+        <div class="timeline-item-sub">The Iconic Awards 3.0 , Mumbai</div>
+      </div>
+    </div>
+    <div class="timeline-item" onclick="openLightboxBySrc(this)">
+      <img loading="lazy" src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(6).jpeg" alt="Awards 3.0 - Performance">
+      <div class="timeline-item-date">2026</div>
+      <div class="timeline-item-overlay">
+        <div class="timeline-item-title">Evening Performance</div>
+        <div class="timeline-item-sub">The Iconic Awards 3.0 , Mumbai</div>
+      </div>
+    </div>
+    <div class="timeline-item" onclick="openLightboxBySrc(this)">
+      <img loading="lazy" src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(7).jpeg" alt="Awards 3.0 - Panel">
+      <div class="timeline-item-date">2026</div>
+      <div class="timeline-item-overlay">
+        <div class="timeline-item-title">Expert Panel Discussion</div>
+        <div class="timeline-item-sub">The Iconic Awards 3.0 , Mumbai</div>
+      </div>
+    </div>
+    <div class="timeline-item" onclick="openLightboxBySrc(this)">
+      <img loading="lazy" src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(8).jpeg" alt="Awards 3.0 - Trophy">
+      <div class="timeline-item-date">2026</div>
+      <div class="timeline-item-overlay">
+        <div class="timeline-item-title">The Sattva Trophy</div>
+        <div class="timeline-item-sub">The Iconic Awards 3.0 , Mumbai</div>
+      </div>
+    </div>
+    <div class="timeline-item" onclick="openLightboxBySrc(this)">
+      <img loading="lazy" src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(9).jpeg" alt="Awards 3.0 - Networking">
+      <div class="timeline-item-date">2026</div>
+      <div class="timeline-item-overlay">
+        <div class="timeline-item-title">Networking Session</div>
+        <div class="timeline-item-sub">The Iconic Awards 3.0 , Mumbai</div>
+      </div>
+    </div>
+    <div class="timeline-item" onclick="openLightboxBySrc(this)">
+      <img loading="lazy" src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(10).jpeg" alt="Awards 3.0 - Group">
+      <div class="timeline-item-date">2026</div>
+      <div class="timeline-item-overlay">
+        <div class="timeline-item-title">Community Group Photo</div>
+        <div class="timeline-item-sub">The Iconic Awards 3.0 , Mumbai</div>
+      </div>
+    </div>
+    <div class="timeline-item" onclick="openLightboxBySrc(this)">
+      <img loading="lazy" src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(11).jpeg" alt="Awards 3.0 - Closing">
+      <div class="timeline-item-date">2026</div>
+      <div class="timeline-item-overlay">
+        <div class="timeline-item-title">Closing Ceremony</div>
+        <div class="timeline-item-sub">The Iconic Awards 3.0 , Mumbai</div>
+      </div>
+    </div>
+    <div class="timeline-item" onclick="openLightboxBySrc(this)">
+      <img loading="lazy" src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(12).jpeg" alt="Awards 3.0 - Venue">
+      <div class="timeline-item-date">2026</div>
+      <div class="timeline-item-overlay">
+        <div class="timeline-item-title">Venue Decor</div>
+        <div class="timeline-item-sub">The Iconic Awards 3.0 , Mumbai</div>
+      </div>
+    </div>
+    <div class="timeline-item" onclick="openLightboxBySrc(this)">
+      <img loading="lazy" src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(13).jpeg" alt="Awards 3.0 - Speaker">
+      <div class="timeline-item-date">2026</div>
+      <div class="timeline-item-overlay">
+        <div class="timeline-item-title">Guest Speaker</div>
+        <div class="timeline-item-sub">The Iconic Awards 3.0 , Mumbai</div>
+      </div>
+    </div>
+    <div class="timeline-item" onclick="openLightboxBySrc(this)">
+      <img loading="lazy" src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(14).jpeg" alt="Awards 3.0 - Honour">
+      <div class="timeline-item-date">2026</div>
+      <div class="timeline-item-overlay">
+        <div class="timeline-item-title">Special Honour</div>
+        <div class="timeline-item-sub">The Iconic Awards 3.0 , Mumbai</div>
+      </div>
+    </div>
+    <div class="timeline-item" onclick="openLightboxBySrc(this)">
+      <img loading="lazy" src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(15).jpeg" alt="Awards 3.0 - Celebration">
+      <div class="timeline-item-date">2026</div>
+      <div class="timeline-item-overlay">
+        <div class="timeline-item-title">Celebration Moment</div>
+        <div class="timeline-item-sub">The Iconic Awards 3.0 , Mumbai</div>
+      </div>
+    </div>
+    <div class="timeline-item" onclick="openLightboxBySrc(this)">
+      <img loading="lazy" src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(16).jpeg" alt="Awards 3.0 - Finale">
+      <div class="timeline-item-date">2026</div>
+      <div class="timeline-item-overlay">
+        <div class="timeline-item-title">Grand Finale</div>
+        <div class="timeline-item-sub">The Iconic Awards 3.0 , Mumbai</div>
+      </div>
+    </div>
+    <div class="timeline-item" onclick="openLightboxBySrc(this)">
+      <img loading="lazy" src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(17).jpeg" alt="Awards 3.0 - Afterparty">
+      <div class="timeline-item-date">2026</div>
+      <div class="timeline-item-overlay">
+        <div class="timeline-item-title">Afterparty</div>
+        <div class="timeline-item-sub">The Iconic Awards 3.0 , Mumbai</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--  COLLEGE WORKSHOPS  -->
+<section class="workshops-section">
+  <div class="workshops-header">
+    <span class="workshops-badge">Campus Wellness</span>
+    <span class="section-tag">College Workshops</span>
+    <h2>Learning Meets <em>Wellness</em></h2>
+    <p>Sattva Nation brings mindfulness, healing, and holistic wellness workshops to college campuses across India.</p>
+  </div>
+
+  <div class="workshops-tabs">
+    <button class="workshops-tab active" data-tab="amity">Amity Law School</button>
+    <button class="workshops-tab" data-tab="imm">Institute of Marketing & Management</button>
+    <button class="workshops-tab" data-tab="jims">JIMS College</button>
+    <button class="workshops-tab" data-tab="lakshmibai">Lakshmi Bai College</button>
+  </div>
+
+  <div class="workshops-grid active" id="tab-amity">
+    <div class="workshop-card" onclick="openWorkshopLightbox(this)">
+      <img loading="lazy" src="../SATTVA%20NATION%20COLLEGE%20WORKSHOPS/AMITY%20LAW%20SCHOOL/AMITY%20LAW%20SCHOOL%20(1).jpeg" alt="Amity Law School Workshop 1">
+      <div class="workshop-card-body">
+        <div class="workshop-card-title">Session in Progress</div>
+        <div class="workshop-card-meta">Amity Law School , New Delhi</div>
+      </div>
+    </div>
+    <div class="workshop-card" onclick="openWorkshopLightbox(this)">
+      <img loading="lazy" src="../SATTVA%20NATION%20COLLEGE%20WORKSHOPS/AMITY%20LAW%20SCHOOL/AMITY%20LAW%20SCHOOL%20(2).jpeg" alt="Amity Law School Workshop 2">
+      <div class="workshop-card-body">
+        <div class="workshop-card-title">Group Meditation</div>
+        <div class="workshop-card-meta">Amity Law School , New Delhi</div>
+      </div>
+    </div>
+    <div class="workshop-card" onclick="openWorkshopLightbox(this)">
+      <img loading="lazy" src="../SATTVA%20NATION%20COLLEGE%20WORKSHOPS/AMITY%20LAW%20SCHOOL/AMITY%20LAW%20SCHOOL%20(3).jpeg" alt="Amity Law School Workshop 3">
+      <div class="workshop-card-body">
+        <div class="workshop-card-title">Interactive Session</div>
+        <div class="workshop-card-meta">Amity Law School , New Delhi</div>
+      </div>
+    </div>
+    <div class="workshop-card" onclick="openWorkshopLightbox(this)">
+      <img loading="lazy" src="../SATTVA%20NATION%20COLLEGE%20WORKSHOPS/AMITY%20LAW%20SCHOOL/AMITY%20LAW%20SCHOOL%20(4).jpeg" alt="Amity Law School Workshop 4">
+      <div class="workshop-card-body">
+        <div class="workshop-card-title">Wellness Workshop</div>
+        <div class="workshop-card-meta">Amity Law School , New Delhi</div>
+      </div>
+    </div>
+    <div class="workshop-card" onclick="openWorkshopLightbox(this)">
+      <img loading="lazy" src="../SATTVA%20NATION%20COLLEGE%20WORKSHOPS/AMITY%20LAW%20SCHOOL/AMITY%20LAW%20SCHOOL%20(5).jpeg" alt="Amity Law School Workshop 5">
+      <div class="workshop-card-body">
+        <div class="workshop-card-title">Closing Ceremony</div>
+        <div class="workshop-card-meta">Amity Law School , New Delhi</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="workshops-grid" id="tab-imm">
+    <div class="workshop-card" onclick="openWorkshopLightbox(this)">
+      <img loading="lazy" src="../SATTVA%20NATION%20COLLEGE%20WORKSHOPS/INSTITUTE%20OF%20MARKETING%20&%20MANAGEMENT%20(IMM)/MARKETING%20&%20MANAGEMENT%20%20(1).jpeg" alt="IMM Workshop 1">
+      <div class="workshop-card-body">
+        <div class="workshop-card-title">Marketing & Management Workshop</div>
+        <div class="workshop-card-meta">IMM , Delhi</div>
+      </div>
+    </div>
+    <div class="workshop-card" onclick="openWorkshopLightbox(this)">
+      <img loading="lazy" src="../SATTVA%20NATION%20COLLEGE%20WORKSHOPS/INSTITUTE%20OF%20MARKETING%20&%20MANAGEMENT%20(IMM)/MARKETING%20&%20MANAGEMENT%20%20(2).jpeg" alt="IMM Workshop 2">
+      <div class="workshop-card-body">
+        <div class="workshop-card-title">Student Engagement Session</div>
+        <div class="workshop-card-meta">IMM , Delhi</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="workshops-grid" id="tab-jims">
+    <div class="workshop-card" onclick="openWorkshopLightbox(this)">
+      <img loading="lazy" src="../SATTVA%20NATION%20COLLEGE%20WORKSHOPS/JIMS%20COLLEGE/JIMS%20COLLEGE%20(1).jpeg" alt="JIMS College Workshop 1">
+      <div class="workshop-card-body">
+        <div class="workshop-card-title">Wellness Session at JIMS</div>
+        <div class="workshop-card-meta">JIMS College , Delhi</div>
+      </div>
+    </div>
+    <div class="workshop-card" onclick="openWorkshopLightbox(this)">
+      <img loading="lazy" src="../SATTVA%20NATION%20COLLEGE%20WORKSHOPS/JIMS%20COLLEGE/JIMS%20COLLEGE%20(2).jpeg" alt="JIMS College Workshop 2">
+      <div class="workshop-card-body">
+        <div class="workshop-card-title">Group Activity</div>
+        <div class="workshop-card-meta">JIMS College , Delhi</div>
+      </div>
+    </div>
+    <div class="workshop-card" onclick="openWorkshopLightbox(this)">
+      <img loading="lazy" src="../SATTVA%20NATION%20COLLEGE%20WORKSHOPS/JIMS%20COLLEGE/JIMS%20COLLEGE%20(3).jpeg" alt="JIMS College Workshop 3">
+      <div class="workshop-card-body">
+        <div class="workshop-card-title">Closing & Certificate Distribution</div>
+        <div class="workshop-card-meta">JIMS College , Delhi</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="workshops-grid" id="tab-lakshmibai">
+    <div class="workshop-card" onclick="openWorkshopLightbox(this)">
+      <img loading="lazy" src="../SATTVA%20NATION%20COLLEGE%20WORKSHOPS/LAKSHMI%20BAI%20COLLEGE/LAKSHMI%20BAI%20COLLEGE.jpeg" alt="Lakshmi Bai College Workshop">
+      <div class="workshop-card-body">
+        <div class="workshop-card-title">Lakshmi Bai College Wellness Day</div>
+        <div class="workshop-card-meta">Lakshmi Bai College , Delhi</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--  VIDEO GALLERY  -->
+<section class="video-section">
+  <div class="video-header">
+    <span class="section-tag">Videos</span>
+    <h2 class="section-title">Experience <em>Sattva</em> in Motion</h2>
+    <p style="font-size:0.95rem;color:var(--text-mid);line-height:1.75;font-weight:300;">
+      Watch highlights, event recaps, and wellness tutorials from the Sattva Nation community.
+    </p>
+  </div>
+  <div class="video-grid">
+    <div class="video-card">
+      <div class="video-thumb" style="background-image:url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600&q=80')">
+        <div class="video-thumb-overlay"><div class="play-btn">▶</div></div>
+      </div>
+      <div class="video-body">
+        <div class="video-title">Sattva Wellness Festival 2025 - Event Recap</div>
+        <div class="video-meta">March 2025 | 4:32 | 12K views</div>
+      </div>
+    </div>
+    <div class="video-card">
+      <div class="video-thumb" style="background-image:url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80')">
+        <div class="video-thumb-overlay"><div class="play-btn">▶</div></div>
+      </div>
+      <div class="video-body">
+        <div class="video-title">Guided Morning Meditation - 10 Minutes</div>
+        <div class="video-meta">April 2026 | 10:15 | 8.5K views</div>
+      </div>
+    </div>
+    <div class="video-card">
+      <div class="video-thumb" style="background-image:url('https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?w=600&q=80')">
+        <div class="video-thumb-overlay"><div class="play-btn">▶</div></div>
+      </div>
+      <div class="video-body">
+        <div class="video-title">5 Yoga Stretches for Better Posture</div>
+        <div class="video-meta">May 2026 | 8:45 | 6.2K views</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+  <div class="cta-inner">
+    <span class="section-tag">Join Us</span>
+    <h2 class="cta-title">Be Part of Our Next <em>Experience</em></h2>
+    <p class="cta-sub">Every event is a chance to reconnect with yourself and join a community of like-minded souls. Find your next experience.</p>
+    <div class="cta-btns">
+      <a href="/events/" class="btn-white">Explore Events</a>
+      <a href="/programmes/" class="btn-outline-white">View Programmes</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">SattvaNation</div>
+  <ul class="footer-links">
+    <li><a href="/about-us/">About</a></li>
+    <li><a href="/programmes/">Programmes</a></li>
+    <li><a href="/events/">Events</a></li>
+    <li><a href="/founders/">Founders</a></li>
+    <li><a href="/contact-us/">Contact</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/gallery/">Gallery</a></li>
+  </ul>
+  <div class="footer-copy">&copy; 2026 Sattva Nation. Celebrate Life.</div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">×</button>
+  <button class="lightbox-nav prev" id="lightboxPrev">&#8592;</button>
+  <button class="lightbox-nav next" id="lightboxNext">&#8594;</button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="">
+  <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
+
+<script>
+// Mobile navigation toggle
+(function() {
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  if (toggle && links) {
+    toggle.addEventListener('click', () => {
+      toggle.classList.toggle('active');
+      links.classList.toggle('active');
+      toggle.setAttribute('aria-expanded', toggle.classList.contains('active'));
+    });
+    links.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        toggle.classList.remove('active');
+        links.classList.remove('active');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+})();
+
+(function() {
+  // Filter buttons - scroll to section
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const sectionMap = {
+    all: '.awards1-section',
+    retreats: '.workshops-section',
+    festivals: '.awards1-section',
+    workshops: '.workshops-section',
+    community: '.awards2-section',
+    awards: '.awards1-section',
+  };
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const target = document.querySelector(sectionMap[btn.dataset.category] || '.awards1-section');
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  // Slideshow navigation
+  const slideTrack = document.getElementById('slideshow2');
+  const slidePrevBtn = document.getElementById('slidePrev2');
+  const slideNextBtn = document.getElementById('slideNext2');
+  if (slideTrack && slidePrevBtn && slideNextBtn) {
+    slidePrevBtn.addEventListener('click', () => slideTrack.scrollBy({ left: -370, behavior: 'smooth' }));
+    slideNextBtn.addEventListener('click', () => slideTrack.scrollBy({ left: 370, behavior: 'smooth' }));
+  }
+
+  // Workshop tabs
+  const workshopTabs = document.querySelectorAll('.workshops-tab');
+  const workshopGrids = document.querySelectorAll('.workshops-grid');
+  workshopTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      workshopTabs.forEach(t => t.classList.remove('active'));
+      workshopGrids.forEach(g => g.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+    });
+  });
+
+  // Lightbox
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxCaption = document.getElementById('lightboxCaption');
+  let currentIndex = 0;
+  const images = [];
+
+  // Bento items
+  document.querySelectorAll('.gallery-item').forEach(item => {
+    const img = item.querySelector('img');
+    if (img) {
+      images.push({ src: img.src, caption: item.dataset.caption || '' });
+      item.addEventListener('click', () => openLightbox(images.length - 1));
+    }
+  });
+
+  // Slideshow cards
+  document.querySelectorAll('.slideshow-card').forEach(card => {
+    const src = card.style.backgroundImage.replace(/url\(['"]?(.+?)['"]?\)/, '$1');
+    images.push({ src, caption: card.dataset.caption || '' });
+    card.addEventListener('click', () => openLightbox(images.length - 1));
+  });
+
+  function openLightboxBySrc(el) {
+    const img = el.querySelector('img');
+    const src = img.src;
+    const caption = img.alt || '';
+    openLightbox(images.findIndex(i => i.src === src));
+  }
+  window.openLightboxBySrc = openLightboxBySrc;
+
+  function openLightbox(index) {
+    currentIndex = index;
+    lightboxImg.src = images[currentIndex].src;
+    lightboxCaption.textContent = images[currentIndex].caption;
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  function nextImage() {
+    currentIndex = (currentIndex + 1) % images.length;
+    lightboxImg.src = images[currentIndex].src;
+    lightboxCaption.textContent = images[currentIndex].caption;
+  }
+
+  function prevImage() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    lightboxImg.src = images[currentIndex].src;
+    lightboxCaption.textContent = images[currentIndex].caption;
+  }
+
+  document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+  document.getElementById('lightboxNext').addEventListener('click', nextImage);
+  document.getElementById('lightboxPrev').addEventListener('click', prevImage);
+  lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+
+  document.addEventListener('keydown', e => {
+    if (!lightbox.classList.contains('active')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowRight') nextImage();
+    if (e.key === 'ArrowLeft') prevImage();
+  });
+
+  // Workshop lightbox
+  window.openWorkshopLightbox = function(card) {
+    const img = card.querySelector('img');
+    const title = card.querySelector('.workshop-card-title').textContent;
+    lightboxImg.src = img.src;
+    lightboxCaption.textContent = title;
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  };
+})();
+</script>
+
+</body>
+</html>
