@@ -389,6 +389,170 @@
   .workshop-card-title { font-family: var(--serif); font-size: 1rem; font-weight: 600; color: var(--text-dark); margin-bottom: 0.3rem; }
   .workshop-card-meta { font-size: 0.78rem; color: var(--text-muted); }
 
+  /* GOA FEST: POSTCARD MOSAIC */
+  .goa-section {
+    padding: 5.5rem 5%; position: relative; overflow: hidden;
+    background: linear-gradient(165deg, #fff5ee 0%, #fdeaf0 60%, #fce4ec 100%);
+  }
+  .goa-section::before {
+    content: ''; position: absolute; top: -120px; right: -80px;
+    width: 340px; height: 340px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,167,109,0.45), rgba(240,98,146,0.12) 60%, transparent 72%);
+    filter: blur(6px); pointer-events: none; animation: floaty 8s ease-in-out infinite;
+  }
+  .goa-section::after {
+    content: ''; position: absolute; bottom: -90px; left: -60px;
+    width: 260px; height: 260px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(240,98,146,0.22), transparent 70%);
+    filter: blur(8px); pointer-events: none;
+  }
+  .goa-header { text-align: center; max-width: 660px; margin: 0 auto 1rem; position: relative; z-index: 2; }
+  .goa-badge {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    background: linear-gradient(135deg, #ff8a5c, #f06292); color: white;
+    padding: 0.3rem 0.95rem; border-radius: 50px;
+    font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em;
+    margin-bottom: 0.7rem; box-shadow: 0 6px 16px rgba(255,138,92,0.32);
+  }
+  .goa-header .section-tag { color: #e85d75; }
+  .goa-header h2 { font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 2.6rem); color: var(--text-dark); margin-bottom: 0.8rem; }
+  .goa-header h2 em { font-style: italic; color: #ef6a4d; }
+  .goa-header p { font-size: 0.95rem; color: var(--text-mid); line-height: 1.75; font-weight: 300; }
+
+  .goa-mosaic {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.7rem;
+    margin-top: 3rem; position: relative; z-index: 2;
+  }
+  .goa-postcard {
+    background: #fff; border-radius: 8px; padding: 0.7rem 0.7rem 0;
+    box-shadow: 0 10px 30px rgba(45,26,36,0.12), 0 2px 6px rgba(45,26,36,0.06);
+    cursor: pointer; position: relative;
+    transition: transform 0.4s cubic-bezier(0.2,0.7,0.3,1), box-shadow 0.4s;
+  }
+  .goa-postcard:nth-child(odd)  { transform: rotate(-1.6deg); }
+  .goa-postcard:nth-child(even) { transform: rotate(1.6deg); }
+  .goa-postcard:hover {
+    transform: rotate(0) translateY(-8px) scale(1.02); z-index: 5;
+    box-shadow: 0 28px 60px rgba(232,93,117,0.32);
+  }
+  .goa-postcard img {
+    width: 100%; height: 240px; object-fit: cover; border-radius: 4px; display: block;
+    transition: filter 0.35s;
+  }
+  .goa-postcard:hover img { filter: saturate(1.12) brightness(1.03); }
+  .goa-postcard.feature { grid-column: span 2; transform: rotate(0); }
+  .goa-postcard.feature img { height: 100%; min-height: 240px; }
+  .goa-postcard.feature:hover { transform: translateY(-8px) scale(1.01); }
+  .goa-stamp {
+    position: absolute; top: -14px; right: 16px; z-index: 4;
+    width: 52px; height: 52px; border-radius: 50%;
+    background: linear-gradient(135deg, #ff8a5c, #e85d75); color: #fff;
+    display: flex; align-items: center; justify-content: center; text-align: center;
+    font-family: var(--serif); font-size: 0.6rem; font-weight: 700; line-height: 1;
+    letter-spacing: 0.04em; text-transform: uppercase;
+    border: 3px solid #fff; box-shadow: 0 4px 12px rgba(232,93,117,0.4);
+    transform: rotate(12deg);
+  }
+  .goa-caption {
+    padding: 0.85rem 0.5rem 1rem; text-align: center;
+  }
+  .goa-caption-title { font-family: var(--serif); font-size: 1.02rem; font-weight: 600; color: var(--text-dark); line-height: 1.25; }
+  .goa-caption-meta {
+    font-size: 0.72rem; color: #b56a52; text-transform: uppercase;
+    letter-spacing: 0.09em; margin-top: 0.35rem; font-weight: 500;
+  }
+  .goa-caption-meta::before { content: '\1F334  '; }
+
+  /* MINISTRY EVENTS: DIGNITARY TABBED CARDS */
+  .ministry-section {
+    padding: 5.5rem 5%; position: relative; overflow: hidden;
+    background: linear-gradient(180deg, #ffffff 0%, #fdf0f5 100%);
+  }
+  .ministry-header { text-align: center; max-width: 680px; margin: 0 auto 2.5rem; }
+  .ministry-badge {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    background: #2d1a24; color: #f3c98b;
+    padding: 0.3rem 0.95rem; border-radius: 50px;
+    font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em;
+    margin-bottom: 0.7rem; border: 1px solid rgba(243,201,139,0.4);
+  }
+  .ministry-header .section-tag { color: var(--pink-deep); }
+  .ministry-header h2 { font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 2.6rem); color: var(--text-dark); margin-bottom: 0.8rem; }
+  .ministry-header h2 em { font-style: italic; color: var(--pink-deep); }
+  .ministry-header p { font-size: 0.95rem; color: var(--text-mid); line-height: 1.75; font-weight: 300; }
+
+  .ministry-tabs {
+    display: flex; gap: 0.6rem; flex-wrap: wrap; justify-content: center; margin-bottom: 2.8rem;
+  }
+  .ministry-tab {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.6rem 1.4rem; border-radius: 50px;
+    background: white; border: 1.5px solid #e6b8cb;
+    font-size: 0.84rem; font-weight: 500; color: var(--text-mid);
+    cursor: pointer; transition: all 0.25s; font-family: var(--sans);
+  }
+  .ministry-tab .m-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--pink-soft); transition: background 0.25s, transform 0.25s;
+  }
+  .ministry-tab:hover { border-color: var(--pink-soft); color: var(--pink-deep); transform: translateY(-2px); }
+  .ministry-tab.active {
+    background: linear-gradient(135deg, #2d1a24, #4a2438); color: #fff; border-color: transparent;
+    box-shadow: 0 10px 26px rgba(45,26,36,0.28);
+  }
+  .ministry-tab.active .m-dot { background: #f3c98b; transform: scale(1.25); }
+
+  .ministry-panel { display: none; }
+  .ministry-panel.active {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.6rem;
+    animation: fadeUp 0.5s ease both;
+  }
+  .ministry-card {
+    position: relative; border-radius: 18px; overflow: hidden; aspect-ratio: 3 / 4;
+    cursor: pointer; background: var(--pink-light);
+    box-shadow: 0 8px 26px rgba(45,26,36,0.12);
+    transition: transform 0.4s cubic-bezier(0.2,0.7,0.3,1), box-shadow 0.4s;
+  }
+  .ministry-card:hover { transform: translateY(-6px); box-shadow: 0 26px 56px rgba(45,26,36,0.28); }
+  .ministry-card img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+    transition: transform 0.6s cubic-bezier(0.2,0.7,0.3,1);
+  }
+  .ministry-card:hover img { transform: scale(1.06); }
+  .ministry-card::after {
+    content: ''; position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(to top, rgba(20,8,14,0.9) 0%, rgba(20,8,14,0.35) 34%, transparent 60%);
+  }
+  .ministry-emblem {
+    position: absolute; top: 0.9rem; left: 0.9rem; z-index: 2;
+    display: inline-flex; align-items: center; gap: 0.32rem;
+    background: rgba(255,255,255,0.16); backdrop-filter: blur(8px);
+    border: 1px solid rgba(243,201,139,0.55); color: #f3c98b;
+    font-size: 0.6rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 0.28rem 0.7rem; border-radius: 50px;
+  }
+  .ministry-plate {
+    position: absolute; bottom: 0; left: 0; right: 0; z-index: 2;
+    padding: 1.1rem 1.1rem 1.2rem; color: #fff;
+  }
+  .ministry-plate-name { font-family: var(--serif); font-size: 1.06rem; font-weight: 600; line-height: 1.25; }
+  .ministry-plate-role {
+    font-size: 0.74rem; color: rgba(255,255,255,0.82); font-weight: 300;
+    margin-top: 0.3rem; line-height: 1.4;
+    padding-top: 0.4rem; border-top: 1px solid rgba(243,201,139,0.45);
+  }
+
+  /* Ministry video card (spans wider) */
+  .ministry-card.video-tile { aspect-ratio: auto; cursor: default; grid-column: span 2; background: #140810; }
+  .ministry-card.video-tile:hover { transform: none; box-shadow: 0 8px 26px rgba(45,26,36,0.12); }
+  .ministry-card.video-tile::after { display: none; }
+  .ministry-card.video-tile video { width: 100%; height: 100%; display: block; border-radius: 18px 18px 0 0; background: #000; }
+  .ministry-video-plate {
+    padding: 1rem 1.2rem 1.2rem; color: #fff; background: linear-gradient(135deg, #2d1a24, #4a2438);
+  }
+  .ministry-video-plate .ministry-plate-name { color: #fff; }
+  .ministry-video-plate .ministry-plate-role { border-top-color: rgba(243,201,139,0.45); color: rgba(255,255,255,0.82); }
+
   /* LIGHTBOX */
   .lightbox {
     position: fixed; inset: 0; z-index: 1000;
@@ -550,6 +714,11 @@
     .timeline-gallery { columns: 2; }
     .slideshow-card { flex: 0 0 280px; height: 360px; }
     .workshops-grid { grid-template-columns: repeat(2, 1fr); }
+    .goa-mosaic { grid-template-columns: repeat(2, 1fr); }
+    .goa-postcard.feature { grid-column: span 2; }
+    .goa-postcard.feature img { height: 240px; }
+    .ministry-panel.active { grid-template-columns: repeat(2, 1fr); }
+    .ministry-card.video-tile { grid-column: span 2; }
   }
   @media (max-width: 640px) {
     .nav-links li:not(:last-child):not(:first-child) { display: block; }
@@ -561,6 +730,10 @@
     .workshops-tabs { gap: 0.3rem; }
     .workshops-tab { padding: 0.5rem 0.8rem; font-size: 0.78rem; }
     .workshops-grid { grid-template-columns: 1fr; }
+    .goa-mosaic { grid-template-columns: 1fr; }
+    .goa-postcard.feature { grid-column: span 1; }
+    .ministry-panel.active { grid-template-columns: 1fr; }
+    .ministry-card.video-tile { grid-column: span 1; }
   }
 </style>
 </head>
@@ -597,7 +770,8 @@
     <div class="hero-stats">
       <div><div class="hero-stat-num">3 Editions</div><div class="hero-stat-label">Iconic Awards</div></div>
       <div><div class="hero-stat-num">4 Campuses</div><div class="hero-stat-label">College Workshops</div></div>
-      <div><div class="hero-stat-num">40+ Moments</div><div class="hero-stat-label">Captured</div></div>
+      <div><div class="hero-stat-num">1 Retreat</div><div class="hero-stat-label">Goa Wellness Fest</div></div>
+      <div><div class="hero-stat-num">50+ Moments</div><div class="hero-stat-label">Captured</div></div>
     </div>
   </div>
   <div class="breadcrumb">
@@ -614,6 +788,8 @@
   <button type="button" class="filter-btn" data-category="awards2">Awards 2.0</button>
   <button type="button" class="filter-btn" data-category="awards3">Awards 3.0</button>
   <button type="button" class="filter-btn" data-category="workshops">College Workshops</button>
+  <button type="button" class="filter-btn" data-category="goa">Goa Fest</button>
+  <button type="button" class="filter-btn" data-category="ministry">Ministry Events</button>
   <button type="button" class="filter-btn" data-category="videos">Videos</button>
 </div>
 
@@ -1055,6 +1231,179 @@
   </div>
 </section>
 
+<!--  WELLNESS RETREAT GOA FEST: POSTCARD MOSAIC  -->
+<section class="goa-section">
+  <div class="goa-header">
+    <span class="goa-badge">☀ Goa</span>
+    <span class="section-tag">Wellness Retreat Goa Fest</span>
+    <h2>Sunshine, Sand &amp; <em>Soul</em></h2>
+    <p>Where the ocean meets inner calm. Postcards from our beachside wellness retreat - days of yoga, healing, music, and barefoot connection under the Goan sun.</p>
+  </div>
+
+  <div class="goa-mosaic">
+    <div class="goa-postcard feature" data-caption="Wellness Retreat Goa Fest - Beachside Gathering">
+      <span class="goa-stamp">Goa Fest</span>
+      <img loading="lazy" src="/WELLNESS%20RETREAT%20GOA%20FEST/WELLNESS%20RETREAT%20GOA%20FEST/wellness%20retreat%20goa%20fest%20(1).jpeg" alt="Goa Fest Beachside Gathering">
+      <div class="goa-caption">
+        <div class="goa-caption-title">Beachside Gathering</div>
+        <div class="goa-caption-meta">Goa</div>
+      </div>
+    </div>
+    <div class="goa-postcard" data-caption="Wellness Retreat Goa Fest - Sunrise Yoga">
+      <img loading="lazy" src="/WELLNESS%20RETREAT%20GOA%20FEST/WELLNESS%20RETREAT%20GOA%20FEST/wellness%20retreat%20goa%20fest%20(2).jpeg" alt="Goa Fest Sunrise Yoga">
+      <div class="goa-caption">
+        <div class="goa-caption-title">Sunrise Yoga</div>
+        <div class="goa-caption-meta">Goa</div>
+      </div>
+    </div>
+    <div class="goa-postcard" data-caption="Wellness Retreat Goa Fest - Mindful Moments">
+      <img loading="lazy" src="/WELLNESS%20RETREAT%20GOA%20FEST/WELLNESS%20RETREAT%20GOA%20FEST/wellness%20retreat%20goa%20fest%20(3).jpeg" alt="Goa Fest Mindful Moments">
+      <div class="goa-caption">
+        <div class="goa-caption-title">Mindful Moments</div>
+        <div class="goa-caption-meta">Goa</div>
+      </div>
+    </div>
+    <div class="goa-postcard" data-caption="Wellness Retreat Goa Fest - Healing Circle">
+      <img loading="lazy" src="/WELLNESS%20RETREAT%20GOA%20FEST/WELLNESS%20RETREAT%20GOA%20FEST/wellness%20retreat%20goa%20fest%20(4).jpeg" alt="Goa Fest Healing Circle">
+      <div class="goa-caption">
+        <div class="goa-caption-title">Healing Circle</div>
+        <div class="goa-caption-meta">Goa</div>
+      </div>
+    </div>
+    <div class="goa-postcard" data-caption="Wellness Retreat Goa Fest - Sound &amp; Music">
+      <img loading="lazy" src="/WELLNESS%20RETREAT%20GOA%20FEST/WELLNESS%20RETREAT%20GOA%20FEST/wellness%20retreat%20goa%20fest%20(5).jpeg" alt="Goa Fest Sound and Music">
+      <div class="goa-caption">
+        <div class="goa-caption-title">Sound &amp; Music</div>
+        <div class="goa-caption-meta">Goa</div>
+      </div>
+    </div>
+    <div class="goa-postcard" data-caption="Wellness Retreat Goa Fest - Community Connection">
+      <img loading="lazy" src="/WELLNESS%20RETREAT%20GOA%20FEST/WELLNESS%20RETREAT%20GOA%20FEST/wellness%20retreat%20goa%20fest%20(6).jpeg" alt="Goa Fest Community Connection">
+      <div class="goa-caption">
+        <div class="goa-caption-title">Community Connection</div>
+        <div class="goa-caption-meta">Goa</div>
+      </div>
+    </div>
+    <div class="goa-postcard" data-caption="Wellness Retreat Goa Fest - Sunset Celebration">
+      <img loading="lazy" src="/WELLNESS%20RETREAT%20GOA%20FEST/WELLNESS%20RETREAT%20GOA%20FEST/wellness%20retreat%20goa%20fest%20(7).jpeg" alt="Goa Fest Sunset Celebration">
+      <div class="goa-caption">
+        <div class="goa-caption-title">Sunset Celebration</div>
+        <div class="goa-caption-meta">Goa</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--  SATTVA NATION MINISTRY EVENTS: DIGNITARY TABBED CARDS  -->
+<section class="ministry-section">
+  <div class="ministry-header">
+    <span class="ministry-badge">★ Government of India</span>
+    <span class="section-tag">Sattva Nation Ministry Events</span>
+    <h2>Honouring Leaders &amp; <em>Changemakers</em></h2>
+    <p>Distinguished ministers, champions, and visionaries who have graced Sattva Nation - united in the mission of wellness, service, and a healthier India.</p>
+  </div>
+
+  <div class="ministry-tabs">
+    <button class="ministry-tab active" data-mtab="housing"><span class="m-dot"></span>Housing &amp; Urban Affairs</button>
+    <button class="ministry-tab" data-mtab="sports"><span class="m-dot"></span>Sports &amp; Youth</button>
+    <button class="ministry-tab" data-mtab="infotech"><span class="m-dot"></span>Information &amp; Technology</button>
+  </div>
+
+  <!-- Housing & Urban Affairs -->
+  <div class="ministry-panel active" id="mtab-housing">
+    <div class="ministry-card" data-caption="Shri. Narayan Rane - Minister of MSME, Government of India">
+      <span class="ministry-emblem">★ Official</span>
+      <img loading="lazy" src="/SATTVA%20NATION%20MINISTRY%20EVENTS/Ministry%20of%20housing%20%26%20urban%20affairs/Shri.Narayan%20Rane%20%2C%20Minister%20of%20Micro%2C%20Small%20and%20Medium%20Enterprises%20%28MSME%29%20Government%20Of%20India..jpeg" alt="Shri. Narayan Rane, Minister of MSME">
+      <div class="ministry-plate">
+        <div class="ministry-plate-name">Shri. Narayan Rane</div>
+        <div class="ministry-plate-role">Minister of Micro, Small &amp; Medium Enterprises (MSME), Government of India</div>
+      </div>
+    </div>
+    <div class="ministry-card" data-caption="Shri. Sarbananda Sonowal - Minister of Ports, Shipping &amp; Waterways, Govt of India">
+      <span class="ministry-emblem">★ Official</span>
+      <img loading="lazy" src="/SATTVA%20NATION%20MINISTRY%20EVENTS/Ministry%20of%20housing%20%26%20urban%20affairs/Shri.Sarbananda%20Sonowal%20%20%2C%20Minister%20of%20Ports%2C%20Shipping%20and%20Waterways%20.%20Govt%20of%20India.jpeg" alt="Shri. Sarbananda Sonowal, Minister of Ports, Shipping and Waterways">
+      <div class="ministry-plate">
+        <div class="ministry-plate-name">Shri. Sarbananda Sonowal</div>
+        <div class="ministry-plate-role">Minister of Ports, Shipping &amp; Waterways, Government of India</div>
+      </div>
+    </div>
+    <div class="ministry-card" data-caption="Shri. Sarbananda Sonowal - Minister of Ports, Shipping &amp; Waterways, Govt of India">
+      <span class="ministry-emblem">★ Official</span>
+      <img loading="lazy" src="/SATTVA%20NATION%20MINISTRY%20EVENTS/Ministry%20of%20housing%20%26%20urban%20affairs/Shri.Sarbananda%20Sonowal%20%20%2C%20Minister%20of%20Ports%2C%20Shipping%20and%20Waterways%20.%20Govt%20of%20India%20%282%29.jpeg" alt="Shri. Sarbananda Sonowal in conversation">
+      <div class="ministry-plate">
+        <div class="ministry-plate-name">Shri. Sarbananda Sonowal</div>
+        <div class="ministry-plate-role">Minister of Ports, Shipping &amp; Waterways, Government of India</div>
+      </div>
+    </div>
+    <div class="ministry-card" data-caption="Shri. Sarbananda Sonowal - Minister of Ports, Shipping &amp; Waterways, Govt of India">
+      <span class="ministry-emblem">★ Official</span>
+      <img loading="lazy" src="/SATTVA%20NATION%20MINISTRY%20EVENTS/Ministry%20of%20housing%20%26%20urban%20affairs/Shri.Sarbananda%20Sonowal%20%20%2C%20Minister%20of%20Ports%2C%20Shipping%20and%20Waterways%20.%20Govt%20of%20India%20%283%29.jpeg" alt="Shri. Sarbananda Sonowal at the event">
+      <div class="ministry-plate">
+        <div class="ministry-plate-name">Shri. Sarbananda Sonowal</div>
+        <div class="ministry-plate-role">Minister of Ports, Shipping &amp; Waterways, Government of India</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sports & Youth -->
+  <div class="ministry-panel" id="mtab-sports">
+    <div class="ministry-card" data-caption="Gukesh Dommaraju - Indian Chess Grandmaster">
+      <span class="ministry-emblem">★ Champion</span>
+      <img loading="lazy" src="/SATTVA%20NATION%20MINISTRY%20EVENTS/Ministry%20of%20sports%20%26%20youth/Gukesh%20Dommaraju%20Indian%20chess%20grandmaster.jpeg" alt="Gukesh Dommaraju, Indian Chess Grandmaster">
+      <div class="ministry-plate">
+        <div class="ministry-plate-name">Gukesh Dommaraju</div>
+        <div class="ministry-plate-role">Indian Chess Grandmaster &amp; World Champion</div>
+      </div>
+    </div>
+    <div class="ministry-card" data-caption="Gukesh Dommaraju - Indian Chess Grandmaster">
+      <span class="ministry-emblem">★ Champion</span>
+      <img loading="lazy" src="/SATTVA%20NATION%20MINISTRY%20EVENTS/Ministry%20of%20sports%20%26%20youth/Gukesh%20Dommaraju%20Indian%20chess%20grandmaster%20%282%29.jpeg" alt="Gukesh Dommaraju at Sattva Nation">
+      <div class="ministry-plate">
+        <div class="ministry-plate-name">Gukesh Dommaraju</div>
+        <div class="ministry-plate-role">Indian Chess Grandmaster &amp; World Champion</div>
+      </div>
+    </div>
+    <div class="ministry-card" data-caption="Maithili Thakur - Member, Bihar Legislative Assembly">
+      <span class="ministry-emblem">★ Youth Icon</span>
+      <img loading="lazy" src="/SATTVA%20NATION%20MINISTRY%20EVENTS/Ministry%20of%20sports%20%26%20youth/Maithili%20Thakur%20member%20of%20Bihar%20Legislative%20Assembly.jpeg" alt="Maithili Thakur, Member of Bihar Legislative Assembly">
+      <div class="ministry-plate">
+        <div class="ministry-plate-name">Maithili Thakur</div>
+        <div class="ministry-plate-role">Singer &amp; Member, Bihar Legislative Assembly</div>
+      </div>
+    </div>
+    <div class="ministry-card" data-caption="Manu Bhaker - Indian Professional Shooter">
+      <span class="ministry-emblem">★ Champion</span>
+      <img loading="lazy" src="/SATTVA%20NATION%20MINISTRY%20EVENTS/Ministry%20of%20sports%20%26%20youth/Manu%20Bhaker%20Indian%20Professional%20shooter.jpeg" alt="Manu Bhaker, Indian Professional Shooter">
+      <div class="ministry-plate">
+        <div class="ministry-plate-name">Manu Bhaker</div>
+        <div class="ministry-plate-role">Olympic Medallist &amp; Professional Shooter</div>
+      </div>
+    </div>
+    <div class="ministry-card" data-caption="Manu Bhaker - Indian Professional Shooter">
+      <span class="ministry-emblem">★ Champion</span>
+      <img loading="lazy" src="/SATTVA%20NATION%20MINISTRY%20EVENTS/Ministry%20of%20sports%20%26%20youth/Manu%20Bhaker%20Indian%20Professional%20shooter%20%282%29.jpeg" alt="Manu Bhaker at Sattva Nation">
+      <div class="ministry-plate">
+        <div class="ministry-plate-name">Manu Bhaker</div>
+        <div class="ministry-plate-role">Olympic Medallist &amp; Professional Shooter</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Information & Technology -->
+  <div class="ministry-panel" id="mtab-infotech">
+    <div class="ministry-card video-tile">
+      <video controls preload="metadata" playsinline>
+        <source src="/SATTVA%20NATION%20MINISTRY%20EVENTS/Ministry%20of%20information%20%26%20technology/Mr.%20Luke%20Coutinho%20-%20globally%20renowned%20Holistic%20Lifestyle%20Coach%20in%20the%20field%20of%20Integrative%20and%20Lifestyle%20Medicine.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="ministry-video-plate">
+        <div class="ministry-plate-name">Mr. Luke Coutinho</div>
+        <div class="ministry-plate-role">Globally Renowned Holistic Lifestyle Coach - Integrative &amp; Lifestyle Medicine</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!--  VIDEO GALLERY  -->
 <section class="video-section" id="videos">
   <div class="video-header">
@@ -1161,6 +1510,8 @@
     awards2: '.awards2-section',
     awards3: '.awards3-section',
     workshops: '.workshops-section',
+    goa: '.goa-section',
+    ministry: '.ministry-section',
     videos: '#videos',
   };
   filterBtns.forEach(btn => {
@@ -1191,6 +1542,22 @@
       workshopGrids.forEach(g => g.classList.remove('active'));
       tab.classList.add('active');
       document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+    });
+  });
+
+  // Ministry event tabs
+  const ministryTabs = document.querySelectorAll('.ministry-tab');
+  const ministryPanels = document.querySelectorAll('.ministry-panel');
+  ministryTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      ministryTabs.forEach(t => t.classList.remove('active'));
+      ministryPanels.forEach(p => {
+        p.classList.remove('active');
+        // pause any playing video when switching away
+        p.querySelectorAll('video').forEach(v => v.pause());
+      });
+      tab.classList.add('active');
+      document.getElementById('mtab-' + tab.dataset.mtab).classList.add('active');
     });
   });
 
@@ -1248,6 +1615,18 @@
       card.removeAttribute('onclick');
       registerImage(card, img.src, title);
     }
+  });
+
+  // Goa Fest postcards
+  document.querySelectorAll('.goa-postcard').forEach(card => {
+    const img = card.querySelector('img');
+    if (img) registerImage(card, img.src, card.dataset.caption || img.alt || '');
+  });
+
+  // Ministry event cards (images only, not video)
+  document.querySelectorAll('.ministry-card:not(.video-tile)').forEach(card => {
+    const img = card.querySelector('img');
+    if (img) registerImage(card, img.src, card.dataset.caption || img.alt || '');
   });
 
   function openLightbox(index) {
