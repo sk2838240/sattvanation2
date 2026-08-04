@@ -1,23 +1,23 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#c2185b">
 <title>Wellness Programmes &ndash; Sattva Nation</title>
-<meta name="description" content="Explore Sattva Nation's 8 dimensions of wellness programmes &mdash;&nbsp; physical, mental, emotional, social, financial, occupational, intellectual, and environmental wellbeing.">
+<meta name="description" content="Explore Sattva Nation's 8 dimensions of wellness programmes - physical, mental, emotional, social, financial, occupational, intellectual, and environmental wellbeing.">
 <link rel="icon" type="image/png" href="/assets/sattvalogo123.png" sizes="32x32">
 <link rel="apple-touch-icon" href="/assets/sattvalogo123.png">
 <link rel="canonical" href="https://www.sattvanation.com/programmes/">
 <meta property="og:title" content="Wellness Programmes &ndash; Sattva Nation">
-<meta property="og:description" content="Explore Sattva Nation's 8 dimensions of wellness programmes &mdash;&nbsp; physical, mental, emotional, social, financial, occupational, intellectual, and environmental wellbeing.">
+<meta property="og:description" content="Explore Sattva Nation's 8 dimensions of wellness programmes - physical, mental, emotional, social, financial, occupational, intellectual, and environmental wellbeing.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.sattvanation.com/programmes/">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://images.unsplash.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -55,6 +55,7 @@
     color: var(--text-mid); letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.2s;
   }
   .nav-links a:hover, .nav-links a.active-page { color: var(--pink-deep); }
+  .nav-links a.active-page:not(.nav-cta) { font-weight: 600; border-bottom: 2px solid var(--pink-deep); padding-bottom: 4px; }
   .nav-cta {
     background: var(--pink-deep); color: white !important;
     padding: 0.5rem 1.3rem; border-radius: 50px;
@@ -185,7 +186,7 @@
   .dim-nav {
     background: var(--pink-pale);
     padding: 1.5rem 5%;
-    position: sticky; top: 64px; z-index: 50;
+    position: sticky; top: 76px; z-index: 50;
     border-bottom: 1px solid #f4c0d1;
     border-top: 1px solid #f4c0d1;
   }
@@ -209,8 +210,8 @@
     padding: 6rem 5%;
     scroll-margin-top: 130px;
   }
-  .dimension-section:nth-child(odd) { background: var(--white); }
-  .dimension-section:nth-child(even) { background: var(--pink-pale); }
+  .dimension-section:nth-of-type(odd) { background: var(--white); }
+  .dimension-section:nth-of-type(even) { background: var(--pink-pale); }
 
   .dim-section-inner {
     display: grid;
@@ -218,8 +219,8 @@
     gap: 5rem;
     align-items: start;
   }
-  .dim-section-inner.reverse { flex-direction: row-reverse; }
-  .dim-section-inner.reverse > * { direction: ltr; }
+  .dim-section-inner.reverse > :first-child { order: 2; }
+  .dim-section-inner.reverse > :last-child { order: 1; }
 
   .dim-header { margin-bottom: 1.8rem; }
   .dim-badge {
@@ -394,12 +395,11 @@
       transition: right 0.3s ease;
     }
     .nav-links.active { right: 0; }
-    
-    .nav-toggle + .nav-links { display: flex; }
-    
+
     .intro { grid-template-columns: 1fr; gap: 3rem; }
     .dim-section-inner { grid-template-columns: 1fr; gap: 3rem; }
-    .dim-section-inner.reverse { direction: ltr; }
+    .dim-section-inner.reverse > :first-child { order: 0; }
+    .dim-section-inner.reverse > :last-child { order: 0; }
     .dim-visual-wrap { order: -1; }
     .dim-main-img { height: 300px; }
     .dim-float-card { left: 1rem; bottom: -1.2rem; }
@@ -634,7 +634,7 @@
   <div class="dim-section-inner reverse">
     <div class="reveal">
       <div class="dim-header">
-        <div class="dim-badge">🧠 Dimension 04</div>
+        <div class="dim-badge">🤝 Dimension 04</div>
         <h2 class="dim-title">Social <em>Wellness</em></h2>
       </div>
       <p class="dim-body">Human beings are naturally social, and the relationships we build with others play an important role in our overall well-being. Building healthy, supportive, and meaningful connections helps us navigate life's challenges with greater confidence and emotional balance.</p>
@@ -678,7 +678,7 @@
       <div class="dim-subheading">Our Financial Wellness Programs</div>
       <div class="sub-prog-grid">
         <div class="sub-prog-card">
-          <div class="sub-prog-name">🏋️ Money Management Workshop</div>
+          <div class="sub-prog-name">💰 Money Management Workshop</div>
           <div class="sub-prog-desc">Simple, practical, and engaging. Learn budgeting, expense tracking, savings, and everyday money management &mdash;&nbsp; designed for homemakers, students, and working professionals alike.</div>
         </div>
         <div class="sub-prog-card">
@@ -686,11 +686,11 @@
           <div class="sub-prog-desc">Gain confidence in making informed financial decisions. Learn to manage earnings, expenses, and savings while creating practical strategies to achieve your short and long-term goals.</div>
         </div>
         <div class="sub-prog-card">
-          <div class="sub-prog-name">🧠 Credit &amp; Financial Planning</div>
+          <div class="sub-prog-name">💳 Credit &amp; Financial Planning</div>
           <div class="sub-prog-desc">Focus on goal-based financial planning, money management, and basic investment awareness to help you make smarter financial choices for the future.</div>
         </div>
         <div class="sub-prog-card">
-          <div class="sub-prog-name">🧠 Startup &amp; Business Workshops</div>
+          <div class="sub-prog-name">💼 Startup &amp; Business Workshops</div>
           <div class="sub-prog-desc">Guidance for startups and aspiring entrepreneurs &mdash;&nbsp; sessions on setting up, managing, and growing a business with confidence.</div>
         </div>
         <div class="sub-prog-card">
@@ -813,7 +813,7 @@
       <div class="dim-subheading">Our Environmental Programs</div>
       <div class="sub-prog-grid">
         <div class="sub-prog-card">
-          <div class="sub-prog-name">🧠 Nature Tours</div>
+          <div class="sub-prog-name">🌿 Nature Tours</div>
           <div class="sub-prog-desc">Reconnect with nature through curated travel &mdash;&nbsp; from the unexplored hamlets of Himachal and Uttarakhand to Ladakh, Mt. Everest, Bhutan, Bali, and Europe.</div>
         </div>
         <div class="sub-prog-card">
@@ -862,9 +862,9 @@
   <div class="footer-logo">SattvaNation</div>
   <ul class="footer-links">
     <li><a href="/about-us/">About</a></li>
-    <li><a href="/programmes/">Programmes</a></li>
+  <li><a href="/programmes/" class="active-page">Programmes</a></li>
     <li><a href="/events/">Events</a></li>
-    <li><a href="/founders/">Mentors</a></li>
+    <li><a href="/founders/">Founders</a></li>
     <li><a href="/contact-us/">Contact</a></li>
     <li><a href="/blog/">Blog</a></li>
     <li><a href="/gallery/">Gallery</a></li>

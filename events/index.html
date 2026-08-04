@@ -55,6 +55,7 @@
     color: var(--text-mid); letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.2s;
   }
   .nav-links a:hover, .nav-links a.active-page { color: var(--pink-deep); }
+  .nav-links a.active-page:not(.nav-cta) { font-weight: 600; border-bottom: 2px solid var(--pink-deep); padding-bottom: 4px; }
   .nav-cta {
     background: var(--pink-deep); color: white !important;
     padding: 0.5rem 1.3rem; border-radius: 50px;
@@ -293,7 +294,7 @@
     transition: gap 0.2s;
   }
   .event-link:hover { gap: 8px; }
-  .event-link::after { content: '&ndash;'; }
+  .event-link::after { content: '\2013'; }
 
   /* PAST EVENTS */
   .past-events {
@@ -495,7 +496,7 @@
   .reveal.visible { opacity:1; transform:translateY(0); }
 
   /* RESPONSIVE */
-  @media (max-width: 1024px) {
+  @media (max-width: 960px) {
     .nav-toggle { display: flex; }
     
     .nav-links {
@@ -527,7 +528,6 @@
     .past-grid { grid-template-columns: 1fr; }
     .categories-grid { grid-template-columns: 1fr 1fr; }
     .page-hero { min-height: 60vh; }
-    .nav-links li:not(:last-child):not(:first-child) { display: block; }
   }
 </style>
 </head>
@@ -584,7 +584,7 @@
         <div class="event-img-overlay"></div>
         <div class="event-date-badge">
           <div class="event-date-day">15</div>
-          <div class="event-date-month">Aug 2025</div>
+          <div class="event-date-month">Aug 2026</div>
         </div>
         <div class="event-type-badge">Retreat</div>
       </div>
@@ -593,8 +593,8 @@
         <div class="event-meta">📍 Rishikesh, Uttarakhand &nbsp;|&nbsp; 🗓 3 Days</div>
         <div class="event-desc">A transformative 3-day retreat featuring yoga, meditation, sound healing, and nature immersion in the spiritual heart of India.</div>
         <div class="event-footer">
-          <div class="event-price">&ndash; ₹12,500 <span>onwards</span></div>
-          <a href="/events/" class="event-link">Details</a>
+          <div class="event-price">₹12,500 <span>onwards</span></div>
+          <a href="/contact-us/?event=rishikesh-retreat" class="event-link">Register</a>
         </div>
       </div>
     </div>
@@ -604,7 +604,7 @@
         <div class="event-img-overlay"></div>
         <div class="event-date-badge">
           <div class="event-date-day">22</div>
-          <div class="event-date-month">Sep 2025</div>
+          <div class="event-date-month">Sep 2026</div>
         </div>
         <div class="event-type-badge">Festival</div>
       </div>
@@ -613,8 +613,8 @@
         <div class="event-meta">📍 Anjuna, Goa &nbsp;|&nbsp; 🗓 2 Days</div>
         <div class="event-desc">India's premier wellness festival bringing together 50+ experts, workshops, music, and mindful experiences by the beach.</div>
         <div class="event-footer">
-          <div class="event-price">&ndash; ₹3,500 <span>onwards</span></div>
-          <a href="/events/" class="event-link">Details</a>
+          <div class="event-price">₹3,500 <span>onwards</span></div>
+          <a href="/contact-us/?event=goa-festival" class="event-link">Register</a>
         </div>
       </div>
     </div>
@@ -624,7 +624,7 @@
         <div class="event-img-overlay"></div>
         <div class="event-date-badge">
           <div class="event-date-day">05</div>
-          <div class="event-date-month">Oct 2025</div>
+          <div class="event-date-month">Oct 2026</div>
         </div>
         <div class="event-type-badge">Workshop</div>
       </div>
@@ -633,8 +633,8 @@
         <div class="event-meta">📍 New Delhi &nbsp;|&nbsp; 🗓 1 Day</div>
         <div class="event-desc">A corporate wellness workshop focused on stress management, mindful leadership, and building resilient teams.</div>
         <div class="event-footer">
-          <div class="event-price">&ndash; ₹4,500 <span>onwards</span></div>
-          <a href="/events/" class="event-link">Details</a>
+          <div class="event-price">₹4,500 <span>onwards</span></div>
+          <a href="/contact-us/?event=leadership-workshop" class="event-link">Register</a>
         </div>
       </div>
     </div>
@@ -644,7 +644,7 @@
         <div class="event-img-overlay"></div>
         <div class="event-date-badge">
           <div class="event-date-day">18</div>
-          <div class="event-date-month">Nov 2025</div>
+          <div class="event-date-month">Nov 2026</div>
         </div>
         <div class="event-type-badge">Retreat</div>
       </div>
@@ -653,18 +653,18 @@
         <div class="event-meta">📍 Manali, Himachal &nbsp;|&nbsp; 🗓 5 Days</div>
         <div class="event-desc">Deep healing amidst the Himalayas with Ayurveda, forest bathing, and guided meditation sessions.</div>
         <div class="event-footer">
-          <div class="event-price">&ndash; ₹18,000 <span>onwards</span></div>
-          <a href="/events/" class="event-link">Details</a>
+          <div class="event-price">₹18,000 <span>onwards</span></div>
+          <a href="/contact-us/?event=himalayan-retreat" class="event-link">Register</a>
         </div>
       </div>
     </div>
 
     <div class="event-card reveal">
-      <div class="event-img" style="background-image:url('https://images.unsplash.com/photo-1519823551278-4b0d9d3028eb2?w=600&q=80')">
+      <div class="event-img" style="background-image:url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80')">
         <div class="event-img-overlay"></div>
         <div class="event-date-badge">
           <div class="event-date-day">12</div>
-          <div class="event-date-month">Dec 2025</div>
+          <div class="event-date-month">Dec 2026</div>
         </div>
         <div class="event-type-badge">Workshop</div>
       </div>
@@ -673,8 +673,8 @@
         <div class="event-meta">📍 Bangalore &nbsp;|&nbsp; 🗓 2 Days</div>
         <div class="event-desc">Learn the art and science of sound healing with singing bowls, gongs, and vocal toning techniques.</div>
         <div class="event-footer">
-          <div class="event-price">&ndash; ₹8,500 <span>onwards</span></div>
-          <a href="/events/" class="event-link">Details</a>
+          <div class="event-price">₹8,500 <span>onwards</span></div>
+          <a href="/contact-us/?event=sound-healing" class="event-link">Register</a>
         </div>
       </div>
     </div>
@@ -684,7 +684,7 @@
         <div class="event-img-overlay"></div>
         <div class="event-date-badge">
           <div class="event-date-day">20</div>
-          <div class="event-date-month">Jan 2026</div>
+          <div class="event-date-month">Jan 2027</div>
         </div>
         <div class="event-type-badge">Festival</div>
       </div>
@@ -693,8 +693,8 @@
         <div class="event-meta">📍 Mumbai &nbsp;|&nbsp; 🗓 1 Day</div>
         <div class="event-desc">A day of movement, mindfulness, and community building featuring yoga marathons, nutrition talks, and wellness bazaar.</div>
         <div class="event-footer">
-          <div class="event-price">&ndash; ₹1,500 <span>onwards</span></div>
-          <a href="/events/" class="event-link">Details</a>
+          <div class="event-price">₹1,500 <span>onwards</span></div>
+          <a href="/contact-us/?event=wellness-marathon" class="event-link">Register</a>
         </div>
       </div>
     </div>
@@ -786,9 +786,8 @@
     <span class="section-tag">Stay Updated</span>
     <h2>Never Miss an <em>Event</em></h2>
     <p>Subscribe to our newsletter and be the first to know about upcoming retreats, workshops, and wellness festivals.</p>
-    <form class="newsletter-form" id="newsletterForm" action="https://formspree.io/f/mvgqzdrl" method="POST">
-      <input type="hidden" name="_subject" value="New Events Newsletter Subscription - Sattva Nation">
-      <input type="hidden" name="_cc" value="hello@sattvanation.com">
+    <form class="newsletter-form" id="newsletterForm" action="https://formspree.io/f/mvgqzdrl" method="POST" novalidate>
+      <input type="hidden" name="_subject" value="Newsletter Subscription - Sattva Nation Events">
       <input type="email" name="email" class="newsletter-input" placeholder="Enter your email" required>
       <button type="submit" class="btn-white">Subscribe</button>
     </form>
@@ -801,8 +800,8 @@
   <ul class="footer-links">
     <li><a href="/about-us/">About</a></li>
     <li><a href="/programmes/">Programmes</a></li>
-    <li><a href="/events/">Events</a></li>
-    <li><a href="/founders/">Mentors</a></li>
+  <li><a href="/events/" class="active-page">Events</a></li>
+    <li><a href="/founders/">Founders</a></li>
     <li><a href="/contact-us/">Contact</a></li>
     <li><a href="/blog/">Blog</a></li>
     <li><a href="/gallery/">Gallery</a></li>
@@ -845,12 +844,30 @@
     newsletterForm.addEventListener('submit', e => {
       e.preventDefault();
       const input = newsletterForm.querySelector('input[type="email"]');
-      if (input && input.value && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value)) {
-        alert('Thank you for subscribing! You will receive our updates soon.');
-        input.value = '';
-      } else if (input) {
+      const email = (input?.value || '').trim();
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
         alert('Please enter a valid email address.');
+        return;
       }
+      const submitBtn = newsletterForm.querySelector('button[type="submit"]');
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = 'Subscribing...';
+      submitBtn.disabled = true;
+
+      fetch(newsletterForm.action, {
+        method: 'POST',
+        body: new FormData(newsletterForm),
+        headers: { 'Accept': 'application/json' }
+      })
+        .then(r => { if (!r.ok) throw new Error('Network'); return r.json(); })
+        .then(() => {
+          newsletterForm.innerHTML = '<div style="color:#fff;padding:0.9rem 1.5rem;background:rgba(255,255,255,0.15);border-radius:50px;font-size:0.92rem;">✓ Thank you for subscribing!</div>';
+        })
+        .catch(() => {
+          submitBtn.textContent = originalText;
+          submitBtn.disabled = false;
+          alert('Sorry, something went wrong. Please email us directly at hello@sattvanation.com');
+        });
     });
   }
 })();

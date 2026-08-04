@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -63,7 +63,9 @@
     --sans: 'DM Sans', sans-serif;
   }
 
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+
+  :focus-visible { outline: 2px solid var(--pink-deep); outline-offset: 2px; }
 
   body {
     font-family: var(--sans);
@@ -100,6 +102,7 @@
     transition: color 0.2s;
   }
   .nav-links a:hover { color: var(--pink-deep); }
+  .nav-links a.active-page:not(.nav-cta) { color: var(--pink-deep); font-weight: 600; border-bottom: 2px solid var(--pink-deep); padding-bottom: 4px; }
   .nav-cta {
     background: var(--pink-deep);
     color: white !important;
@@ -641,7 +644,7 @@
     transition: gap 0.2s;
   }
   .prog-link:hover { gap: 8px; }
-  .prog-link::after { content: 'Rs.&ndash;&nbsp;&ndash;TM'; }
+  .prog-link::after { content: '→'; margin-left: 2px; }
 
   /* WHAT WE DO */
   .what-we-do {
@@ -784,10 +787,16 @@
   }
   .mentor-photo {
     width: 100%;
-    height: 220px;
-    background-size: cover;
-    background-position: center top;
+    height: 260px;
     position: relative;
+    overflow: hidden;
+  }
+  .mentor-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
   }
   .mentor-photo-overlay {
     position: absolute; inset: 0;
@@ -1125,7 +1134,7 @@
   box-shadow: 0 20px 50px rgba(194,24,91,0.2);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 960px) {
   .nav-toggle { display: flex; }
   
   .nav-links {
@@ -1159,6 +1168,24 @@
   .quote-box {
     font-size: 1.5rem;
   }
+
+  .about { grid-template-columns: 1fr; gap: 3rem; }
+  .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .wwd-grid { grid-template-columns: 1fr; }
+  .programs-grid { grid-template-columns: 1fr; }
+  .mentors-grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery-bento { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+  .gallery-item.tall { grid-row: span 1; }
+}
+@media (max-width: 640px) {
+  .prog-card { grid-template-columns: 1fr; }
+  .prog-img { width: 100%; height: 180px; }
+  .mentors-grid { grid-template-columns: 1fr; }
+  .gallery-bento { grid-template-columns: 1fr; }
+  .about-cards { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .hero-stat-chip { left: 5%; right: 5%; gap: 1rem; padding: 0.8rem 1rem; }
+  .thumbnail-strip { display: none; }
 }
 </style>
 </head>
@@ -1175,7 +1202,7 @@
     <span></span>
   </button>
  <ul class="nav-links" id="navLinks">
-  <li><a href="/">Home</a></li>
+  <li><a href="/" class="active-page">Home</a></li>
   <li><a href="/about-us/">About</a></li>
   <li><a href="/programmes/">Programmes</a></li>
   <li><a href="/events/">Events</a></li>
@@ -1226,7 +1253,7 @@
         <h2 class="slide-title">Feel. Try. <em>Explore.</em><br>Transform.</h2>
         <p class="slide-sub">We create spaces where you don't just sit and listen &mdash;&nbsp; you experience, discover, and take something back into everyday life.</p>
         <div class="slide-btns">
-          <a href="#events" class="btn-primary">View Events</a>
+          <a href="/events/" class="btn-primary">View Events</a>
           <a href="#contact" class="btn-outline">Join Us</a>
         </div>
       </div>
@@ -1461,7 +1488,7 @@
 </script>
 
 <!-- ABOUT US -->
-<section class="about-modern" id="about-us">
+<section class="about-modern" id="about">
 
   <div class="about-top">
     <span class="section-tag">About Us</span>
@@ -1542,10 +1569,10 @@
 
 </section>
 <!-- ABOUT -->
-<section class="about" id="about">
+<section class="about" id="philosophy">
   <div>
     <span class="section-tag">Who We Are</span>
-    <h2 class="section-title">Love. Refine.<br><em>Empower.</em></h2>
+    <h2 class="section-title">A Festival to <br><em>Celebrate Life.</em></h2>
     <p class="section-body">
       Sattva Nation is a festival to celebrate life and bring the best out of you. We host wellness festivals, conferences, corporate programmes, university events, and government collaborations &mdash;&nbsp; creating a shared platform where experts from diverse fields come together.
     </p>
@@ -1740,7 +1767,7 @@
 </section>
 
 <!-- GALLERY -->
-<section class="gallery" id="events">
+<section class="gallery" id="gallery">
   <div class="section-header">
     <span class="section-tag">Gallery</span>
     <h2 class="section-title">A Glimpse Into <em>Our World</em></h2>
@@ -1751,41 +1778,41 @@
 
   <div class="gallery-bento">
     <!-- Large tall card -->
-    <div class="gallery-item tall" style="background-image:url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=80')">
-      <div class="gallery-item-overlay"></div>
-      <div class="gallery-item-label">
-        <div class="gl-tag">Retreat</div>
-        <div class="gl-title">Wellness Retreat Fest, Goa</div>
-      </div>
-    </div>
-    <!-- Top-right 2 -->
-    <div class="gallery-item" style="background-image:url('https://images.unsplash.com/photo-1545389336-cf090694435e?w=600&q=80')">
-      <div class="gallery-item-overlay"></div>
-      <div class="gallery-item-label">
-        <div class="gl-tag">Meditation</div>
-        <div class="gl-title">Morning Practice Sessions</div>
-      </div>
-    </div>
-    <div class="gallery-item" style="background-image:url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80')">
-      <div class="gallery-item-overlay"></div>
-      <div class="gallery-item-label">
-        <div class="gl-tag">Fitness</div>
-        <div class="gl-title">Dance & Movement Workshops</div>
-      </div>
-    </div>
-    <!-- Bottom-right 2 -->
-    <div class="gallery-item" style="background-image:url('https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=600&q=80')">
+    <div class="gallery-item tall" style="background-image:url('/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(1).jpeg')">
       <div class="gallery-item-overlay"></div>
       <div class="gallery-item-label">
         <div class="gl-tag">Awards</div>
-        <div class="gl-title">Sattva Iconic Wellness Awards</div>
+        <div class="gl-title">Sattva Iconic Wellness Awards 3.0</div>
       </div>
     </div>
-    <div class="gallery-item" style="background-image:url('https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?w=600&q=80')">
+    <!-- Top-right 2 -->
+    <div class="gallery-item" style="background-image:url('/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%202.0/2-iconic-awards%20(1).jpeg')">
       <div class="gallery-item-overlay"></div>
       <div class="gallery-item-label">
-        <div class="gl-tag">Healing</div>
-        <div class="gl-title">Holistic Healing Experiences</div>
+        <div class="gl-tag">Awards</div>
+        <div class="gl-title">The Grand Return &mdash; Awards 2.0</div>
+      </div>
+    </div>
+    <div class="gallery-item" style="background-image:url('/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%201.0/1-iconic-awards%20(1).jpeg')">
+      <div class="gallery-item-overlay"></div>
+      <div class="gallery-item-label">
+        <div class="gl-tag">Awards</div>
+        <div class="gl-title">The Inaugural Celebration &mdash; Awards 1.0</div>
+      </div>
+    </div>
+    <!-- Bottom-right 2 -->
+    <div class="gallery-item" style="background-image:url('/SATTVA%20NATION%20COLLEGE%20WORKSHOPS/AMITY%20LAW%20SCHOOL/AMITY%20LAW%20SCHOOL%20(1).jpeg')">
+      <div class="gallery-item-overlay"></div>
+      <div class="gallery-item-label">
+        <div class="gl-tag">Workshops</div>
+        <div class="gl-title">College Wellness Workshops</div>
+      </div>
+    </div>
+    <div class="gallery-item" style="background-image:url('/SATTVA%20NATION%20COLLEGE%20WORKSHOPS/JIMS%20COLLEGE/JIMS%20COLLEGE%20(1).jpeg')">
+      <div class="gallery-item-overlay"></div>
+      <div class="gallery-item-label">
+        <div class="gl-tag">Community</div>
+        <div class="gl-title">Campus Community Sessions</div>
       </div>
     </div>
   </div>
@@ -1803,69 +1830,127 @@
   <div class="mentors-grid">
 
     <div class="mentor-card">
-      <div class="mentor-photo" style="background-image:url('https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&q=80')">
+      <div class="mentor-photo">
+        <img class="mentor-img" src="/assets/mentors/Dr.%20Mickey%20Mehta.jpeg" alt="Dr. Mickey Mehta" loading="lazy">
         <div class="mentor-photo-overlay"></div>
         <span class="mentor-badge">Holistic Health</span>
       </div>
       <div class="mentor-body">
-        <div class="mentor-name">Dr. Ananya Sharma</div>
-        <div class="mentor-field">Wellness &amp; Nutrition</div>
-        <div class="mentor-bio">15+ years guiding individuals toward balanced health through integrative medicine and mindful living.</div>
+        <div class="mentor-name">Dr. Mickey Mehta</div>
+        <div class="mentor-field">Holistic Health &amp; Fitness</div>
+        <div class="mentor-bio">Globally renowned holistic health guru guiding people toward mind, body, and spirit wellness.</div>
         <div class="mentor-socials">
-          <a class="mentor-social-btn" href="#" role="button" tabindex="0" aria-label="Social profile">in</a>
-          <a class="mentor-social-btn" href="#" role="button" tabindex="0" aria-label="Social profile">tw</a>
-          <a class="mentor-social-btn" href="#" role="button" tabindex="0" aria-label="Social profile">ig</a>
+          <a class="mentor-social-btn" href="https://in.linkedin.com/company/sattva-nation" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+          <a class="mentor-social-btn" href="https://x.com/sattvanation" target="_blank" rel="noopener" aria-label="Twitter">tw</a>
+          <a class="mentor-social-btn" href="https://www.instagram.com/sattvanation/" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
         </div>
       </div>
     </div>
 
     <div class="mentor-card">
-      <div class="mentor-photo" style="background-image:url('https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&q=80')">
+      <div class="mentor-photo">
+        <img class="mentor-img" src="/assets/mentors/Dr.%20Mukesh%20Batra.jpeg" alt="Dr. Mukesh Batra" loading="lazy">
         <div class="mentor-photo-overlay"></div>
-        <span class="mentor-badge">Mind &amp; Soul</span>
+        <span class="mentor-badge">Homeopathy</span>
       </div>
       <div class="mentor-body">
-        <div class="mentor-name">Arjun Mehta</div>
-        <div class="mentor-field">Mindfulness Coach</div>
-        <div class="mentor-bio">Certified meditation teacher helping professionals find calm and clarity in busy modern lives.</div>
+        <div class="mentor-name">Dr. Mukesh Batra</div>
+        <div class="mentor-field">Homeopathy &amp; Preventive Care</div>
+        <div class="mentor-bio">Padma Shri awardee and a pioneer of homeopathy and preventive wellness in India.</div>
         <div class="mentor-socials">
-          <a class="mentor-social-btn" href="#" role="button" tabindex="0" aria-label="Social profile">in</a>
-          <a class="mentor-social-btn" href="#" role="button" tabindex="0" aria-label="Social profile">tw</a>
-          <a class="mentor-social-btn" href="#" role="button" tabindex="0" aria-label="Social profile">ig</a>
+          <a class="mentor-social-btn" href="https://in.linkedin.com/company/sattva-nation" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+          <a class="mentor-social-btn" href="https://x.com/sattvanation" target="_blank" rel="noopener" aria-label="Twitter">tw</a>
+          <a class="mentor-social-btn" href="https://www.instagram.com/sattvanation/" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
         </div>
       </div>
     </div>
 
     <div class="mentor-card">
-      <div class="mentor-photo" style="background-image:url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80')">
+      <div class="mentor-photo">
+        <img class="mentor-img" src="/assets/mentors/Dr.%20Blossom%20Kochhar.jpg" alt="Dr. Blossom Kochhar" loading="lazy">
         <div class="mentor-photo-overlay"></div>
-        <span class="mentor-badge">Finance</span>
+        <span class="mentor-badge">Aromatherapy</span>
       </div>
       <div class="mentor-body">
-        <div class="mentor-name">Priya Kapoor</div>
-        <div class="mentor-field">Financial Wellness Advisor</div>
-        <div class="mentor-bio">Empowering women and families to build financial confidence and sustainable wealth habits.</div>
+        <div class="mentor-name">Dr. Blossom Kochhar</div>
+        <div class="mentor-field">Aromatherapy &amp; Beauty</div>
+        <div class="mentor-bio">A pioneer of aromatherapy and holistic beauty and wellbeing in India.</div>
         <div class="mentor-socials">
-          <a class="mentor-social-btn" href="#" role="button" tabindex="0" aria-label="Social profile">in</a>
-          <a class="mentor-social-btn" href="#" role="button" tabindex="0" aria-label="Social profile">tw</a>
-          <a class="mentor-social-btn" href="#" role="button" tabindex="0" aria-label="Social profile">ig</a>
+          <a class="mentor-social-btn" href="https://in.linkedin.com/company/sattva-nation" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+          <a class="mentor-social-btn" href="https://x.com/sattvanation" target="_blank" rel="noopener" aria-label="Twitter">tw</a>
+          <a class="mentor-social-btn" href="https://www.instagram.com/sattvanation/" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
         </div>
       </div>
     </div>
 
     <div class="mentor-card">
-      <div class="mentor-photo" style="background-image:url('https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?w=400&q=80')">
+      <div class="mentor-photo">
+        <img class="mentor-img" src="/assets/mentors/Dr.%20Deepa%20Malik.jpeg" alt="Dr. Deepa Malik" loading="lazy">
         <div class="mentor-photo-overlay"></div>
-        <span class="mentor-badge">Environment</span>
+        <span class="mentor-badge">Resilience</span>
       </div>
       <div class="mentor-body">
-        <div class="mentor-name">Rohit Nair</div>
-        <div class="mentor-field">Nature &amp; Eco Wellness</div>
-        <div class="mentor-bio">Connecting communities to nature through mindful outdoor experiences and sustainability education.</div>
+        <div class="mentor-name">Dr. Deepa Malik</div>
+        <div class="mentor-field">Motivation &amp; Resilience</div>
+        <div class="mentor-bio">Paralympic medallist and Padma Shri awardee championing resilience and inclusion.</div>
         <div class="mentor-socials">
-          <a class="mentor-social-btn" href="#" role="button" tabindex="0" aria-label="Social profile">in</a>
-          <a class="mentor-social-btn" href="#" role="button" tabindex="0" aria-label="Social profile">tw</a>
-          <a class="mentor-social-btn" href="#" role="button" tabindex="0" aria-label="Social profile">ig</a>
+          <a class="mentor-social-btn" href="https://in.linkedin.com/company/sattva-nation" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+          <a class="mentor-social-btn" href="https://x.com/sattvanation" target="_blank" rel="noopener" aria-label="Twitter">tw</a>
+          <a class="mentor-social-btn" href="https://www.instagram.com/sattvanation/" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mentor-card">
+      <div class="mentor-photo">
+        <img class="mentor-img" src="/assets/mentors/Dr.%20Niranjan%20Hiranandani.jpeg" alt="Dr. Niranjan Hiranandani" loading="lazy">
+        <div class="mentor-photo-overlay"></div>
+        <span class="mentor-badge">Leadership</span>
+      </div>
+      <div class="mentor-body">
+        <div class="mentor-name">Dr. Niranjan Hiranandani</div>
+        <div class="mentor-field">Business &amp; Leadership</div>
+        <div class="mentor-bio">Eminent entrepreneur and industry leader inspiring purpose-driven growth and success.</div>
+        <div class="mentor-socials">
+          <a class="mentor-social-btn" href="https://in.linkedin.com/company/sattva-nation" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+          <a class="mentor-social-btn" href="https://x.com/sattvanation" target="_blank" rel="noopener" aria-label="Twitter">tw</a>
+          <a class="mentor-social-btn" href="https://www.instagram.com/sattvanation/" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mentor-card">
+      <div class="mentor-photo">
+        <img class="mentor-img" src="/assets/mentors/Dr.%20Seema%20Midha.jpeg" alt="Dr. Seema Midha" loading="lazy">
+        <div class="mentor-photo-overlay"></div>
+        <span class="mentor-badge">Wellbeing</span>
+      </div>
+      <div class="mentor-body">
+        <div class="mentor-name">Dr. Seema Midha</div>
+        <div class="mentor-field">Holistic Wellbeing</div>
+        <div class="mentor-bio">Dedicated wellness practitioner helping people cultivate balance, health, and inner calm.</div>
+        <div class="mentor-socials">
+          <a class="mentor-social-btn" href="https://in.linkedin.com/company/sattva-nation" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+          <a class="mentor-social-btn" href="https://x.com/sattvanation" target="_blank" rel="noopener" aria-label="Twitter">tw</a>
+          <a class="mentor-social-btn" href="https://www.instagram.com/sattvanation/" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mentor-card">
+      <div class="mentor-photo">
+        <img class="mentor-img" src="/assets/mentors/Gurmit%20Singh%20Arora.jpeg" alt="Gurmit Singh Arora" loading="lazy">
+        <div class="mentor-photo-overlay"></div>
+        <span class="mentor-badge">Community</span>
+      </div>
+      <div class="mentor-body">
+        <div class="mentor-name">Gurmit Singh Arora</div>
+        <div class="mentor-field">Community &amp; Social Impact</div>
+        <div class="mentor-bio">Community leader driving social wellbeing, connection, and meaningful collective growth.</div>
+        <div class="mentor-socials">
+          <a class="mentor-social-btn" href="https://in.linkedin.com/company/sattva-nation" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+          <a class="mentor-social-btn" href="https://x.com/sattvanation" target="_blank" rel="noopener" aria-label="Twitter">tw</a>
+          <a class="mentor-social-btn" href="https://www.instagram.com/sattvanation/" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
         </div>
       </div>
     </div>
@@ -1901,15 +1986,15 @@
       </div>
     </div>
 
-    <form class="contact-form" id="contactForm" action="https://formspree.io/f/mvgqzdrl" method="POST">
+    <form class="contact-form" id="contactForm" action="https://formspree.io/f/mvgqzdrl" method="POST" novalidate>
       <input type="hidden" name="_subject" value="New Contact Form Submission - Sattva Nation">
       <input type="hidden" name="_cc" value="hello@sattvanation.com">
       <div class="form-row">
-        <input class="form-input" type="text" name="name" placeholder="Your Name" required>
-        <input class="form-input" type="email" name="email" placeholder="Email Address" required>
+        <input class="form-input" type="text" name="name" placeholder="Your Name" aria-label="Your name" required>
+        <input class="form-input" type="email" name="email" placeholder="Email Address" aria-label="Email address" required>
       </div>
-      <input class="form-input" type="text" name="interest" placeholder="I am a... (Speaker / Sponsor / Collaborator)">
-      <textarea class="form-input form-textarea" name="message" placeholder="What's on your mind?" required></textarea>
+      <input class="form-input" type="text" name="interest" placeholder="I am a... (Speaker / Sponsor / Collaborator)" aria-label="I am a (Speaker, Sponsor, or Collaborator)">
+      <textarea class="form-input form-textarea" name="message" placeholder="What's on your mind?" aria-label="Your message" required></textarea>
       <button class="btn-white" type="submit">Send Message</button>
     </form>
   </div>
@@ -1974,9 +2059,9 @@
       const name = contactForm.querySelector('[name="name"]')?.value || '';
       const email = contactForm.querySelector('[name="email"]')?.value || '';
       const msg = contactForm.querySelector('textarea')?.value || '';
-      if (!name || !email) { e.preventDefault(); alert('Please fill in your name and email.'); return; }
-
       e.preventDefault();
+      if (!name || !email || !msg) { alert('Please fill in your name, email, and message.'); return; }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { alert('Please enter a valid email address.'); return; }
       const submitBtn = contactForm.querySelector('button[type="submit"]');
       const originalText = submitBtn.textContent;
       submitBtn.textContent = 'Sending...';

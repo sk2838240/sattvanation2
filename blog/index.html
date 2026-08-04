@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://images.unsplash.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -35,8 +35,9 @@
     --sans: 'DM Sans', sans-serif;
   }
 
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; scroll-padding-top: 90px; }
   body { font-family: var(--sans); background: var(--white); color: var(--text-dark); }
+  :focus-visible { outline: 2px solid var(--pink-deep); outline-offset: 2px; }
 
   /* NAV */
   nav {
@@ -55,6 +56,7 @@
     color: var(--text-mid); letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.2s;
   }
   .nav-links a:hover, .nav-links a.active-page { color: var(--pink-deep); }
+  .nav-links a.active-page:not(.nav-cta) { font-weight: 600; border-bottom: 2px solid var(--pink-deep); padding-bottom: 4px; }
   .nav-cta {
     background: var(--pink-deep); color: white !important;
     padding: 0.5rem 1.3rem; border-radius: 50px;
@@ -158,11 +160,11 @@
     font-size: 0.8rem; font-weight: 500; color: var(--text-muted);
     text-transform: uppercase; letter-spacing: 0.08em; margin-right: 0.5rem;
   }
-  .filter-btn { button { all: unset; box-sizing: border-box; }}}\n  .filter-btn {
+  .filter-btn {
     padding: 0.45rem 1.1rem; border-radius: 50px; border: 1.5px solid #f4c0d1;
     background: white; font-size: 0.8rem; font-weight: 500;
     color: var(--text-mid); cursor: pointer;
-    transition: all 0.2s; text-decoration: none;
+    transition: all 0.2s; font-family: var(--sans);
   }
   .filter-btn:hover, .filter-btn.active {
     background: var(--pink-deep); border-color: var(--pink-deep); color: white;
@@ -264,7 +266,7 @@
   }
   .blog-card-title {
     font-family: var(--serif); font-size: 1.1rem; font-weight: 600;
-    color: var(--text-dark); line-height: 1.3; margin-bottom: 0.6rem;
+    color: var(--text-dark); line-height: 1.3; margin: 0 0 0.6rem;
   }
   .blog-card-title a {
     color: inherit; text-decoration: none;
@@ -301,7 +303,12 @@
     transition: gap 0.2s;
   }
   .read-more:hover { gap: 8px; }
-  .read-more::after { content: ' | Read More'; }
+
+  /* Coming soon badge replaces dead article links until individual posts exist */
+  .coming-soon {
+    font-size: 0.78rem; color: var(--text-muted); font-weight: 500;
+    font-style: italic; cursor: not-allowed; user-select: none;
+  }
 
   /* SIDEBAR */
   .sidebar-section {
@@ -406,13 +413,34 @@
 
   /* RESPONSIVE */
   @media (max-width: 960px) {
+    .nav-toggle { display: flex; }
+
+    .nav-links {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 280px;
+      height: 100vh;
+      background: white;
+      flex-direction: column;
+      padding: 80px 2rem 2rem;
+      gap: 1.5rem;
+      box-shadow: -4px 0 20px rgba(0,0,0,0.1);
+      transition: right 0.3s ease;
+    }
+    .nav-links.active { right: 0; }
+
+    .nav-links a {
+      font-size: 1rem;
+      padding: 0.5rem 0;
+    }
+
     .featured-inner { grid-template-columns: 1fr; gap: 2rem; }
     .sidebar-grid { grid-template-columns: 1fr; }
     .trending-widget { position: static; }
     .blog-grid { grid-template-columns: repeat(2, 1fr); }
   }
   @media (max-width: 640px) {
-    .nav-links li:not(:last-child):not(:first-child) { display: none; }
     .blog-grid { grid-template-columns: 1fr; }
     .page-hero { min-height: 60vh; }
   }
@@ -425,12 +453,18 @@
   <div class="logo">
     <img src="/assets/sattvalogo123.png" alt="Sattva Nation Logo" class="logo-img" width="160" height="40" />
   </div>
- <ul class="nav-links">
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+ <ul class="nav-links" id="navLinks">
   <li><a href="/">Home</a></li>
   <li><a href="/about-us/">About</a></li>
   <li><a href="/programmes/">Programmes</a></li>
   <li><a href="/events/">Events</a></li>
   <li><a href="/founders/">Founders</a></li>
+  <li><a href="/blog/" class="active-page">Blog</a></li>
   <li><a href="/contact-us/" class="nav-cta">Contact</a></li>
 </ul>
  </nav>
@@ -471,16 +505,16 @@
     </div>
     <div class="featured-content">
       <span class="post-category">Mindfulness</span>
-      <h2><a href="#">The Art of Mindful Living: Finding Stillness in a Chaotic World</a></h2>
+      <h2>The Art of Mindful Living: Finding Stillness in a Chaotic World</h2>
       <div class="post-meta">
         <span>June 2, 2026</span>
         <span>8 min read</span>
-        <span>Priya Sharma</span>
+        <span>Priya Kapoor</span>
       </div>
       <p class="post-excerpt">
         In a world that celebrates constant motion and endless productivity, the practice of mindfulness offers a radical pause. It is not about stopping life — it is about stepping into life more fully, with presence and intention. Discover how small daily rituals can transform your relationship with yourself and the world around you.
       </p>
-      <a href="#" class="btn-primary">Read Article</a>
+      <a href="#newsletter" class="btn-primary">Get Notified When Published</a>
     </div>
   </div>
 </section>
@@ -497,7 +531,7 @@
           </div>
           <div class="blog-card-body">
             <span class="blog-card-category">Yoga</span>
-            <div class="blog-card-title"><a href="#">5 Morning Yoga Poses That Take Just 10 Minutes</a></div>
+            <h3 class="blog-card-title">5 Morning Yoga Poses That Take Just 10 Minutes</h3>
             <div class="blog-card-meta">May 28, 2026 &nbsp;|&nbsp; 6 min read</div>
             <p class="blog-card-excerpt">Starting your day with even a brief yoga practice can shift your entire state of being. Here are five gentle yet powerful poses to awaken body and mind.</p>
             <div class="blog-card-footer">
@@ -505,7 +539,7 @@
                 <div class="blog-author-avatar" style="background-image:url('https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=100&q=80')"></div>
                 <span class="blog-author-name">Dr. Ananya</span>
               </div>
-              <a href="#" class="read-more">Read</a>
+              <span class="coming-soon" title="Full article coming soon">Coming Soon</span>
             </div>
           </div>
         </div>
@@ -516,7 +550,7 @@
           </div>
           <div class="blog-card-body">
             <span class="blog-card-category">Nutrition</span>
-            <div class="blog-card-title"><a href="#">Eating With Intention: A Beginner's Guide to Mindful Eating</a></div>
+            <h3 class="blog-card-title">Eating With Intention: A Beginner's Guide to Mindful Eating</h3>
             <div class="blog-card-meta">May 21, 2026 &nbsp;|&nbsp; 7 min read</div>
             <p class="blog-card-excerpt">What you eat matters, but so does how you eat. Mindful eating transforms meals from rushed obligations into nourishing rituals of self-care.</p>
             <div class="blog-card-footer">
@@ -524,7 +558,7 @@
                 <div class="blog-author-avatar" style="background-image:url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&q=80')"></div>
                 <span class="blog-author-name">Priya Kapoor</span>
               </div>
-              <a href="#" class="read-more">Read</a>
+              <span class="coming-soon" title="Full article coming soon">Coming Soon</span>
             </div>
           </div>
         </div>
@@ -535,7 +569,7 @@
           </div>
           <div class="blog-card-body">
             <span class="blog-card-category">Mental Health</span>
-            <div class="blog-card-title"><a href="#">Breaking the Stigma: Why Talking About Mental Health Matters</a></div>
+            <h3 class="blog-card-title">Breaking the Stigma: Why Talking About Mental Health Matters</h3>
             <div class="blog-card-meta">May 14, 2026 &nbsp;|&nbsp; 9 min read</div>
             <p class="blog-card-excerpt">Mental health is not a luxury — it is a fundamental part of our wellbeing. Opening up about emotional wellness creates ripple effects of healing.</p>
             <div class="blog-card-footer">
@@ -543,7 +577,7 @@
                 <div class="blog-author-avatar" style="background-image:url('https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&q=80')"></div>
                 <span class="blog-author-name">Arjun Mehta</span>
               </div>
-              <a href="#" class="read-more">Read</a>
+              <span class="coming-soon" title="Full article coming soon">Coming Soon</span>
             </div>
           </div>
         </div>
@@ -554,7 +588,7 @@
           </div>
           <div class="blog-card-body">
             <span class="blog-card-category">Financial Wellness</span>
-            <div class="blog-card-title"><a href="#">Money and Mindfulness: Building a Healthy Relationship with Finances</a></div>
+            <h3 class="blog-card-title">Money and Mindfulness: Building a Healthy Relationship with Finances</h3>
             <div class="blog-card-meta">May 7, 2026 &nbsp;|&nbsp; 8 min read</div>
             <p class="blog-card-excerpt">Financial stress affects every dimension of wellness. Learn how mindfulness practices can help you make calmer, wiser decisions around money.</p>
             <div class="blog-card-footer">
@@ -562,26 +596,26 @@
                 <div class="blog-author-avatar" style="background-image:url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&q=80')"></div>
                 <span class="blog-author-name">Priya Kapoor</span>
               </div>
-              <a href="#" class="read-more">Read</a>
+              <span class="coming-soon" title="Full article coming soon">Coming Soon</span>
             </div>
           </div>
         </div>
 
-        <div class="blog-card reveal" data-category="environment">
+        <div class="blog-card reveal" data-category="mindfulness">
           <div class="blog-card-img" style="background-image:url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&q=80')">
             <div class="blog-card-img-overlay"></div>
           </div>
           <div class="blog-card-body">
-            <span class="blog-card-category">Environment</span>
-            <div class="blog-card-title"><a href="#">Nature as Medicine: How Spending Time Outdoors Heals Body and Mind</a></div>
+            <span class="blog-card-category">Mindfulness</span>
+            <h3 class="blog-card-title">Nature as Medicine: How Forest Bathing Calms an Anxious Mind</h3>
             <div class="blog-card-meta">April 30, 2026 &nbsp;|&nbsp; 6 min read</div>
-            <p class="blog-card-excerpt">From forest bathing in Japan to sunrise walks in the Himalayas, connecting with nature is one of the most accessible and powerful wellness tools.</p>
+            <p class="blog-card-excerpt">From forest bathing in Japan to sunrise walks in the Himalayas, mindful time in nature is one of the most accessible and powerful meditation practices.</p>
             <div class="blog-card-footer">
               <div class="blog-author">
                 <div class="blog-author-avatar" style="background-image:url('https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?w=100&q=80')"></div>
                 <span class="blog-author-name">Rohit Nair</span>
               </div>
-              <a href="#" class="read-more">Read</a>
+              <span class="coming-soon" title="Full article coming soon">Coming Soon</span>
             </div>
           </div>
         </div>
@@ -592,7 +626,7 @@
           </div>
           <div class="blog-card-body">
             <span class="blog-card-category">Community</span>
-            <div class="blog-card-title"><a href="#">Why Community Is the Most Underrated Wellness Tool</a></div>
+            <h3 class="blog-card-title">Why Community Is the Most Underrated Wellness Tool</h3>
             <div class="blog-card-meta">April 23, 2026 &nbsp;|&nbsp; 7 min read</div>
             <p class="blog-card-excerpt">Human beings are wired for connection. Discover why meaningful community is the secret ingredient most wellness journeys are missing.</p>
             <div class="blog-card-footer">
@@ -600,7 +634,7 @@
                 <div class="blog-author-avatar" style="background-image:url('https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&q=80')"></div>
                 <span class="blog-author-name">Arjun Mehta</span>
               </div>
-              <a href="#" class="read-more">Read</a>
+              <span class="coming-soon" title="Full article coming soon">Coming Soon</span>
             </div>
           </div>
         </div>
@@ -617,35 +651,35 @@
           <div class="trending-num">01</div>
           <div class="trending-content">
             <div class="trend-category">Mindfulness</div>
-            <div class="trend-title"><a href="#">The Art of Mindful Living</a></div>
+            <div class="trend-title">The Art of Mindful Living</div>
           </div>
         </div>
         <div class="trending-item">
           <div class="trending-num">02</div>
           <div class="trending-content">
             <div class="trend-category">Mental Health</div>
-            <div class="trend-title"><a href="#">Breaking the Stigma Around Mental Health</a></div>
+            <div class="trend-title">Breaking the Stigma Around Mental Health</div>
           </div>
         </div>
         <div class="trending-item">
           <div class="trending-num">03</div>
           <div class="trending-content">
             <div class="trend-category">Nutrition</div>
-            <div class="trend-title"><a href="#">Eating With Intention: Mindful Eating Guide</a></div>
+            <div class="trend-title">Eating With Intention: Mindful Eating Guide</div>
           </div>
         </div>
         <div class="trending-item">
           <div class="trending-num">04</div>
           <div class="trending-content">
             <div class="trend-category">Financial Wellness</div>
-            <div class="trend-title"><a href="#">Money and Mindfulness</a></div>
+            <div class="trend-title">Money and Mindfulness</div>
           </div>
         </div>
         <div class="trending-item">
           <div class="trending-num">05</div>
           <div class="trending-content">
             <div class="trend-category">Yoga</div>
-            <div class="trend-title"><a href="#">5 Morning Yoga Poses in 10 Minutes</a></div>
+            <div class="trend-title">5 Morning Yoga Poses in 10 Minutes</div>
           </div>
         </div>
       </div>
@@ -654,14 +688,13 @@
 </section>
 
 <!-- NEWSLETTER -->
-<section class="newsletter">
+<section class="newsletter" id="newsletter">
   <div class="newsletter-inner reveal">
     <span class="section-tag">Stay Inspired</span>
     <h2>Get Wellness Wisdom <em>Delivered</em></h2>
     <p>Subscribe to our blog newsletter and receive weekly wellness tips, mindfulness guides, and inspiration straight to your inbox.</p>
-    <form class="newsletter-form" id="blogNewsletter" action="https://formspree.io/f/mvgqzdrl" method="POST">
-      <input type="hidden" name="_subject" value="New Blog Newsletter Subscription - Sattva Nation">
-      <input type="hidden" name="_cc" value="hello@sattvanation.com">
+    <form class="newsletter-form" id="blogNewsletter" action="https://formspree.io/f/mvgqzdrl" method="POST" novalidate>
+      <input type="hidden" name="_subject" value="Newsletter Subscription - Sattva Nation Blog">
       <input type="email" name="email" class="newsletter-input" placeholder="Enter your email" aria-label="Email address" required>
       <button type="submit" class="btn-white">Subscribe</button>
     </form>
@@ -684,6 +717,34 @@
 </footer>
 
 <script>
+// Mobile nav toggle
+(function() {
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  if (toggle && links) {
+    toggle.addEventListener('click', () => {
+      toggle.classList.toggle('active');
+      links.classList.toggle('active');
+      toggle.setAttribute('aria-expanded', toggle.classList.contains('active'));
+    });
+    links.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        toggle.classList.remove('active');
+        links.classList.remove('active');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && links.classList.contains('active')) {
+        toggle.classList.remove('active');
+        links.classList.remove('active');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.focus();
+      }
+    });
+  }
+})();
+
 (function() {
   const reveals = document.querySelectorAll('.reveal');
   const io = new IntersectionObserver(entries => {
@@ -696,17 +757,12 @@
   const filterBtns = document.querySelectorAll('.filter-btn');
   const blogCards = document.querySelectorAll('.blog-card');
   filterBtns.forEach(btn => {
-    btn.addEventListener('click', e => {
-      e.preventDefault();
+    btn.addEventListener('click', () => {
       filterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       const cat = btn.dataset.category;
       blogCards.forEach(card => {
-        if (cat === 'all' || card.dataset.category === cat) {
-          card.style.display = '';
-        } else {
-          card.style.display = 'none';
-        }
+        card.style.display = (cat === 'all' || card.dataset.category === cat) ? '' : 'none';
       });
     });
   });
@@ -716,12 +772,30 @@
     newsletterForm.addEventListener('submit', e => {
       e.preventDefault();
       const input = newsletterForm.querySelector('input[type="email"]');
-      if (input && input.value && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value)) {
-        alert('Thank you for subscribing! You will receive our wellness blog updates soon.');
-        input.value = '';
-      } else if (input) {
+      const email = (input?.value || '').trim();
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
         alert('Please enter a valid email address.');
+        return;
       }
+      const submitBtn = newsletterForm.querySelector('button[type="submit"]');
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = 'Subscribing...';
+      submitBtn.disabled = true;
+
+      fetch(newsletterForm.action, {
+        method: 'POST',
+        body: new FormData(newsletterForm),
+        headers: { 'Accept': 'application/json' }
+      })
+        .then(r => { if (!r.ok) throw new Error('Network'); return r.json(); })
+        .then(() => {
+          newsletterForm.innerHTML = '<div style="color:#fff;padding:0.9rem 1.5rem;background:rgba(255,255,255,0.15);border-radius:50px;font-size:0.92rem;">✓ Thank you for subscribing!</div>';
+        })
+        .catch(() => {
+          submitBtn.textContent = originalText;
+          submitBtn.disabled = false;
+          alert('Sorry, something went wrong. Please email us directly at hello@sattvanation.com');
+        });
     });
   }
 })();

@@ -5,19 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#c2185b">
 <title>Contact Us - Sattva Nation</title>
-<meta name="description" content="Get in touch with Sattva Nation. Whether you're a speaker, sponsor, collaborator, or wellness seeker &mdash;&nbsp; we'd love to connect.">
+<meta name="description" content="Get in touch with Sattva Nation. Whether you're a speaker, sponsor, collaborator, or wellness seeker - we'd love to connect.">
 <link rel="icon" type="image/png" href="/assets/sattvalogo123.png" sizes="32x32">
 <link rel="apple-touch-icon" href="/assets/sattvalogo123.png">
 <link rel="canonical" href="https://www.sattvanation.com/contact-us/">
 <meta property="og:title" content="Contact Us - Sattva Nation">
-<meta property="og:description" content="Get in touch with Sattva Nation. Whether you're a speaker, sponsor, collaborator, or wellness seeker &mdash;&nbsp; we'd love to connect.">
+<meta property="og:description" content="Get in touch with Sattva Nation. Whether you're a speaker, sponsor, collaborator, or wellness seeker - we'd love to connect.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.sattvanation.com/contact-us/">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://images.unsplash.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -35,8 +35,9 @@
     --sans: 'DM Sans', sans-serif;
   }
 
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; scroll-padding-top: 90px; }
   body { font-family: var(--sans); background: var(--white); color: var(--text-dark); }
+  :focus-visible { outline: 2px solid var(--pink-deep); outline-offset: 2px; }
 
   /* NAV */
   nav {
@@ -55,6 +56,8 @@
     color: var(--text-mid); letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.2s;
   }
   .nav-links a:hover, .nav-links a.active-page { color: var(--pink-deep); }
+  .nav-links a.active-page:not(.nav-cta) { font-weight: 600; border-bottom: 2px solid var(--pink-deep); padding-bottom: 4px; }
+  .nav-cta.active-page { background: #a31150 !important; }
   .nav-cta {
     background: var(--pink-deep); color: white !important;
     padding: 0.5rem 1.3rem; border-radius: 50px;
@@ -516,7 +519,6 @@
   }
   @media (max-width: 640px) {
     .page-hero { min-height: 60vh; }
-    .nav-links li:not(:last-child):not(:first-child) { display: block; }
     .contact-form-wrap { padding: 1.8rem; }
   }
 </style>
@@ -539,7 +541,7 @@
   <li><a href="/programmes/">Programmes</a></li>
   <li><a href="/events/">Events</a></li>
   <li><a href="/founders/">Founders</a></li>
-  <li><a href="/contact-us/" class="nav-cta">Contact</a></li>
+  <li><a href="/contact-us/" class="nav-cta active-page">Contact</a></li>
 </ul>
  </nav>
 
@@ -553,7 +555,7 @@
   </div>
   <div class="breadcrumb">
     <a href="/">Home</a>
-    <span style="margin:0 4px;">&ndash;</span>
+    <span style="margin:0 4px;">|</span>
     <span>Contact Us</span>
   </div>
 </section>
@@ -584,7 +586,7 @@
         <div class="info-icon">📱</div>
         <div class="info-content">
           <h4>Social Media</h4>
-          <a href="https://www.instagram.com/sattvanation/" target="_blank">@sattvanation</a>
+          <a href="https://www.instagram.com/sattvanation/" target="_blank" rel="noopener">@sattvanation</a>
         </div>
       </div>
       <div class="info-card">
@@ -599,11 +601,11 @@
     <div class="social-links">
       <h4>Follow Our Journey</h4>
       <div class="social-btns">
-        <a href="https://www.instagram.com/sattvanation/" class="social-btn" aria-label="Instagram" target="_blank">IG</a>
-        <a href="https://www.facebook.com/sattvanation/" class="social-btn" aria-label="Facebook" target="_blank">FB</a>
-        <a href="https://in.linkedin.com/company/sattva-nation" class="social-btn" aria-label="LinkedIn" target="_blank">LI</a>
-        <a href="https://x.com/sattvanation" class="social-btn" aria-label="Twitter" target="_blank">TW</a>
-        <a href="https://www.youtube.com/@sattvanation" class="social-btn" aria-label="YouTube" target="_blank">YT</a>
+        <a href="https://www.instagram.com/sattvanation/" class="social-btn" aria-label="Instagram" target="_blank" rel="noopener">IG</a>
+        <a href="https://www.facebook.com/sattvanation/" class="social-btn" aria-label="Facebook" target="_blank" rel="noopener">FB</a>
+        <a href="https://in.linkedin.com/company/sattva-nation" class="social-btn" aria-label="LinkedIn" target="_blank" rel="noopener">LI</a>
+        <a href="https://x.com/sattvanation" class="social-btn" aria-label="Twitter" target="_blank" rel="noopener">TW</a>
+        <a href="https://www.youtube.com/@sattvanation" class="social-btn" aria-label="YouTube" target="_blank" rel="noopener">YT</a>
       </div>
     </div>
   </div>
@@ -611,32 +613,32 @@
   <div class="contact-form-wrap reveal">
     <h3>Send a Message</h3>
     <p>Fill out the form below and we'll get back to you within 24 hours.</p>
-    <form id="contactForm" action="https://formspree.io/f/mvgqzdrl" method="POST">
+    <form id="contactForm" action="https://formspree.io/f/mvgqzdrl" method="POST" novalidate>
       <input type="hidden" name="_subject" value="New Contact Form Submission - Sattva Nation">
       <input type="hidden" name="_cc" value="hello@sattvanation.com">
       <input type="hidden" name="_template" value="table">
       <div class="form-row">
         <div class="form-group">
           <label for="firstName">First Name</label>
-          <input type="text" id="firstName" class="form-input" placeholder="Your first name">
+          <input type="text" id="firstName" name="firstName" class="form-input" placeholder="Your first name" required>
         </div>
         <div class="form-group">
           <label for="lastName">Last Name</label>
-          <input type="text" id="lastName" class="form-input" placeholder="Your last name">
+          <input type="text" id="lastName" name="lastName" class="form-input" placeholder="Your last name" required>
         </div>
       </div>
       <div class="form-group">
         <label for="email">Email Address</label>
-        <input type="email" id="email" class="form-input" placeholder="you@example.com">
+        <input type="email" id="email" name="email" class="form-input" placeholder="you@example.com" required>
       </div>
       <div class="form-row">
         <div class="form-group">
           <label for="phone">Phone (Optional)</label>
-          <input type="tel" id="phone" class="form-input" placeholder="+91 00000 00000">
+          <input type="tel" id="phone" name="phone" class="form-input" placeholder="+91 00000 00000">
         </div>
         <div class="form-group">
           <label for="interest">I am a</label>
-          <select id="interest" class="form-input form-select">
+          <select id="interest" name="interest" class="form-input form-select">
             <option>Wellness Seeker</option>
             <option>Speaker / Expert</option>
             <option>Sponsor / Partner</option>
@@ -649,11 +651,11 @@
       </div>
       <div class="form-group">
         <label for="subject">Subject</label>
-        <input type="text" id="subject" class="form-input" placeholder="What's this about?">
+        <input type="text" id="subject" name="subject" class="form-input" placeholder="What's this about?" required>
       </div>
       <div class="form-group">
         <label for="message">Message</label>
-        <textarea id="message" class="form-input form-textarea" placeholder="Tell us what's on your mind..."></textarea>
+        <textarea id="message" name="message" class="form-input form-textarea" placeholder="Tell us what's on your mind..." required></textarea>
       </div>
       <button type="submit" class="submit-btn">Send Message</button>
     </form>
@@ -670,6 +672,7 @@
       style="border:0;"
       allowfullscreen=""
       loading="lazy"
+      title="Map showing Sattva Nation location in New Delhi, India"
       referrerpolicy="no-referrer-when-downgrade">
     </iframe>
   </div>
@@ -724,7 +727,7 @@
     <li><a href="/about-us/">About</a></li>
     <li><a href="/programmes/">Programmes</a></li>
     <li><a href="/events/">Events</a></li>
-    <li><a href="/founders/">Mentors</a></li>
+    <li><a href="/founders/">Founders</a></li>
     <li><a href="/contact-us/">Contact</a></li>
     <li><a href="/blog/">Blog</a></li>
     <li><a href="/gallery/">Gallery</a></li>
@@ -764,23 +767,50 @@
 
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
+    // Pre-fill subject/interest from ?event= URL query (used by event register buttons)
+    const params = new URLSearchParams(location.search);
+    const eventSlug = params.get('event');
+    if (eventSlug) {
+      const interest = contactForm.querySelector('#interest');
+      const subject = contactForm.querySelector('#subject');
+      if (interest) interest.value = 'Wellness Seeker';
+      if (subject) subject.value = 'Registration: ' + eventSlug.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+      setTimeout(() => { contactForm.scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 300);
+    }
+
     contactForm.addEventListener('submit', e => {
-      const firstName = contactForm.querySelector('#firstName')?.value?.trim();
-      const lastName = contactForm.querySelector('#lastName')?.value?.trim();
-      const email = contactForm.querySelector('#email')?.value?.trim();
-      const message = contactForm.querySelector('#message')?.value?.trim();
+      e.preventDefault();
+      const firstName = contactForm.firstName.value.trim();
+      const email = contactForm.email.value.trim();
+      const message = contactForm.message.value.trim();
       if (!firstName || !email || !message) {
-        e.preventDefault();
-        alert('Please fill in your name, email, and message.');
+        contactForm.reportValidity();
         return;
       }
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        e.preventDefault();
         alert('Please enter a valid email address.');
         return;
       }
-      // Form will submit naturally to Formspree
-      alert('Thank you, ' + firstName + '! Your message is being sent...');
+      const submitBtn = contactForm.querySelector('.submit-btn');
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = 'Sending...';
+      submitBtn.disabled = true;
+
+      fetch(contactForm.action, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: { 'Accept': 'application/json' }
+      })
+        .then(r => { if (!r.ok) throw new Error('Network'); return r.json(); })
+        .then(() => {
+          contactForm.reset();
+          contactForm.innerHTML = '<div style="text-align:center;padding:2rem 1rem;"><div style="font-size:2.5rem;margin-bottom:0.8rem;color:var(--pink-deep);">&#10003;</div><h3 style="font-family:var(--serif);color:var(--text-dark);margin-bottom:0.5rem;">Message Sent!</h3><p style="color:var(--text-mid);">Thank you for reaching out, ' + firstName + '. We\'ll get back to you soon.</p></div>';
+        })
+        .catch(() => {
+          submitBtn.textContent = originalText;
+          submitBtn.disabled = false;
+          alert('Sorry, something went wrong. Please email us directly at hello@sattvanation.com');
+        });
     });
   }
 })();

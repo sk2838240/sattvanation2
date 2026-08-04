@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://images.unsplash.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -35,8 +35,9 @@
     --sans: 'DM Sans', sans-serif;
   }
 
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; scroll-padding-top: 90px; }
   body { font-family: var(--sans); background: var(--white); color: var(--text-dark); }
+  :focus-visible { outline: 2px solid var(--pink-deep); outline-offset: 2px; }
 
   /* NAV */
   nav {
@@ -55,6 +56,7 @@
     color: var(--text-mid); letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.2s;
   }
   .nav-links a:hover { color: var(--pink-deep); }
+  .nav-links a.active-page { color: var(--pink-deep); font-weight: 600; border-bottom: 2px solid var(--pink-deep); padding-bottom: 4px; }
   .nav-cta {
     background: var(--pink-deep); color: white !important;
     padding: 0.5rem 1.3rem; border-radius: 50px;
@@ -394,8 +396,7 @@
     display: flex; align-items: center; justify-content: center;
     opacity: 0; visibility: hidden;
     transition: opacity 0.35s, visibility 0.35s;
-  }
-  .lightbox.active { opacity: 1; visibility: visible; }
+  }  .lightbox.active { opacity: 1; visibility: visible; }
   .lightbox-img {
     max-width: 90vw; max-height: 85vh; border-radius: 14px; object-fit: contain;
     box-shadow: 0 30px 80px rgba(0,0,0,0.6);
@@ -568,7 +569,7 @@
 <!-- NAV -->
 <nav>
   <div class="logo">
-    <img loading="lazy" src="/assets/sattvalogo123.png" alt="Sattva Nation Logo" class="logo-img" width="160" height="40" />
+    <img src="/assets/sattvalogo123.png" alt="Sattva Nation Logo" class="logo-img" width="160" height="40" />
   </div>
   <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
     <span></span>
@@ -581,6 +582,7 @@
     <li><a href="/programmes/">Programmes</a></li>
     <li><a href="/events/">Events</a></li>
     <li><a href="/founders/">Founders</a></li>
+    <li><a href="/gallery/" class="active-page">Gallery</a></li>
     <li><a href="/contact-us/" class="nav-cta">Contact</a></li>
   </ul>
 </nav>
@@ -607,19 +609,18 @@
 
 <!-- FILTER BAR -->
 <div class="filter-bar">
-  <span class="filter-label">Filter by:</span>
-  <button type="button" class="filter-btn active" data-category="all">All</button>
-  <button type="button" class="filter-btn" data-category="retreats">Retreats</button>
-  <button type="button" class="filter-btn" data-category="festivals">Festivals</button>
-  <button type="button" class="filter-btn" data-category="workshops">Workshops</button>
-  <button type="button" class="filter-btn" data-category="community">Community</button>
-  <button type="button" class="filter-btn" data-category="awards">Awards</button>
+  <span class="filter-label">Jump to:</span>
+  <button type="button" class="filter-btn active" data-category="awards1">Awards 1.0</button>
+  <button type="button" class="filter-btn" data-category="awards2">Awards 2.0</button>
+  <button type="button" class="filter-btn" data-category="awards3">Awards 3.0</button>
+  <button type="button" class="filter-btn" data-category="workshops">College Workshops</button>
+  <button type="button" class="filter-btn" data-category="videos">Videos</button>
 </div>
 
 <!--  AWARDS 1.0: BENTO GRID  -->
 <section class="awards1-section">
   <div class="awards1-header">
-    <span class="awards1-badge">| 2024</span>
+    <span class="awards1-badge">✦ 2024</span>
     <span class="section-tag">Sattva Iconic Awards 1.0</span>
     <h2>The Inaugural <em>Celebration</em></h2>
     <p>Where it all began. Our first wellness awards honoured exceptional individuals shaping the wellness landscape across India.</p>
@@ -627,75 +628,75 @@
 
   <div class="gallery-bento">
     <div class="gallery-item tall" data-caption="Sattva Iconic Awards 1.0 - Opening Ceremony">
-      <img loading="lazy" src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%201.0/1-iconic-awards%20(1).jpeg" alt="Opening Ceremony">
+      <img loading="lazy" src="/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%201.0/1-iconic-awards%20(1).jpeg" alt="Opening Ceremony">
       <div class="gallery-item-overlay"></div>
       <div class="gallery-item-label">
         <div class="gl-tag">Awards</div>
         <div class="gl-title">Opening Ceremony</div>
-        <div class="gl-sub">December 2024 , Mumbai</div>
+        <div class="gl-sub">December 2024, Mumbai</div>
       </div>
     </div>
     <div class="gallery-item wide" data-caption="Sattva Iconic Awards 1.0 - Keynote Address">
-      <img loading="lazy" src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%201.0/1-iconic-awards%20(2).jpeg" alt="Keynote Address">
+      <img loading="lazy" src="/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%201.0/1-iconic-awards%20(2).jpeg" alt="Keynote Address">
       <div class="gallery-item-overlay"></div>
       <div class="gallery-item-label">
         <div class="gl-tag">Keynote</div>
         <div class="gl-title">Keynote Address</div>
-        <div class="gl-sub">December 2024 , Mumbai</div>
+        <div class="gl-sub">December 2024, Mumbai</div>
       </div>
     </div>
     <div class="gallery-item" data-caption="Sattva Iconic Awards 1.0 - Winner Stage">
-      <img loading="lazy" src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%201.0/1-iconic-awards%20(3).jpeg" alt="Winner on Stage">
+      <img loading="lazy" src="/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%201.0/1-iconic-awards%20(3).jpeg" alt="Winner on Stage">
       <div class="gallery-item-overlay"></div>
       <div class="gallery-item-label">
         <div class="gl-tag">Awards</div>
         <div class="gl-title">Winner on Stage</div>
-        <div class="gl-sub">December 2024 , Mumbai</div>
+        <div class="gl-sub">December 2024, Mumbai</div>
       </div>
     </div>
     <div class="gallery-item" data-caption="Sattva Iconic Awards 1.0 - Audience">
-      <img src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%201.0/1-iconic-awards%20(4).jpeg" alt="The Audience" loading="lazy">
+      <img src="/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%201.0/1-iconic-awards%20(4).jpeg" alt="The Audience" loading="lazy">
       <div class="gallery-item-overlay"></div>
       <div class="gallery-item-label">
         <div class="gl-tag">Community</div>
         <div class="gl-title">The Audience</div>
-        <div class="gl-sub">December 2024 , Mumbai</div>
+        <div class="gl-sub">December 2024, Mumbai</div>
       </div>
     </div>
     <div class="gallery-item tall" data-caption="Sattva Iconic Awards 1.0 - Honour Ceremony">
-      <img src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%201.0/1-iconic-awards%20(5).jpeg" alt="Honour Ceremony" loading="lazy">
+      <img src="/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%201.0/1-iconic-awards%20(5).jpeg" alt="Honour Ceremony" loading="lazy">
       <div class="gallery-item-overlay"></div>
       <div class="gallery-item-label">
         <div class="gl-tag">Honour</div>
         <div class="gl-title">Honour Ceremony</div>
-        <div class="gl-sub">December 2024 , Mumbai</div>
+        <div class="gl-sub">December 2024, Mumbai</div>
       </div>
     </div>
     <div class="gallery-item" data-caption="Sattva Iconic Awards 1.0 - Award Design">
-      <img src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%201.0/1-iconic-awards%20(6).jpeg" alt="The Sattva Award" loading="lazy">
+      <img src="/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%201.0/1-iconic-awards%20(6).jpeg" alt="The Sattva Award" loading="lazy">
       <div class="gallery-item-overlay"></div>
       <div class="gallery-item-label">
         <div class="gl-tag">Trophy</div>
         <div class="gl-title">The Sattva Award</div>
-        <div class="gl-sub">December 2024 , Mumbai</div>
+        <div class="gl-sub">December 2024, Mumbai</div>
       </div>
     </div>
     <div class="gallery-item wide" data-caption="Sattva Iconic Awards 1.0 - Panel Discussion">
-      <img src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%201.0/1-iconic-awards%20(7).jpeg" alt="Panel Discussion" loading="lazy">
+      <img src="/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%201.0/1-iconic-awards%20(7).jpeg" alt="Panel Discussion" loading="lazy">
       <div class="gallery-item-overlay"></div>
       <div class="gallery-item-label">
         <div class="gl-tag">Panel</div>
         <div class="gl-title">Panel Discussion</div>
-        <div class="gl-sub">December 2024 , Mumbai</div>
+        <div class="gl-sub">December 2024, Mumbai</div>
       </div>
     </div>
     <div class="gallery-item" data-caption="Sattva Iconic Awards 1.0 - Networking">
-      <img src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%201.0/1-iconic-awards%20(8).jpeg" alt="Networking Evening" loading="lazy">
+      <img src="/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%201.0/1-iconic-awards%20(8).jpeg" alt="Networking Evening" loading="lazy">
       <div class="gallery-item-overlay"></div>
       <div class="gallery-item-label">
         <div class="gl-tag">Network</div>
         <div class="gl-title">Networking Evening</div>
-        <div class="gl-sub">December 2024 , Mumbai</div>
+        <div class="gl-sub">December 2024, Mumbai</div>
       </div>
     </div>
   </div>
@@ -704,91 +705,91 @@
 <!--  AWARDS 2.0: SLIDESHOW  -->
 <section class="awards2-section">
   <div class="awards2-header">
-    <span class="awards2-badge">| 2025</span>
+    <span class="awards2-badge">✦ 2025</span>
     <span class="section-tag">Sattva Iconic Awards 2.0</span>
     <h2>The Grand <em>Return</em></h2>
     <p>Expanded, elevated, and even more inspiring. Our second edition brought together a larger community of wellness champions.</p>
   </div>
 
   <div class="slideshow-track" id="slideshow2">
-    <div class="slideshow-card" style="background-image:url('../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%202.0/2-iconic-awards%20(1).jpeg')" data-caption="Awards 2.0 - Grand Stage">
+    <div class="slideshow-card" style="background-image:url('/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%202.0/2-iconic-awards%20(1).jpeg')" data-caption="Awards 2.0 - Grand Stage">
       <div class="slideshow-card-overlay"></div>
       <div class="slideshow-card-content">
         <div class="slideshow-card-num">01</div>
         <div class="slideshow-card-title">Grand Stage Setup</div>
-        <div class="slideshow-card-sub">March 2025 , Mumbai</div>
+        <div class="slideshow-card-sub">March 2025, Mumbai</div>
       </div>
     </div>
-    <div class="slideshow-card" style="background-image:url('../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%202.0/2-iconic-awards%20(2).jpeg')" data-caption="Awards 2.0 - Acceptance Speech">
+    <div class="slideshow-card" style="background-image:url('/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%202.0/2-iconic-awards%20(2).jpeg')" data-caption="Awards 2.0 - Acceptance Speech">
       <div class="slideshow-card-overlay"></div>
       <div class="slideshow-card-content">
         <div class="slideshow-card-num">02</div>
         <div class="slideshow-card-title">Acceptance Speech</div>
-        <div class="slideshow-card-sub">March 2025 , Mumbai</div>
+        <div class="slideshow-card-sub">March 2025, Mumbai</div>
       </div>
     </div>
-    <div class="slideshow-card" style="background-image:url('../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%202.0/2-iconic-awards%20(3).jpeg')" data-caption="Awards 2.0 - Honour Ceremony">
+    <div class="slideshow-card" style="background-image:url('/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%202.0/2-iconic-awards%20(3).jpeg')" data-caption="Awards 2.0 - Honour Ceremony">
       <div class="slideshow-card-overlay"></div>
       <div class="slideshow-card-content">
         <div class="slideshow-card-num">03</div>
         <div class="slideshow-card-title">Honour Ceremony</div>
-        <div class="slideshow-card-sub">March 2025 , Mumbai</div>
+        <div class="slideshow-card-sub">March 2025, Mumbai</div>
       </div>
     </div>
-    <div class="slideshow-card" style="background-image:url('../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%202.0/2-iconic-awards%20(4).jpeg')" data-caption="Awards 2.0 - Hall of Fame">
+    <div class="slideshow-card" style="background-image:url('/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%202.0/2-iconic-awards%20(4).jpeg')" data-caption="Awards 2.0 - Hall of Fame">
       <div class="slideshow-card-overlay"></div>
       <div class="slideshow-card-content">
         <div class="slideshow-card-num">04</div>
         <div class="slideshow-card-title">Hall of Fame Inductees</div>
-        <div class="slideshow-card-sub">March 2025 , Mumbai</div>
+        <div class="slideshow-card-sub">March 2025, Mumbai</div>
       </div>
     </div>
-    <div class="slideshow-card" style="background-image:url('../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%202.0/2-iconic-awards%20(5).jpeg')" data-caption="Awards 2.0 - Cultural Performance">
+    <div class="slideshow-card" style="background-image:url('/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%202.0/2-iconic-awards%20(5).jpeg')" data-caption="Awards 2.0 - Cultural Performance">
       <div class="slideshow-card-overlay"></div>
       <div class="slideshow-card-content">
         <div class="slideshow-card-num">05</div>
         <div class="slideshow-card-title">Cultural Performance</div>
-        <div class="slideshow-card-sub">March 2025 , Mumbai</div>
+        <div class="slideshow-card-sub">March 2025, Mumbai</div>
       </div>
     </div>
-    <div class="slideshow-card" style="background-image:url('../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%202.0/2-iconic-awards%20(6).jpeg')" data-caption="Awards 2.0 - Closing Gala">
+    <div class="slideshow-card" style="background-image:url('/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%202.0/2-iconic-awards%20(6).jpeg')" data-caption="Awards 2.0 - Closing Gala">
       <div class="slideshow-card-overlay"></div>
       <div class="slideshow-card-content">
         <div class="slideshow-card-num">06</div>
         <div class="slideshow-card-title">Closing Gala Dinner</div>
-        <div class="slideshow-card-sub">March 2025 , Mumbai</div>
+        <div class="slideshow-card-sub">March 2025, Mumbai</div>
       </div>
     </div>
-    <div class="slideshow-card" style="background-image:url('../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%202.0/2-iconic-awards%20(7).jpeg')" data-caption="Awards 2.0 - Group Photo">
+    <div class="slideshow-card" style="background-image:url('/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%202.0/2-iconic-awards%20(7).jpeg')" data-caption="Awards 2.0 - Group Photo">
       <div class="slideshow-card-overlay"></div>
       <div class="slideshow-card-content">
         <div class="slideshow-card-num">07</div>
         <div class="slideshow-card-title">All Winners Together</div>
-        <div class="slideshow-card-sub">March 2025 , Mumbai</div>
+        <div class="slideshow-card-sub">March 2025, Mumbai</div>
       </div>
     </div>
-    <div class="slideshow-card" style="background-image:url('../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%202.0/2-iconic-awards%20(8).jpeg')" data-caption="Awards 2.0 - VIP Lounge">
+    <div class="slideshow-card" style="background-image:url('/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%202.0/2-iconic-awards%20(8).jpeg')" data-caption="Awards 2.0 - VIP Lounge">
       <div class="slideshow-card-overlay"></div>
       <div class="slideshow-card-content">
         <div class="slideshow-card-num">08</div>
         <div class="slideshow-card-title">VIP Lounge</div>
-        <div class="slideshow-card-sub">March 2025 , Mumbai</div>
+        <div class="slideshow-card-sub">March 2025, Mumbai</div>
       </div>
     </div>
-    <div class="slideshow-card" style="background-image:url('../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%202.0/2-iconic-awards%20(9).jpeg')" data-caption="Awards 2.0 - Red Carpet">
+    <div class="slideshow-card" style="background-image:url('/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%202.0/2-iconic-awards%20(9).jpeg')" data-caption="Awards 2.0 - Red Carpet">
       <div class="slideshow-card-overlay"></div>
       <div class="slideshow-card-content">
         <div class="slideshow-card-num">09</div>
         <div class="slideshow-card-title">Red Carpet Arrivals</div>
-        <div class="slideshow-card-sub">March 2025 , Mumbai</div>
+        <div class="slideshow-card-sub">March 2025, Mumbai</div>
       </div>
     </div>
-    <div class="slideshow-card" style="background-image:url('../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%202.0/2-iconic-awards%20(10).jpeg')" data-caption="Awards 2.0 - Stage Finale">
+    <div class="slideshow-card" style="background-image:url('/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%202.0/2-iconic-awards%20(10).jpeg')" data-caption="Awards 2.0 - Stage Finale">
       <div class="slideshow-card-overlay"></div>
       <div class="slideshow-card-content">
         <div class="slideshow-card-num">10</div>
         <div class="slideshow-card-title">Stage Finale</div>
-        <div class="slideshow-card-sub">March 2025 , Mumbai</div>
+        <div class="slideshow-card-sub">March 2025, Mumbai</div>
       </div>
     </div>
   </div>
@@ -802,147 +803,147 @@
 <!--  AWARDS 3.0: TIMELINE/MASONRY  -->
 <section class="awards3-section">
   <div class="awards3-header">
-    <span class="awards3-badge">| 2026</span>
+    <span class="awards3-badge">✦ 2026</span>
     <span class="section-tag">Sattva Iconic Awards 3.0</span>
     <h2>The Iconic <em>Evolution</em></h2>
     <p>Our most ambitious edition yet - celebrating three years of wellness excellence with a spectacular showcase of community and achievement.</p>
   </div>
 
   <div class="timeline-gallery">
-    <div class="timeline-item" onclick="openLightboxBySrc(this)">
-      <img src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(1).jpeg" alt="Awards 3.0 - Main Stage" loading="lazy">
+    <div class="timeline-item">
+      <img src="/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(1).jpeg" alt="Awards 3.0 - Main Stage" loading="lazy">
       <div class="timeline-item-date">2026</div>
       <div class="timeline-item-overlay">
         <div class="timeline-item-title">Main Stage - Opening</div>
-        <div class="timeline-item-sub">The Iconic Awards 3.0 , Mumbai</div>
+        <div class="timeline-item-sub">The Iconic Awards 3.0, Mumbai</div>
       </div>
     </div>
-    <div class="timeline-item" onclick="openLightboxBySrc(this)">
-      <img src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(2).jpeg" alt="Awards 3.0 - Keynote" loading="lazy">
+    <div class="timeline-item">
+      <img src="/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(2).jpeg" alt="Awards 3.0 - Keynote" loading="lazy">
       <div class="timeline-item-date">2026</div>
       <div class="timeline-item-overlay">
         <div class="timeline-item-title">Keynote Address</div>
-        <div class="timeline-item-sub">The Iconic Awards 3.0 , Mumbai</div>
+        <div class="timeline-item-sub">The Iconic Awards 3.0, Mumbai</div>
       </div>
     </div>
-    <div class="timeline-item" onclick="openLightboxBySrc(this)">
-      <img loading="lazy" src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(3).jpeg" alt="Awards 3.0 - Award Ceremony">
+    <div class="timeline-item">
+      <img loading="lazy" src="/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(3).jpeg" alt="Awards 3.0 - Award Ceremony">
       <div class="timeline-item-date">2026</div>
       <div class="timeline-item-overlay">
         <div class="timeline-item-title">Award Ceremony</div>
-        <div class="timeline-item-sub">The Iconic Awards 3.0 , Mumbai</div>
+        <div class="timeline-item-sub">The Iconic Awards 3.0, Mumbai</div>
       </div>
     </div>
-    <div class="timeline-item" onclick="openLightboxBySrc(this)">
-      <img loading="lazy" src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(4).jpeg" alt="Awards 3.0 - Winner">
+    <div class="timeline-item">
+      <img loading="lazy" src="/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(4).jpeg" alt="Awards 3.0 - Winner">
       <div class="timeline-item-date">2026</div>
       <div class="timeline-item-overlay">
         <div class="timeline-item-title">Winner Receiving Award</div>
-        <div class="timeline-item-sub">The Iconic Awards 3.0 , Mumbai</div>
+        <div class="timeline-item-sub">The Iconic Awards 3.0, Mumbai</div>
       </div>
     </div>
-    <div class="timeline-item" onclick="openLightboxBySrc(this)">
-      <img loading="lazy" src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(5).jpeg" alt="Awards 3.0 - Audience">
+    <div class="timeline-item">
+      <img loading="lazy" src="/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(5).jpeg" alt="Awards 3.0 - Audience">
       <div class="timeline-item-date">2026</div>
       <div class="timeline-item-overlay">
         <div class="timeline-item-title">Audience Hall</div>
-        <div class="timeline-item-sub">The Iconic Awards 3.0 , Mumbai</div>
+        <div class="timeline-item-sub">The Iconic Awards 3.0, Mumbai</div>
       </div>
     </div>
-    <div class="timeline-item" onclick="openLightboxBySrc(this)">
-      <img loading="lazy" src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(6).jpeg" alt="Awards 3.0 - Performance">
+    <div class="timeline-item">
+      <img loading="lazy" src="/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(6).jpeg" alt="Awards 3.0 - Performance">
       <div class="timeline-item-date">2026</div>
       <div class="timeline-item-overlay">
         <div class="timeline-item-title">Evening Performance</div>
-        <div class="timeline-item-sub">The Iconic Awards 3.0 , Mumbai</div>
+        <div class="timeline-item-sub">The Iconic Awards 3.0, Mumbai</div>
       </div>
     </div>
-    <div class="timeline-item" onclick="openLightboxBySrc(this)">
-      <img loading="lazy" src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(7).jpeg" alt="Awards 3.0 - Panel">
+    <div class="timeline-item">
+      <img loading="lazy" src="/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(7).jpeg" alt="Awards 3.0 - Panel">
       <div class="timeline-item-date">2026</div>
       <div class="timeline-item-overlay">
         <div class="timeline-item-title">Expert Panel Discussion</div>
-        <div class="timeline-item-sub">The Iconic Awards 3.0 , Mumbai</div>
+        <div class="timeline-item-sub">The Iconic Awards 3.0, Mumbai</div>
       </div>
     </div>
-    <div class="timeline-item" onclick="openLightboxBySrc(this)">
-      <img loading="lazy" src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(8).jpeg" alt="Awards 3.0 - Trophy">
+    <div class="timeline-item">
+      <img loading="lazy" src="/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(8).jpeg" alt="Awards 3.0 - Trophy">
       <div class="timeline-item-date">2026</div>
       <div class="timeline-item-overlay">
         <div class="timeline-item-title">The Sattva Trophy</div>
-        <div class="timeline-item-sub">The Iconic Awards 3.0 , Mumbai</div>
+        <div class="timeline-item-sub">The Iconic Awards 3.0, Mumbai</div>
       </div>
     </div>
-    <div class="timeline-item" onclick="openLightboxBySrc(this)">
-      <img loading="lazy" src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(9).jpeg" alt="Awards 3.0 - Networking">
+    <div class="timeline-item">
+      <img loading="lazy" src="/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(9).jpeg" alt="Awards 3.0 - Networking">
       <div class="timeline-item-date">2026</div>
       <div class="timeline-item-overlay">
         <div class="timeline-item-title">Networking Session</div>
-        <div class="timeline-item-sub">The Iconic Awards 3.0 , Mumbai</div>
+        <div class="timeline-item-sub">The Iconic Awards 3.0, Mumbai</div>
       </div>
     </div>
-    <div class="timeline-item" onclick="openLightboxBySrc(this)">
-      <img loading="lazy" src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(10).jpeg" alt="Awards 3.0 - Group">
+    <div class="timeline-item">
+      <img loading="lazy" src="/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(10).jpeg" alt="Awards 3.0 - Group">
       <div class="timeline-item-date">2026</div>
       <div class="timeline-item-overlay">
         <div class="timeline-item-title">Community Group Photo</div>
-        <div class="timeline-item-sub">The Iconic Awards 3.0 , Mumbai</div>
+        <div class="timeline-item-sub">The Iconic Awards 3.0, Mumbai</div>
       </div>
     </div>
-    <div class="timeline-item" onclick="openLightboxBySrc(this)">
-      <img loading="lazy" src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(11).jpeg" alt="Awards 3.0 - Closing">
+    <div class="timeline-item">
+      <img loading="lazy" src="/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(11).jpeg" alt="Awards 3.0 - Closing">
       <div class="timeline-item-date">2026</div>
       <div class="timeline-item-overlay">
         <div class="timeline-item-title">Closing Ceremony</div>
-        <div class="timeline-item-sub">The Iconic Awards 3.0 , Mumbai</div>
+        <div class="timeline-item-sub">The Iconic Awards 3.0, Mumbai</div>
       </div>
     </div>
-    <div class="timeline-item" onclick="openLightboxBySrc(this)">
-      <img loading="lazy" src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(12).jpeg" alt="Awards 3.0 - Venue">
+    <div class="timeline-item">
+      <img loading="lazy" src="/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(12).jpeg" alt="Awards 3.0 - Venue">
       <div class="timeline-item-date">2026</div>
       <div class="timeline-item-overlay">
         <div class="timeline-item-title">Venue Decor</div>
-        <div class="timeline-item-sub">The Iconic Awards 3.0 , Mumbai</div>
+        <div class="timeline-item-sub">The Iconic Awards 3.0, Mumbai</div>
       </div>
     </div>
-    <div class="timeline-item" onclick="openLightboxBySrc(this)">
-      <img loading="lazy" src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(13).jpeg" alt="Awards 3.0 - Speaker">
+    <div class="timeline-item">
+      <img loading="lazy" src="/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(13).jpeg" alt="Awards 3.0 - Speaker">
       <div class="timeline-item-date">2026</div>
       <div class="timeline-item-overlay">
         <div class="timeline-item-title">Guest Speaker</div>
-        <div class="timeline-item-sub">The Iconic Awards 3.0 , Mumbai</div>
+        <div class="timeline-item-sub">The Iconic Awards 3.0, Mumbai</div>
       </div>
     </div>
-    <div class="timeline-item" onclick="openLightboxBySrc(this)">
-      <img loading="lazy" src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(14).jpeg" alt="Awards 3.0 - Honour">
+    <div class="timeline-item">
+      <img loading="lazy" src="/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(14).jpeg" alt="Awards 3.0 - Honour">
       <div class="timeline-item-date">2026</div>
       <div class="timeline-item-overlay">
         <div class="timeline-item-title">Special Honour</div>
-        <div class="timeline-item-sub">The Iconic Awards 3.0 , Mumbai</div>
+        <div class="timeline-item-sub">The Iconic Awards 3.0, Mumbai</div>
       </div>
     </div>
-    <div class="timeline-item" onclick="openLightboxBySrc(this)">
-      <img loading="lazy" src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(15).jpeg" alt="Awards 3.0 - Celebration">
+    <div class="timeline-item">
+      <img loading="lazy" src="/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(15).jpeg" alt="Awards 3.0 - Celebration">
       <div class="timeline-item-date">2026</div>
       <div class="timeline-item-overlay">
         <div class="timeline-item-title">Celebration Moment</div>
-        <div class="timeline-item-sub">The Iconic Awards 3.0 , Mumbai</div>
+        <div class="timeline-item-sub">The Iconic Awards 3.0, Mumbai</div>
       </div>
     </div>
-    <div class="timeline-item" onclick="openLightboxBySrc(this)">
-      <img loading="lazy" src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(16).jpeg" alt="Awards 3.0 - Finale">
+    <div class="timeline-item">
+      <img loading="lazy" src="/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(16).jpeg" alt="Awards 3.0 - Finale">
       <div class="timeline-item-date">2026</div>
       <div class="timeline-item-overlay">
         <div class="timeline-item-title">Grand Finale</div>
-        <div class="timeline-item-sub">The Iconic Awards 3.0 , Mumbai</div>
+        <div class="timeline-item-sub">The Iconic Awards 3.0, Mumbai</div>
       </div>
     </div>
-    <div class="timeline-item" onclick="openLightboxBySrc(this)">
-      <img loading="lazy" src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(17).jpeg" alt="Awards 3.0 - Afterparty">
+    <div class="timeline-item">
+      <img loading="lazy" src="/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(17).jpeg" alt="Awards 3.0 - Afterparty">
       <div class="timeline-item-date">2026</div>
       <div class="timeline-item-overlay">
         <div class="timeline-item-title">Afterparty</div>
-        <div class="timeline-item-sub">The Iconic Awards 3.0 , Mumbai</div>
+        <div class="timeline-item-sub">The Iconic Awards 3.0, Mumbai</div>
       </div>
     </div>
   </div>
@@ -965,97 +966,97 @@
   </div>
 
   <div class="workshops-grid active" id="tab-amity">
-    <div class="workshop-card" onclick="openWorkshopLightbox(this)">
-      <img loading="lazy" src="../SATTVA%20NATION%20COLLEGE%20WORKSHOPS/AMITY%20LAW%20SCHOOL/AMITY%20LAW%20SCHOOL%20(1).jpeg" alt="Amity Law School Workshop 1">
+    <div class="workshop-card">
+      <img loading="lazy" src="/SATTVA%20NATION%20COLLEGE%20WORKSHOPS/AMITY%20LAW%20SCHOOL/AMITY%20LAW%20SCHOOL%20(1).jpeg" alt="Amity Law School Workshop 1">
       <div class="workshop-card-body">
         <div class="workshop-card-title">Session in Progress</div>
-        <div class="workshop-card-meta">Amity Law School , New Delhi</div>
+        <div class="workshop-card-meta">Amity Law School, New Delhi</div>
       </div>
     </div>
-    <div class="workshop-card" onclick="openWorkshopLightbox(this)">
-      <img loading="lazy" src="../SATTVA%20NATION%20COLLEGE%20WORKSHOPS/AMITY%20LAW%20SCHOOL/AMITY%20LAW%20SCHOOL%20(2).jpeg" alt="Amity Law School Workshop 2">
+    <div class="workshop-card">
+      <img loading="lazy" src="/SATTVA%20NATION%20COLLEGE%20WORKSHOPS/AMITY%20LAW%20SCHOOL/AMITY%20LAW%20SCHOOL%20(2).jpeg" alt="Amity Law School Workshop 2">
       <div class="workshop-card-body">
         <div class="workshop-card-title">Group Meditation</div>
-        <div class="workshop-card-meta">Amity Law School , New Delhi</div>
+        <div class="workshop-card-meta">Amity Law School, New Delhi</div>
       </div>
     </div>
-    <div class="workshop-card" onclick="openWorkshopLightbox(this)">
-      <img loading="lazy" src="../SATTVA%20NATION%20COLLEGE%20WORKSHOPS/AMITY%20LAW%20SCHOOL/AMITY%20LAW%20SCHOOL%20(3).jpeg" alt="Amity Law School Workshop 3">
+    <div class="workshop-card">
+      <img loading="lazy" src="/SATTVA%20NATION%20COLLEGE%20WORKSHOPS/AMITY%20LAW%20SCHOOL/AMITY%20LAW%20SCHOOL%20(3).jpeg" alt="Amity Law School Workshop 3">
       <div class="workshop-card-body">
         <div class="workshop-card-title">Interactive Session</div>
-        <div class="workshop-card-meta">Amity Law School , New Delhi</div>
+        <div class="workshop-card-meta">Amity Law School, New Delhi</div>
       </div>
     </div>
-    <div class="workshop-card" onclick="openWorkshopLightbox(this)">
-      <img loading="lazy" src="../SATTVA%20NATION%20COLLEGE%20WORKSHOPS/AMITY%20LAW%20SCHOOL/AMITY%20LAW%20SCHOOL%20(4).jpeg" alt="Amity Law School Workshop 4">
+    <div class="workshop-card">
+      <img loading="lazy" src="/SATTVA%20NATION%20COLLEGE%20WORKSHOPS/AMITY%20LAW%20SCHOOL/AMITY%20LAW%20SCHOOL%20(4).jpeg" alt="Amity Law School Workshop 4">
       <div class="workshop-card-body">
         <div class="workshop-card-title">Wellness Workshop</div>
-        <div class="workshop-card-meta">Amity Law School , New Delhi</div>
+        <div class="workshop-card-meta">Amity Law School, New Delhi</div>
       </div>
     </div>
-    <div class="workshop-card" onclick="openWorkshopLightbox(this)">
-      <img loading="lazy" src="../SATTVA%20NATION%20COLLEGE%20WORKSHOPS/AMITY%20LAW%20SCHOOL/AMITY%20LAW%20SCHOOL%20(5).jpeg" alt="Amity Law School Workshop 5">
+    <div class="workshop-card">
+      <img loading="lazy" src="/SATTVA%20NATION%20COLLEGE%20WORKSHOPS/AMITY%20LAW%20SCHOOL/AMITY%20LAW%20SCHOOL%20(5).jpeg" alt="Amity Law School Workshop 5">
       <div class="workshop-card-body">
         <div class="workshop-card-title">Closing Ceremony</div>
-        <div class="workshop-card-meta">Amity Law School , New Delhi</div>
+        <div class="workshop-card-meta">Amity Law School, New Delhi</div>
       </div>
     </div>
   </div>
 
   <div class="workshops-grid" id="tab-imm">
-    <div class="workshop-card" onclick="openWorkshopLightbox(this)">
-      <img loading="lazy" src="../SATTVA%20NATION%20COLLEGE%20WORKSHOPS/INSTITUTE%20OF%20MARKETING%20&%20MANAGEMENT%20(IMM)/MARKETING%20&%20MANAGEMENT%20%20(1).jpeg" alt="IMM Workshop 1">
+    <div class="workshop-card">
+      <img loading="lazy" src="/SATTVA%20NATION%20COLLEGE%20WORKSHOPS/INSTITUTE%20OF%20MARKETING%20&amp;%20MANAGEMENT%20(IMM)/MARKETING%20&amp;%20MANAGEMENT%20%20(1).jpeg" alt="IMM Workshop 1">
       <div class="workshop-card-body">
         <div class="workshop-card-title">Marketing & Management Workshop</div>
-        <div class="workshop-card-meta">IMM , Delhi</div>
+        <div class="workshop-card-meta">IMM, Delhi</div>
       </div>
     </div>
-    <div class="workshop-card" onclick="openWorkshopLightbox(this)">
-      <img loading="lazy" src="../SATTVA%20NATION%20COLLEGE%20WORKSHOPS/INSTITUTE%20OF%20MARKETING%20&%20MANAGEMENT%20(IMM)/MARKETING%20&%20MANAGEMENT%20%20(2).jpeg" alt="IMM Workshop 2">
+    <div class="workshop-card">
+      <img loading="lazy" src="/SATTVA%20NATION%20COLLEGE%20WORKSHOPS/INSTITUTE%20OF%20MARKETING%20&amp;%20MANAGEMENT%20(IMM)/MARKETING%20&amp;%20MANAGEMENT%20%20(2).jpeg" alt="IMM Workshop 2">
       <div class="workshop-card-body">
         <div class="workshop-card-title">Student Engagement Session</div>
-        <div class="workshop-card-meta">IMM , Delhi</div>
+        <div class="workshop-card-meta">IMM, Delhi</div>
       </div>
     </div>
   </div>
 
   <div class="workshops-grid" id="tab-jims">
-    <div class="workshop-card" onclick="openWorkshopLightbox(this)">
-      <img loading="lazy" src="../SATTVA%20NATION%20COLLEGE%20WORKSHOPS/JIMS%20COLLEGE/JIMS%20COLLEGE%20(1).jpeg" alt="JIMS College Workshop 1">
+    <div class="workshop-card">
+      <img loading="lazy" src="/SATTVA%20NATION%20COLLEGE%20WORKSHOPS/JIMS%20COLLEGE/JIMS%20COLLEGE%20(1).jpeg" alt="JIMS College Workshop 1">
       <div class="workshop-card-body">
         <div class="workshop-card-title">Wellness Session at JIMS</div>
-        <div class="workshop-card-meta">JIMS College , Delhi</div>
+        <div class="workshop-card-meta">JIMS College, Delhi</div>
       </div>
     </div>
-    <div class="workshop-card" onclick="openWorkshopLightbox(this)">
-      <img loading="lazy" src="../SATTVA%20NATION%20COLLEGE%20WORKSHOPS/JIMS%20COLLEGE/JIMS%20COLLEGE%20(2).jpeg" alt="JIMS College Workshop 2">
+    <div class="workshop-card">
+      <img loading="lazy" src="/SATTVA%20NATION%20COLLEGE%20WORKSHOPS/JIMS%20COLLEGE/JIMS%20COLLEGE%20(2).jpeg" alt="JIMS College Workshop 2">
       <div class="workshop-card-body">
         <div class="workshop-card-title">Group Activity</div>
-        <div class="workshop-card-meta">JIMS College , Delhi</div>
+        <div class="workshop-card-meta">JIMS College, Delhi</div>
       </div>
     </div>
-    <div class="workshop-card" onclick="openWorkshopLightbox(this)">
-      <img loading="lazy" src="../SATTVA%20NATION%20COLLEGE%20WORKSHOPS/JIMS%20COLLEGE/JIMS%20COLLEGE%20(3).jpeg" alt="JIMS College Workshop 3">
+    <div class="workshop-card">
+      <img loading="lazy" src="/SATTVA%20NATION%20COLLEGE%20WORKSHOPS/JIMS%20COLLEGE/JIMS%20COLLEGE%20(3).jpeg" alt="JIMS College Workshop 3">
       <div class="workshop-card-body">
         <div class="workshop-card-title">Closing & Certificate Distribution</div>
-        <div class="workshop-card-meta">JIMS College , Delhi</div>
+        <div class="workshop-card-meta">JIMS College, Delhi</div>
       </div>
     </div>
   </div>
 
   <div class="workshops-grid" id="tab-lakshmibai">
-    <div class="workshop-card" onclick="openWorkshopLightbox(this)">
-      <img loading="lazy" src="../SATTVA%20NATION%20COLLEGE%20WORKSHOPS/LAKSHMI%20BAI%20COLLEGE/LAKSHMI%20BAI%20COLLEGE.jpeg" alt="Lakshmi Bai College Workshop">
+    <div class="workshop-card">
+      <img loading="lazy" src="/SATTVA%20NATION%20COLLEGE%20WORKSHOPS/LAKSHMI%20BAI%20COLLEGE/LAKSHMI%20BAI%20COLLEGE.jpeg" alt="Lakshmi Bai College Workshop">
       <div class="workshop-card-body">
         <div class="workshop-card-title">Lakshmi Bai College Wellness Day</div>
-        <div class="workshop-card-meta">Lakshmi Bai College , Delhi</div>
+        <div class="workshop-card-meta">Lakshmi Bai College, Delhi</div>
       </div>
     </div>
   </div>
 </section>
 
 <!--  VIDEO GALLERY  -->
-<section class="video-section">
+<section class="video-section" id="videos">
   <div class="video-header">
     <span class="section-tag">Videos</span>
     <h2 class="section-title">Experience <em>Sattva</em> in Motion</h2>
@@ -1064,33 +1065,33 @@
     </p>
   </div>
   <div class="video-grid">
-    <div class="video-card">
+    <a class="video-card" href="https://www.youtube.com/@sattvanation" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;">
       <div class="video-thumb" style="background-image:url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600&q=80')">
         <div class="video-thumb-overlay"><div class="play-btn">▶</div></div>
       </div>
       <div class="video-body">
-        <div class="video-title">Sattva Wellness Festival 2025 - Event Recap</div>
-        <div class="video-meta">March 2025 | 4:32 | 12K views</div>
+        <div class="video-title">Sattva Wellness Festival - Event Highlights</div>
+        <div class="video-meta">Watch on YouTube</div>
       </div>
-    </div>
-    <div class="video-card">
+    </a>
+    <a class="video-card" href="https://www.youtube.com/@sattvanation" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;">
       <div class="video-thumb" style="background-image:url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80')">
         <div class="video-thumb-overlay"><div class="play-btn">▶</div></div>
       </div>
       <div class="video-body">
-        <div class="video-title">Guided Morning Meditation - 10 Minutes</div>
-        <div class="video-meta">April 2026 | 10:15 | 8.5K views</div>
+        <div class="video-title">Guided Morning Meditation</div>
+        <div class="video-meta">Watch on YouTube</div>
       </div>
-    </div>
-    <div class="video-card">
+    </a>
+    <a class="video-card" href="https://www.youtube.com/@sattvanation" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;">
       <div class="video-thumb" style="background-image:url('https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?w=600&q=80')">
         <div class="video-thumb-overlay"><div class="play-btn">▶</div></div>
       </div>
       <div class="video-body">
-        <div class="video-title">5 Yoga Stretches for Better Posture</div>
-        <div class="video-meta">May 2026 | 8:45 | 6.2K views</div>
+        <div class="video-title">Yoga & Movement Practices</div>
+        <div class="video-meta">Watch on YouTube</div>
       </div>
-    </div>
+    </a>
   </div>
 </section>
 
@@ -1123,11 +1124,11 @@
 </footer>
 
 <!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox">
-  <button class="lightbox-close" id="lightboxClose">×</button>
-  <button class="lightbox-nav prev" id="lightboxPrev">&#8592;</button>
-  <button class="lightbox-nav next" id="lightboxNext">&#8594;</button>
-  <img class="lightbox-img" id="lightboxImg" src="" alt="">
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close image viewer">×</button>
+  <button class="lightbox-nav prev" id="lightboxPrev" aria-label="Previous image">&#8592;</button>
+  <button class="lightbox-nav next" id="lightboxNext" aria-label="Next image">&#8594;</button>
+  <img class="lightbox-img" id="lightboxImg" alt="" />
   <div class="lightbox-caption" id="lightboxCaption"></div>
 </div>
 
@@ -1156,12 +1157,11 @@
   // Filter buttons - scroll to section
   const filterBtns = document.querySelectorAll('.filter-btn');
   const sectionMap = {
-    all: '.awards1-section',
-    retreats: '.workshops-section',
-    festivals: '.awards1-section',
+    awards1: '.awards1-section',
+    awards2: '.awards2-section',
+    awards3: '.awards3-section',
     workshops: '.workshops-section',
-    community: '.awards2-section',
-    awards: '.awards1-section',
+    videos: '#videos',
   };
   filterBtns.forEach(btn => {
     btn.addEventListener('click', e => {
@@ -1201,36 +1201,64 @@
   let currentIndex = 0;
   const images = [];
 
+  function registerImage(el, src, caption) {
+    const idx = images.length;
+    images.push({ src, caption });
+    el.addEventListener('click', () => openLightbox(idx));
+    // Keyboard accessibility
+    el.setAttribute('tabindex', '0');
+    el.setAttribute('role', 'button');
+    el.setAttribute('aria-label', 'Open image: ' + (caption || 'gallery image'));
+    el.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openLightbox(idx);
+      }
+    });
+  }
+
   // Bento items
   document.querySelectorAll('.gallery-item').forEach(item => {
     const img = item.querySelector('img');
+    if (img) registerImage(item, img.src, item.dataset.caption || img.alt || '');
+  });
+
+  // Slideshow cards (background-image based)
+  document.querySelectorAll('.slideshow-card').forEach(card => {
+    const src = card.style.backgroundImage.replace(/url\(['"]?(.+?)['"]?\)/, '$1');
+    if (src) registerImage(card, new URL(src, location.href).href, card.dataset.caption || '');
+  });
+
+  // Timeline (masonry) items - previously not registered, which crashed the lightbox
+  document.querySelectorAll('.timeline-item').forEach(item => {
+    const img = item.querySelector('img');
+    const title = item.querySelector('.timeline-item-title')?.textContent || img?.alt || '';
     if (img) {
-      images.push({ src: img.src, caption: item.dataset.caption || '' });
-      item.addEventListener('click', () => openLightbox(images.length - 1));
+      // Remove legacy inline onclick to avoid double-trigger
+      item.removeAttribute('onclick');
+      registerImage(item, img.src, title);
     }
   });
 
-  // Slideshow cards
-  document.querySelectorAll('.slideshow-card').forEach(card => {
-    const src = card.style.backgroundImage.replace(/url\(['"]?(.+?)['"]?\)/, '$1');
-    images.push({ src, caption: card.dataset.caption || '' });
-    card.addEventListener('click', () => openLightbox(images.length - 1));
+  // Workshop cards
+  document.querySelectorAll('.workshop-card').forEach(card => {
+    const img = card.querySelector('img');
+    const title = card.querySelector('.workshop-card-title')?.textContent || img?.alt || '';
+    if (img) {
+      card.removeAttribute('onclick');
+      registerImage(card, img.src, title);
+    }
   });
 
-  function openLightboxBySrc(el) {
-    const img = el.querySelector('img');
-    const src = img.src;
-    const caption = img.alt || '';
-    openLightbox(images.findIndex(i => i.src === src));
-  }
-  window.openLightboxBySrc = openLightboxBySrc;
-
   function openLightbox(index) {
+    if (index < 0 || index >= images.length) return;
     currentIndex = index;
     lightboxImg.src = images[currentIndex].src;
+    lightboxImg.alt = images[currentIndex].caption;
     lightboxCaption.textContent = images[currentIndex].caption;
     lightbox.classList.add('active');
     document.body.style.overflow = 'hidden';
+    document.getElementById('lightboxClose').focus();
   }
 
   function closeLightbox() {
@@ -1261,16 +1289,6 @@
     if (e.key === 'ArrowRight') nextImage();
     if (e.key === 'ArrowLeft') prevImage();
   });
-
-  // Workshop lightbox
-  window.openWorkshopLightbox = function(card) {
-    const img = card.querySelector('img');
-    const title = card.querySelector('.workshop-card-title').textContent;
-    lightboxImg.src = img.src;
-    lightboxCaption.textContent = title;
-    lightbox.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  };
 })();
 </script>
 
