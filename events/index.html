@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -161,141 +161,6 @@
   }
   .btn-outline-dark:hover { background: var(--pink-light); transform: translateY(-2px); }
 
-  /* UPCOMING EVENTS */
-  .upcoming {
-    padding: 6rem 5%;
-    background: var(--white);
-  }
-  .upcoming-header {
-    text-align: center;
-    max-width: 640px;
-    margin: 0 auto 3.5rem;
-  }
-  .events-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.6rem;
-  }
-  .event-card {
-    background: white;
-    border-radius: 24px;
-    overflow: hidden;
-    border: 1px solid #f4c0d1;
-    transition: transform 0.22s, box-shadow 0.22s;
-    display: flex;
-    flex-direction: column;
-  }
-  .event-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 18px 44px rgba(194,24,91,0.12);
-  }
-  .event-img {
-    width: 100%;
-    height: 220px;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-  }
-  .event-img-overlay {
-    position: absolute; inset: 0;
-    background: linear-gradient(to top, rgba(45,26,36,0.55) 0%, transparent 60%);
-  }
-  .event-date-badge {
-    position: absolute;
-    top: 14px; left: 14px;
-    background: white;
-    border-radius: 12px;
-    padding: 0.5rem 0.9rem;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  }
-  .event-date-day {
-    font-family: var(--serif);
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: var(--pink-deep);
-    line-height: 1;
-  }
-  .event-date-month {
-    font-size: 0.65rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--text-muted);
-    margin-top: 2px;
-  }
-  .event-type-badge {
-    position: absolute;
-    top: 14px; right: 14px;
-    background: var(--pink-deep);
-    color: white;
-    border-radius: 50px;
-    padding: 0.35rem 0.9rem;
-    font-size: 0.7rem;
-    font-weight: 500;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-  }
-  .event-body {
-    padding: 1.5rem;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
-  .event-title {
-    font-family: var(--serif);
-    font-size: 1.15rem;
-    font-weight: 600;
-    color: var(--text-dark);
-    margin-bottom: 0.5rem;
-    line-height: 1.3;
-  }
-  .event-meta {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.82rem;
-    color: var(--text-muted);
-    margin-bottom: 0.8rem;
-  }
-  .event-desc {
-    font-size: 0.88rem;
-    line-height: 1.65;
-    color: var(--text-mid);
-    font-weight: 300;
-    margin-bottom: 1.2rem;
-    flex: 1;
-  }
-  .event-footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: auto;
-  }
-  .event-price {
-    font-family: var(--serif);
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--pink-deep);
-  }
-  .event-price span {
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    font-weight: 400;
-    font-family: var(--sans);
-  }
-  .event-link {
-    font-size: 0.82rem;
-    color: var(--pink-deep);
-    font-weight: 500;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    transition: gap 0.2s;
-  }
-  .event-link:hover { gap: 8px; }
-  .event-link::after { content: '\2013'; }
-
   /* PAST EVENTS */
   .past-events {
     padding: 6rem 5%;
@@ -414,6 +279,159 @@
     color: var(--text-muted);
   }
 
+  /* AWARDS */
+  .awards { padding: 5rem 5%; background: var(--pink-pale); }
+  .awards-header { text-align: center; max-width: 720px; margin: 0 auto 3rem; }
+  .awards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.6rem; }
+  .award-card { position: relative; border-radius: 18px; overflow: hidden; aspect-ratio: 3 / 4; cursor: pointer; background: var(--pink-light); box-shadow: 0 8px 26px rgba(45,26,36,0.12); transition: transform 0.4s cubic-bezier(0.2,0.7,0.3,1), box-shadow 0.4s; }
+  .award-card:hover { transform: translateY(-6px); box-shadow: 0 26px 56px rgba(45,26,36,0.28); }
+  .award-card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s cubic-bezier(0.2,0.7,0.3,1); }
+  .award-card:hover img { transform: scale(1.06); }
+  .award-card::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(to top, rgba(20,8,14,0.85) 0%, rgba(20,8,14,0.3) 34%, transparent 60%); }
+  .award-badge { position: absolute; top: 0.9rem; left: 0.9rem; z-index: 2; display: inline-flex; align-items: center; gap: 0.32rem; background: rgba(255,255,255,0.16); backdrop-filter: blur(8px); border: 1px solid rgba(243,201,139,0.55); color: #f3c98b; font-size: 0.6rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.28rem 0.7rem; border-radius: 50px; }
+  .award-plate { position: absolute; bottom: 0; left: 0; right: 0; z-index: 2; padding: 1.1rem 1.1rem 1.2rem; color: #fff; }
+  .award-plate-title { font-family: var(--serif); font-size: 1.06rem; font-weight: 600; line-height: 1.25; }
+  .award-plate-sub { font-size: 0.74rem; color: rgba(255,255,255,0.82); font-weight: 300; margin-top: 0.3rem; line-height: 1.4; padding-top: 0.4rem; border-top: 1px solid rgba(243,201,139,0.45); }
+  @media (max-width: 960px) { .awards-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 640px) { .awards-grid { grid-template-columns: 1fr; } }
+
+  /* MEDIA COVERAGE */
+  .media-coverage { padding: 5rem 5%; background: var(--white); }
+  .media-header { text-align: center; max-width: 720px; margin: 0 auto 3rem; }
+
+  /* Newspaper cutouts — paper-clipping masonry */
+  .news-clippings {
+    column-count: 3; column-gap: 1.6rem;
+    padding: 1rem 0 0;
+    max-width: 1180px; margin: 0 auto;
+  }
+  .news-clip {
+    display: inline-block; width: 100%; margin: 0 0 1.6rem;
+    background: #fdf8f0; border-radius: 4px;
+    box-shadow: 0 4px 14px rgba(45,26,36,0.08), 0 1px 3px rgba(45,26,36,0.1);
+    transform: rotate(var(--tilt, 0deg));
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: pointer;
+  }
+  .news-clip:hover {
+    transform: rotate(0deg) translateY(-4px);
+    box-shadow: 0 18px 40px rgba(45,26,36,0.18), 0 4px 10px rgba(45,26,36,0.1);
+    z-index: 2;
+  }
+  .news-clip img {
+    width: 100%; display: block; border-radius: 3px;
+    filter: sepia(0.1) contrast(1.02);
+  }
+  .news-clip::before {
+    content: ''; position: absolute; top: 0.6rem; left: 50%; transform: translateX(-50%);
+    width: 56px; height: 18px; background: rgba(194,24,91,0.65);
+    border-radius: 2px; opacity: 0.5; pointer-events: none;
+  }
+  .media-tag {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    background: #fdf8f0; color: #6b4a3a;
+    padding: 0.24rem 0.7rem; border-radius: 50px;
+    font-size: 0.64rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;
+    margin-bottom: 0.9rem; border: 1px dashed rgba(107,74,58,0.35);
+  }
+
+  /* Digital coverages — clean modern grid */
+  .digital-coverages {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.4rem; max-width: 1180px; margin: 0 auto;
+  }
+  .dc-card {
+    position: relative; border-radius: 20px; overflow: hidden;
+    background: linear-gradient(180deg, #fff, #fdf4f8);
+    box-shadow: 0 10px 30px rgba(45,26,36,0.08);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(194,24,91,0.08);
+  }
+  .dc-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 22px 50px rgba(45,26,36,0.18);
+  }
+  .dc-card img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
+  .dc-label {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    padding: 0.9rem 1rem 1rem; color: #fff;
+    background: linear-gradient(to top, rgba(20,8,14,0.85), transparent);
+    font-family: var(--serif); font-size: 0.92rem; font-weight: 600;
+  }
+  .dc-label em { font-style: italic; color: #f48fb1; }
+  .media-section-head {
+    display: flex; align-items: center; justify-content: space-between;
+    max-width: 1180px; margin: 0 auto 1.2rem;
+  }
+  .media-section-head h3 {
+    font-family: var(--serif); font-size: 1.5rem; color: var(--text-dark); font-weight: 600;
+  }
+  .media-section-head h3 em { color: var(--pink-deep); font-style: italic; }
+  .media-section-head .count {
+    font-size: 0.78rem; color: var(--text-muted);
+    background: var(--pink-light); padding: 0.24rem 0.9rem; border-radius: 50px;
+  }
+
+  @media (max-width: 960px) {
+    .news-clippings { column-count: 2; }
+  }
+  @media (max-width: 640px) {
+    .news-clippings { column-count: 1; }
+    .digital-coverages { grid-template-columns: 1fr; }
+  }
+
+  /* CORPORATE WELLNESS — experts + tab gallery */
+  .cw-section { padding: 5rem 5%; background: var(--pink-pale); }
+  .cw-header { text-align: center; max-width: 720px; margin: 0 auto 3rem; }
+  .cw-experts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.6rem; max-width: 1180px; margin: 0 auto 3rem; }
+  .cw-expert {
+    position: relative; border-radius: 20px; overflow: hidden;
+    background: linear-gradient(180deg, #fff, #fdf4f8);
+    box-shadow: 0 10px 30px rgba(45,26,36,0.08);
+    border: 1px solid rgba(194,24,91,0.08);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+  }
+  .cw-expert:hover { transform: translateY(-6px); box-shadow: 0 22px 50px rgba(45,26,36,0.18); }
+  .cw-expert img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block; transition: transform 0.5s ease; }
+  .cw-expert:hover img { transform: scale(1.04); }
+  .cw-expert-plate {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    padding: 1rem 1.2rem 1.2rem; color: #fff;
+    background: linear-gradient(to top, rgba(20,8,14,0.85), transparent);
+  }
+  .cw-expert-plate .badge {
+    display: inline-block; background: rgba(255,255,255,0.16); backdrop-filter: blur(8px);
+    border: 1px solid rgba(243,201,139,0.55); color: #f3c98b;
+    font-size: 0.6rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 0.28rem 0.7rem; border-radius: 50px; margin-bottom: 0.4rem;
+  }
+  .cw-expert-name { font-family: var(--serif); font-size: 1.08rem; font-weight: 600; line-height: 1.25; }
+  .cw-expert-role { font-size: 0.76rem; color: rgba(255,255,255,0.82); font-weight: 300; margin-top: 0.24rem; }
+  .cw-tabs { display: flex; gap: 0.6rem; flex-wrap: wrap; justify-content: center; margin-bottom: 2.2rem; }
+  .cw-tab {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.6rem 1.4rem; border-radius: 50px;
+    background: white; border: 1.5px solid #e6b8cb;
+    font-size: 0.84rem; font-weight: 500; color: var(--text-mid);
+    cursor: pointer; transition: all 0.25s; font-family: var(--sans);
+  }
+  .cw-tab .t-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--pink-soft); transition: background 0.25s, transform 0.25s; }
+  .cw-tab:hover { border-color: var(--pink-soft); color: var(--pink-deep); transform: translateY(-2px); }
+  .cw-tab.active { background: linear-gradient(135deg, var(--pink-deep), var(--pink-mid)); color: #fff; border-color: transparent; box-shadow: 0 10px 26px rgba(194,24,91,0.3); }
+  .cw-tab.active .t-dot { background: #fff; transform: scale(1.25); }
+  .cw-panel { display: none; }
+  .cw-panel.active { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.6rem; max-width: 1180px; margin: 0 auto; animation: fadeUp 0.5s ease both; }
+  .cw-card { position: relative; border-radius: 18px; overflow: hidden; aspect-ratio: 4 / 3; background: var(--pink-light); box-shadow: 0 8px 26px rgba(45,26,36,0.12); cursor: pointer; transition: transform 0.35s ease, box-shadow 0.35s ease; }
+  .cw-card:hover { transform: translateY(-6px); box-shadow: 0 22px 50px rgba(45,26,36,0.18); }
+  .cw-card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease; }
+  .cw-card:hover img { transform: scale(1.06); }
+  .cw-card::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(20,8,14,0.7) 0%, transparent 60%); pointer-events: none; }
+  .cw-card-label { position: absolute; bottom: 0.9rem; left: 1rem; right: 1rem; color: #fff; font-family: var(--serif); font-size: 0.92rem; font-weight: 600; z-index: 2; }
+  .cw-card-label em { font-style: italic; color: #f48fb1; }
+  @media (max-width: 960px) { .cw-experts-grid { grid-template-columns: repeat(2, 1fr); } .cw-panel.active { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 640px) { .cw-experts-grid { grid-template-columns: 1fr; } .cw-panel.active { grid-template-columns: 1fr; } }
+
   /* NEWSLETTER */
   .newsletter {
     padding: 5rem 5%;
@@ -519,12 +537,10 @@
       padding: 0.5rem 0;
     }
     
-    .events-grid { grid-template-columns: repeat(2, 1fr); }
     .past-grid { grid-template-columns: repeat(2, 1fr); }
     .categories-grid { grid-template-columns: repeat(2, 1fr); }
   }
   @media (max-width: 640px) {
-    .events-grid { grid-template-columns: 1fr; }
     .past-grid { grid-template-columns: 1fr; }
     .categories-grid { grid-template-columns: 1fr 1fr; }
     .page-hero { min-height: 60vh; }
@@ -549,6 +565,7 @@
   <li><a href="/programmes/">Programmes</a></li>
   <li><a href="/events/">Events</a></li>
   <li><a href="/founders/">Founders</a></li>
+  <li><a href="/gallery/">Gallery</a></li>
   <li><a href="/contact-us/" class="nav-cta">Contact</a></li>
 </ul>
  </nav>
@@ -568,140 +585,6 @@
   </div>
 </section>
 
-<!-- UPCOMING EVENTS -->
-<section class="upcoming">
-  <div class="upcoming-header reveal">
-    <span class="section-tag">Upcoming</span>
-    <h2 class="section-title">Join Our Next <em>Gatherings</em></h2>
-    <p style="font-size:0.95rem;color:var(--text-mid);line-height:1.75;font-weight:300;">
-      Reserve your spot at our upcoming wellness festivals, retreats, and workshops across India.
-    </p>
-  </div>
-  <div class="events-grid">
-
-    <div class="event-card reveal">
-      <div class="event-img" style="background-image:url('https://images.unsplash.com/photo-1545389336-cf090694435e?w=600&q=80')">
-        <div class="event-img-overlay"></div>
-        <div class="event-date-badge">
-          <div class="event-date-day">15</div>
-          <div class="event-date-month">Aug 2026</div>
-        </div>
-        <div class="event-type-badge">Retreat</div>
-      </div>
-      <div class="event-body">
-        <div class="event-title">Sattva Wellness Retreat, Rishikesh</div>
-        <div class="event-meta">📍 Rishikesh, Uttarakhand &nbsp;|&nbsp; 🗓 3 Days</div>
-        <div class="event-desc">A transformative 3-day retreat featuring yoga, meditation, sound healing, and nature immersion in the spiritual heart of India.</div>
-        <div class="event-footer">
-          <div class="event-price">₹12,500 <span>onwards</span></div>
-          <a href="/contact-us/?event=rishikesh-retreat" class="event-link">Register</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="event-card reveal">
-      <div class="event-img" style="background-image:url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80')">
-        <div class="event-img-overlay"></div>
-        <div class="event-date-badge">
-          <div class="event-date-day">22</div>
-          <div class="event-date-month">Sep 2026</div>
-        </div>
-        <div class="event-type-badge">Festival</div>
-      </div>
-      <div class="event-body">
-        <div class="event-title">Sattva Wellness Festival, Goa</div>
-        <div class="event-meta">📍 Anjuna, Goa &nbsp;|&nbsp; 🗓 2 Days</div>
-        <div class="event-desc">India's premier wellness festival bringing together 50+ experts, workshops, music, and mindful experiences by the beach.</div>
-        <div class="event-footer">
-          <div class="event-price">₹3,500 <span>onwards</span></div>
-          <a href="/contact-us/?event=goa-festival" class="event-link">Register</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="event-card reveal">
-      <div class="event-img" style="background-image:url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80')">
-        <div class="event-img-overlay"></div>
-        <div class="event-date-badge">
-          <div class="event-date-day">05</div>
-          <div class="event-date-month">Oct 2026</div>
-        </div>
-        <div class="event-type-badge">Workshop</div>
-      </div>
-      <div class="event-body">
-        <div class="event-title">Mindful Leadership Workshop</div>
-        <div class="event-meta">📍 New Delhi &nbsp;|&nbsp; 🗓 1 Day</div>
-        <div class="event-desc">A corporate wellness workshop focused on stress management, mindful leadership, and building resilient teams.</div>
-        <div class="event-footer">
-          <div class="event-price">₹4,500 <span>onwards</span></div>
-          <a href="/contact-us/?event=leadership-workshop" class="event-link">Register</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="event-card reveal">
-      <div class="event-img" style="background-image:url('https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?w=600&q=80')">
-        <div class="event-img-overlay"></div>
-        <div class="event-date-badge">
-          <div class="event-date-day">18</div>
-          <div class="event-date-month">Nov 2026</div>
-        </div>
-        <div class="event-type-badge">Retreat</div>
-      </div>
-      <div class="event-body">
-        <div class="event-title">Himalayan Healing Retreat</div>
-        <div class="event-meta">📍 Manali, Himachal &nbsp;|&nbsp; 🗓 5 Days</div>
-        <div class="event-desc">Deep healing amidst the Himalayas with Ayurveda, forest bathing, and guided meditation sessions.</div>
-        <div class="event-footer">
-          <div class="event-price">₹18,000 <span>onwards</span></div>
-          <a href="/contact-us/?event=himalayan-retreat" class="event-link">Register</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="event-card reveal">
-      <div class="event-img" style="background-image:url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80')">
-        <div class="event-img-overlay"></div>
-        <div class="event-date-badge">
-          <div class="event-date-day">12</div>
-          <div class="event-date-month">Dec 2026</div>
-        </div>
-        <div class="event-type-badge">Workshop</div>
-      </div>
-      <div class="event-body">
-        <div class="event-title">Sound Healing Certification</div>
-        <div class="event-meta">📍 Bangalore &nbsp;|&nbsp; 🗓 2 Days</div>
-        <div class="event-desc">Learn the art and science of sound healing with singing bowls, gongs, and vocal toning techniques.</div>
-        <div class="event-footer">
-          <div class="event-price">₹8,500 <span>onwards</span></div>
-          <a href="/contact-us/?event=sound-healing" class="event-link">Register</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="event-card reveal">
-      <div class="event-img" style="background-image:url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&q=80')">
-        <div class="event-img-overlay"></div>
-        <div class="event-date-badge">
-          <div class="event-date-day">20</div>
-          <div class="event-date-month">Jan 2027</div>
-        </div>
-        <div class="event-type-badge">Festival</div>
-      </div>
-      <div class="event-body">
-        <div class="event-title">Community Wellness Marathon</div>
-        <div class="event-meta">📍 Mumbai &nbsp;|&nbsp; 🗓 1 Day</div>
-        <div class="event-desc">A day of movement, mindfulness, and community building featuring yoga marathons, nutrition talks, and wellness bazaar.</div>
-        <div class="event-footer">
-          <div class="event-price">₹1,500 <span>onwards</span></div>
-          <a href="/contact-us/?event=wellness-marathon" class="event-link">Register</a>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
 <!-- PAST EVENTS -->
 <section class="past-events">
   <div class="past-events-header reveal">
@@ -712,38 +595,57 @@
     </p>
   </div>
   <div class="past-grid">
-    <div class="past-card reveal" style="background-image:url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600&q=80')">
+    <div class="past-card reveal" style="background-image:url('/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(1).jpeg')">
+      <div class="past-card-overlay"></div>
+      <div class="past-card-content">
+        <div class="past-card-tag">Awards</div>
+        <div class="past-card-title">Sattva Iconic Awards 3.0</div>
+        <div class="past-card-date">2026 &mdash;&nbsp; Mumbai</div>
+      </div>
+    </div>
+    <div class="past-card reveal" style="background-image:url('/WELLNESS%20RETREAT%20GOA%20FEST/wellness%20retreat%20goa%20fest%20(1).jpeg')">
       <div class="past-card-overlay"></div>
       <div class="past-card-content">
         <div class="past-card-tag">Retreat</div>
-        <div class="past-card-title">Sunset Yoga Festival</div>
-        <div class="past-card-date">March 2025 &mdash;&nbsp; Goa</div>
+        <div class="past-card-title">Wellness Retreat Goa Fest</div>
+        <div class="past-card-date">2026 &mdash;&nbsp; Goa</div>
       </div>
     </div>
-    <div class="past-card reveal" style="background-image:url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80')">
+    <div class="past-card reveal" style="background-image:url('/SATTVA%20NATION%20MINISTRY%20EVENTS/Ministry%20of%20sports%20%26%20youth/Manu%20Bhaker%20Indian%20Professional%20shooter.jpeg')">
+      <div class="past-card-overlay"></div>
+      <div class="past-card-content">
+        <div class="past-card-tag">Ministry Events</div>
+        <div class="past-card-title">Honouring Leaders &amp; Changemakers</div>
+        <div class="past-card-date">2026 &mdash;&nbsp; New Delhi</div>
+      </div>
+    </div>
+    <div class="past-card reveal" style="background-image:url('/SATTVA%20NATION%20COLLEGE%20WORKSHOPS/AMITY%20LAW%20SCHOOL/AMITY%20LAW%20SCHOOL%20(1).jpeg')">
       <div class="past-card-overlay"></div>
       <div class="past-card-content">
         <div class="past-card-tag">Workshop</div>
-        <div class="past-card-title">Mindful Living Intensive</div>
-        <div class="past-card-date">January 2025 &mdash;&nbsp; Delhi</div>
+        <div class="past-card-title">College Wellness Workshops</div>
+        <div class="past-card-date">2025 &mdash;&nbsp; Delhi Campuses</div>
       </div>
     </div>
-    <div class="past-card reveal" style="background-image:url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80')">
+    <div class="past-card reveal" style="background-image:url('/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%202.0/2-iconic-awards%20(1).jpeg')">
       <div class="past-card-overlay"></div>
       <div class="past-card-content">
-        <div class="past-card-tag">Festival</div>
-        <div class="past-card-title">Sattva Iconic Awards</div>
+        <div class="past-card-tag">Awards</div>
+        <div class="past-card-title">Sattva Iconic Awards 2.0</div>
+        <div class="past-card-date">March 2025 &mdash;&nbsp; Mumbai</div>
+      </div>
+    </div>
+    <div class="past-card reveal" style="background-image:url('/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%201.0/1-iconic-awards%20(1).jpeg')">
+      <div class="past-card-overlay"></div>
+      <div class="past-card-content">
+        <div class="past-card-tag">Awards</div>
+        <div class="past-card-title">Sattva Iconic Awards 1.0</div>
         <div class="past-card-date">December 2024 &mdash;&nbsp; Mumbai</div>
       </div>
     </div>
-    <div class="past-card reveal" style="background-image:url('https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?w=600&q=80')">
-      <div class="past-card-overlay"></div>
-      <div class="past-card-content">
-        <div class="past-card-tag">Retreat</div>
-        <div class="past-card-title">Himalayan Reset</div>
-        <div class="past-card-date">November 2024 &mdash;&nbsp; Manali</div>
-      </div>
-    </div>
+  </div>
+  <div style="text-align:center; margin-top:3rem;">
+    <a href="/gallery/" class="btn-outline-dark">View Full Gallery</a>
   </div>
 </section>
 
@@ -758,25 +660,217 @@
   </div>
   <div class="categories-grid">
     <div class="category-card reveal">
-      <div class="category-icon">🙌</div>
-      <div class="category-name">Retreats</div>
-      <div class="category-count">12 upcoming</div>
+      <div class="category-icon">🏆</div>
+      <div class="category-name">Iconic Awards</div>
+      <div class="category-count">3 editions</div>
     </div>
     <div class="category-card reveal">
-      <div class="category-icon">🎉</div>
-      <div class="category-name">Festivals</div>
-      <div class="category-count">4 upcoming</div>
+      <div class="category-icon">🌴</div>
+      <div class="category-name">Wellness Retreats</div>
+      <div class="category-count">Goa Fest &amp; more</div>
     </div>
     <div class="category-card reveal">
-      <div class="category-icon">🎊</div>
-      <div class="category-name">Workshops</div>
-      <div class="category-count">18 upcoming</div>
+      <div class="category-icon">🎓</div>
+      <div class="category-name">College Workshops</div>
+      <div class="category-count">4 campuses</div>
     </div>
     <div class="category-card reveal">
-      <div class="category-icon">🎈</div>
-      <div class="category-name">Corporate</div>
-      <div class="category-count">8 upcoming</div>
+      <div class="category-icon">🏛️</div>
+      <div class="category-name">Ministry Events</div>
+      <div class="category-count">Leaders &amp; changemakers</div>
     </div>
+  </div>
+</section>
+
+<!-- AWARDS & RECOGNITION -->
+<section class="awards" id="awards">
+  <div class="awards-header reveal">
+    <span class="section-tag">Recognition</span>
+    <h2 class="section-title">Awards &amp; <em>Recognition</em></h2>
+    <p class="section-body" style="margin-bottom:0;">Honours received by Sattva Nation and our community champions — a testament to the work we celebrate together.</p>
+  </div>
+  <div class="awards-grid">
+    <div class="award-card reveal">
+      <span class="award-badge">★ Honour</span>
+      <img loading="lazy" src="/assets/Awards%20%26%20Recognition/Economic%20Times_%20Most%20Promising/4b906315-c457-4745-a415-7e1f5202a606.png" alt="Economic Times Most Promising award">
+      <div class="award-plate">
+        <div class="award-plate-title">Economic Times — Most Promising</div>
+        <div class="award-plate-sub">Recognition for impact and innovation</div>
+      </div>
+    </div>
+    <div class="award-card reveal">
+      <span class="award-badge">★ Honour</span>
+      <img loading="lazy" src="/assets/Awards%20%26%20Recognition/Global%20Influencers%20and%20Leadership%20Awards%20by%20RajKumar%20Rao/17b12d7a-0e58-47ac-9baf-a44f01601aee.png" alt="Global Influencers and Leadership Awards by RajKumar Rao">
+      <div class="award-plate">
+        <div class="award-plate-title">Global Influencers &amp; Leadership Awards</div>
+        <div class="award-plate-sub">Presented by RajKumar Rao</div>
+      </div>
+    </div>
+    <div class="award-card reveal">
+      <span class="award-badge">★ Honour</span>
+      <img loading="lazy" src="/assets/Awards%20%26%20Recognition/Holistic%20Wellness%20Awards%20by%20ET%20Health%20by%20kriti%20kharbanda/56d4be8e-d714-4665-be86-2ad03330d06e.png" alt="Holistic Wellness Awards by ET Health by Kriti Kharbanda">
+      <div class="award-plate">
+        <div class="award-plate-title">Holistic Wellness Awards — ET Health</div>
+        <div class="award-plate-sub">Presented by Kriti Kharbanda</div>
+      </div>
+    </div>
+    <div class="award-card reveal">
+      <span class="award-badge">★ Honour</span>
+      <img loading="lazy" src="/assets/Awards%20%26%20Recognition/Women%20Disruptors%202024%20(DNA%20INDIA)/00f07aaf-c0d6-4678-99cb-f02a11ed50ef.png" alt="Women Disruptors 2024 DNA India">
+      <div class="award-plate">
+        <div class="award-plate-title">Women Disruptors 2024</div>
+        <div class="award-plate-sub">DNA India</div>
+      </div>
+    </div>
+    <div class="award-card reveal">
+      <span class="award-badge">★ Honour</span>
+      <img loading="lazy" src="/assets/Awards%20%26%20Recognition/Women%20Disruptors%202024%20(DNA%20INDIA)/d2d71d9a-ae4b-4cec-a473-29b2fb04c70d.png" alt="Women Disruptors 2024 DNA India — second image">
+      <div class="award-plate">
+        <div class="award-plate-title">Women Disruptors 2024</div>
+        <div class="award-plate-sub">DNA India</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--  CORPORATE WELLNESS PROGRAMS  -->
+<section class="cw-section" id="corporate-wellness">
+  <div class="cw-header reveal">
+    <span class="section-tag">Corporate Wellness</span>
+    <h2 class="section-title">Our <em>Wellness Experts</em></h2>
+    <p style="font-size:0.95rem;color:var(--text-mid);line-height:1.75;font-weight:300;">Practitioners and mentors who lead sessions across our programs and partner events.</p>
+  </div>
+
+  <div class="cw-experts-grid">
+    <div class="cw-expert reveal">
+      <img loading="lazy" src="/assets/Corporate%20wellness%20programs/Wellness%20experts/WhatsApp%20Image%202026-06-25%20at%204.57.46%20PM.jpeg" alt="Wellness expert">
+      <div class="cw-expert-plate">
+        <span class="badge">★ Expert</span>
+        <div class="cw-expert-name">Wellness Coach</div>
+        <div class="cw-expert-role">Lead practitioner, corporate wellness</div>
+      </div>
+    </div>
+    <div class="cw-expert reveal">
+      <img loading="lazy" src="/assets/Corporate%20wellness%20programs/Wellness%20experts/WhatsApp%20Image%202026-06-25%20at%204.57.46%20PM%20(1).jpeg" alt="Wellness expert">
+      <div class="cw-expert-plate">
+        <span class="badge">★ Expert</span>
+        <div class="cw-expert-name">Wellness Coach</div>
+        <div class="cw-expert-role">Lead practitioner, corporate wellness</div>
+      </div>
+    </div>
+    <div class="cw-expert reveal">
+      <img loading="lazy" src="/assets/Corporate%20wellness%20programs/Wellness%20experts/WhatsApp%20Image%202026-06-25%20at%204.57.46%20PM%20(2).jpeg" alt="Wellness expert">
+      <div class="cw-expert-plate">
+        <span class="badge">★ Expert</span>
+        <div class="cw-expert-name">Wellness Coach</div>
+        <div class="cw-expert-role">Lead practitioner, corporate wellness</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cw-tabs">
+    <button class="cw-tab active" data-cwtab="summit"><span class="t-dot"></span>South Asian Summit</button>
+    <button class="cw-tab" data-cwtab="signature"><span class="t-dot"></span>Signature Global</button>
+  </div>
+
+  <!-- Summit -->
+  <div class="cw-panel active" id="cwtab-summit">
+    <div class="cw-card" data-caption="Wellness session at South Asian Summit">
+      <img loading="lazy" src="/assets/Corporate%20wellness%20programs/Wellness%20session%20at%20South%20Asian%20summit/WhatsApp%20Image%202026-06-25%20at%204.38.53%20PM.jpeg" alt="Wellness session at South Asian Summit">
+      <div class="cw-card-label">Wellness session <em>№1</em></div>
+    </div>
+    <div class="cw-card" data-caption="Wellness session at South Asian Summit">
+      <img loading="lazy" src="/assets/Corporate%20wellness%20programs/Wellness%20session%20at%20South%20Asian%20summit/WhatsApp%20Image%202026-06-25%20at%204.38.53%20PM%20(1).jpeg" alt="Wellness session at South Asian Summit">
+      <div class="cw-card-label">Wellness session <em>№2</em></div>
+    </div>
+    <div class="cw-card" data-caption="Wellness session at South Asian Summit">
+      <img loading="lazy" src="/assets/Corporate%20wellness%20programs/Wellness%20session%20at%20South%20Asian%20summit/WhatsApp%20Image%202026-06-25%20at%204.38.53%20PM%20(2).jpeg" alt="Wellness session at South Asian Summit">
+      <div class="cw-card-label">Wellness session <em>№3</em></div>
+    </div>
+  </div>
+
+  <!-- Signature Global -->
+  <div class="cw-panel" id="cwtab-signature">
+    <div class="cw-card" data-caption="Women Empowerment with Signature Global">
+      <img loading="lazy" src="/assets/Corporate%20wellness%20programs/Women%20Empowerment%20with%20Signature%20global/WhatsApp%20Image%202026-06-25%20at%204.38.26%20PM.jpeg" alt="Women Empowerment with Signature Global">
+      <div class="cw-card-label">Women Empowerment <em>№1</em></div>
+    </div>
+    <div class="cw-card" data-caption="Women Empowerment with Signature Global">
+      <img loading="lazy" src="/assets/Corporate%20wellness%20programs/Women%20Empowerment%20with%20Signature%20global/WhatsApp%20Image%202026-06-25%20at%204.38.26%20PM%20(1).jpeg" alt="Women Empowerment with Signature Global">
+      <div class="cw-card-label">Women Empowerment <em>№2</em></div>
+    </div>
+    <div class="cw-card" data-caption="Women Empowerment with Signature Global">
+      <img loading="lazy" src="/assets/Corporate%20wellness%20programs/Women%20Empowerment%20with%20Signature%20global/WhatsApp%20Image%202026-06-25%20at%204.38.26%20PM%20(2).jpeg" alt="Women Empowerment with Signature Global">
+      <div class="cw-card-label">Women Empowerment <em>№3</em></div>
+    </div>
+    <div class="cw-card" data-caption="Women Empowerment with Signature Global">
+      <img loading="lazy" src="/assets/Corporate%20wellness%20programs/Women%20Empowerment%20with%20Signature%20global/WhatsApp%20Image%202026-06-25%20at%204.38.27%20PM.jpeg" alt="Women Empowerment with Signature Global">
+      <div class="cw-card-label">Women Empowerment <em>№4</em></div>
+    </div>
+    <div class="cw-card" data-caption="Women Empowerment with Signature Global">
+      <img loading="lazy" src="/assets/Corporate%20wellness%20programs/Women%20Empowerment%20with%20Signature%20global/WhatsApp%20Image%202026-06-25%20at%204.38.27%20PM%20(1).jpeg" alt="Women Empowerment with Signature Global">
+      <div class="cw-card-label">Women Empowerment <em>№5</em></div>
+    </div>
+    <div class="cw-card" data-caption="Women Empowerment with Signature Global">
+      <img loading="lazy" src="/assets/Corporate%20wellness%20programs/Women%20Empowerment%20with%20Signature%20global/WhatsApp%20Image%202026-06-25%20at%204.38.27%20PM%20(2).jpeg" alt="Women Empowerment with Signature Global">
+      <div class="cw-card-label">Women Empowerment <em>№6</em></div>
+    </div>
+  </div>
+</section>
+
+<!--  MEDIA COVERAGE  -->
+<section class="media-coverage" id="media-coverage">
+  <div class="media-header">
+    <span class="section-tag">Press</span>
+    <h2 class="section-title">In the <em>Media</em></h2>
+    <p style="font-size:0.95rem;color:var(--text-mid);line-height:1.75;font-weight:300;">Highlights from newspapers and digital coverage — recognition of Sattva Nation's wellness work.</p>
+  </div>
+
+  <div class="media-section-head">
+    <h3>Newspaper <em>Cutouts</em></h3>
+    <span class="count">5 clippings</span>
+  </div>
+
+  <div class="news-clippings">
+    <figure class="news-clip" style="--tilt:-1.8deg;">
+      <img src="/assets/Media%20coverages/Newspaper%20Cutouts/WhatsApp%20Image%202026-06-25%20at%204.38.07%20PM.jpeg" alt="Newspaper cutout 1" loading="lazy">
+    </figure>
+    <figure class="news-clip" style="--tilt:1.4deg;">
+      <img src="/assets/Media%20coverages/Newspaper%20Cutouts/WhatsApp%20Image%202026-06-25%20at%204.38.07%20PM%20(1).jpeg" alt="Newspaper cutout 2" loading="lazy">
+    </figure>
+    <figure class="news-clip" style="--tilt:-1.2deg;">
+      <img src="/assets/Media%20coverages/Newspaper%20Cutouts/WhatsApp%20Image%202026-06-25%20at%204.38.07%20PM%20(2).jpeg" alt="Newspaper cutout 3" loading="lazy">
+    </figure>
+    <figure class="news-clip" style="--tilt:1.6deg;">
+      <img src="/assets/Media%20coverages/Newspaper%20Cutouts/WhatsApp%20Image%202026-06-25%20at%204.38.07%20PM%20(3).jpeg" alt="Newspaper cutout 4" loading="lazy">
+    </figure>
+    <figure class="news-clip" style="--tilt:-0.8deg;">
+      <img src="/assets/Media%20coverages/Newspaper%20Cutouts/WhatsApp%20Image%202026-06-25%20at%204.38.07%20PM%20(4).jpeg" alt="Newspaper cutout 5" loading="lazy">
+    </figure>
+  </div>
+
+  <div class="media-section-head" style="margin-top:2.5rem;">
+    <h3>Digital <em>Coverages</em></h3>
+    <span class="count">4 items</span>
+  </div>
+
+  <div class="digital-coverages">
+    <figure class="dc-card reveal">
+      <img src="/assets/Media%20coverages/Digital%20Media%20Coverages/WhatsApp%20Image%202026-06-25%20at%2011.58.31%20AM.jpeg" alt="Digital media coverage" loading="lazy">
+      <figcaption class="dc-label">Online feature <em>1</em></figcaption>
+    </figure>
+    <figure class="dc-card reveal">
+      <img src="/assets/Media%20coverages/Digital%20Media%20Coverages/WhatsApp%20Image%202026-06-25%20at%2011.58.31%20AM%20(2).jpeg" alt="Digital media coverage" loading="lazy">
+      <figcaption class="dc-label">Online feature <em>2</em></figcaption>
+    </figure>
+    <figure class="dc-card reveal">
+      <img src="/assets/Media%20coverages/Digital%20Media%20Coverages/WhatsApp%20Image%202026-06-25%20at%2011.58.31%20AM%20(3).jpeg" alt="Digital media coverage" loading="lazy">
+      <figcaption class="dc-label">Online feature <em>3</em></figcaption>
+    </figure>
+    <figure class="dc-card reveal">
+      <img src="/assets/Media%20coverages/Digital%20Media%20Coverages/WhatsApp%20Image%202026-06-25%20at%2011.58.31%20AM%20(4).jpeg" alt="Digital media coverage" loading="lazy">
+      <figcaption class="dc-label">Online feature <em>4</em></figcaption>
+    </figure>
   </div>
 </section>
 
@@ -838,6 +932,18 @@
     });
   }, { threshold: 0.1 });
   reveals.forEach(el => io.observe(el));
+
+  // Corporate Wellness tab gallery
+  const cwTabs = document.querySelectorAll('.cw-tab');
+  const cwPanels = document.querySelectorAll('.cw-panel');
+  cwTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      cwTabs.forEach(t => t.classList.remove('active'));
+      cwPanels.forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById('cwtab-' + tab.dataset.cwtab).classList.add('active');
+    });
+  });
 
   const newsletterForm = document.getElementById('newsletterForm');
   if (newsletterForm) {

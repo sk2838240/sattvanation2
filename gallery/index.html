@@ -6,8 +6,8 @@
 <meta name="theme-color" content="#c2185b">
 <title>Gallery - Sattva Nation</title>
 <meta name="description" content="Explore photos and videos from Sattva Nation's wellness festivals, retreats, workshops, and community events across India.">
-<link rel="icon" type="image/png" href="/assets/sattvalogo123.png" sizes="32x32">
-<link rel="apple-touch-icon" href="/assets/sattvalogo123.png">
+<link rel="icon" type="image/png" href="../assets/sattvalogo123.png" sizes="32x32">
+<link rel="apple-touch-icon" href="../assets/sattvalogo123.png">
 <link rel="canonical" href="https://www.sattvanation.com/gallery/">
 <meta property="og:title" content="Gallery - Sattva Nation">
 <meta property="og:description" content="Explore photos and videos from Sattva Nation's wellness festivals, retreats, workshops, and community events across India.">
@@ -596,8 +596,156 @@
     border: 1px solid rgba(255,255,255,0.2);
   }
 
+  /* ==============================================
+     WOMEN EMPOWERMENT: COMPACT EDITION
+     Aubergine + gold theme, grid layout
+     ============================================== */
+  .empower-section {
+    padding: 4rem 5%; position: relative; overflow: hidden;
+    background: linear-gradient(175deg, #1a0a1e 0%, #2d1040 35%, #1e0c2c 70%, #12061a 100%);
+  }
+  .empower-section::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background:
+      radial-gradient(ellipse at 20% 20%, rgba(212,175,55,0.08) 0%, transparent 55%),
+      radial-gradient(ellipse at 75% 70%, rgba(212,175,55,0.06) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  .empower-section::after {
+    content: ''; position: absolute; inset: 0; pointer-events: none; opacity: 0.04;
+    background-image:
+      repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(212,175,55,0.5) 40px, rgba(212,175,55,0.5) 41px),
+      repeating-linear-gradient(-45deg, transparent, transparent 40px, rgba(212,175,55,0.5) 40px, rgba(212,175,55,0.5) 41px);
+  }
+
+  .empower-header-compact {
+    text-align: center; max-width: 600px; margin: 0 auto 2.5rem;
+    position: relative; z-index: 2;
+  }
+  .empower-emblem {
+    display: inline-flex; align-items: center; gap: 0.55rem;
+    padding: 0.35rem 1.1rem; border-radius: 50px;
+    background: rgba(212,175,55,0.12); color: #d4af37;
+    border: 1px solid rgba(212,175,55,0.35);
+    font-size: 0.7rem; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.14em; margin-bottom: 0.9rem;
+  }
+  .empower-emblem::before,
+  .empower-emblem::after {
+    content: '◆'; font-size: 0.45rem; opacity: 0.7;
+  }
+  .empower-header-compact h2 {
+    font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 2.5rem);
+    color: #f5edd6; line-height: 1.18; margin-bottom: 0.8rem;
+  }
+  .empower-header-compact h2 em {
+    font-style: italic; color: #d4af37;
+  }
+  .empower-header-compact p {
+    font-size: 0.92rem; color: rgba(245,237,214,0.6); line-height: 1.7;
+    font-weight: 300; max-width: 500px; margin: 0 auto;
+  }
+
+  /* Compact Grid: 3 columns, video spans 2 rows */
+  .empower-grid-compact {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 280px; gap: 1rem;
+    position: relative; z-index: 2; max-width: 1200px; margin: 0 auto;
+  }
+
+  /* Video tile spans 2 rows */
+  .empower-video-tile {
+    grid-row: span 2; position: relative; border-radius: 16px; overflow: hidden;
+    border: 2px solid rgba(212,175,55,0.25);
+    box-shadow: 0 0 40px rgba(212,175,55,0.08), 0 14px 36px rgba(0,0,0,0.35);
+    transition: box-shadow 0.4s, border-color 0.4s;
+  }
+  .empower-video-tile:hover {
+    border-color: rgba(212,175,55,0.5);
+    box-shadow: 0 0 60px rgba(212,175,55,0.14), 0 20px 48px rgba(0,0,0,0.45);
+  }
+  .empower-video-tile video {
+    width: 100%; height: 100%; object-fit: cover; display: block; background: #000;
+  }
+  .empower-video-badge {
+    position: absolute; top: 1rem; left: 1rem; z-index: 3;
+    background: rgba(26,10,30,0.85); backdrop-filter: blur(10px);
+    color: #d4af37; font-size: 0.68rem; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.12em;
+    padding: 0.35rem 0.9rem; border-radius: 50px;
+    border: 1px solid rgba(212,175,55,0.4);
+    display: flex; align-items: center; gap: 0.4rem;
+  }
+  .empower-video-badge::before {
+    content: ''; width: 6px; height: 6px; border-radius: 50%;
+    background: #d4af37; animation: pulse-dot 1.8s ease-in-out infinite;
+  }
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(1.6); }
+  }
+
+  /* Image tiles */
+  .empower-img-tile {
+    position: relative; border-radius: 14px; overflow: hidden; cursor: pointer;
+    transition: transform 0.4s cubic-bezier(0.2,0.7,0.3,1), box-shadow 0.4s;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.3);
+  }
+  .empower-img-tile:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 42px rgba(212,175,55,0.18), 0 10px 28px rgba(0,0,0,0.4);
+  }
+  .empower-img-tile img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+    transition: transform 0.55s cubic-bezier(0.2,0.7,0.3,1), filter 0.4s;
+  }
+  .empower-img-tile:hover img {
+    transform: scale(1.05); filter: brightness(1.08) saturate(1.1);
+  }
+
+  /* Gold corner accent */
+  .empower-tile-accent {
+    position: absolute; bottom: -1px; right: -1px; z-index: 2;
+    width: 40px; height: 40px;
+    background: linear-gradient(135deg, transparent 50%, rgba(212,175,55,0.7) 50%);
+    border-radius: 14px 0 0 0; pointer-events: none;
+  }
+
+  /* Overlay with label on hover */
+  .empower-tile-overlay {
+    position: absolute; inset: 0; display: flex; align-items: flex-end;
+    padding: 1.2rem; pointer-events: none;
+    background: linear-gradient(to top, rgba(26,10,30,0.85) 0%, transparent 70%);
+    opacity: 0; transition: opacity 0.4s;
+  }
+  .empower-img-tile:hover .empower-tile-overlay { opacity: 1; }
+  .empower-tile-label {
+    font-size: 0.78rem; font-weight: 600; color: #d4af37;
+    text-transform: uppercase; letter-spacing: 0.08em;
+  }
+
+  /* Responsive */
+  @media (max-width: 960px) {
+    .empower-grid-compact {
+      grid-template-columns: repeat(2, 1fr);
+      grid-auto-rows: 260px;
+    }
+    .empower-video-tile { grid-row: span 2; }
+    .empower-header-compact { margin-bottom: 2rem; }
+  }
+  @media (max-width: 640px) {
+    .empower-grid-compact {
+      grid-template-columns: 1fr;
+      grid-auto-rows: 280px;
+    }
+    .empower-video-tile { grid-row: span 1; }
+    .empower-section { padding: 3rem 4%; }
+  }
+
   /* VIDEO SECTION */
   .video-section { padding: 5rem 5%; background: var(--pink-pale); }
+
+  /* VIDEO SECTION */
   .video-header { text-align: center; max-width: 640px; margin: 0 auto 3rem; }
   .video-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
   .video-card {
@@ -636,6 +784,116 @@
   .video-body { padding: 1.2rem 1.4rem; }
   .video-title { font-family: var(--serif); font-size: 1rem; font-weight: 600; color: var(--text-dark); line-height: 1.3; margin-bottom: 0.4rem; }
   .video-meta { font-size: 0.78rem; color: var(--text-muted); }
+
+  /* TED TALK — ORBIT SECTION */
+  .ted-section { padding: 6rem 5%; background: radial-gradient(ellipse at center, #2d1a24 0%, #1a0f17 100%); color: #fff; position: relative; overflow: hidden; }
+  .ted-section::before, .ted-section::after { content:''; position: absolute; border-radius: 50%; pointer-events: none; }
+  .ted-section::before { top: -150px; left: -150px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(194,24,91,0.35), transparent 70%); }
+  .ted-section::after  { bottom: -200px; right: -120px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(212,83,126,0.25), transparent 70%); }
+  .ted-header { text-align: center; margin-bottom: 3rem; position: relative; z-index: 2; }
+  .ted-section .section-tag { color: #f8bbd0; }
+  .ted-section .section-title { color: #fff; }
+  .ted-section .section-title em { color: #f48fb1; }
+  .ted-section .section-sub { color: rgba(255,255,255,0.75); max-width: 620px; margin: 0.75rem auto 0; line-height: 1.7; font-weight: 300; }
+
+  .ted-orbit { position: relative; width: 100%; max-width: 720px; aspect-ratio: 1 / 1; margin: 0 auto; z-index: 2; }
+  .ted-orbit-ring { position: absolute; inset: 0; border-radius: 50%; border: 1px dashed rgba(255,255,255,0.18); animation: ted-spin 60s linear infinite; }
+  .ted-orbit-ring.r2 { inset: 14%; border-color: rgba(244,143,177,0.18); animation-duration: 90s; animation-direction: reverse; }
+  @keyframes ted-spin { to { transform: rotate(360deg); } }
+
+  .ted-core { position: absolute; top: 50%; left: 50%; width: 60%; aspect-ratio: 1 / 1; transform: translate(-50%, -50%); border-radius: 50%; overflow: hidden; box-shadow: 0 0 0 6px rgba(255,255,255,0.06), 0 30px 80px rgba(0,0,0,0.5); transition: box-shadow 0.4s ease; }
+  .ted-core img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: opacity 0.6s ease, transform 0.6s ease; }
+  .ted-core::after { content:''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.55)); }
+  .ted-core-label { position: absolute; left: 0; right: 0; bottom: 10%; text-align: center; font-family: var(--serif); font-size: clamp(0.9rem, 1.6vw, 1.1rem); color: #fff; letter-spacing: 0.04em; padding: 0 1rem; z-index: 2; }
+
+  .ted-sat { position: absolute; width: 26%; aspect-ratio: 1 / 1; border-radius: 50%; overflow: hidden; cursor: pointer; box-shadow: 0 12px 30px rgba(0,0,0,0.45); transition: box-shadow 0.35s ease; transform-origin: center; }
+  .ted-sat img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 0.6s ease; }
+  .ted-sat::after { content:''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 60%, rgba(194,24,91,0.55)); opacity: 0; transition: opacity 0.35s ease; }
+  .ted-sat:hover { box-shadow: 0 20px 50px rgba(194,24,91,0.5); }
+  .ted-sat:hover img { transform: scale(1.08); }
+  .ted-sat:hover::after { opacity: 1; }
+  .ted-sat:focus-visible { outline: 3px solid #f48fb1; outline-offset: 4px; }
+  .ted-sat.active { box-shadow: 0 0 0 4px #f48fb1, 0 20px 50px rgba(244,143,177,0.45); }
+  .ted-sat[data-pos="0"] { top: 4%;   left: 50%; transform: translate(-50%, 0); }
+  .ted-sat[data-pos="1"] { top: 50%;  right: 4%; transform: translate(0, -50%); }
+  .ted-sat[data-pos="2"] { bottom: 4%; left: 50%; transform: translate(-50%, 0); }
+  .ted-sat[data-pos="3"] { top: 50%;  left: 4%;  transform: translate(0, -50%); }
+
+  .ted-thumbs { display: flex; gap: 0.6rem; justify-content: center; margin-top: 2.5rem; flex-wrap: wrap; position: relative; z-index: 2; }
+  .ted-thumb { width: 56px; height: 56px; border-radius: 50%; overflow: hidden; cursor: pointer; border: 2px solid transparent; transition: border-color 0.25s ease, transform 0.25s ease; opacity: 0.55; }
+  .ted-thumb:hover { transform: translateY(-3px); opacity: 1; }
+  .ted-thumb.active { border-color: #f48fb1; opacity: 1; transform: scale(1.1); }
+  .ted-thumb img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+
+  .ted-hint { text-align: center; margin-top: 1.25rem; font-size: 0.8rem; color: rgba(255,255,255,0.55); letter-spacing: 0.08em; text-transform: uppercase; position: relative; z-index: 2; }
+
+  /* IMG-SET TABBED SECTION */
+  .imgset-section { padding: 5rem 5%; background: var(--pink-pale); }
+  .imgset-header { text-align: center; max-width: 720px; margin: 0 auto 2.5rem; }
+  .imgset-badge {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    background: white; color: var(--pink-deep);
+    padding: 0.3rem 0.95rem; border-radius: 50px;
+    font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em;
+    margin-bottom: 0.7rem; border: 1px solid #f8bbd0;
+  }
+  .imgset-header h2 { font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 2.6rem); color: var(--text-dark); margin-bottom: 0.8rem; }
+  .imgset-header h2 em { font-style: italic; color: var(--pink-deep); }
+  .imgset-header p { font-size: 0.95rem; color: var(--text-mid); line-height: 1.75; font-weight: 300; }
+
+  .imgset-tabs {
+    display: flex; gap: 0.6rem; flex-wrap: wrap; justify-content: center; margin-bottom: 2.8rem;
+  }
+  .imgset-tab {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.6rem 1.4rem; border-radius: 50px;
+    background: white; border: 1.5px solid #e6b8cb;
+    font-size: 0.84rem; font-weight: 500; color: var(--text-mid);
+    cursor: pointer; transition: all 0.25s; font-family: var(--sans);
+  }
+  .imgset-tab .i-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--pink-soft); transition: background 0.25s, transform 0.25s;
+  }
+  .imgset-tab:hover { border-color: var(--pink-soft); color: var(--pink-deep); transform: translateY(-2px); }
+  .imgset-tab.active {
+    background: linear-gradient(135deg, var(--pink-deep), var(--pink-mid));
+    color: #fff; border-color: transparent;
+    box-shadow: 0 10px 26px rgba(194,24,91,0.3);
+  }
+  .imgset-tab.active .i-dot { background: #fff; transform: scale(1.25); }
+
+  .imgset-panel { display: none; }
+  .imgset-panel.active {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.6rem;
+    animation: fadeUp 0.5s ease both;
+  }
+  .imgset-card {
+    position: relative; border-radius: 18px; overflow: hidden; aspect-ratio: 3 / 4;
+    cursor: pointer; background: var(--pink-light);
+    box-shadow: 0 8px 26px rgba(45,26,36,0.12);
+    transition: transform 0.4s cubic-bezier(0.2,0.7,0.3,1), box-shadow 0.4s;
+  }
+  .imgset-card:hover { transform: translateY(-6px); box-shadow: 0 26px 56px rgba(45,26,36,0.28); }
+  .imgset-card img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+    transition: transform 0.6s cubic-bezier(0.2,0.7,0.3,1);
+  }
+  .imgset-card:hover img { transform: scale(1.06); }
+  .imgset-card::after {
+    content: ''; position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(to top, rgba(20,8,14,0.85) 0%, rgba(20,8,14,0.3) 34%, transparent 60%);
+  }
+  .imgset-plate {
+    position: absolute; bottom: 0; left: 0; right: 0; z-index: 2;
+    padding: 1.1rem 1.1rem 1.2rem; color: #fff;
+  }
+  .imgset-plate-title { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; line-height: 1.25; }
+  .imgset-plate-sub {
+    font-size: 0.74rem; color: rgba(255,255,255,0.82); font-weight: 300;
+    margin-top: 0.3rem; line-height: 1.4;
+    padding-top: 0.4rem; border-top: 1px solid rgba(255,255,255,0.35);
+  }
 
   /* CTA */
   .cta-banner {
@@ -711,6 +969,7 @@
     .gallery-item.tall { grid-row: span 1; }
     .gallery-item.wide { grid-column: span 1; }
     .video-grid { grid-template-columns: repeat(2, 1fr); }
+    .ted-orbit { max-width: 520px; }
     .timeline-gallery { columns: 2; }
     .slideshow-card { flex: 0 0 280px; height: 360px; }
     .workshops-grid { grid-template-columns: repeat(2, 1fr); }
@@ -719,11 +978,14 @@
     .goa-postcard.feature img { height: 240px; }
     .ministry-panel.active { grid-template-columns: repeat(2, 1fr); }
     .ministry-card.video-tile { grid-column: span 2; }
+    .imgset-panel.active { grid-template-columns: repeat(2, 1fr); }
   }
   @media (max-width: 640px) {
     .nav-links li:not(:last-child):not(:first-child) { display: block; }
     .gallery-bento { grid-template-columns: 1fr; }
     .video-grid { grid-template-columns: 1fr; }
+    .ted-orbit { max-width: 360px; }
+    .ted-thumb { width: 44px; height: 44px; }
     .page-hero { min-height: 60vh; padding-bottom: 5.5rem; }
     .timeline-gallery { columns: 1; }
     .slideshow-card { flex: 0 0 260px; height: 340px; }
@@ -734,6 +996,7 @@
     .goa-postcard.feature { grid-column: span 1; }
     .ministry-panel.active { grid-template-columns: 1fr; }
     .ministry-card.video-tile { grid-column: span 1; }
+    .imgset-panel.active { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -742,7 +1005,7 @@
 <!-- NAV -->
 <nav>
   <div class="logo">
-    <img src="/assets/sattvalogo123.png" alt="Sattva Nation Logo" class="logo-img" width="160" height="40" />
+    <img src="../assets/sattvalogo123.png" alt="Sattva Nation Logo" class="logo-img" width="160" height="40" />
   </div>
   <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
     <span></span>
@@ -771,6 +1034,7 @@
       <div><div class="hero-stat-num">3 Editions</div><div class="hero-stat-label">Iconic Awards</div></div>
       <div><div class="hero-stat-num">4 Campuses</div><div class="hero-stat-label">College Workshops</div></div>
       <div><div class="hero-stat-num">1 Retreat</div><div class="hero-stat-label">Goa Wellness Fest</div></div>
+      <div><div class="hero-stat-num">3 Ministries</div><div class="hero-stat-label">Ministry Partners</div></div>
       <div><div class="hero-stat-num">50+ Moments</div><div class="hero-stat-label">Captured</div></div>
     </div>
   </div>
@@ -790,6 +1054,7 @@
   <button type="button" class="filter-btn" data-category="workshops">College Workshops</button>
   <button type="button" class="filter-btn" data-category="goa">Goa Fest</button>
   <button type="button" class="filter-btn" data-category="ministry">Ministry Events</button>
+  <button type="button" class="filter-btn" data-category="empower">Women Empowerment</button>
   <button type="button" class="filter-btn" data-category="videos">Videos</button>
 </div>
 
@@ -804,7 +1069,7 @@
 
   <div class="gallery-bento">
     <div class="gallery-item tall" data-caption="Sattva Iconic Awards 1.0 - Opening Ceremony">
-      <img loading="lazy" src="/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%201.0/1-iconic-awards%20(1).jpeg" alt="Opening Ceremony">
+      <img loading="lazy" src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%201.0/1-iconic-awards%20(1).jpeg" alt="Opening Ceremony">
       <div class="gallery-item-overlay"></div>
       <div class="gallery-item-label">
         <div class="gl-tag">Awards</div>
@@ -813,7 +1078,7 @@
       </div>
     </div>
     <div class="gallery-item wide" data-caption="Sattva Iconic Awards 1.0 - Keynote Address">
-      <img loading="lazy" src="/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%201.0/1-iconic-awards%20(2).jpeg" alt="Keynote Address">
+      <img loading="lazy" src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%201.0/1-iconic-awards%20(2).jpeg" alt="Keynote Address">
       <div class="gallery-item-overlay"></div>
       <div class="gallery-item-label">
         <div class="gl-tag">Keynote</div>
@@ -822,7 +1087,7 @@
       </div>
     </div>
     <div class="gallery-item" data-caption="Sattva Iconic Awards 1.0 - Winner Stage">
-      <img loading="lazy" src="/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%201.0/1-iconic-awards%20(3).jpeg" alt="Winner on Stage">
+      <img loading="lazy" src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%201.0/1-iconic-awards%20(3).jpeg" alt="Winner on Stage">
       <div class="gallery-item-overlay"></div>
       <div class="gallery-item-label">
         <div class="gl-tag">Awards</div>
@@ -831,7 +1096,7 @@
       </div>
     </div>
     <div class="gallery-item" data-caption="Sattva Iconic Awards 1.0 - Audience">
-      <img src="/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%201.0/1-iconic-awards%20(4).jpeg" alt="The Audience" loading="lazy">
+      <img src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%201.0/1-iconic-awards%20(4).jpeg" alt="The Audience" loading="lazy">
       <div class="gallery-item-overlay"></div>
       <div class="gallery-item-label">
         <div class="gl-tag">Community</div>
@@ -840,7 +1105,7 @@
       </div>
     </div>
     <div class="gallery-item tall" data-caption="Sattva Iconic Awards 1.0 - Honour Ceremony">
-      <img src="/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%201.0/1-iconic-awards%20(5).jpeg" alt="Honour Ceremony" loading="lazy">
+      <img src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%201.0/1-iconic-awards%20(5).jpeg" alt="Honour Ceremony" loading="lazy">
       <div class="gallery-item-overlay"></div>
       <div class="gallery-item-label">
         <div class="gl-tag">Honour</div>
@@ -849,7 +1114,7 @@
       </div>
     </div>
     <div class="gallery-item" data-caption="Sattva Iconic Awards 1.0 - Award Design">
-      <img src="/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%201.0/1-iconic-awards%20(6).jpeg" alt="The Sattva Award" loading="lazy">
+      <img src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%201.0/1-iconic-awards%20(6).jpeg" alt="The Sattva Award" loading="lazy">
       <div class="gallery-item-overlay"></div>
       <div class="gallery-item-label">
         <div class="gl-tag">Trophy</div>
@@ -858,7 +1123,7 @@
       </div>
     </div>
     <div class="gallery-item wide" data-caption="Sattva Iconic Awards 1.0 - Panel Discussion">
-      <img src="/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%201.0/1-iconic-awards%20(7).jpeg" alt="Panel Discussion" loading="lazy">
+      <img src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%201.0/1-iconic-awards%20(7).jpeg" alt="Panel Discussion" loading="lazy">
       <div class="gallery-item-overlay"></div>
       <div class="gallery-item-label">
         <div class="gl-tag">Panel</div>
@@ -867,7 +1132,7 @@
       </div>
     </div>
     <div class="gallery-item" data-caption="Sattva Iconic Awards 1.0 - Networking">
-      <img src="/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%201.0/1-iconic-awards%20(8).jpeg" alt="Networking Evening" loading="lazy">
+      <img src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%201.0/1-iconic-awards%20(8).jpeg" alt="Networking Evening" loading="lazy">
       <div class="gallery-item-overlay"></div>
       <div class="gallery-item-label">
         <div class="gl-tag">Network</div>
@@ -888,7 +1153,7 @@
   </div>
 
   <div class="slideshow-track" id="slideshow2">
-    <div class="slideshow-card" style="background-image:url('/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%202.0/2-iconic-awards%20(1).jpeg')" data-caption="Awards 2.0 - Grand Stage">
+    <div class="slideshow-card" style="background-image:url('../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%202.0/2-iconic-awards%20(1).jpeg')" data-caption="Awards 2.0 - Grand Stage">
       <div class="slideshow-card-overlay"></div>
       <div class="slideshow-card-content">
         <div class="slideshow-card-num">01</div>
@@ -896,7 +1161,7 @@
         <div class="slideshow-card-sub">March 2025, Mumbai</div>
       </div>
     </div>
-    <div class="slideshow-card" style="background-image:url('/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%202.0/2-iconic-awards%20(2).jpeg')" data-caption="Awards 2.0 - Acceptance Speech">
+    <div class="slideshow-card" style="background-image:url('../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%202.0/2-iconic-awards%20(2).jpeg')" data-caption="Awards 2.0 - Acceptance Speech">
       <div class="slideshow-card-overlay"></div>
       <div class="slideshow-card-content">
         <div class="slideshow-card-num">02</div>
@@ -904,7 +1169,7 @@
         <div class="slideshow-card-sub">March 2025, Mumbai</div>
       </div>
     </div>
-    <div class="slideshow-card" style="background-image:url('/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%202.0/2-iconic-awards%20(3).jpeg')" data-caption="Awards 2.0 - Honour Ceremony">
+    <div class="slideshow-card" style="background-image:url('../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%202.0/2-iconic-awards%20(3).jpeg')" data-caption="Awards 2.0 - Honour Ceremony">
       <div class="slideshow-card-overlay"></div>
       <div class="slideshow-card-content">
         <div class="slideshow-card-num">03</div>
@@ -912,7 +1177,7 @@
         <div class="slideshow-card-sub">March 2025, Mumbai</div>
       </div>
     </div>
-    <div class="slideshow-card" style="background-image:url('/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%202.0/2-iconic-awards%20(4).jpeg')" data-caption="Awards 2.0 - Hall of Fame">
+    <div class="slideshow-card" style="background-image:url('../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%202.0/2-iconic-awards%20(4).jpeg')" data-caption="Awards 2.0 - Hall of Fame">
       <div class="slideshow-card-overlay"></div>
       <div class="slideshow-card-content">
         <div class="slideshow-card-num">04</div>
@@ -920,7 +1185,7 @@
         <div class="slideshow-card-sub">March 2025, Mumbai</div>
       </div>
     </div>
-    <div class="slideshow-card" style="background-image:url('/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%202.0/2-iconic-awards%20(5).jpeg')" data-caption="Awards 2.0 - Cultural Performance">
+    <div class="slideshow-card" style="background-image:url('../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%202.0/2-iconic-awards%20(5).jpeg')" data-caption="Awards 2.0 - Cultural Performance">
       <div class="slideshow-card-overlay"></div>
       <div class="slideshow-card-content">
         <div class="slideshow-card-num">05</div>
@@ -928,7 +1193,7 @@
         <div class="slideshow-card-sub">March 2025, Mumbai</div>
       </div>
     </div>
-    <div class="slideshow-card" style="background-image:url('/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%202.0/2-iconic-awards%20(6).jpeg')" data-caption="Awards 2.0 - Closing Gala">
+    <div class="slideshow-card" style="background-image:url('../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%202.0/2-iconic-awards%20(6).jpeg')" data-caption="Awards 2.0 - Closing Gala">
       <div class="slideshow-card-overlay"></div>
       <div class="slideshow-card-content">
         <div class="slideshow-card-num">06</div>
@@ -936,7 +1201,7 @@
         <div class="slideshow-card-sub">March 2025, Mumbai</div>
       </div>
     </div>
-    <div class="slideshow-card" style="background-image:url('/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%202.0/2-iconic-awards%20(7).jpeg')" data-caption="Awards 2.0 - Group Photo">
+    <div class="slideshow-card" style="background-image:url('../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%202.0/2-iconic-awards%20(7).jpeg')" data-caption="Awards 2.0 - Group Photo">
       <div class="slideshow-card-overlay"></div>
       <div class="slideshow-card-content">
         <div class="slideshow-card-num">07</div>
@@ -944,7 +1209,7 @@
         <div class="slideshow-card-sub">March 2025, Mumbai</div>
       </div>
     </div>
-    <div class="slideshow-card" style="background-image:url('/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%202.0/2-iconic-awards%20(8).jpeg')" data-caption="Awards 2.0 - VIP Lounge">
+    <div class="slideshow-card" style="background-image:url('../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%202.0/2-iconic-awards%20(8).jpeg')" data-caption="Awards 2.0 - VIP Lounge">
       <div class="slideshow-card-overlay"></div>
       <div class="slideshow-card-content">
         <div class="slideshow-card-num">08</div>
@@ -952,7 +1217,7 @@
         <div class="slideshow-card-sub">March 2025, Mumbai</div>
       </div>
     </div>
-    <div class="slideshow-card" style="background-image:url('/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%202.0/2-iconic-awards%20(9).jpeg')" data-caption="Awards 2.0 - Red Carpet">
+    <div class="slideshow-card" style="background-image:url('../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%202.0/2-iconic-awards%20(9).jpeg')" data-caption="Awards 2.0 - Red Carpet">
       <div class="slideshow-card-overlay"></div>
       <div class="slideshow-card-content">
         <div class="slideshow-card-num">09</div>
@@ -960,7 +1225,7 @@
         <div class="slideshow-card-sub">March 2025, Mumbai</div>
       </div>
     </div>
-    <div class="slideshow-card" style="background-image:url('/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%202.0/2-iconic-awards%20(10).jpeg')" data-caption="Awards 2.0 - Stage Finale">
+    <div class="slideshow-card" style="background-image:url('../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%202.0/2-iconic-awards%20(10).jpeg')" data-caption="Awards 2.0 - Stage Finale">
       <div class="slideshow-card-overlay"></div>
       <div class="slideshow-card-content">
         <div class="slideshow-card-num">10</div>
@@ -987,7 +1252,7 @@
 
   <div class="timeline-gallery">
     <div class="timeline-item">
-      <img src="/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(1).jpeg" alt="Awards 3.0 - Main Stage" loading="lazy">
+      <img src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(1).jpeg" alt="Awards 3.0 - Main Stage" loading="lazy">
       <div class="timeline-item-date">2026</div>
       <div class="timeline-item-overlay">
         <div class="timeline-item-title">Main Stage - Opening</div>
@@ -995,7 +1260,7 @@
       </div>
     </div>
     <div class="timeline-item">
-      <img src="/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(2).jpeg" alt="Awards 3.0 - Keynote" loading="lazy">
+      <img src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(2).jpeg" alt="Awards 3.0 - Keynote" loading="lazy">
       <div class="timeline-item-date">2026</div>
       <div class="timeline-item-overlay">
         <div class="timeline-item-title">Keynote Address</div>
@@ -1003,7 +1268,7 @@
       </div>
     </div>
     <div class="timeline-item">
-      <img loading="lazy" src="/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(3).jpeg" alt="Awards 3.0 - Award Ceremony">
+      <img loading="lazy" src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(3).jpeg" alt="Awards 3.0 - Award Ceremony">
       <div class="timeline-item-date">2026</div>
       <div class="timeline-item-overlay">
         <div class="timeline-item-title">Award Ceremony</div>
@@ -1011,7 +1276,7 @@
       </div>
     </div>
     <div class="timeline-item">
-      <img loading="lazy" src="/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(4).jpeg" alt="Awards 3.0 - Winner">
+      <img loading="lazy" src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(4).jpeg" alt="Awards 3.0 - Winner">
       <div class="timeline-item-date">2026</div>
       <div class="timeline-item-overlay">
         <div class="timeline-item-title">Winner Receiving Award</div>
@@ -1019,7 +1284,7 @@
       </div>
     </div>
     <div class="timeline-item">
-      <img loading="lazy" src="/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(5).jpeg" alt="Awards 3.0 - Audience">
+      <img loading="lazy" src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(5).jpeg" alt="Awards 3.0 - Audience">
       <div class="timeline-item-date">2026</div>
       <div class="timeline-item-overlay">
         <div class="timeline-item-title">Audience Hall</div>
@@ -1027,7 +1292,7 @@
       </div>
     </div>
     <div class="timeline-item">
-      <img loading="lazy" src="/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(6).jpeg" alt="Awards 3.0 - Performance">
+      <img loading="lazy" src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(6).jpeg" alt="Awards 3.0 - Performance">
       <div class="timeline-item-date">2026</div>
       <div class="timeline-item-overlay">
         <div class="timeline-item-title">Evening Performance</div>
@@ -1035,7 +1300,7 @@
       </div>
     </div>
     <div class="timeline-item">
-      <img loading="lazy" src="/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(7).jpeg" alt="Awards 3.0 - Panel">
+      <img loading="lazy" src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(7).jpeg" alt="Awards 3.0 - Panel">
       <div class="timeline-item-date">2026</div>
       <div class="timeline-item-overlay">
         <div class="timeline-item-title">Expert Panel Discussion</div>
@@ -1043,7 +1308,7 @@
       </div>
     </div>
     <div class="timeline-item">
-      <img loading="lazy" src="/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(8).jpeg" alt="Awards 3.0 - Trophy">
+      <img loading="lazy" src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(8).jpeg" alt="Awards 3.0 - Trophy">
       <div class="timeline-item-date">2026</div>
       <div class="timeline-item-overlay">
         <div class="timeline-item-title">The Sattva Trophy</div>
@@ -1051,7 +1316,7 @@
       </div>
     </div>
     <div class="timeline-item">
-      <img loading="lazy" src="/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(9).jpeg" alt="Awards 3.0 - Networking">
+      <img loading="lazy" src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(9).jpeg" alt="Awards 3.0 - Networking">
       <div class="timeline-item-date">2026</div>
       <div class="timeline-item-overlay">
         <div class="timeline-item-title">Networking Session</div>
@@ -1059,7 +1324,7 @@
       </div>
     </div>
     <div class="timeline-item">
-      <img loading="lazy" src="/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(10).jpeg" alt="Awards 3.0 - Group">
+      <img loading="lazy" src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(10).jpeg" alt="Awards 3.0 - Group">
       <div class="timeline-item-date">2026</div>
       <div class="timeline-item-overlay">
         <div class="timeline-item-title">Community Group Photo</div>
@@ -1067,7 +1332,7 @@
       </div>
     </div>
     <div class="timeline-item">
-      <img loading="lazy" src="/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(11).jpeg" alt="Awards 3.0 - Closing">
+      <img loading="lazy" src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(11).jpeg" alt="Awards 3.0 - Closing">
       <div class="timeline-item-date">2026</div>
       <div class="timeline-item-overlay">
         <div class="timeline-item-title">Closing Ceremony</div>
@@ -1075,7 +1340,7 @@
       </div>
     </div>
     <div class="timeline-item">
-      <img loading="lazy" src="/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(12).jpeg" alt="Awards 3.0 - Venue">
+      <img loading="lazy" src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(12).jpeg" alt="Awards 3.0 - Venue">
       <div class="timeline-item-date">2026</div>
       <div class="timeline-item-overlay">
         <div class="timeline-item-title">Venue Decor</div>
@@ -1083,7 +1348,7 @@
       </div>
     </div>
     <div class="timeline-item">
-      <img loading="lazy" src="/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(13).jpeg" alt="Awards 3.0 - Speaker">
+      <img loading="lazy" src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(13).jpeg" alt="Awards 3.0 - Speaker">
       <div class="timeline-item-date">2026</div>
       <div class="timeline-item-overlay">
         <div class="timeline-item-title">Guest Speaker</div>
@@ -1091,7 +1356,7 @@
       </div>
     </div>
     <div class="timeline-item">
-      <img loading="lazy" src="/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(14).jpeg" alt="Awards 3.0 - Honour">
+      <img loading="lazy" src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(14).jpeg" alt="Awards 3.0 - Honour">
       <div class="timeline-item-date">2026</div>
       <div class="timeline-item-overlay">
         <div class="timeline-item-title">Special Honour</div>
@@ -1099,7 +1364,7 @@
       </div>
     </div>
     <div class="timeline-item">
-      <img loading="lazy" src="/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(15).jpeg" alt="Awards 3.0 - Celebration">
+      <img loading="lazy" src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(15).jpeg" alt="Awards 3.0 - Celebration">
       <div class="timeline-item-date">2026</div>
       <div class="timeline-item-overlay">
         <div class="timeline-item-title">Celebration Moment</div>
@@ -1107,7 +1372,7 @@
       </div>
     </div>
     <div class="timeline-item">
-      <img loading="lazy" src="/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(16).jpeg" alt="Awards 3.0 - Finale">
+      <img loading="lazy" src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(16).jpeg" alt="Awards 3.0 - Finale">
       <div class="timeline-item-date">2026</div>
       <div class="timeline-item-overlay">
         <div class="timeline-item-title">Grand Finale</div>
@@ -1115,7 +1380,7 @@
       </div>
     </div>
     <div class="timeline-item">
-      <img loading="lazy" src="/SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(17).jpeg" alt="Awards 3.0 - Afterparty">
+      <img loading="lazy" src="../SATTVA%20ICONIC%20WELLNESS%20AWARDS/SATTVA%20ICONIC%20AWARDS%203.0/3-iconic-awards%20(17).jpeg" alt="Awards 3.0 - Afterparty">
       <div class="timeline-item-date">2026</div>
       <div class="timeline-item-overlay">
         <div class="timeline-item-title">Afterparty</div>
@@ -1143,35 +1408,35 @@
 
   <div class="workshops-grid active" id="tab-amity">
     <div class="workshop-card">
-      <img loading="lazy" src="/SATTVA%20NATION%20COLLEGE%20WORKSHOPS/AMITY%20LAW%20SCHOOL/AMITY%20LAW%20SCHOOL%20(1).jpeg" alt="Amity Law School Workshop 1">
+      <img loading="lazy" src="../SATTVA%20NATION%20COLLEGE%20WORKSHOPS/AMITY%20LAW%20SCHOOL/AMITY%20LAW%20SCHOOL%20(1).jpeg" alt="Amity Law School Workshop 1">
       <div class="workshop-card-body">
         <div class="workshop-card-title">Session in Progress</div>
         <div class="workshop-card-meta">Amity Law School, New Delhi</div>
       </div>
     </div>
     <div class="workshop-card">
-      <img loading="lazy" src="/SATTVA%20NATION%20COLLEGE%20WORKSHOPS/AMITY%20LAW%20SCHOOL/AMITY%20LAW%20SCHOOL%20(2).jpeg" alt="Amity Law School Workshop 2">
+      <img loading="lazy" src="../SATTVA%20NATION%20COLLEGE%20WORKSHOPS/AMITY%20LAW%20SCHOOL/AMITY%20LAW%20SCHOOL%20(2).jpeg" alt="Amity Law School Workshop 2">
       <div class="workshop-card-body">
         <div class="workshop-card-title">Group Meditation</div>
         <div class="workshop-card-meta">Amity Law School, New Delhi</div>
       </div>
     </div>
     <div class="workshop-card">
-      <img loading="lazy" src="/SATTVA%20NATION%20COLLEGE%20WORKSHOPS/AMITY%20LAW%20SCHOOL/AMITY%20LAW%20SCHOOL%20(3).jpeg" alt="Amity Law School Workshop 3">
+      <img loading="lazy" src="../SATTVA%20NATION%20COLLEGE%20WORKSHOPS/AMITY%20LAW%20SCHOOL/AMITY%20LAW%20SCHOOL%20(3).jpeg" alt="Amity Law School Workshop 3">
       <div class="workshop-card-body">
         <div class="workshop-card-title">Interactive Session</div>
         <div class="workshop-card-meta">Amity Law School, New Delhi</div>
       </div>
     </div>
     <div class="workshop-card">
-      <img loading="lazy" src="/SATTVA%20NATION%20COLLEGE%20WORKSHOPS/AMITY%20LAW%20SCHOOL/AMITY%20LAW%20SCHOOL%20(4).jpeg" alt="Amity Law School Workshop 4">
+      <img loading="lazy" src="../SATTVA%20NATION%20COLLEGE%20WORKSHOPS/AMITY%20LAW%20SCHOOL/AMITY%20LAW%20SCHOOL%20(4).jpeg" alt="Amity Law School Workshop 4">
       <div class="workshop-card-body">
         <div class="workshop-card-title">Wellness Workshop</div>
         <div class="workshop-card-meta">Amity Law School, New Delhi</div>
       </div>
     </div>
     <div class="workshop-card">
-      <img loading="lazy" src="/SATTVA%20NATION%20COLLEGE%20WORKSHOPS/AMITY%20LAW%20SCHOOL/AMITY%20LAW%20SCHOOL%20(5).jpeg" alt="Amity Law School Workshop 5">
+      <img loading="lazy" src="../SATTVA%20NATION%20COLLEGE%20WORKSHOPS/AMITY%20LAW%20SCHOOL/AMITY%20LAW%20SCHOOL%20(5).jpeg" alt="Amity Law School Workshop 5">
       <div class="workshop-card-body">
         <div class="workshop-card-title">Closing Ceremony</div>
         <div class="workshop-card-meta">Amity Law School, New Delhi</div>
@@ -1181,14 +1446,14 @@
 
   <div class="workshops-grid" id="tab-imm">
     <div class="workshop-card">
-      <img loading="lazy" src="/SATTVA%20NATION%20COLLEGE%20WORKSHOPS/INSTITUTE%20OF%20MARKETING%20&amp;%20MANAGEMENT%20(IMM)/MARKETING%20&amp;%20MANAGEMENT%20%20(1).jpeg" alt="IMM Workshop 1">
+      <img loading="lazy" src="../SATTVA%20NATION%20COLLEGE%20WORKSHOPS/INSTITUTE%20OF%20MARKETING%20&amp;%20MANAGEMENT%20(IMM)/MARKETING%20&amp;%20MANAGEMENT%20%20(1).jpeg" alt="IMM Workshop 1">
       <div class="workshop-card-body">
         <div class="workshop-card-title">Marketing & Management Workshop</div>
         <div class="workshop-card-meta">IMM, Delhi</div>
       </div>
     </div>
     <div class="workshop-card">
-      <img loading="lazy" src="/SATTVA%20NATION%20COLLEGE%20WORKSHOPS/INSTITUTE%20OF%20MARKETING%20&amp;%20MANAGEMENT%20(IMM)/MARKETING%20&amp;%20MANAGEMENT%20%20(2).jpeg" alt="IMM Workshop 2">
+      <img loading="lazy" src="../SATTVA%20NATION%20COLLEGE%20WORKSHOPS/INSTITUTE%20OF%20MARKETING%20&amp;%20MANAGEMENT%20(IMM)/MARKETING%20&amp;%20MANAGEMENT%20%20(2).jpeg" alt="IMM Workshop 2">
       <div class="workshop-card-body">
         <div class="workshop-card-title">Student Engagement Session</div>
         <div class="workshop-card-meta">IMM, Delhi</div>
@@ -1198,21 +1463,21 @@
 
   <div class="workshops-grid" id="tab-jims">
     <div class="workshop-card">
-      <img loading="lazy" src="/SATTVA%20NATION%20COLLEGE%20WORKSHOPS/JIMS%20COLLEGE/JIMS%20COLLEGE%20(1).jpeg" alt="JIMS College Workshop 1">
+      <img loading="lazy" src="../SATTVA%20NATION%20COLLEGE%20WORKSHOPS/JIMS%20COLLEGE/JIMS%20COLLEGE%20(1).jpeg" alt="JIMS College Workshop 1">
       <div class="workshop-card-body">
         <div class="workshop-card-title">Wellness Session at JIMS</div>
         <div class="workshop-card-meta">JIMS College, Delhi</div>
       </div>
     </div>
     <div class="workshop-card">
-      <img loading="lazy" src="/SATTVA%20NATION%20COLLEGE%20WORKSHOPS/JIMS%20COLLEGE/JIMS%20COLLEGE%20(2).jpeg" alt="JIMS College Workshop 2">
+      <img loading="lazy" src="../SATTVA%20NATION%20COLLEGE%20WORKSHOPS/JIMS%20COLLEGE/JIMS%20COLLEGE%20(2).jpeg" alt="JIMS College Workshop 2">
       <div class="workshop-card-body">
         <div class="workshop-card-title">Group Activity</div>
         <div class="workshop-card-meta">JIMS College, Delhi</div>
       </div>
     </div>
     <div class="workshop-card">
-      <img loading="lazy" src="/SATTVA%20NATION%20COLLEGE%20WORKSHOPS/JIMS%20COLLEGE/JIMS%20COLLEGE%20(3).jpeg" alt="JIMS College Workshop 3">
+      <img loading="lazy" src="../SATTVA%20NATION%20COLLEGE%20WORKSHOPS/JIMS%20COLLEGE/JIMS%20COLLEGE%20(3).jpeg" alt="JIMS College Workshop 3">
       <div class="workshop-card-body">
         <div class="workshop-card-title">Closing & Certificate Distribution</div>
         <div class="workshop-card-meta">JIMS College, Delhi</div>
@@ -1222,7 +1487,7 @@
 
   <div class="workshops-grid" id="tab-lakshmibai">
     <div class="workshop-card">
-      <img loading="lazy" src="/SATTVA%20NATION%20COLLEGE%20WORKSHOPS/LAKSHMI%20BAI%20COLLEGE/LAKSHMI%20BAI%20COLLEGE.jpeg" alt="Lakshmi Bai College Workshop">
+      <img loading="lazy" src="../SATTVA%20NATION%20COLLEGE%20WORKSHOPS/LAKSHMI%20BAI%20COLLEGE/LAKSHMI%20BAI%20COLLEGE.jpeg" alt="Lakshmi Bai College Workshop">
       <div class="workshop-card-body">
         <div class="workshop-card-title">Lakshmi Bai College Wellness Day</div>
         <div class="workshop-card-meta">Lakshmi Bai College, Delhi</div>
@@ -1243,49 +1508,49 @@
   <div class="goa-mosaic">
     <div class="goa-postcard feature" data-caption="Wellness Retreat Goa Fest - Beachside Gathering">
       <span class="goa-stamp">Goa Fest</span>
-      <img loading="lazy" src="/WELLNESS%20RETREAT%20GOA%20FEST/WELLNESS%20RETREAT%20GOA%20FEST/wellness%20retreat%20goa%20fest%20(1).jpeg" alt="Goa Fest Beachside Gathering">
+      <img loading="lazy" src="../WELLNESS%20RETREAT%20GOA%20FEST/wellness%20retreat%20goa%20fest%20(1).jpeg" alt="Goa Fest Beachside Gathering">
       <div class="goa-caption">
         <div class="goa-caption-title">Beachside Gathering</div>
         <div class="goa-caption-meta">Goa</div>
       </div>
     </div>
     <div class="goa-postcard" data-caption="Wellness Retreat Goa Fest - Sunrise Yoga">
-      <img loading="lazy" src="/WELLNESS%20RETREAT%20GOA%20FEST/WELLNESS%20RETREAT%20GOA%20FEST/wellness%20retreat%20goa%20fest%20(2).jpeg" alt="Goa Fest Sunrise Yoga">
+      <img loading="lazy" src="../WELLNESS%20RETREAT%20GOA%20FEST/wellness%20retreat%20goa%20fest%20(2).jpeg" alt="Goa Fest Sunrise Yoga">
       <div class="goa-caption">
         <div class="goa-caption-title">Sunrise Yoga</div>
         <div class="goa-caption-meta">Goa</div>
       </div>
     </div>
     <div class="goa-postcard" data-caption="Wellness Retreat Goa Fest - Mindful Moments">
-      <img loading="lazy" src="/WELLNESS%20RETREAT%20GOA%20FEST/WELLNESS%20RETREAT%20GOA%20FEST/wellness%20retreat%20goa%20fest%20(3).jpeg" alt="Goa Fest Mindful Moments">
+      <img loading="lazy" src="../WELLNESS%20RETREAT%20GOA%20FEST/wellness%20retreat%20goa%20fest%20(3).jpeg" alt="Goa Fest Mindful Moments">
       <div class="goa-caption">
         <div class="goa-caption-title">Mindful Moments</div>
         <div class="goa-caption-meta">Goa</div>
       </div>
     </div>
     <div class="goa-postcard" data-caption="Wellness Retreat Goa Fest - Healing Circle">
-      <img loading="lazy" src="/WELLNESS%20RETREAT%20GOA%20FEST/WELLNESS%20RETREAT%20GOA%20FEST/wellness%20retreat%20goa%20fest%20(4).jpeg" alt="Goa Fest Healing Circle">
+      <img loading="lazy" src="../WELLNESS%20RETREAT%20GOA%20FEST/wellness%20retreat%20goa%20fest%20(4).jpeg" alt="Goa Fest Healing Circle">
       <div class="goa-caption">
         <div class="goa-caption-title">Healing Circle</div>
         <div class="goa-caption-meta">Goa</div>
       </div>
     </div>
     <div class="goa-postcard" data-caption="Wellness Retreat Goa Fest - Sound &amp; Music">
-      <img loading="lazy" src="/WELLNESS%20RETREAT%20GOA%20FEST/WELLNESS%20RETREAT%20GOA%20FEST/wellness%20retreat%20goa%20fest%20(5).jpeg" alt="Goa Fest Sound and Music">
+      <img loading="lazy" src="../WELLNESS%20RETREAT%20GOA%20FEST/wellness%20retreat%20goa%20fest%20(5).jpeg" alt="Goa Fest Sound and Music">
       <div class="goa-caption">
         <div class="goa-caption-title">Sound &amp; Music</div>
         <div class="goa-caption-meta">Goa</div>
       </div>
     </div>
     <div class="goa-postcard" data-caption="Wellness Retreat Goa Fest - Community Connection">
-      <img loading="lazy" src="/WELLNESS%20RETREAT%20GOA%20FEST/WELLNESS%20RETREAT%20GOA%20FEST/wellness%20retreat%20goa%20fest%20(6).jpeg" alt="Goa Fest Community Connection">
+      <img loading="lazy" src="../WELLNESS%20RETREAT%20GOA%20FEST/wellness%20retreat%20goa%20fest%20(6).jpeg" alt="Goa Fest Community Connection">
       <div class="goa-caption">
         <div class="goa-caption-title">Community Connection</div>
         <div class="goa-caption-meta">Goa</div>
       </div>
     </div>
     <div class="goa-postcard" data-caption="Wellness Retreat Goa Fest - Sunset Celebration">
-      <img loading="lazy" src="/WELLNESS%20RETREAT%20GOA%20FEST/WELLNESS%20RETREAT%20GOA%20FEST/wellness%20retreat%20goa%20fest%20(7).jpeg" alt="Goa Fest Sunset Celebration">
+      <img loading="lazy" src="../WELLNESS%20RETREAT%20GOA%20FEST/wellness%20retreat%20goa%20fest%20(7).jpeg" alt="Goa Fest Sunset Celebration">
       <div class="goa-caption">
         <div class="goa-caption-title">Sunset Celebration</div>
         <div class="goa-caption-meta">Goa</div>
@@ -1313,7 +1578,7 @@
   <div class="ministry-panel active" id="mtab-housing">
     <div class="ministry-card" data-caption="Shri. Narayan Rane - Minister of MSME, Government of India">
       <span class="ministry-emblem">★ Official</span>
-      <img loading="lazy" src="/SATTVA%20NATION%20MINISTRY%20EVENTS/Ministry%20of%20housing%20%26%20urban%20affairs/Shri.Narayan%20Rane%20%2C%20Minister%20of%20Micro%2C%20Small%20and%20Medium%20Enterprises%20%28MSME%29%20Government%20Of%20India..jpeg" alt="Shri. Narayan Rane, Minister of MSME">
+      <img loading="lazy" src="../SATTVA%20NATION%20MINISTRY%20EVENTS/Ministry%20of%20housing%20%26%20urban%20affairs/Shri.Narayan%20Rane%20%2C%20Minister%20of%20Micro%2C%20Small%20and%20Medium%20Enterprises%20%28MSME%29%20Government%20Of%20India..jpeg" alt="Shri. Narayan Rane, Minister of MSME">
       <div class="ministry-plate">
         <div class="ministry-plate-name">Shri. Narayan Rane</div>
         <div class="ministry-plate-role">Minister of Micro, Small &amp; Medium Enterprises (MSME), Government of India</div>
@@ -1321,7 +1586,7 @@
     </div>
     <div class="ministry-card" data-caption="Shri. Sarbananda Sonowal - Minister of Ports, Shipping &amp; Waterways, Govt of India">
       <span class="ministry-emblem">★ Official</span>
-      <img loading="lazy" src="/SATTVA%20NATION%20MINISTRY%20EVENTS/Ministry%20of%20housing%20%26%20urban%20affairs/Shri.Sarbananda%20Sonowal%20%20%2C%20Minister%20of%20Ports%2C%20Shipping%20and%20Waterways%20.%20Govt%20of%20India.jpeg" alt="Shri. Sarbananda Sonowal, Minister of Ports, Shipping and Waterways">
+      <img loading="lazy" src="../SATTVA%20NATION%20MINISTRY%20EVENTS/Ministry%20of%20housing%20%26%20urban%20affairs/Shri.Sarbananda%20Sonowal%20%20%2C%20Minister%20of%20Ports%2C%20Shipping%20and%20Waterways%20.%20Govt%20of%20India.jpeg" alt="Shri. Sarbananda Sonowal, Minister of Ports, Shipping and Waterways">
       <div class="ministry-plate">
         <div class="ministry-plate-name">Shri. Sarbananda Sonowal</div>
         <div class="ministry-plate-role">Minister of Ports, Shipping &amp; Waterways, Government of India</div>
@@ -1329,7 +1594,7 @@
     </div>
     <div class="ministry-card" data-caption="Shri. Sarbananda Sonowal - Minister of Ports, Shipping &amp; Waterways, Govt of India">
       <span class="ministry-emblem">★ Official</span>
-      <img loading="lazy" src="/SATTVA%20NATION%20MINISTRY%20EVENTS/Ministry%20of%20housing%20%26%20urban%20affairs/Shri.Sarbananda%20Sonowal%20%20%2C%20Minister%20of%20Ports%2C%20Shipping%20and%20Waterways%20.%20Govt%20of%20India%20%282%29.jpeg" alt="Shri. Sarbananda Sonowal in conversation">
+      <img loading="lazy" src="../SATTVA%20NATION%20MINISTRY%20EVENTS/Ministry%20of%20housing%20%26%20urban%20affairs/Shri.Sarbananda%20Sonowal%20%20%2C%20Minister%20of%20Ports%2C%20Shipping%20and%20Waterways%20.%20Govt%20of%20India%20%282%29.jpeg" alt="Shri. Sarbananda Sonowal in conversation">
       <div class="ministry-plate">
         <div class="ministry-plate-name">Shri. Sarbananda Sonowal</div>
         <div class="ministry-plate-role">Minister of Ports, Shipping &amp; Waterways, Government of India</div>
@@ -1337,7 +1602,7 @@
     </div>
     <div class="ministry-card" data-caption="Shri. Sarbananda Sonowal - Minister of Ports, Shipping &amp; Waterways, Govt of India">
       <span class="ministry-emblem">★ Official</span>
-      <img loading="lazy" src="/SATTVA%20NATION%20MINISTRY%20EVENTS/Ministry%20of%20housing%20%26%20urban%20affairs/Shri.Sarbananda%20Sonowal%20%20%2C%20Minister%20of%20Ports%2C%20Shipping%20and%20Waterways%20.%20Govt%20of%20India%20%283%29.jpeg" alt="Shri. Sarbananda Sonowal at the event">
+      <img loading="lazy" src="../SATTVA%20NATION%20MINISTRY%20EVENTS/Ministry%20of%20housing%20%26%20urban%20affairs/Shri.Sarbananda%20Sonowal%20%20%2C%20Minister%20of%20Ports%2C%20Shipping%20and%20Waterways%20.%20Govt%20of%20India%20%283%29.jpeg" alt="Shri. Sarbananda Sonowal at the event">
       <div class="ministry-plate">
         <div class="ministry-plate-name">Shri. Sarbananda Sonowal</div>
         <div class="ministry-plate-role">Minister of Ports, Shipping &amp; Waterways, Government of India</div>
@@ -1349,7 +1614,7 @@
   <div class="ministry-panel" id="mtab-sports">
     <div class="ministry-card" data-caption="Gukesh Dommaraju - Indian Chess Grandmaster">
       <span class="ministry-emblem">★ Champion</span>
-      <img loading="lazy" src="/SATTVA%20NATION%20MINISTRY%20EVENTS/Ministry%20of%20sports%20%26%20youth/Gukesh%20Dommaraju%20Indian%20chess%20grandmaster.jpeg" alt="Gukesh Dommaraju, Indian Chess Grandmaster">
+      <img loading="lazy" src="../SATTVA%20NATION%20MINISTRY%20EVENTS/Ministry%20of%20sports%20%26%20youth/Gukesh%20Dommaraju%20Indian%20chess%20grandmaster.jpeg" alt="Gukesh Dommaraju, Indian Chess Grandmaster">
       <div class="ministry-plate">
         <div class="ministry-plate-name">Gukesh Dommaraju</div>
         <div class="ministry-plate-role">Indian Chess Grandmaster &amp; World Champion</div>
@@ -1357,7 +1622,7 @@
     </div>
     <div class="ministry-card" data-caption="Gukesh Dommaraju - Indian Chess Grandmaster">
       <span class="ministry-emblem">★ Champion</span>
-      <img loading="lazy" src="/SATTVA%20NATION%20MINISTRY%20EVENTS/Ministry%20of%20sports%20%26%20youth/Gukesh%20Dommaraju%20Indian%20chess%20grandmaster%20%282%29.jpeg" alt="Gukesh Dommaraju at Sattva Nation">
+      <img loading="lazy" src="../SATTVA%20NATION%20MINISTRY%20EVENTS/Ministry%20of%20sports%20%26%20youth/Gukesh%20Dommaraju%20Indian%20chess%20grandmaster%20%282%29.jpeg" alt="Gukesh Dommaraju at Sattva Nation">
       <div class="ministry-plate">
         <div class="ministry-plate-name">Gukesh Dommaraju</div>
         <div class="ministry-plate-role">Indian Chess Grandmaster &amp; World Champion</div>
@@ -1365,7 +1630,7 @@
     </div>
     <div class="ministry-card" data-caption="Maithili Thakur - Member, Bihar Legislative Assembly">
       <span class="ministry-emblem">★ Youth Icon</span>
-      <img loading="lazy" src="/SATTVA%20NATION%20MINISTRY%20EVENTS/Ministry%20of%20sports%20%26%20youth/Maithili%20Thakur%20member%20of%20Bihar%20Legislative%20Assembly.jpeg" alt="Maithili Thakur, Member of Bihar Legislative Assembly">
+      <img loading="lazy" src="../SATTVA%20NATION%20MINISTRY%20EVENTS/Ministry%20of%20sports%20%26%20youth/Maithili%20Thakur%20member%20of%20Bihar%20Legislative%20Assembly.jpeg" alt="Maithili Thakur, Member of Bihar Legislative Assembly">
       <div class="ministry-plate">
         <div class="ministry-plate-name">Maithili Thakur</div>
         <div class="ministry-plate-role">Singer &amp; Member, Bihar Legislative Assembly</div>
@@ -1373,7 +1638,7 @@
     </div>
     <div class="ministry-card" data-caption="Manu Bhaker - Indian Professional Shooter">
       <span class="ministry-emblem">★ Champion</span>
-      <img loading="lazy" src="/SATTVA%20NATION%20MINISTRY%20EVENTS/Ministry%20of%20sports%20%26%20youth/Manu%20Bhaker%20Indian%20Professional%20shooter.jpeg" alt="Manu Bhaker, Indian Professional Shooter">
+      <img loading="lazy" src="../SATTVA%20NATION%20MINISTRY%20EVENTS/Ministry%20of%20sports%20%26%20youth/Manu%20Bhaker%20Indian%20Professional%20shooter.jpeg" alt="Manu Bhaker, Indian Professional Shooter">
       <div class="ministry-plate">
         <div class="ministry-plate-name">Manu Bhaker</div>
         <div class="ministry-plate-role">Olympic Medallist &amp; Professional Shooter</div>
@@ -1381,7 +1646,7 @@
     </div>
     <div class="ministry-card" data-caption="Manu Bhaker - Indian Professional Shooter">
       <span class="ministry-emblem">★ Champion</span>
-      <img loading="lazy" src="/SATTVA%20NATION%20MINISTRY%20EVENTS/Ministry%20of%20sports%20%26%20youth/Manu%20Bhaker%20Indian%20Professional%20shooter%20%282%29.jpeg" alt="Manu Bhaker at Sattva Nation">
+      <img loading="lazy" src="../SATTVA%20NATION%20MINISTRY%20EVENTS/Ministry%20of%20sports%20%26%20youth/Manu%20Bhaker%20Indian%20Professional%20shooter%20%282%29.jpeg" alt="Manu Bhaker at Sattva Nation">
       <div class="ministry-plate">
         <div class="ministry-plate-name">Manu Bhaker</div>
         <div class="ministry-plate-role">Olympic Medallist &amp; Professional Shooter</div>
@@ -1393,12 +1658,77 @@
   <div class="ministry-panel" id="mtab-infotech">
     <div class="ministry-card video-tile">
       <video controls preload="metadata" playsinline>
-        <source src="/SATTVA%20NATION%20MINISTRY%20EVENTS/Ministry%20of%20information%20%26%20technology/Mr.%20Luke%20Coutinho%20-%20globally%20renowned%20Holistic%20Lifestyle%20Coach%20in%20the%20field%20of%20Integrative%20and%20Lifestyle%20Medicine.mp4" type="video/mp4">
+        <source src="../SATTVA%20NATION%20MINISTRY%20EVENTS/Ministry%20of%20information%20%26%20technology/Mr.%20Luke%20Coutinho%20-%20globally%20renowned%20Holistic%20Lifestyle%20Coach%20in%20the%20field%20of%20Integrative%20and%20Lifestyle%20Medicine.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
       <div class="ministry-video-plate">
         <div class="ministry-plate-name">Mr. Luke Coutinho</div>
         <div class="ministry-plate-role">Globally Renowned Holistic Lifestyle Coach - Integrative &amp; Lifestyle Medicine</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==============================================
+     WOMEN EMPOWERMENT — COMPACT EDITION
+     Aubergine + gold theme, grid layout
+     ============================================== -->
+<section class="empower-section" id="empower">
+  <div class="empower-header-compact">
+    <span class="empower-emblem">National Commission for Women</span>
+    <h2>Voices of <em>Strength</em></h2>
+    <p>In partnership with the National Commission for Women — celebrating changemakers shaping a more equitable India.</p>
+  </div>
+
+  <!-- Compact Grid: Video + Images -->
+  <div class="empower-grid-compact">
+    <!-- Video tile (spans 2 rows) -->
+    <div class="empower-video-tile">
+      <span class="empower-video-badge">Featured</span>
+      <video controls preload="metadata" playsinline poster="../Women%20empowerment%20with%20National%20Commission/WhatsApp%20Image%202026-06-25%20at%2011.58.10%20AM.jpeg">
+        <source src="../Women%20empowerment%20with%20National%20Commission/WhatsApp%20Video%202026-06-25%20at%2011.58.11%20AM.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <!-- Image tiles -->
+    <div class="empower-img-tile" data-caption="Women Empowerment — National Commission for Women — Session Address">
+      <div class="empower-tile-accent"></div>
+      <img loading="lazy" src="../Women%20empowerment%20with%20National%20Commission/WhatsApp%20Image%202026-06-25%20at%2011.58.10%20AM.jpeg" alt="Women Empowerment Session Address">
+      <div class="empower-tile-overlay">
+        <span class="empower-tile-label">✦ Session Address</span>
+      </div>
+    </div>
+
+    <div class="empower-img-tile" data-caption="Women Empowerment — National Commission for Women — Dialogue in Progress">
+      <div class="empower-tile-accent"></div>
+      <img loading="lazy" src="../Women%20empowerment%20with%20National%20Commission/WhatsApp%20Image%202026-06-25%20at%2011.58.11%20AM%20(1).jpeg" alt="Women Empowerment Dialogue">
+      <div class="empower-tile-overlay">
+        <span class="empower-tile-label">✦ Voices in Conversation</span>
+      </div>
+    </div>
+
+    <div class="empower-img-tile" data-caption="Women Empowerment — National Commission for Women — Panel Discussion">
+      <div class="empower-tile-accent"></div>
+      <img loading="lazy" src="../Women%20empowerment%20with%20National%20Commission/WhatsApp%20Image%202026-06-25%20at%2011.58.11%20AM.jpeg" alt="Women Empowerment Panel Discussion">
+      <div class="empower-tile-overlay">
+        <span class="empower-tile-label">✦ Panel Discussion</span>
+      </div>
+    </div>
+
+    <div class="empower-img-tile" data-caption="Women Empowerment — National Commission for Women — Recognition Ceremony">
+      <div class="empower-tile-accent"></div>
+      <img loading="lazy" src="../Women%20empowerment%20with%20National%20Commission/WhatsApp%20Image%202026-06-25%20at%2011.58.12%20AM%20(1).jpeg" alt="Women Empowerment Recognition Ceremony">
+      <div class="empower-tile-overlay">
+        <span class="empower-tile-label">✦ Recognition Ceremony</span>
+      </div>
+    </div>
+
+    <div class="empower-img-tile" data-caption="Women Empowerment — National Commission for Women — Community Pledge">
+      <div class="empower-tile-accent"></div>
+      <img loading="lazy" src="../Women%20empowerment%20with%20National%20Commission/WhatsApp%20Image%202026-06-25%20at%2011.58.12%20AM.jpeg" alt="Women Empowerment Community Pledge">
+      <div class="empower-tile-overlay">
+        <span class="empower-tile-label">✦ Together We Rise</span>
       </div>
     </div>
   </div>
@@ -1414,33 +1744,168 @@
     </p>
   </div>
   <div class="video-grid">
+    <div class="video-card">
+      <video controls preload="metadata" playsinline style="width:100%;display:block;border-radius:12px 12px 0 0;">
+        <source src="../SATTVA%20NATION%20MINISTRY%20EVENTS/Ministry%20of%20information%20%26%20technology/Mr.%20Luke%20Coutinho%20-%20globally%20renowned%20Holistic%20Lifestyle%20Coach%20in%20the%20field%20of%20Integrative%20and%20Lifestyle%20Medicine.mp4" type="video/mp4">
+      </video>
+      <div class="video-body">
+        <div class="video-title">Luke Coutinho — Holistic & Lifestyle Medicine</div>
+        <div class="video-meta">Ministry of Information & Technology</div>
+      </div>
+    </div>
+    <div class="video-card">
+      <video controls preload="metadata" playsinline poster="../Women%20empowerment%20with%20National%20Commission/WhatsApp%20Image%202026-06-25%20at%2011.58.10%20AM.jpeg" style="width:100%;display:block;border-radius:12px 12px 0 0;">
+        <source src="../Women%20empowerment%20with%20National%20Commission/WhatsApp%20Video%202026-06-25%20at%2011.58.11%20AM.mp4" type="video/mp4">
+      </video>
+      <div class="video-body">
+        <div class="video-title">Women Empowerment — National Commission</div>
+        <div class="video-meta">Highlights from the recognition ceremony</div>
+      </div>
+    </div>
     <a class="video-card" href="https://www.youtube.com/@sattvanation" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;">
-      <div class="video-thumb" style="background-image:url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600&q=80')">
+      <div class="video-thumb" style="background:linear-gradient(135deg,#c2185b,#d4537e);">
         <div class="video-thumb-overlay"><div class="play-btn">▶</div></div>
       </div>
       <div class="video-body">
-        <div class="video-title">Sattva Wellness Festival - Event Highlights</div>
-        <div class="video-meta">Watch on YouTube</div>
+        <div class="video-title">More on YouTube</div>
+        <div class="video-meta">Subscribe to @sattvanation</div>
       </div>
     </a>
-    <a class="video-card" href="https://www.youtube.com/@sattvanation" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;">
-      <div class="video-thumb" style="background-image:url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80')">
-        <div class="video-thumb-overlay"><div class="play-btn">▶</div></div>
+  </div>
+</section>
+
+<!--  TED TALK — ORBIT  -->
+<section class="ted-section" id="ted-talk">
+  <div class="ted-header">
+    <span class="section-tag">Featured Event</span>
+    <h2 class="section-title">Voices on the <em>Sattva</em> Stage</h2>
+    <p class="section-sub">A constellation of moments from Sattva Nation's TED Talk — pick any tile to bring it into focus.</p>
+  </div>
+
+  <div class="ted-orbit" id="tedOrbit">
+    <div class="ted-orbit-ring"></div>
+    <div class="ted-orbit-ring r2"></div>
+
+    <div class="ted-core" id="tedCore">
+      <img id="tedCoreImg" src="../TED%20TALK%20FOR%20SATTVA%20NATION-20260806T083730Z-1-001/WhatsApp%20Image%202026-06-25%20at%2012.04.10%20PM%20(1).jpeg" alt="TED Talk featured moment">
+      <div class="ted-core-label" id="tedCoreLabel">TED Talk — Sattva Nation</div>
+    </div>
+
+    <button class="ted-sat" data-pos="0" data-index="1" data-label="Speaker on Stage" aria-label="Show speaker on stage">
+      <img src="../TED%20TALK%20FOR%20SATTVA%20NATION-20260806T083730Z-1-001/WhatsApp%20Image%202026-06-25%20at%2012.04.10%20PM%20(2).jpeg" alt="Speaker on stage">
+    </button>
+    <button class="ted-sat" data-pos="1" data-index="2" data-label="The Audience" aria-label="Show audience">
+      <img src="../TED%20TALK%20FOR%20SATTVA%20NATION-20260806T083730Z-1-001/WhatsApp%20Image%202026-06-25%20at%2012.04.10%20PM%20(3).jpeg" alt="Audience at TED Talk">
+    </button>
+    <button class="ted-sat" data-pos="2" data-index="3" data-label="Behind the Scenes" aria-label="Show behind the scenes">
+      <img src="../TED%20TALK%20FOR%20SATTVA%20NATION-20260806T083730Z-1-001/WhatsApp%20Image%202026-06-25%20at%2012.04.10%20PM%20(5).jpeg" alt="Behind the scenes">
+    </button>
+    <button class="ted-sat" data-pos="3" data-index="4" data-label="The Conversation" aria-label="Show conversation">
+      <img src="../TED%20TALK%20FOR%20SATTVA%20NATION-20260806T083730Z-1-001/WhatsApp%20Image%202026-06-25%20at%2012.04.10%20PM.jpeg" alt="Conversation moment">
+    </button>
+  </div>
+
+  <div class="ted-thumbs" id="tedThumbs">
+    <button class="ted-thumb active" data-index="0" aria-label="Show feature image">
+      <img src="../TED%20TALK%20FOR%20SATTVA%20NATION-20260806T083730Z-1-001/WhatsApp%20Image%202026-06-25%20at%2012.04.10%20PM%20(1).jpeg" alt="Featured">
+    </button>
+    <button class="ted-thumb" data-index="1" aria-label="Show speaker on stage">
+      <img src="../TED%20TALK%20FOR%20SATTVA%20NATION-20260806T083730Z-1-001/WhatsApp%20Image%202026-06-25%20at%2012.04.10%20PM%20(2).jpeg" alt="Speaker">
+    </button>
+    <button class="ted-thumb" data-index="2" aria-label="Show audience">
+      <img src="../TED%20TALK%20FOR%20SATTVA%20NATION-20260806T083730Z-1-001/WhatsApp%20Image%202026-06-25%20at%2012.04.10%20PM%20(3).jpeg" alt="Audience">
+    </button>
+    <button class="ted-thumb" data-index="3" aria-label="Show behind the scenes">
+      <img src="../TED%20TALK%20FOR%20SATTVA%20NATION-20260806T083730Z-1-001/WhatsApp%20Image%202026-06-25%20at%2012.04.10%20PM%20(5).jpeg" alt="Behind">
+    </button>
+    <button class="ted-thumb" data-index="4" aria-label="Show conversation">
+      <img src="../TED%20TALK%20FOR%20SATTVA%20NATION-20260806T083730Z-1-001/WhatsApp%20Image%202026-06-25%20at%2012.04.10%20PM.jpeg" alt="Conversation">
+    </button>
+  </div>
+
+  <p class="ted-hint">Click a satellite to bring it center stage</p>
+</section>
+
+<!--  EVENT GALLERY — TABBED BY CATEGORY  -->
+<section class="imgset-section" id="imgset">
+  <div class="imgset-header">
+    <span class="imgset-badge">✦ Event Gallery</span>
+    <h2>Celebrations in <em>Motion</em></h2>
+    <p>Browse our festival moments by category — yoga, devotion, and the colors of spring.</p>
+  </div>
+
+  <div class="imgset-tabs">
+    <button class="imgset-tab active" data-itab="yoga"><span class="i-dot"></span>International Yoga Day</button>
+    <button class="imgset-tab" data-itab="shivratri"><span class="i-dot"></span>Maha Shivratri Event</button>
+    <button class="imgset-tab" data-itab="holi"><span class="i-dot"></span>Phoolon ki Holi</button>
+  </div>
+
+  <!-- International Yoga Day -->
+  <div class="imgset-panel active" id="itab-yoga">
+    <div class="imgset-card" data-caption="International Yoga Day — Group Practice">
+      <img loading="lazy" src="../assets/img-section/International%20Yoga%20Day/231b5c47-54d7-4dc9-a3fb-3694706a2709.png" alt="International Yoga Day group practice">
+      <div class="imgset-plate">
+        <div class="imgset-plate-title">Group Practice</div>
+        <div class="imgset-plate-sub">International Yoga Day · Sattva Nation</div>
       </div>
-      <div class="video-body">
-        <div class="video-title">Guided Morning Meditation</div>
-        <div class="video-meta">Watch on YouTube</div>
+    </div>
+    <div class="imgset-card" data-caption="International Yoga Day — Asana Demonstration">
+      <img loading="lazy" src="../assets/img-section/International%20Yoga%20Day/29b2f5e9-39b7-4a34-af4d-32cf4a8a5dcc.png" alt="International Yoga Day asana demonstration">
+      <div class="imgset-plate">
+        <div class="imgset-plate-title">Asana Demonstration</div>
+        <div class="imgset-plate-sub">International Yoga Day · Sattva Nation</div>
       </div>
-    </a>
-    <a class="video-card" href="https://www.youtube.com/@sattvanation" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;">
-      <div class="video-thumb" style="background-image:url('https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?w=600&q=80')">
-        <div class="video-thumb-overlay"><div class="play-btn">▶</div></div>
+    </div>
+    <div class="imgset-card" data-caption="International Yoga Day — Community Moment">
+      <img loading="lazy" src="../assets/img-section/International%20Yoga%20Day/61053ddf-b3fe-4c44-bd6c-48a9b89a9879.png" alt="International Yoga Day community moment">
+      <div class="imgset-plate">
+        <div class="imgset-plate-title">Community Moment</div>
+        <div class="imgset-plate-sub">International Yoga Day · Sattva Nation</div>
       </div>
-      <div class="video-body">
-        <div class="video-title">Yoga & Movement Practices</div>
-        <div class="video-meta">Watch on YouTube</div>
+    </div>
+    <div class="imgset-card" data-caption="International Yoga Day — On the Mat">
+      <img loading="lazy" src="../assets/img-section/International%20Yoga%20Day/cdd4442b-826c-4636-951f-a7485c81c97c.png" alt="International Yoga Day on the mat">
+      <div class="imgset-plate">
+        <div class="imgset-plate-title">On the Mat</div>
+        <div class="imgset-plate-sub">International Yoga Day · Sattva Nation</div>
       </div>
-    </a>
+    </div>
+  </div>
+
+  <!-- Maha Shivratri Event -->
+  <div class="imgset-panel" id="itab-shivratri">
+    <div class="imgset-card" data-caption="Maha Shivratri Event — Devotional Gathering">
+      <img loading="lazy" src="../assets/img-section/Maha%20Shivratri%20Event/314cd097-0f71-4015-a725-7d1a26798ef3.png" alt="Maha Shivratri devotional gathering">
+      <div class="imgset-plate">
+        <div class="imgset-plate-title">Devotional Gathering</div>
+        <div class="imgset-plate-sub">Maha Shivratri · Sattva Nation</div>
+      </div>
+    </div>
+    <div class="imgset-card" data-caption="Maha Shivratri Event — Sacred Ritual">
+      <img loading="lazy" src="../assets/img-section/Maha%20Shivratri%20Event/b8dc7713-1671-4148-8719-5632499cc667.png" alt="Maha Shivratri sacred ritual">
+      <div class="imgset-plate">
+        <div class="imgset-plate-title">Sacred Ritual</div>
+        <div class="imgset-plate-sub">Maha Shivratri · Sattva Nation</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Phoolon ki Holi -->
+  <div class="imgset-panel" id="itab-holi">
+    <div class="imgset-card" data-caption="Phoolon ki Holi — Petal Shower">
+      <img loading="lazy" src="../assets/img-section/Phoolon%20ki%20holi/WhatsApp%20Image%202026-06-25%20at%204.37.20%20PM.jpeg" alt="Phoolon ki Holi petal shower">
+      <div class="imgset-plate">
+        <div class="imgset-plate-title">Petal Shower</div>
+        <div class="imgset-plate-sub">Phoolon ki Holi · Sattva Nation</div>
+      </div>
+    </div>
+    <div class="imgset-card" data-caption="Phoolon ki Holi — Colors of Joy">
+      <img loading="lazy" src="../assets/img-section/Phoolon%20ki%20holi/WhatsApp%20Image%202026-06-25%20at%204.37.20%20PM%20(1).jpeg" alt="Phoolon ki Holi colors of joy">
+      <div class="imgset-plate">
+        <div class="imgset-plate-title">Colors of Joy</div>
+        <div class="imgset-plate-sub">Phoolon ki Holi · Sattva Nation</div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1512,6 +1977,7 @@
     workshops: '.workshops-section',
     goa: '.goa-section',
     ministry: '.ministry-section',
+    empower: '#empower',
     videos: '#videos',
   };
   filterBtns.forEach(btn => {
@@ -1558,6 +2024,18 @@
       });
       tab.classList.add('active');
       document.getElementById('mtab-' + tab.dataset.mtab).classList.add('active');
+    });
+  });
+
+  // Imgset tabs
+  const imgsetTabs = document.querySelectorAll('.imgset-tab');
+  const imgsetPanels = document.querySelectorAll('.imgset-panel');
+  imgsetTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      imgsetTabs.forEach(t => t.classList.remove('active'));
+      imgsetPanels.forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById('itab-' + tab.dataset.itab).classList.add('active');
     });
   });
 
@@ -1629,6 +2107,12 @@
     if (img) registerImage(card, img.src, card.dataset.caption || img.alt || '');
   });
 
+  // Women Empowerment image tiles
+  document.querySelectorAll('.empower-img-tile').forEach(tile => {
+    const img = tile.querySelector('img');
+    if (img) registerImage(tile, img.src, tile.dataset.caption || img.alt || '');
+  });
+
   function openLightbox(index) {
     if (index < 0 || index >= images.length) return;
     currentIndex = index;
@@ -1668,6 +2152,45 @@
     if (e.key === 'ArrowRight') nextImage();
     if (e.key === 'ArrowLeft') prevImage();
   });
+})();
+
+/* TED TALK — ORBIT INTERACTION */
+(function () {
+  const orbit = document.getElementById('tedOrbit');
+  const coreImg = document.getElementById('tedCoreImg');
+  const coreLabel = document.getElementById('tedCoreLabel');
+  const sats = document.querySelectorAll('.ted-sat');
+  const thumbs = document.querySelectorAll('.ted-thumb');
+  if (!orbit || !coreImg || !sats.length) return;
+
+  const allImages = [
+    { src: coreImg.src, label: 'TED Talk — Sattva Nation' },
+    ...Array.from(sats).map(s => ({
+      src: s.querySelector('img').src,
+      label: s.dataset.label || ''
+    }))
+  ];
+
+  let activeIndex = 0;
+
+  function activate(index) {
+    if (index === activeIndex) return;
+    activeIndex = index;
+    const item = allImages[index];
+    coreImg.style.opacity = '0';
+    coreImg.style.transform = 'scale(1.04)';
+    setTimeout(() => {
+      coreImg.src = item.src;
+      coreLabel.textContent = item.label;
+      coreImg.style.opacity = '1';
+      coreImg.style.transform = 'scale(1)';
+    }, 200);
+    sats.forEach(s => s.classList.toggle('active', Number(s.dataset.index) === index));
+    thumbs.forEach(t => t.classList.toggle('active', Number(t.dataset.index) === index));
+  }
+
+  sats.forEach(s => s.addEventListener('click', () => activate(Number(s.dataset.index))));
+  thumbs.forEach(t => t.addEventListener('click', () => activate(Number(t.dataset.index))));
 })();
 </script>
 
