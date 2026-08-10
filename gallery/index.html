@@ -2070,7 +2070,7 @@
 
   // Slideshow cards (background-image based)
   document.querySelectorAll('.slideshow-card').forEach(card => {
-    const src = card.style.backgroundImage.replace(/url\(['"]?(.+?)['"]?\)/, '$1');
+    const src = card.style.backgroundImage.replace(/^url\(['"]?/, '').replace(/['"]?\)\s*$/, '');
     if (src) registerImage(card, new URL(src, location.href).href, card.dataset.caption || '');
   });
 
