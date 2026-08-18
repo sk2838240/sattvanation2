@@ -535,6 +535,176 @@
   .footer-links a:hover { color: #f48fb1; }
   .footer-copy { font-size: 0.78rem; }
 
+  /* ============================================
+     DESIGN ENHANCEMENTS
+     ============================================ */
+
+  /* Hero — glass eyebrow + ambient glow */
+  .page-hero-eyebrow {
+    background: rgba(255,255,255,0.10);
+    border: 1px solid rgba(255,255,255,0.28);
+    padding: 0.5rem 1.15rem;
+    border-radius: 50px;
+    backdrop-filter: blur(6px);
+  }
+  .page-hero-eyebrow::before {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--pink-soft);
+  }
+  .page-hero::after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    width: 460px; height: 460px;
+    top: -150px; right: -120px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(240,98,146,0.5), transparent 68%);
+    filter: blur(14px);
+    animation: floatGlow 16s ease-in-out infinite;
+    pointer-events: none;
+  }
+  @keyframes floatGlow {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(-40px, 36px); }
+  }
+
+  /* Pillars — accent bar + lift + icon medallions */
+  .intro-pillars { gap: 1.1rem; }
+  .pillar {
+    padding: 1.6rem 1rem 1.4rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  }
+  .pillar::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--pink-soft), var(--pink-deep));
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+  .pillar:hover { transform: translateY(-5px); box-shadow: 0 16px 36px rgba(194,24,91,0.16); border-color: var(--pink-soft); }
+  .pillar:hover::before { transform: scaleX(1); }
+  .pillar-emoji {
+    width: 54px; height: 54px;
+    border-radius: 50%;
+    background: var(--pink-pale);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 0.7rem;
+    font-size: 1.5rem;
+    transition: transform 0.25s ease;
+  }
+  .pillar:hover .pillar-emoji { transform: scale(1.1) rotate(-4deg); }
+
+  /* Quote — closing mark */
+  .quote-wrap::after {
+    content: '\201D';
+    position: absolute;
+    bottom: 6px; right: 28px;
+    font-size: 6rem;
+    color: rgba(255,255,255,0.18);
+    font-family: var(--serif);
+    line-height: 1;
+  }
+
+  /* Approach gallery */
+  .approach-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .approach-img {
+    border-radius: 20px;
+    overflow: hidden;
+    height: 240px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+  }
+  .approach-img::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(194,24,91,0.3), transparent 58%);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+  }
+  .approach-img:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(194,24,91,0.18); }
+  .approach-img:hover::after { opacity: 1; }
+
+  /* Offerings grid (Who We Are) */
+  .offerings-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.4rem;
+    max-width: 1100px;
+    margin: 3rem auto 0;
+  }
+  .offering-card {
+    background: white;
+    border: 1px solid #f4c0d1;
+    border-radius: 20px;
+    padding: 2rem 1.6rem;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  }
+  .offering-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; bottom: 0; width: 3px;
+    background: linear-gradient(180deg, var(--pink-soft), var(--pink-deep));
+    transform: scaleY(0); transform-origin: top;
+    transition: transform 0.3s ease;
+  }
+  .offering-card:hover { transform: translateY(-6px); box-shadow: 0 20px 44px rgba(194,24,91,0.14); border-color: var(--pink-soft); }
+  .offering-card:hover::before { transform: scaleY(1); }
+  .offering-icon {
+    width: 52px; height: 52px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, var(--pink-light), #f8bbd0);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem;
+    margin-bottom: 1.1rem;
+  }
+  .offering-title {
+    font-family: var(--serif);
+    font-size: 1.18rem;
+    color: var(--text-dark);
+    margin-bottom: 0.45rem;
+  }
+  .offering-desc {
+    font-size: 0.9rem;
+    line-height: 1.65;
+    color: var(--text-mid);
+    font-weight: 300;
+  }
+
+  /* Challenges — richer items */
+  .challenge-item {
+    border-left: 3px solid transparent;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+  .challenge-item:hover {
+    transform: translateX(6px);
+    box-shadow: 0 12px 28px rgba(194,24,91,0.1);
+    border-left-color: var(--pink-deep);
+  }
+  .challenge-dot {
+    background: linear-gradient(135deg, var(--pink-soft), var(--pink-deep));
+    box-shadow: 0 4px 10px rgba(194,24,91,0.3);
+  }
+  .challenge-img { position: relative; }
+  .challenge-img::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(194,24,91,0.2), transparent 55%);
+  }
+
+  /* CTA ghost hover lift */
+  .cta .btn-ghost:hover { transform: translateY(-2px); }
+
+  /* Staggered reveals */
+  .reveal.delay-1 { transition-delay: 0.09s; }
+  .reveal.delay-2 { transition-delay: 0.18s; }
+  .reveal.delay-3 { transition-delay: 0.27s; }
+
   /* REVEAL ANIMATION */
   .reveal {
     opacity: 0;
@@ -548,6 +718,7 @@
 
   @media (prefers-reduced-motion: reduce) {
     .reveal { transition: none !important; }
+    .page-hero::after { animation: none; }
   }
 
   @media (max-width: 960px) {
@@ -681,11 +852,11 @@
     </p>
   </div>
 
-  <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
-    <div style="border-radius:20px;overflow:hidden;height:240px;background-image:url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=80');background-size:cover;background-position:center;"></div>
-    <div style="border-radius:20px;overflow:hidden;height:240px;background-image:url('https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=600&q=80');background-size:cover;background-position:center;"></div>
-    <div style="border-radius:20px;overflow:hidden;height:240px;background-image:url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80');background-size:cover;background-position:center;"></div>
-    <div style="border-radius:20px;overflow:hidden;height:240px;background-image:url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600&q=80');background-size:cover;background-position:center;"></div>
+  <div class="reveal approach-gallery">
+    <div class="approach-img" style="background-image:url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=80');"></div>
+    <div class="approach-img" style="background-image:url('https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=600&q=80');"></div>
+    <div class="approach-img" style="background-image:url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80');"></div>
+    <div class="approach-img" style="background-image:url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600&q=80');"></div>
   </div>
 </section>
 
@@ -700,6 +871,39 @@
     <p class="section-body">
       Through events, wellness experiences, educational initiatives, corporate programs and community engagements, Sattva promotes growth across every dimension of human wellness.
     </p>
+  </div>
+
+  <div class="offerings-grid">
+    <div class="offering-card reveal">
+      <div class="offering-icon" aria-hidden="true">📅</div>
+      <h3 class="offering-title">Events</h3>
+      <p class="offering-desc">Signature festivals and gatherings that bring people together to celebrate life.</p>
+    </div>
+    <div class="offering-card reveal delay-1">
+      <div class="offering-icon" aria-hidden="true">🌿</div>
+      <h3 class="offering-title">Wellness Experiences</h3>
+      <p class="offering-desc">Immersive practices for the mind, body and soul in real, open environments.</p>
+    </div>
+    <div class="offering-card reveal delay-2">
+      <div class="offering-icon" aria-hidden="true">📖</div>
+      <h3 class="offering-title">Educational Initiatives</h3>
+      <p class="offering-desc">Programmes that make holistic wellbeing practical &mdash;&nbsp; not just theory.</p>
+    </div>
+    <div class="offering-card reveal">
+      <div class="offering-icon" aria-hidden="true">🏢</div>
+      <h3 class="offering-title">Corporate Programs</h3>
+      <p class="offering-desc">Workplace wellbeing that helps teams find balance and thrive.</p>
+    </div>
+    <div class="offering-card reveal delay-1">
+      <div class="offering-icon" aria-hidden="true">🤝</div>
+      <h3 class="offering-title">Community Engagements</h3>
+      <p class="offering-desc">Grassroots initiatives that nurture healthier, happier communities.</p>
+    </div>
+    <div class="offering-card reveal delay-2">
+      <div class="offering-icon" aria-hidden="true">✨</div>
+      <h3 class="offering-title">Every Dimension</h3>
+      <p class="offering-desc">Growth across mind, soul, body and beauty &mdash;&nbsp; one holistic you.</p>
+    </div>
   </div>
 </section>
 
