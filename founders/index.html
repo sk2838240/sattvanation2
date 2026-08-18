@@ -410,6 +410,96 @@
   }
   .carousel-autoplay:hover .autoplay-icon { background: #a31150; }
 
+  /* FOUNDER SPOTLIGHT */
+  .founder-section {
+    padding: 6rem 5%;
+    background: var(--white);
+    overflow: hidden;
+  }
+  .founder-inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 3.5rem;
+    align-items: center;
+  }
+
+  /* LEFT — auto-slide gallery */
+  .founder-gallery {
+    position: relative;
+    border-radius: 28px;
+    overflow: hidden;
+    aspect-ratio: 4 / 3.2;
+    background: var(--pink-pale);
+    box-shadow: 0 24px 64px rgba(194,24,91,0.16);
+    border: 1px solid #f4c0d1;
+  }
+  .fg-slides { position: absolute; inset: 0; }
+  .fg-slide {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transform: scale(1.05);
+    transition: opacity 1s ease, transform 6s ease;
+  }
+  .fg-slide.active { opacity: 1; transform: scale(1); }
+  .founder-gallery::after {
+    content: ''; position: absolute; inset: auto 0 0 0; height: 42%;
+    background: linear-gradient(to top, rgba(30,5,18,0.5), transparent);
+    pointer-events: none; z-index: 2;
+  }
+  .fg-badge {
+    position: absolute; top: 1.1rem; left: 1.1rem; z-index: 3;
+    background: rgba(194,24,91,0.92); color: #fff;
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 0.42rem 0.95rem; border-radius: 50px; backdrop-filter: blur(4px);
+  }
+  .fg-dots {
+    position: absolute; left: 0; right: 0; bottom: 1.1rem; z-index: 3;
+    display: flex; justify-content: center; gap: 0.5rem;
+  }
+  .fg-dot {
+    width: 8px; height: 8px; border-radius: 50%; border: none; padding: 0; cursor: pointer;
+    background: rgba(255,255,255,0.55); transition: all 0.35s;
+  }
+  .fg-dot:hover { background: rgba(255,255,255,0.85); }
+  .fg-dot.active { width: 26px; border-radius: 4px; background: #fff; }
+  @media (prefers-reduced-motion: reduce) {
+    .fg-slide { transition: opacity 0.3s ease; transform: none !important; }
+  }
+
+  /* RIGHT — content */
+  .founder-info { max-width: 520px; }
+  .founder-role-tag {
+    display: inline-block; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--pink-deep); margin-bottom: 0.7rem;
+  }
+  .founder-name {
+    font-family: var(--serif); font-size: clamp(1.9rem, 3vw, 2.6rem);
+    color: var(--text-dark); line-height: 1.15; margin-bottom: 0.5rem;
+  }
+  .founder-title {
+    font-size: 0.95rem; color: var(--pink-mid); font-weight: 500; margin-bottom: 1.4rem;
+  }
+  .founder-bio {
+    font-size: 1rem; line-height: 1.85; color: var(--text-mid); font-weight: 300; margin-bottom: 1.1rem;
+  }
+  .founder-quote {
+    font-family: var(--serif); font-style: italic; font-size: 1.1rem; color: var(--pink-deep);
+    line-height: 1.55; padding-left: 1.2rem; border-left: 3px solid var(--pink-soft); margin-top: 1.6rem;
+  }
+  @media (max-width: 960px) {
+    .founder-inner { grid-template-columns: 1fr; gap: 2.4rem; }
+    .founder-gallery { aspect-ratio: 16 / 10; }
+    .founder-info { max-width: none; }
+  }
+  @media (max-width: 640px) {
+    .founder-section { padding: 4rem 5%; }
+    .founder-gallery { aspect-ratio: 4 / 3; border-radius: 20px; }
+  }
+
   /* VISION SECTION */
   .vision {
     padding: 6rem 5%;
@@ -578,6 +668,42 @@
     <a href="/">Home</a>
     <span style="margin:0 4px;">&ndash;</span>
     <span>Mentors</span>
+  </div>
+</section>
+
+<!-- FOUNDER SPOTLIGHT -->
+<section class="founder-section" id="founder">
+  <div class="founder-inner">
+
+    <!-- LEFT: auto-slide gallery -->
+    <div class="founder-gallery reveal" id="founderGallery" role="region" aria-label="Preeti Singh Mundra photo gallery" aria-roledescription="carousel">
+      <span class="fg-badge">The Founder</span>
+      <div class="fg-slides">
+        <img class="fg-slide active" src="../assets/sports-expo-2026/expo-01.jpg" alt="Preeti Singh Mundra addressing the audience at the Times of India Sports, Fitness &amp; Infrastructure Expo 2026" loading="lazy">
+        <img class="fg-slide" src="../assets/sports-expo-2026/expo-03.jpg" alt="Preeti Singh Mundra being felicitated on stage" loading="lazy">
+        <img class="fg-slide" src="../assets/sports-expo-2026/expo-09.jpg" alt="Preeti Singh Mundra speaking on the Women in Sport leadership panel" loading="lazy">
+        <img class="fg-slide" src="../assets/sports-expo-2026/expo-05.jpg" alt="Preeti Singh Mundra with fellow women leaders and panelists" loading="lazy">
+        <img class="fg-slide" src="../assets/sports-expo-2026/expo-04.jpg" alt="Preeti Singh Mundra with the panel and dignitaries at the Expo 2026" loading="lazy">
+      </div>
+      <div class="fg-dots" id="fgDots" role="tablist" aria-label="Choose slide"></div>
+    </div>
+
+    <!-- RIGHT: circular avatar + content -->
+    <div class="founder-info reveal">
+      <span class="founder-role-tag">Founder &amp; Visionary</span>
+      <h2 class="founder-name">Preeti Singh Mundra</h2>
+      <div class="founder-title">Founder, Sattva Nation · Wellness &amp; Women-in-Sport Advocate</div>
+      <p class="founder-bio">
+        Preeti Singh Mundra is the founding force behind Sattva Nation &mdash;&nbsp; a movement built on the belief that wellness is a way of living, not a luxury. Her vision brings holistic health, mindful movement, and community out of exclusive retreats and into everyday life, making balance accessible to all.
+      </p>
+      <p class="founder-bio">
+        A passionate champion of women's participation in sport and fitness, she has shared the stage with India's leading voices on leadership, inclusion, and opportunity &mdash;&nbsp; most recently at The Times of India Sports, Fitness &amp; Infrastructure Expo 2026. Through Sattva Nation, she is building spaces where people of every background can rediscover strength, purpose, and inner harmony.
+      </p>
+      <div class="founder-quote">
+        "When we invest in wellness and in one another, we don't just change individual lives &mdash;&nbsp; we build a healthier, more inclusive nation."
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -997,6 +1123,53 @@
   } else {
     stopAutoplay();
   }
+})();
+
+// Founder gallery — auto-advancing slideshow
+(function() {
+  const gallery = document.getElementById('founderGallery');
+  if (!gallery) return;
+  const slides = Array.from(gallery.querySelectorAll('.fg-slide'));
+  const dotsContainer = document.getElementById('fgDots');
+  if (slides.length <= 1) return;
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const INTERVAL = 4000;
+  let current = 0;
+  let timer = null;
+
+  // Build dots
+  const dots = slides.map((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'fg-dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('role', 'tab');
+    dot.setAttribute('aria-label', 'Show founder photo ' + (i + 1));
+    dot.addEventListener('click', () => { goTo(i); restart(); });
+    dotsContainer.appendChild(dot);
+    return dot;
+  });
+
+  function goTo(index) {
+    current = ((index % slides.length) + slides.length) % slides.length;
+    slides.forEach((s, i) => s.classList.toggle('active', i === current));
+    dots.forEach((d, i) => d.classList.toggle('active', i === current));
+  }
+  function next() { goTo(current + 1); }
+
+  function start() {
+    if (reduceMotion) return;
+    clearInterval(timer);
+    timer = setInterval(next, INTERVAL);
+  }
+  function stop() { clearInterval(timer); }
+  function restart() { stop(); start(); }
+
+  // Pause on hover / when tab hidden
+  gallery.addEventListener('mouseenter', stop);
+  gallery.addEventListener('mouseleave', start);
+  document.addEventListener('visibilitychange', () => { document.hidden ? stop() : start(); });
+
+  start();
 })();
 </script>
 
