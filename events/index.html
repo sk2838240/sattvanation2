@@ -6,14 +6,28 @@
 <meta name="theme-color" content="#c2185b">
 <title>Events &ndash; Sattva Nation</title>
 <meta name="description" content="Explore upcoming and past wellness events, retreats, festivals, and workshops hosted by Sattva Nation across India.">
+<meta name="keywords" content="wellness events, wellness retreats, wellness festivals India, workshops, Sattva Nation events">
+<meta name="author" content="Sattva Nation">
+<meta name="robots" content="index, follow">
 <link rel="icon" type="image/png" href="/assets/sattvalogo123.png" sizes="32x32">
 <link rel="apple-touch-icon" href="/assets/sattvalogo123.png">
 <link rel="canonical" href="https://www.sattvanation.com/events/">
+<!-- Open Graph / Facebook -->
+<meta property="og:site_name" content="Sattva Nation">
 <meta property="og:title" content="Events &ndash; Sattva Nation">
 <meta property="og:description" content="Explore upcoming and past wellness events, retreats, festivals, and workshops hosted by Sattva Nation across India.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.sattvanation.com/events/">
+<meta property="og:image" content="https://www.sattvanation.com/assets/sattvalogo123.png">
+<meta property="og:image:width" content="400">
+<meta property="og:image:height" content="100">
+<meta property="og:image:alt" content="Sattva Nation logo">
+<meta property="og:locale" content="en_IN">
+<!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Events &ndash; Sattva Nation">
+<meta name="twitter:description" content="Explore upcoming and past wellness events, retreats, festivals, and workshops hosted by Sattva Nation across India.">
+<meta name="twitter:image" content="https://www.sattvanation.com/assets/sattvalogo123.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://images.unsplash.com">
@@ -432,6 +446,77 @@
   @media (max-width: 960px) { .cw-experts-grid { grid-template-columns: repeat(2, 1fr); } .cw-panel.active { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 640px) { .cw-experts-grid { grid-template-columns: 1fr; } .cw-panel.active { grid-template-columns: 1fr; } }
 
+  /* SFI EXPO 2026 — FEATURED EVENT BENTO */
+  .sfi-section { padding: 6rem 5%; background: var(--white); position: relative; overflow: hidden; }
+  .sfi-section::before {
+    content: ''; position: absolute; top: -120px; right: -90px;
+    width: 320px; height: 320px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(240,98,146,0.12), transparent 70%);
+    pointer-events: none;
+  }
+  .sfi-header { text-align: center; max-width: 740px; margin: 0 auto 3rem; position: relative; z-index: 2; }
+  .sfi-badge {
+    display: inline-flex; align-items: center; gap: 0.45rem;
+    background: linear-gradient(135deg, var(--pink-deep), var(--pink-mid)); color: #fff;
+    padding: 0.34rem 1rem; border-radius: 50px;
+    font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em;
+    margin-bottom: 0.9rem; box-shadow: 0 8px 20px rgba(194,24,91,0.22);
+  }
+  .sfi-supported {
+    display: inline-flex; align-items: center; gap: 0.4rem; flex-wrap: wrap; justify-content: center;
+    font-size: 0.74rem; color: var(--text-muted); margin-top: 1rem; letter-spacing: 0.02em;
+  }
+  .sfi-supported strong { color: var(--text-mid); font-weight: 600; }
+  .sfi-supported .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--pink-soft); }
+
+  .sfi-bento {
+    display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 210px;
+    grid-auto-flow: dense; gap: 1rem; max-width: 1200px; margin: 0 auto; position: relative; z-index: 2;
+  }
+  .sfi-tile {
+    position: relative; border-radius: 18px; overflow: hidden;
+    background: var(--pink-light);
+    box-shadow: 0 6px 22px rgba(45,26,36,0.08);
+    transition: transform 0.4s cubic-bezier(0.2,0.7,0.3,1), box-shadow 0.4s;
+  }
+  .sfi-tile:hover { transform: translateY(-4px); box-shadow: 0 24px 52px rgba(194,24,91,0.2); }
+  .sfi-tile img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+    transition: transform 0.6s cubic-bezier(0.2,0.7,0.3,1);
+  }
+  .sfi-tile:hover img { transform: scale(1.06); }
+  .sfi-tile.feature { grid-column: span 2; grid-row: span 2; }
+  .sfi-tile.tall { grid-row: span 2; }
+  .sfi-tile.wide { grid-column: span 2; }
+  .sfi-tile::after {
+    content: ''; position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(to top, rgba(20,8,14,0.82) 0%, rgba(20,8,14,0.15) 44%, transparent 70%);
+    transition: opacity 0.35s;
+  }
+  .sfi-plate { position: absolute; bottom: 0; left: 0; right: 0; z-index: 2; padding: 1rem 1.1rem 1.15rem; color: #fff; }
+  .sfi-plate-title { font-family: var(--serif); font-size: 1rem; font-weight: 600; line-height: 1.25; }
+  .sfi-plate-sub { font-size: 0.72rem; color: rgba(255,255,255,0.82); font-weight: 300; margin-top: 0.25rem; }
+  .sfi-tile.feature .sfi-plate-title { font-size: clamp(1.2rem, 2vw, 1.5rem); }
+  .sfi-tile-tag {
+    position: absolute; top: 0.9rem; left: 0.9rem; z-index: 2;
+    display: inline-flex; align-items: center; gap: 0.3rem;
+    background: rgba(255,255,255,0.18); backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.4); color: #fff;
+    font-size: 0.6rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 0.28rem 0.7rem; border-radius: 50px;
+  }
+  @media (max-width: 960px) {
+    .sfi-bento { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 190px; }
+    .sfi-tile.feature { grid-column: span 2; grid-row: span 2; }
+    .sfi-tile.wide { grid-column: span 2; }
+    .sfi-tile.tall { grid-row: span 2; }
+  }
+  @media (max-width: 640px) {
+    .sfi-bento { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 140px; gap: 0.6rem; }
+    .sfi-tile.feature { grid-column: span 2; grid-row: span 2; }
+    .sfi-plate-title { font-size: 0.9rem; }
+  }
+
   /* NEWSLETTER */
   .newsletter {
     padding: 5rem 5%;
@@ -646,6 +731,92 @@
   </div>
   <div style="text-align:center; margin-top:3rem;">
     <a href="/gallery/" class="btn-outline-dark">View Full Gallery</a>
+  </div>
+</section>
+
+<!--  SFI EXPO 2026 — FEATURED EVENT  -->
+<section class="sfi-section" id="sfi-expo">
+  <div class="sfi-header reveal">
+    <span class="sfi-badge">★ Featured &middot; 2026</span>
+    <span class="section-tag">The Times of India SFI Expo</span>
+    <h2 class="section-title">Women in Sport at the <em>Sports, Fitness &amp; Infrastructure Expo</em></h2>
+    <p style="font-size:0.95rem;color:var(--text-mid);line-height:1.75;font-weight:300;">
+      Our founder Preeti Singh Mundra joined the national panel on <em>Leadership, Inclusion &amp; Opportunity</em> &mdash;&nbsp; a proud moment for Sattva Nation on one of India's biggest sports &amp; wellness stages.
+    </p>
+    <div class="sfi-supported">
+      Supported by <strong>Ministry of Youth Affairs &amp; Sports</strong>
+      <span class="dot"></span> <strong>Sports Authority of India (SAI)</strong>
+      <span class="dot"></span> <strong>The Times of India</strong>
+    </div>
+  </div>
+
+  <div class="sfi-bento">
+    <div class="sfi-tile feature reveal">
+      <span class="sfi-tile-tag">★ Featured</span>
+      <img loading="lazy" src="/assets/sports-expo-2026/expo-04.jpg" alt="Women in Sport panelists and moderator felicitated on stage at the SFI Expo 2026">
+      <div class="sfi-plate">
+        <div class="sfi-plate-title">Women in Sport Panel</div>
+        <div class="sfi-plate-sub">Panelists &amp; moderator felicitated &middot; SFI Expo 2026</div>
+      </div>
+    </div>
+    <div class="sfi-tile tall reveal">
+      <span class="sfi-tile-tag">Panelist</span>
+      <img loading="lazy" src="/assets/sports-expo-2026/expo-09.jpg" alt="Preeti Singh Mundra, Founder of Sattva Nation, speaking on the panel">
+      <div class="sfi-plate">
+        <div class="sfi-plate-title">On the Panel</div>
+        <div class="sfi-plate-sub">Preeti Singh Mundra, Founder &mdash; Sattva Nation</div>
+      </div>
+    </div>
+    <div class="sfi-tile reveal">
+      <img loading="lazy" src="/assets/sports-expo-2026/expo-01.jpg" alt="Founder of Sattva Nation addressing the audience at the SFI Expo">
+      <div class="sfi-plate">
+        <div class="sfi-plate-title">Sharing the Vision</div>
+        <div class="sfi-plate-sub">A voice for wellness in sport</div>
+      </div>
+    </div>
+    <div class="sfi-tile reveal">
+      <img loading="lazy" src="/assets/sports-expo-2026/expo-03.jpg" alt="Sattva Nation founder receiving a token of appreciation on stage">
+      <div class="sfi-plate">
+        <div class="sfi-plate-title">Token of Appreciation</div>
+        <div class="sfi-plate-sub">Sattva Nation honoured on stage</div>
+      </div>
+    </div>
+    <div class="sfi-tile wide reveal">
+      <span class="sfi-tile-tag">Sattva Nation</span>
+      <img loading="lazy" src="/assets/sports-expo-2026/expo-07.jpg" alt="Attendees holding I Am Sattva placards at the SFI Expo booth">
+      <div class="sfi-plate">
+        <div class="sfi-plate-title">I Am Sattva</div>
+        <div class="sfi-plate-sub">Community spirit at the expo</div>
+      </div>
+    </div>
+    <div class="sfi-tile reveal">
+      <img loading="lazy" src="/assets/sports-expo-2026/expo-05.jpg" alt="Women leaders in sport with their mementos at the SFI Expo 2026">
+      <div class="sfi-plate">
+        <div class="sfi-plate-title">Women Leaders in Sport</div>
+        <div class="sfi-plate-sub">Panelists with their mementos</div>
+      </div>
+    </div>
+    <div class="sfi-tile reveal">
+      <img loading="lazy" src="/assets/sports-expo-2026/expo-06.jpg" alt="Felicitation moment on stage at the SFI Expo 2026">
+      <div class="sfi-plate">
+        <div class="sfi-plate-title">Felicitation Moment</div>
+        <div class="sfi-plate-sub">Recognising the changemakers</div>
+      </div>
+    </div>
+    <div class="sfi-tile wide reveal">
+      <img loading="lazy" src="/assets/sports-expo-2026/expo-08.jpg" alt="Panel stage panorama for Women in Sport at the SFI Expo 2026">
+      <div class="sfi-plate">
+        <div class="sfi-plate-title">The Panel Stage</div>
+        <div class="sfi-plate-sub">Leadership, Inclusion &amp; Opportunity</div>
+      </div>
+    </div>
+    <div class="sfi-tile wide reveal">
+      <img loading="lazy" src="/assets/sports-expo-2026/expo-02.jpg" alt="Full view of the Women in Sport panel discussion in progress">
+      <div class="sfi-plate">
+        <div class="sfi-plate-title">Full House</div>
+        <div class="sfi-plate-sub">Panel discussion in progress &middot; SFI Expo 2026</div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -893,6 +1064,7 @@
   <div class="footer-logo">SattvaNation</div>
   <ul class="footer-links">
     <li><a href="/about-us/">About</a></li>
+    <li><a href="/what-we-do/">What We Do</a></li>
     <li><a href="/programmes/">Programmes</a></li>
   <li><a href="/events/" class="active-page">Events</a></li>
     <li><a href="/founders/">Founders</a></li>

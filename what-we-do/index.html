@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#c2185b">
+<title>What We Do &ndash; Sattva Nation</title>
+<meta name="description" content="Discover what Sattva Nation does: India's first-of-its-kind wellness festival focused on holistic development, transformative experiences, and celebrating life.">
+<meta name="keywords" content="what we do, Sattva Nation, wellness festival, holistic development, transformative experiences, wellbeing India">
+<meta name="author" content="Sattva Nation">
+<meta name="robots" content="index, follow">
+<link rel="icon" type="image/png" href="/assets/sattvalogo123.png" sizes="32x32">
+<link rel="apple-touch-icon" href="/assets/sattvalogo123.png">
+<link rel="canonical" href="https://www.sattvanation.com/what-we-do/">
+<!-- Open Graph / Facebook -->
+<meta property="og:site_name" content="Sattva Nation">
+<meta property="og:title" content="What We Do &ndash; Sattva Nation">
+<meta property="og:description" content="Discover what Sattva Nation does: India's first-of-its-kind wellness festival focused on holistic development, transformative experiences, and celebrating life.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.sattvanation.com/what-we-do/">
+<meta property="og:image" content="https://www.sattvanation.com/assets/sattvalogo123.png">
+<meta property="og:image:width" content="400">
+<meta property="og:image:height" content="100">
+<meta property="og:image:alt" content="Sattva Nation logo">
+<meta property="og:locale" content="en_IN">
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What We Do &ndash; Sattva Nation">
+<meta name="twitter:description" content="Discover what Sattva Nation does: India's first-of-its-kind wellness festival focused on holistic development, transformative experiences, and celebrating life.">
+<meta name="twitter:image" content="https://www.sattvanation.com/assets/sattvalogo123.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "What We Do &ndash; Sattva Nation",
+  "url": "https://www.sattvanation.com/what-we-do/",
+  "description": "India's first-of-its-kind wellness festival focused on holistic development, transformative experiences, and celebrating life."
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --pink-deep: #c2185b;
+    --pink-mid: #d4537e;
+    --pink-soft: #f06292;
+    --pink-light: #fce4ec;
+    --pink-pale: #fdf0f5;
+    --white: #ffffff;
+    --text-dark: #2d1a24;
+    --text-mid: #6b3a50;
+    --text-muted: #a06080;
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans: 'DM Sans', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--white);
+    color: var(--text-dark);
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.1rem 5%;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid #f4c0d1;
+  }
+  .logo { display: flex; align-items: center; justify-content: center; }
+  .logo-img { height: 40px; width: auto; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--text-mid);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--pink-deep); }
+  .nav-links a.active-page { color: var(--pink-deep); font-weight: 600; border-bottom: 2px solid var(--pink-deep); padding-bottom: 4px; }
+  .nav-cta {
+    background: var(--pink-deep);
+    color: white !important;
+    padding: 0.5rem 1.3rem;
+    border-radius: 50px;
+    font-size: 0.82rem !important;
+    letter-spacing: 0.06em !important;
+    transition: background 0.2s, transform 0.15s !important;
+  }
+  .nav-cta:hover { background: #a31150 !important; transform: translateY(-1px); }
+
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 101;
+  }
+  .nav-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--text-dark);
+    transition: all 0.3s ease;
+  }
+  .nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+  .nav-toggle.active span:nth-child(2) { opacity: 0; }
+  .nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
+
+  /* PAGE HERO */
+  .page-hero {
+    position: relative;
+    width: 100%;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-image: url('https://images.unsplash.com/photo-1545389336-cf090694435e?w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    padding-top: 80px;
+  }
+  .page-hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(120deg, rgba(30,5,18,0.7) 0%, rgba(194,24,91,0.4) 50%, rgba(10,2,8,0.55) 100%);
+  }
+  .page-hero-content {
+    position: relative; z-index: 2;
+    max-width: 760px;
+    padding: 4rem 5%;
+  }
+  .page-hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: #f8bbd0;
+    margin-bottom: 1.4rem;
+  }
+  .page-hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 32px; height: 1.5px;
+    background: var(--pink-soft);
+  }
+  .page-hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(2.6rem, 6vw, 5rem);
+    line-height: 1.08;
+    color: #fff;
+    margin-bottom: 1.2rem;
+    text-shadow: 0 2px 24px rgba(0,0,0,0.3);
+  }
+  .page-hero h1 em { font-style: italic; color: #f48fb1; }
+  .page-hero p {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.7;
+    font-weight: 300;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .breadcrumb {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.75);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .breadcrumb a {
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .breadcrumb a:hover { color: #f8bbd0; }
+  .breadcrumb .sep { color: rgba(255,255,255,0.4); }
+
+  /* SECTION HELPERS */
+  .section-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--pink-deep);
+    margin-bottom: 1rem;
+  }
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+    line-height: 1.18;
+    color: var(--text-dark);
+    margin-bottom: 1.2rem;
+  }
+  .section-title em { font-style: italic; color: var(--pink-deep); }
+  .section-body {
+    font-size: 1rem;
+    line-height: 1.85;
+    color: var(--text-mid);
+    font-weight: 300;
+    margin-bottom: 1.4rem;
+  }
+  .btn-primary {
+    background: var(--pink-deep);
+    color: white;
+    border: none;
+    padding: 0.85rem 2rem;
+    border-radius: 50px;
+    font-family: var(--sans);
+    font-size: 0.92rem;
+    font-weight: 500;
+    cursor: pointer;
+    letter-spacing: 0.04em;
+    transition: background 0.2s, transform 0.15s;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: #a31150; transform: translateY(-2px); }
+  .btn-outline {
+    background: transparent;
+    color: var(--pink-deep);
+    border: 1.5px solid var(--pink-deep);
+    padding: 0.85rem 2rem;
+    border-radius: 50px;
+    font-family: var(--sans);
+    font-size: 0.92rem;
+    font-weight: 500;
+    cursor: pointer;
+    letter-spacing: 0.04em;
+    transition: background 0.2s, color 0.2s;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .btn-outline:hover { background: var(--pink-deep); color: white; }
+
+  /* INTRO */
+  .intro {
+    padding: 6rem 5%;
+    background: var(--white);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+  .intro-lead {
+    font-family: var(--serif);
+    font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+    line-height: 1.4;
+    color: var(--text-dark);
+    font-style: italic;
+    margin-bottom: 1.5rem;
+  }
+  .intro-visual {
+    background: var(--pink-pale);
+    border-radius: 32px;
+    padding: 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .intro-visual::before {
+    content: 'WHAT WE DO';
+    position: absolute;
+    font-family: var(--serif);
+    font-size: 4rem;
+    font-weight: 700;
+    color: #f4c0d1;
+    opacity: 0.4;
+    top: -5px; right: -10px;
+    letter-spacing: -1px;
+  }
+  .intro-pillars {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    position: relative; z-index: 1;
+  }
+  .pillar {
+    background: white;
+    border-radius: 16px;
+    border: 1px solid #f4c0d1;
+    padding: 1.2rem 1rem;
+    text-align: center;
+  }
+  .pillar-emoji { font-size: 1.6rem; margin-bottom: 0.4rem; }
+  .pillar-name {
+    font-family: var(--serif);
+    font-size: 1rem;
+    color: var(--text-dark);
+    font-weight: 600;
+  }
+  .pillar-sub {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+
+  /* QUOTE */
+  .quote-section {
+    padding: 6rem 5%;
+    background: var(--white);
+  }
+  .quote-wrap {
+    max-width: 880px;
+    margin: 0 auto;
+    background: var(--pink-deep);
+    color: white;
+    padding: 3.5rem 3rem;
+    border-radius: 32px;
+    font-family: var(--serif);
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    line-height: 1.4;
+    font-style: italic;
+    text-align: center;
+    box-shadow: 0 24px 60px rgba(194,24,91,0.22);
+    position: relative;
+  }
+  .quote-wrap::before {
+    content: '\201C';
+    position: absolute;
+    top: -10px; left: 24px;
+    font-size: 6rem;
+    color: rgba(255,255,255,0.18);
+    font-family: var(--serif);
+    line-height: 1;
+  }
+
+  /* WHO WE ARE */
+  .who-we-are {
+    padding: 6rem 5%;
+    background: var(--pink-pale);
+  }
+  .wwa-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .wwa-inner .section-title {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.5rem;
+  }
+  .wwa-inner .section-body {
+    text-align: center;
+    max-width: 780px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem;
+  }
+
+  /* CHALLENGES */
+  .challenges {
+    padding: 6rem 5%;
+    background: var(--pink-pale);
+  }
+  .challenges-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .challenges-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  .challenge-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    padding: 1rem 1.2rem;
+    background: white;
+    border-radius: 14px;
+    border: 1px solid #f4c0d1;
+  }
+  .challenge-dot {
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    background: var(--pink-deep);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.78rem;
+    font-weight: 600;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .challenge-text {
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    font-weight: 500;
+  }
+  .challenge-img {
+    border-radius: 24px;
+    overflow: hidden;
+    height: 420px;
+    background-image: url('https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?w=800&q=80');
+    background-size: cover;
+    background-position: center;
+  }
+
+  /* CTA */
+  .cta {
+    padding: 6rem 5%;
+    background: var(--pink-deep);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta::before {
+    content: '';
+    position: absolute;
+    top: -100px; right: -100px;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.06);
+  }
+  .cta::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: -60px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+  }
+  .cta-inner {
+    position: relative; z-index: 2;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+  .cta h2 {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    color: white;
+    line-height: 1.18;
+    margin-bottom: 1rem;
+  }
+  .cta h2 em { font-style: italic; color: #f48fb1; }
+  .cta p {
+    color: #fce4ec;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    font-weight: 300;
+    margin-bottom: 2rem;
+  }
+  .cta .btn-white {
+    background: white;
+    color: var(--pink-deep);
+    border: none;
+    padding: 0.95rem 2.4rem;
+    border-radius: 50px;
+    font-family: var(--sans);
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    letter-spacing: 0.04em;
+    transition: background 0.2s, transform 0.15s;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0 0.5rem;
+  }
+  .cta .btn-white:hover { background: #fce4ec; transform: translateY(-2px); }
+  .cta .btn-ghost {
+    background: rgba(255,255,255,0.12);
+    color: white;
+    border: 1.5px solid rgba(255,255,255,0.5);
+    padding: 0.95rem 2.4rem;
+    border-radius: 50px;
+    font-family: var(--sans);
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    letter-spacing: 0.04em;
+    transition: background 0.2s;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0 0.5rem;
+  }
+  .cta .btn-ghost:hover { background: rgba(255,255,255,0.22); }
+
+  /* FOOTER */
+  footer {
+    background: var(--text-dark);
+    color: #c9899c;
+    padding: 3rem 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .footer-logo {
+    font-family: var(--serif);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: white;
+  }
+  .footer-links { display: flex; gap: 1.8rem; list-style: none; }
+  .footer-links a {
+    text-decoration: none;
+    font-size: 0.82rem;
+    color: #c9899c;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: #f48fb1; }
+  .footer-copy { font-size: 0.78rem; }
+
+  /* REVEAL ANIMATION */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { transition: none !important; }
+  }
+
+  @media (max-width: 960px) {
+    .nav-toggle { display: flex; }
+    .nav-links {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 280px;
+      height: 100vh;
+      background: white;
+      flex-direction: column;
+      padding: 80px 2rem 2rem;
+      gap: 1.5rem;
+      box-shadow: -4px 0 20px rgba(0,0,0,0.1);
+      transition: right 0.3s ease;
+    }
+    .nav-links.active { right: 0; }
+    .nav-links a { font-size: 1rem; padding: 0.5rem 0; }
+
+    .intro { grid-template-columns: 1fr; gap: 3rem; }
+    .challenges-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .challenge-img { height: 320px; }
+  }
+  @media (max-width: 640px) {
+    .intro-pillars { grid-template-columns: 1fr; }
+    .quote-wrap { padding: 2.5rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">
+    <img src="/assets/sattvalogo123.png" alt="Sattva Nation Logo" class="logo-img" width="160" height="40" />
+  </div>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+ <ul class="nav-links" id="navLinks">
+  <li><a href="/">Home</a></li>
+  <li><a href="/about-us/">About</a></li>
+  <li><a href="/what-we-do/" class="active-page">What We Do</a></li>
+  <li><a href="/programmes/">Programmes</a></li>
+  <li><a href="/events/">Events</a></li>
+  <li><a href="/founders/">Founders</a></li>
+  <li><a href="/gallery/">Gallery</a></li>
+  <li><a href="/contact-us/" class="nav-cta">Contact</a></li>
+</ul>
+ </nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <span class="page-hero-eyebrow">Our Work & Mission</span>
+    <h1>What <em>We Do</em></h1>
+    <p>Raising your own bar and helping you transform your inner self to live and celebrate life to the fullest.</p>
+  </div>
+  <div class="breadcrumb">
+    <a href="/">Home</a>
+    <span class="sep">&ndash;</span>
+    <span>What We Do</span>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="intro">
+  <div class="reveal">
+    <span class="section-tag">What We Do</span>
+    <h2 class="section-title">Holistic development, <em>not just bits and pieces.</em></h2>
+    <p class="intro-lead">"Sattva Nation not only enlightens your mind, but also develops your soul, body, and beauty."</p>
+    <p class="section-body">
+      Sattva Nation raises your own bar and helps you transform your inner self to live and celebrate your life to the fullest.
+    </p>
+    <p class="section-body">
+      We focus on holistic development rather than just bits and pieces. Sattva Nation not only enlightens your mind, but also develops your soul, body, and beauty.
+    </p>
+    <a href="/programmes/" class="btn-primary">Explore Our Programmes</a>
+  </div>
+
+  <div class="intro-visual reveal">
+    <div class="intro-pillars">
+      <div class="pillar">
+        <div class="pillar-emoji" aria-hidden="true">🧠</div>
+        <div class="pillar-name">Mind</div>
+        <div class="pillar-sub">Enlighten</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-emoji" aria-hidden="true">🌌</div>
+        <div class="pillar-name">Soul</div>
+        <div class="pillar-sub">Awaken</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-emoji" aria-hidden="true">💪</div>
+        <div class="pillar-name">Body</div>
+        <div class="pillar-sub">Strengthen</div>
+      </div>
+      <div class="pillar" style="background: var(--pink-deep); border-color: var(--pink-deep);">
+        <div class="pillar-emoji" aria-hidden="true">✨</div>
+        <div class="pillar-name" style="color:white;">Beauty</div>
+        <div class="pillar-sub" style="color:#fce4ec;">Celebrate</div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:1.5rem;font-family:var(--serif);font-size:0.95rem;color:var(--text-mid);font-style:italic;">
+      Mind. Soul. Body. Beauty &mdash;&nbsp; one holistic you.
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="quote-section">
+  <div class="quote-wrap reveal">
+    Life is a festival and we believe that life should be celebrated as such.
+  </div>
+</section>
+
+<!-- APPROACH -->
+<section class="intro" style="background: var(--pink-pale);">
+  <div class="reveal">
+    <span class="section-tag">Our Approach</span>
+    <h2 class="section-title">Practical, <em>not classroom.</em></h2>
+    <p class="section-body">
+      A first of its kind wellness festival in India, Sattva Nation focuses on both external as well as internal development and wellness. The knowledge to attain the same is imparted in an actual open environment with focus on practical implementation rather than the boring classroom format.
+    </p>
+    <p class="section-body">
+      We take on the challenges of modern life such as stress, anxiety, and depression &mdash;&nbsp; and help you overcome these by living your life to the best of your potential.
+    </p>
+  </div>
+
+  <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+    <div style="border-radius:20px;overflow:hidden;height:240px;background-image:url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=80');background-size:cover;background-position:center;"></div>
+    <div style="border-radius:20px;overflow:hidden;height:240px;background-image:url('https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=600&q=80');background-size:cover;background-position:center;"></div>
+    <div style="border-radius:20px;overflow:hidden;height:240px;background-image:url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80');background-size:cover;background-position:center;"></div>
+    <div style="border-radius:20px;overflow:hidden;height:240px;background-image:url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600&q=80');background-size:cover;background-position:center;"></div>
+  </div>
+</section>
+
+<!-- WHO WE ARE -->
+<section class="who-we-are">
+  <div class="wwa-inner reveal">
+    <span class="section-tag">Who We Are</span>
+    <h2 class="section-title">A holistic wellness <em>movement</em></h2>
+    <p class="section-body">
+      Sattva Nation is a holistic wellness movement dedicated to nurturing the complete well-being of individuals. Rooted in balance, mindfulness and purposeful living, Sattva brings together experts, organisations and communities to inspire healthier, happier and more meaningful lives.
+    </p>
+    <p class="section-body">
+      Through events, wellness experiences, educational initiatives, corporate programs and community engagements, Sattva promotes growth across every dimension of human wellness.
+    </p>
+  </div>
+</section>
+
+<!-- CHALLENGES -->
+<section class="challenges">
+  <div class="challenges-inner">
+    <div class="reveal">
+      <span class="section-tag">Modern Challenges</span>
+      <h2 class="section-title">Helping you live life to <em>your full potential.</em></h2>
+      <div class="challenges-list">
+        <div class="challenge-item">
+          <div class="challenge-dot">✓</div>
+          <div class="challenge-text">Stress &mdash;&nbsp; learn to release tension and find calm</div>
+        </div>
+        <div class="challenge-item">
+          <div class="challenge-dot">✓</div>
+          <div class="challenge-text">Anxiety &mdash;&nbsp; cultivate inner peace and resilience</div>
+        </div>
+        <div class="challenge-item">
+          <div class="challenge-dot">✓</div>
+          <div class="challenge-text">Depression &mdash;&nbsp; reconnect with joy and purpose</div>
+        </div>
+        <div class="challenge-item">
+          <div class="challenge-dot">✓</div>
+          <div class="challenge-text">Burnout &mdash;&nbsp; rediscover balance and meaningful living</div>
+        </div>
+      </div>
+    </div>
+    <div class="challenge-img reveal"></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-inner reveal">
+    <h2>Help you <em>break free</em> from your cocoon<br>and spread your wings.</h2>
+    <p>Join the Sattva Nation community &mdash;&nbsp; where women and wellness come together to celebrate life in all its dimensions.</p>
+    <a href="/contact-us/" class="btn-white">Get in Touch</a>
+    <a href="/events/" class="btn-ghost">View Events</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">SattvaNation</div>
+  <ul class="footer-links">
+    <li><a href="/about-us/">About</a></li>
+    <li><a href="/what-we-do/">What We Do</a></li>
+    <li><a href="/programmes/">Programmes</a></li>
+    <li><a href="/events/">Events</a></li>
+    <li><a href="/founders/">Founders</a></li>
+    <li><a href="/contact-us/">Contact</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/gallery/">Gallery</a></li>
+  </ul>
+  <div class="footer-copy">&copy; 2026 Sattva Nation. Celebrate Life.</div>
+</footer>
+
+<script>
+(function() {
+  // Mobile nav
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  if (toggle && links) {
+    toggle.addEventListener('click', () => {
+      toggle.classList.toggle('active');
+      links.classList.toggle('active');
+      toggle.setAttribute('aria-expanded', toggle.classList.contains('active'));
+    });
+    links.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        toggle.classList.remove('active');
+        links.classList.remove('active');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && links.classList.contains('active')) {
+        toggle.classList.remove('active');
+        links.classList.remove('active');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.focus();
+      }
+    });
+  }
+
+  // Reveal on scroll
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const reveals = document.querySelectorAll('.reveal');
+  if (!reduceMotion && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(el => io.observe(el));
+  } else {
+    reveals.forEach(el => el.classList.add('visible'));
+  }
+})();
+</script>
+
+</body>
+</html>
