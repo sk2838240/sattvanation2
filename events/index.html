@@ -975,14 +975,14 @@
   }
 
   .vvs-section {
-    --vvs-night: #2d1a24;
-    --vvs-wine: #6f1f45;
-    --vvs-accent: #f48fb1;
-    --vvs-parchment: #fff8fb;
-    --vvs-muted: #d9a6b9;
-    padding: 7rem 5%;
-    background: var(--vvs-night);
-    color: var(--vvs-parchment);
+    --vvs-bg: #FDF0F5;
+    --vvs-ink: #2d1a24;
+    --vvs-accent: #c2185b;
+    --vvs-soft: #f48fb1;
+    --vvs-muted: #8a5b6c;
+    padding: 5.5rem 5%;
+    background: var(--vvs-bg);
+    color: var(--vvs-ink);
     position: relative;
     overflow: hidden;
   }
@@ -994,7 +994,7 @@
     width: 620px;
     height: 620px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(244,143,177,0.14), transparent 68%);
+    background: radial-gradient(circle, rgba(194,24,91,0.08), transparent 68%);
     pointer-events: none;
   }
   .vvs-inner {
@@ -1008,10 +1008,10 @@
     grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
     gap: 4rem;
     align-items: end;
-    margin-bottom: 3.2rem;
+    margin-bottom: 2.6rem;
   }
   .vvs-heading {
-    border-top: 1px solid rgba(244,143,177,0.72);
+    border-top: 1px solid rgba(194,24,91,0.38);
     padding-top: 1.15rem;
   }
   .vvs-kicker {
@@ -1022,7 +1022,7 @@
     margin-bottom: 0.65rem;
   }
   .vvs-title {
-    color: var(--vvs-parchment);
+    color: var(--vvs-ink);
     max-width: 780px;
   }
   .vvs-title em {
@@ -1030,12 +1030,12 @@
     color: var(--vvs-accent);
   }
   .vvs-intro {
-    border-left: 1px solid rgba(244,143,177,0.32);
+    border-left: 1px solid rgba(194,24,91,0.3);
     padding-left: 1.6rem;
     max-width: 430px;
   }
   .vvs-intro p {
-    color: rgba(246,236,221,0.74);
+    color: rgba(75,44,57,0.78);
     font-size: 0.97rem;
     line-height: 1.85;
     font-weight: 300;
@@ -1048,7 +1048,7 @@
     font-size: 0.78rem;
   }
   .vvs-book {
-    height: 610px;
+    height: 500px;
     position: relative;
     perspective: 1500px;
     perspective-origin: 50% 47%;
@@ -1061,9 +1061,9 @@
     left: 50%;
     top: 50%;
     width: min(78vw, 940px);
-    height: 68%;
+    height: 66%;
     transform: translate(-50%, -50%);
-    background: radial-gradient(ellipse, rgba(244,143,177,0.13), transparent 70%);
+    background: radial-gradient(ellipse, rgba(194,24,91,0.1), transparent 70%);
     filter: blur(18px);
     pointer-events: none;
   }
@@ -1074,9 +1074,48 @@
     bottom: 8%;
     width: 1px;
     transform: translateX(-50%);
-    background: linear-gradient(to bottom, transparent, rgba(244,143,177,0.42), transparent);
-    opacity: 0.5;
+    background: linear-gradient(to bottom, transparent, rgba(194,24,91,0.32), transparent);
+    opacity: 0.65;
     pointer-events: none;
+  }
+  .vvs-turn-page {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: min(43vw, 520px);
+    aspect-ratio: 3 / 2;
+    border-radius: 18px 2px 2px 18px;
+    background: linear-gradient(100deg, #ffffff 0%, #fce4ec 72%, #f7d4e2 100%);
+    transform: translate(-50%, -50%) rotateY(0deg);
+    transform-origin: left center;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 40;
+    overflow: hidden;
+    backface-visibility: hidden;
+    box-shadow: 12px 18px 35px rgba(45,26,36,0.18);
+  }
+  .vvs-turn-page::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(194,24,91,0.12), transparent 18%, transparent 82%, rgba(194,24,91,0.08));
+  }
+  .vvs-book.flip-next .vvs-turn-page {
+    animation: vvsFlipNext 0.72s cubic-bezier(0.2, 0.72, 0.2, 1) both;
+  }
+  .vvs-book.flip-prev .vvs-turn-page {
+    animation: vvsFlipPrev 0.72s cubic-bezier(0.2, 0.72, 0.2, 1) both;
+  }
+  @keyframes vvsFlipNext {
+    0% { opacity: 0; transform: translate(-50%, -50%) rotateY(-12deg); transform-origin: left center; }
+    12% { opacity: 1; }
+    100% { opacity: 0; transform: translate(-50%, -50%) rotateY(-178deg); transform-origin: left center; }
+  }
+  @keyframes vvsFlipPrev {
+    0% { opacity: 0; transform: translate(-50%, -50%) rotateY(12deg); transform-origin: right center; }
+    12% { opacity: 1; }
+    100% { opacity: 0; transform: translate(-50%, -50%) rotateY(178deg); transform-origin: right center; }
   }
   .vvs-card {
     --x: 0px;
@@ -1096,13 +1135,13 @@
     border: 0;
     border-radius: 18px;
     overflow: hidden;
-    background: #1b1016;
+    background: var(--vvs-ink);
     cursor: pointer;
     transform: translate(-50%, -50%) translate3d(var(--x), var(--y), var(--z)) rotateY(var(--ry)) rotateZ(var(--rz)) scale(var(--scale));
     transform-origin: center center;
     opacity: var(--opacity);
     z-index: var(--z-index);
-    box-shadow: 0 24px 60px rgba(61,10,31,0.42);
+    box-shadow: 0 24px 60px rgba(45,26,36,0.2);
     transition: transform 0.82s cubic-bezier(0.2, 0.72, 0.2, 1), opacity 0.58s ease, box-shadow 0.58s ease, filter 0.58s ease;
     will-change: transform;
   }
@@ -1123,7 +1162,7 @@
     pointer-events: none;
   }
   .vvs-card.active {
-    box-shadow: 0 40px 100px rgba(61,10,31,0.58), 0 0 0 1px rgba(244,143,177,0.34);
+    box-shadow: 0 34px 80px rgba(45,26,36,0.26), 0 0 0 1px rgba(194,24,91,0.32);
   }
   .vvs-card.active img {
     filter: saturate(1) brightness(1);
@@ -1142,7 +1181,7 @@
     justify-content: center;
     gap: 0.7rem;
     margin-top: 0.4rem;
-    color: rgba(246,236,221,0.6);
+    color: rgba(75,44,57,0.64);
     font-size: 0.76rem;
     letter-spacing: 0.06em;
   }
@@ -1163,9 +1202,9 @@
     height: 46px;
     padding: 0;
     border-radius: 50%;
-    border: 1px solid rgba(244,143,177,0.46);
-    background: rgba(255,255,255,0.035);
-    color: var(--vvs-parchment);
+    border: 1px solid rgba(194,24,91,0.32);
+    background: rgba(255,255,255,0.76);
+    color: var(--vvs-ink);
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -1175,16 +1214,25 @@
   .vvs-control:hover {
     background: var(--vvs-accent);
     border-color: var(--vvs-accent);
-    color: var(--vvs-night);
+    color: white;
     transform: translateY(-2px);
   }
   .vvs-control:focus-visible {
-    outline: 3px solid rgba(244,143,177,0.52);
+    outline: 3px solid rgba(194,24,91,0.35);
     outline-offset: 4px;
   }
   .vvs-control svg {
     width: 18px;
     height: 18px;
+  }
+  .vvs-control .vvs-play-icon {
+    display: none;
+  }
+  .vvs-control.is-paused .vvs-pause-icon {
+    display: none;
+  }
+  .vvs-control.is-paused .vvs-play-icon {
+    display: block;
   }
   .vvs-lightbox {
     position: fixed;
@@ -1235,9 +1283,9 @@
     transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
   }
   .vvs-lightbox-control:hover {
-    background: var(--vvs-accent);
-    border-color: var(--vvs-accent);
-    color: var(--vvs-night);
+    background: var(--vvs-soft);
+    border-color: var(--vvs-soft);
+    color: var(--vvs-ink);
   }
   .vvs-lightbox-control:focus-visible {
     outline: 3px solid rgba(244,143,177,0.52);
@@ -1265,7 +1313,7 @@
     white-space: nowrap;
   }
   .vvs-lightbox-caption strong {
-    color: var(--vvs-accent);
+    color: var(--vvs-soft);
     font-family: var(--serif);
     font-size: 1.15rem;
     font-weight: 600;
@@ -1279,12 +1327,13 @@
       grid-template-columns: minmax(0, 1.1fr) minmax(260px, 0.9fr);
       gap: 2.5rem;
     }
-    .vvs-book { height: 540px; }
-    .vvs-card { width: min(52vw, 500px); }
+    .vvs-book { height: 450px; }
+    .vvs-card { width: min(48vw, 480px); }
+    .vvs-turn-page { width: min(48vw, 480px); }
     .vvs-lightbox { padding: 4.5rem 4rem; }
   }
   @media (max-width: 640px) {
-    .vvs-section { padding: 5rem 4%; }
+    .vvs-section { padding: 4.5rem 4%; }
     .vvs-header {
       grid-template-columns: 1fr;
       gap: 1.8rem;
@@ -1293,12 +1342,13 @@
     .vvs-intro {
       max-width: none;
       border-left: 0;
-      border-top: 1px solid rgba(244,143,177,0.32);
+      border-top: 1px solid rgba(194,24,91,0.3);
       padding-left: 0;
       padding-top: 1.1rem;
     }
-    .vvs-book { height: 420px; }
+    .vvs-book { height: 350px; }
     .vvs-card { width: 76vw; border-radius: 14px; }
+    .vvs-turn-page { width: 76vw; border-radius: 14px 2px 2px 14px; }
     .vvs-control { width: 44px; height: 44px; }
     .vvs-lightbox { padding: 4rem 1rem 4.5rem; }
     .vvs-lightbox-stage { width: 96vw; height: 74vh; }
@@ -1312,6 +1362,7 @@
     .vvs-card,
     .vvs-card img,
     .vvs-lightbox-image { transition: none; animation: none; }
+    .vvs-turn-page { animation: none !important; }
   }
 
   /* FOOTER */
@@ -1598,8 +1649,11 @@
       </div>
     </div>
 
-    <div class="vvs-book" id="vvsBook" role="region" aria-roledescription="carousel" aria-label="School of Vedic Sciences launch ceremony photo album"></div>
-    <noscript><p style="color:#f6ecdd;text-align:center;">Enable JavaScript to view the launch photo album.</p></noscript>
+    <div class="vvs-book" id="vvsBook" role="region" aria-roledescription="carousel" aria-label="School of Vedic Sciences launch ceremony photo album">
+      <div class="vvs-spine" aria-hidden="true"></div>
+      <div class="vvs-turn-page" id="vvsTurnPage" aria-hidden="true"></div>
+    </div>
+    <noscript><p style="color:#6b4a5a;text-align:center;">Enable JavaScript to view the launch photo album.</p></noscript>
 
     <div class="vvs-status" aria-live="off" aria-atomic="true"><strong id="vvsCurrent">01</strong><span aria-hidden="true">/</span><span id="vvsTotal">16</span></div>
     <div class="vvs-controls" role="group" aria-label="Photo album controls">
@@ -1608,7 +1662,7 @@
       </button>
       <button class="vvs-control" id="vvsToggle" type="button" aria-label="Pause automatic gallery" aria-pressed="false" aria-controls="vvsBook">
         <svg class="vvs-pause-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M9 5v14M15 5v14"></path></svg>
-        <svg class="vvs-play-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" hidden><path d="m8 5 11 7-11 7z"></path></svg>
+        <svg class="vvs-play-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m8 5 11 7-11 7z"></path></svg>
       </button>
       <button class="vvs-control" id="vvsNext" type="button" aria-label="Show next photograph" aria-controls="vvsBook">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg>
@@ -2288,14 +2342,13 @@
   if (!gallery) return;
 
   const book = document.getElementById('vvsBook');
+  const turnPage = document.getElementById('vvsTurnPage');
   const currentLabel = document.getElementById('vvsCurrent');
   const totalLabel = document.getElementById('vvsTotal');
   const previousButton = document.getElementById('vvsPrev');
   const nextButton = document.getElementById('vvsNext');
   const toggleButton = document.getElementById('vvsToggle');
   const viewButton = document.getElementById('vvsView');
-  const pauseIcon = toggleButton.querySelector('.vvs-pause-icon');
-  const playIcon = toggleButton.querySelector('.vvs-play-icon');
   const lightbox = document.getElementById('vvsLightbox');
   const lightboxImage = document.getElementById('vvsLightboxImage');
   const lightboxCounter = document.getElementById('vvsLightboxCounter');
@@ -2371,8 +2424,7 @@
   }
 
   function updateToggle() {
-    pauseIcon.hidden = userPaused;
-    playIcon.hidden = !userPaused;
+    toggleButton.classList.toggle('is-paused', userPaused);
     toggleButton.setAttribute('aria-pressed', userPaused ? 'true' : 'false');
     toggleButton.setAttribute('aria-label', userPaused ? 'Resume automatic gallery' : 'Pause automatic gallery');
   }
@@ -2384,9 +2436,22 @@
     }
   }
 
+  function playPageFlip(direction) {
+    if (reduceMotion || !turnPage) return;
+    book.classList.remove('flip-next', 'flip-prev');
+    void turnPage.offsetWidth;
+    book.classList.add(direction === 'prev' ? 'flip-prev' : 'flip-next');
+  }
+
+  if (turnPage) {
+    turnPage.addEventListener('animationend', () => {
+      book.classList.remove('flip-next', 'flip-prev');
+    });
+  }
+
   function startAutoplay() {
     if (timer || userPaused || hovering || lightboxOpen || document.hidden) return;
-    timer = setInterval(() => setCurrent(current + 1), interval);
+    timer = setInterval(() => setCurrent(current + 1, 'next'), interval);
   }
 
   function syncAutoplay() {
@@ -2394,8 +2459,17 @@
     startAutoplay();
   }
 
-  function setCurrent(index) {
-    current = (index + images.length) % images.length;
+  function setCurrent(index, direction) {
+    const normalized = (index + images.length) % images.length;
+    let flipDirection = direction;
+    if (!flipDirection && normalized !== current) {
+      let difference = normalized - current;
+      if (difference > images.length / 2) difference -= images.length;
+      if (difference < -images.length / 2) difference += images.length;
+      flipDirection = difference < 0 ? 'prev' : 'next';
+    }
+    if (normalized !== current) playPageFlip(flipDirection);
+    current = normalized;
     positionCards();
     currentLabel.textContent = String(current + 1).padStart(2, '0');
     syncAutoplay();
@@ -2432,8 +2506,8 @@
     if (lastFocused) lastFocused.focus();
   }
 
-  previousButton.addEventListener('click', () => setCurrent(current - 1));
-  nextButton.addEventListener('click', () => setCurrent(current + 1));
+  previousButton.addEventListener('click', () => setCurrent(current - 1, 'prev'));
+  nextButton.addEventListener('click', () => setCurrent(current + 1, 'next'));
   viewButton.addEventListener('click', () => openLightbox(current));
   toggleButton.addEventListener('click', () => {
     userPaused = !userPaused;
@@ -2453,11 +2527,11 @@
   gallery.addEventListener('keydown', event => {
     if (event.key === 'ArrowLeft') {
       event.preventDefault();
-      setCurrent(current - 1);
+      setCurrent(current - 1, 'prev');
     }
     if (event.key === 'ArrowRight') {
       event.preventDefault();
-      setCurrent(current + 1);
+      setCurrent(current + 1, 'next');
     }
   });
 
@@ -2472,7 +2546,7 @@
     const deltaX = event.changedTouches[0].clientX - touchStartX;
     const deltaY = event.changedTouches[0].clientY - touchStartY;
     if (Math.abs(deltaX) > 45 && Math.abs(deltaX) > Math.abs(deltaY)) {
-      setCurrent(current + (deltaX < 0 ? 1 : -1));
+      setCurrent(current + (deltaX < 0 ? 1 : -1), deltaX < 0 ? 'next' : 'prev');
     }
   }, { passive: true });
 
